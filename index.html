@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Casa Rosebery — Braceria premium e ristorante fine dining a Posillipo, Napoli. Carni pregiate, champagne e cucina mediterranea con vista sul Golfo.">
+<title>Casa Rosebery — Braceria & Ristorante · Napoli</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & BASE ──────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.6; color: #1a1208; background: #faf8f3; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* ── PALETTE ───────────────────────────────────────────── */
+:root {
+  --nero:    #0e0d0a;
+  --carbone: #1a1814;
+  --fumo:    #2a2720;
+  --oro:     #b8923a;
+  --oro-lt:  #d4aa5a;
+  --crema:   #faf8f3;
+  --lino:    #f0ebe0;
+  --sabbia:  #e8e0d0;
+  --text:    #1a1208;
+  --muted:   #7a7060;
+}
+
+/* ── NAV ───────────────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px;
+  height: 72px;
+  transition: background 0.4s, backdrop-filter 0.4s;
+}
+nav.scrolled {
+  background: rgba(14,13,10,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(184,146,58,0.2);
+}
+.nav-logo img { height: 48px; filter: brightness(0) invert(1); }
+.nav-links { display: flex; gap: 40px; list-style: none; }
+.nav-links a {
+  font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: rgba(255,255,255,0.8); font-weight: 400;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--oro-lt); }
+.nav-cta {
+  background: transparent; border: 1px solid var(--oro);
+  color: var(--oro); font-family: 'Inter', sans-serif;
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  padding: 10px 24px; cursor: pointer; transition: all 0.2s;
+}
+.nav-cta:hover { background: var(--oro); color: var(--nero); }
+.nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; }
+
+/* ── HERO SPLIT ────────────────────────────────────────── */
+.hero {
+  height: 100vh; min-height: 600px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  position: relative;
+}
+.hero-half {
+  position: relative; overflow: hidden;
+  display: flex; align-items: flex-end; padding: 60px 56px;
+}
+.hero-half-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  transition: transform 0.6s ease;
+}
+.hero-half:hover .hero-half-bg { transform: scale(1.03); }
+.hero-half-overlay {
+  position: absolute; inset: 0;
+}
+.hero-half--braceria .hero-half-bg {
+  background-image: url('https://images.unsplash.com/photo-1558030006-450675393462?w=900&q=80');
+}
+.hero-half--braceria .hero-half-overlay {
+  background: linear-gradient(to top, rgba(14,13,10,0.92) 0%, rgba(14,13,10,0.3) 50%, transparent 100%);
+}
+.hero-half--dining .hero-half-bg {
+  background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80');
+}
+.hero-half--dining .hero-half-overlay {
+  background: linear-gradient(to top, rgba(10,20,14,0.88) 0%, rgba(10,20,14,0.25) 50%, transparent 100%);
+}
+.hero-divider {
+  position: absolute; top: 0; bottom: 0; left: 50%;
+  width: 1px; background: rgba(184,146,58,0.4);
+  transform: translateX(-50%); z-index: 10;
+}
+.hero-content { position: relative; z-index: 2; }
+.hero-eyebrow {
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--oro-lt); margin-bottom: 12px; display: block;
+}
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 300; color: #ffffff; line-height: 1.05;
+  margin-bottom: 16px;
+}
+.hero-title em { font-style: italic; color: var(--oro-lt); }
+.hero-desc {
+  font-size: 13px; color: rgba(255,255,255,0.65);
+  max-width: 320px; line-height: 1.7; margin-bottom: 28px;
+}
+.btn-ghost {
+  display: inline-block; border: 1px solid rgba(184,146,58,0.6);
+  color: var(--oro-lt); font-size: 10px; letter-spacing: 2px;
+  text-transform: uppercase; padding: 12px 28px;
+  transition: all 0.25s;
+}
+.btn-ghost:hover { background: var(--oro); border-color: var(--oro); color: var(--nero); }
+.hero-logo-center {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  z-index: 20; text-align: center;
+}
+.hero-logo-center img { height: 80px; filter: brightness(0) invert(1); }
+
+/* ── SEZIONE CLAIM ─────────────────────────────────────── */
+.section-claim {
+  background: var(--nero);
+  padding: 80px 48px;
+  text-align: center;
+}
+.section-claim blockquote {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(24px, 3.5vw, 44px);
+  font-weight: 300; font-style: italic;
+  color: rgba(255,255,255,0.9);
+  max-width: 800px; margin: 0 auto 24px;
+  line-height: 1.3;
+}
+.section-claim blockquote em { color: var(--oro-lt); font-style: normal; }
+.section-claim cite {
+  font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--muted); font-style: normal;
+}
+
+/* ── TRE ANIME ─────────────────────────────────────────── */
+.section-anime { padding: 100px 48px; background: var(--crema); }
+.anime-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 2px; max-width: 1200px; margin: 60px auto 0;
+}
+.anime-card {
+  position: relative; overflow: hidden; aspect-ratio: 3/4;
+  cursor: default;
+}
+.anime-card-bg {
+  position: absolute; inset: 0; background-size: cover; background-position: center;
+  transition: transform 0.7s ease;
+}
+.anime-card:hover .anime-card-bg { transform: scale(1.05); }
+.anime-card-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(14,13,10,0.9) 0%, rgba(14,13,10,0.1) 60%);
+}
+.anime-card--braceria .anime-card-bg {
+  background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80');
+}
+.anime-card--ristorante .anime-card-bg {
+  background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80');
+}
+.anime-card--champagneria .anime-card-bg {
+  background-image: url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80');
+}
+.anime-card-content {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 36px 32px; z-index: 2;
+}
+.anime-card-num {
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--oro-lt); margin-bottom: 8px; display: block;
+}
+.anime-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 28px; font-weight: 300; color: #fff;
+  margin-bottom: 12px; line-height: 1.1;
+}
+.anime-card-desc {
+  font-size: 12px; color: rgba(255,255,255,0.65);
+  line-height: 1.7; margin-bottom: 20px;
+}
+.section-header { text-align: center; }
+.section-eyebrow {
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--oro); display: block; margin-bottom: 16px;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(30px, 4vw, 52px); font-weight: 300;
+  color: var(--text); line-height: 1.1;
+}
+.section-title em { font-style: italic; color: var(--oro); }
+
+/* ── POSILLIPO STRIP ───────────────────────────────────── */
+.section-posillipo {
+  background: var(--carbone);
+  display: grid; grid-template-columns: 1fr 1fr;
+  min-height: 480px;
+}
+.posillipo-image {
+  background-image: url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=900&q=80');
+  background-size: cover; background-position: center;
+}
+.posillipo-text {
+  padding: 80px 72px;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.posillipo-text .section-eyebrow { text-align: left; }
+.posillipo-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(28px, 3.5vw, 46px); font-weight: 300;
+  color: #fff; line-height: 1.15; margin-bottom: 24px;
+}
+.posillipo-title em { color: var(--oro-lt); font-style: italic; }
+.posillipo-desc {
+  font-size: 14px; color: rgba(255,255,255,0.6);
+  line-height: 1.85; margin-bottom: 36px; max-width: 420px;
+}
+.posillipo-details {
+  display: flex; gap: 40px;
+}
+.posillipo-detail-label {
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--oro); margin-bottom: 6px; display: block;
+}
+.posillipo-detail-value {
+  font-size: 13px; color: rgba(255,255,255,0.8);
+}
+
+/* ── MENU CTA ──────────────────────────────────────────── */
+.section-menu { padding: 100px 48px; background: var(--lino); }
+.menu-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2px; max-width: 1000px; margin: 60px auto 0;
+}
+.menu-card {
+  background: var(--nero); padding: 56px 48px;
+  position: relative; overflow: hidden;
+  transition: background 0.3s;
+}
+.menu-card::before {
+  content: ''; position: absolute; top: 0; left: 0;
+  width: 3px; height: 0; background: var(--oro);
+  transition: height 0.4s ease;
+}
+.menu-card:hover::before { height: 100%; }
+.menu-card-label {
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--oro); margin-bottom: 16px; display: block;
+}
+.menu-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px; font-weight: 300; color: #fff;
+  margin-bottom: 16px; line-height: 1.1;
+}
+.menu-card-desc {
+  font-size: 13px; color: rgba(255,255,255,0.5);
+  line-height: 1.7; margin-bottom: 32px;
+}
+.btn-gold {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--oro); color: var(--nero);
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  padding: 13px 28px; font-weight: 500;
+  transition: background 0.2s;
+}
+.btn-gold:hover { background: var(--oro-lt); }
+.btn-gold svg { width: 14px; height: 14px; }
+
+/* ── SERATE & EVENTI ───────────────────────────────────── */
+.section-eventi { padding: 100px 48px; background: var(--crema); }
+.eventi-inner { max-width: 680px; margin: 60px auto 0; }
+.form-field { margin-bottom: 20px; }
+.form-field label {
+  display: block; font-size: 9px; letter-spacing: 2px;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+}
+.form-field input, .form-field textarea, .form-field select {
+  width: 100%; background: transparent;
+  border: none; border-bottom: 1px solid var(--sabbia);
+  padding: 10px 0; font-family: 'Inter', sans-serif;
+  font-size: 14px; color: var(--text); outline: none;
+  transition: border-color 0.2s;
+}
+.form-field input:focus, .form-field textarea:focus, .form-field select:focus {
+  border-bottom-color: var(--oro);
+}
+.form-field textarea { resize: vertical; min-height: 80px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.form-submit {
+  display: flex; align-items: center; gap: 20px; margin-top: 36px;
+  flex-wrap: wrap;
+}
+.btn-dark {
+  background: var(--nero); color: #fff;
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  padding: 14px 32px; border: none; cursor: pointer;
+  font-family: 'Inter', sans-serif; font-weight: 400;
+  transition: background 0.2s;
+}
+.btn-dark:hover { background: var(--fumo); }
+.btn-wa {
+  display: inline-flex; align-items: center; gap: 8px;
+  color: var(--muted); font-size: 12px;
+  transition: color 0.2s;
+}
+.btn-wa:hover { color: #25D366; }
+.btn-wa svg { width: 20px; height: 20px; fill: currentColor; }
+.divider-or {
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--sabbia);
+}
+
+/* ── CONTATTI ──────────────────────────────────────────── */
+.section-contatti {
+  background: var(--carbone);
+  display: grid; grid-template-columns: 1fr 1fr;
+}
+.contatti-info { padding: 80px 72px; }
+.contatti-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px; font-weight: 300; color: #fff;
+  margin-bottom: 48px;
+}
+.info-block { margin-bottom: 32px; }
+.info-label {
+  font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--oro); margin-bottom: 8px; display: block;
+}
+.info-value { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.7; }
+.info-value a { transition: color 0.2s; }
+.info-value a:hover { color: var(--oro-lt); }
+.orari-grid { display: grid; grid-template-columns: auto 1fr; gap: 4px 20px; }
+.orari-grid span { font-size: 13px; color: rgba(255,255,255,0.6); }
+.orari-grid span:nth-child(odd) { color: rgba(255,255,255,0.4); }
+.contatti-map { background: #2a2720; min-height: 400px; }
+.contatti-map iframe { width: 100%; height: 100%; border: none; filter: grayscale(100%) contrast(0.8); }
+.social-links { display: flex; gap: 20px; margin-top: 24px; }
+.social-link {
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted); transition: color 0.2s;
+  display: flex; align-items: center; gap: 6px;
+}
+.social-link:hover { color: var(--oro-lt); }
+
+/* ── FOOTER ────────────────────────────────────────────── */
+footer {
+  background: var(--nero); padding: 32px 48px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-top: 1px solid rgba(184,146,58,0.15);
+}
+footer .footer-logo img { height: 36px; filter: brightness(0) invert(1) brightness(0.6); }
+footer p { font-size: 11px; color: rgba(255,255,255,0.3); }
+footer nav a { font-size: 10px; letter-spacing: 1.5px; color: rgba(255,255,255,0.3); margin-left: 24px; text-transform: uppercase; transition: color 0.2s; }
+footer nav a:hover { color: var(--oro-lt); }
+
+/* ── PRENOTAZIONE STICKY ───────────────────────────────── */
+.prenota-sticky {
+  position: fixed; bottom: 28px; right: 28px; z-index: 99;
+  background: var(--oro); color: var(--nero);
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  padding: 14px 28px; font-weight: 500;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  transition: background 0.2s, transform 0.2s;
+}
+.prenota-sticky:hover { background: var(--oro-lt); transform: translateY(-2px); }
+
+/* ── ORARI BANNER ──────────────────────────────────────── */
+.orari-config {
+  /* Modifica gli orari qui — si aggiornano automaticamente nel sito */
+  display: none;
+}
+
+/* ── RECENSIONI ─────────────────────────────────────────── */
+.section-recensioni { padding: 100px 48px; background: var(--nero); }
+.recensioni-header { text-align: center; margin-bottom: 60px; }
+.recensioni-header .section-eyebrow { color: var(--oro); }
+.recensioni-header .section-title { color: #fff; }
+.recensioni-header .section-title em { color: var(--oro-lt); }
+.badges-row {
+  display: flex; justify-content: center; align-items: center;
+  gap: 48px; margin-bottom: 56px; flex-wrap: wrap;
+}
+.badge-google {
+  display: flex; align-items: center; gap: 14px;
+  border: 1px solid rgba(184,146,58,0.2);
+  padding: 16px 28px; border-radius: 4px;
+}
+.badge-google-logo {
+  font-size: 18px; font-weight: 700;
+  background: linear-gradient(135deg, #4285F4, #EA4335, #FBBC05, #34A853);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.badge-stars { color: #FBBC05; font-size: 18px; letter-spacing: 2px; }
+.badge-info { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+.badge-score { font-size: 28px; font-weight: 300; color: #fff; font-family: 'Cormorant Garamond', serif; }
+.reviews-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px; max-width: 1100px; margin: 0 auto;
+}
+.review-card {
+  background: var(--carbone); padding: 32px 28px;
+  border: 1px solid rgba(184,146,58,0.1);
+  position: relative;
+}
+.review-card::before {
+  content: '"';
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 80px; color: rgba(184,146,58,0.15);
+  position: absolute; top: 10px; left: 20px;
+  line-height: 1;
+}
+.review-stars { color: #FBBC05; font-size: 14px; margin-bottom: 16px; }
+.review-text {
+  font-size: 13px; color: rgba(255,255,255,0.65);
+  line-height: 1.8; margin-bottom: 20px; font-style: italic;
+}
+.review-author {
+  font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--oro); font-style: normal;
+}
+.review-source { font-size: 10px; color: rgba(255,255,255,0.3); margin-top: 4px; }
+.ta-widget-wrap {
+  display: flex; justify-content: center;
+  filter: invert(1) brightness(0.7);
+}
+
+/* ── RESPONSIVE ────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .reviews-grid { grid-template-columns: 1fr; }
+  .section-recensioni { padding: 64px 24px; }
+  .badges-row { gap: 24px; }
+
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .nav-mobile-toggle { display: block; }
+  .hero { grid-template-columns: 1fr; height: auto; }
+  .hero-half { min-height: 50vh; padding: 48px 28px; }
+  .hero-divider { display: none; }
+  .hero-logo-center { display: none; }
+  .anime-grid { grid-template-columns: 1fr; }
+  .anime-card { aspect-ratio: 4/3; }
+  .menu-grid { grid-template-columns: 1fr; }
+  .section-posillipo { grid-template-columns: 1fr; }
+  .posillipo-image { min-height: 280px; }
+  .posillipo-text { padding: 56px 28px; }
+  .section-contatti { grid-template-columns: 1fr; }
+  .contatti-map { min-height: 280px; }
+  .contatti-info { padding: 56px 28px; }
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+  footer { flex-direction: column; gap: 16px; text-align: center; }
+  footer nav { margin-top: 8px; }
+  .section-anime, .section-menu, .section-eventi { padding: 64px 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-half-bg, .anime-card-bg { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ─────────────────────────────────────────────── -->
+<nav id="main-nav">
+  <div class="nav-logo">
+    <a href="#"><img src="logo.png" alt="Casa Rosebery"></a>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#anime">Il Ristorante</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#storia">La Nostra Storia</a></li>
+    <li><a href="#eventi">Serate & Eventi</a></li>
+    <li><a href="#recensioni">Recensioni</a></li>
+    <li><a href="#contatti">Contatti</a></li>
+  </ul>
+  <a href="https://casarosebery.plateform.app/reserve" class="nav-cta" target="_blank">Prenota</a>
+</nav>
+
+<!-- ── HERO SPLIT ───────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-half hero-half--braceria">
+    <div class="hero-half-bg"></div>
+    <div class="hero-half-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">Braceria Premium</span>
+      <h2 class="hero-title">La brace<br>come <em>arte</em></h2>
+      <p class="hero-desc">Carni pregiate da tutto il mondo, frollature studiate, cotture millimetriche. La Braceria di Casa Rosebery è un rito.</p>
+      <a href="#anime" class="btn-ghost">Scopri la Braceria</a>
+    </div>
+  </div>
+
+  <div class="hero-divider"></div>
+  <div class="hero-logo-center">
+    <img src="logo.png" alt="Casa Rosebery">
+  </div>
+
+  <div class="hero-half hero-half--dining">
+    <div class="hero-half-bg"></div>
+    <div class="hero-half-overlay"></div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">Fine Dining</span>
+      <h2 class="hero-title">Cucina<br>di <em>territorio</em></h2>
+      <p class="hero-desc">Ingredienti del Golfo, tecnica e creatività. Un menu che cambia con le stagioni, fedele alla tradizione napoletana.</p>
+      <a href="#anime" class="btn-ghost">Scopri il Ristorante</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── CLAIM ────────────────────────────────────────────── -->
+<section class="section-claim">
+  <blockquote>
+    "Il profumo della brace, il tintinnio dei calici, la luce sul mare di <em>Posillipo</em>.<br>Benvenuti a Casa Rosebery."
+  </blockquote>
+  <cite>Via Ferdinando Russo 13, Napoli</cite>
+</section>
+
+<!-- ── TRE ANIME ────────────────────────────────────────── -->
+<section class="section-anime" id="anime">
+  <div class="section-header">
+    <span class="section-eyebrow">La nostra identità</span>
+    <h2 class="section-title">Tre <em>anime</em>, un'unica esperienza</h2>
+  </div>
+  <div class="anime-grid">
+    <div class="anime-card anime-card--braceria">
+      <div class="anime-card-bg"></div>
+      <div class="anime-card-overlay"></div>
+      <div class="anime-card-content">
+        <span class="anime-card-num">I</span>
+        <h3 class="anime-card-title">Braceria</h3>
+        <p class="anime-card-desc">Eccellenze italiane e internazionali — Wagyu, Black Angus, Chianina — lavorate con frollature e cotture studiate per esaltare ogni fibra.</p>
+      </div>
+    </div>
+    <div class="anime-card anime-card--ristorante">
+      <div class="anime-card-bg"></div>
+      <div class="anime-card-overlay"></div>
+      <div class="anime-card-content">
+        <span class="anime-card-num">II</span>
+        <h3 class="anime-card-title">Ristorante</h3>
+        <p class="anime-card-desc">Menu stagionali che celebrano i sapori del Mediterraneo. Dalla pasta fresca ai secondi di mare, ogni piatto è una narrazione del territorio.</p>
+      </div>
+    </div>
+    <div class="anime-card anime-card--champagneria">
+      <div class="anime-card-bg"></div>
+      <div class="anime-card-overlay"></div>
+      <div class="anime-card-content">
+        <span class="anime-card-num">III</span>
+        <h3 class="anime-card-title">Champagneria</h3>
+        <p class="anime-card-desc">Una selezione esclusiva di champagne, bollicine e vini scelti per esaltare ogni momento — dall'aperitivo al brindisi finale.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── POSILLIPO ─────────────────────────────────────────── -->
+<section class="section-posillipo" id="storia">
+  <div class="posillipo-image"></div>
+  <div class="posillipo-text">
+    <span class="section-eyebrow">Posillipo, Napoli</span>
+    <h2 class="posillipo-title">Una cornice<br><em>senza tempo</em></h2>
+    <p class="posillipo-desc">
+      Casa Rosebery nasce a Posillipo, uno dei luoghi più suggestivi del Golfo di Napoli. Un ristorante dove l'eleganza dell'ambiente si unisce alla passione per la cucina autentica — ogni dettaglio pensato per rendere indimenticabile ogni visita.
+    </p>
+    <p class="posillipo-desc" style="margin-top:-8px">
+      Il nome evoca la Villa Rosebery, residenza del Presidente della Repubblica a pochi passi da noi: storia, bellezza e raffinatezza come fondamenta di tutto quello che facciamo.
+    </p>
+    <div class="posillipo-details">
+      <div>
+        <span class="posillipo-detail-label">Dove siamo</span>
+        <span class="posillivo-detail-value" style="font-size:13px;color:rgba(255,255,255,0.7)">Via Ferdinando Russo 13<br>Posillipo, Napoli</span>
+      </div>
+      <div>
+        <span class="posillipo-detail-label">Parcheggio</span>
+        <span class="posillipo-detail-value" style="font-size:13px;color:rgba(255,255,255,0.7)">Gratuito e riservato<br>Nessuna ZTL</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MENU ──────────────────────────────────────────────── -->
+<section class="section-menu" id="menu">
+  <div class="section-header">
+    <span class="section-eyebrow">Esplora</span>
+    <h2 class="section-title">Il nostro <em>menu</em></h2>
+  </div>
+  <div class="menu-grid">
+    <div class="menu-card">
+      <span class="menu-card-label">Cucina & Braceria</span>
+      <h3 class="menu-card-title">Menu del Ristorante</h3>
+      <p class="menu-card-desc">Antipasti, primi, carni pregiate alla brace e specialità della casa. Aggiornato stagionalmente.</p>
+      <a href="#" class="btn-gold" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+        Scarica il Menu
+      </a>
+    </div>
+    <div class="menu-card">
+      <span class="menu-card-label">Champagneria & Vini</span>
+      <h3 class="menu-card-title">Carta dei Vini</h3>
+      <p class="menu-card-desc">Champagne, bollicine italiane e una selezione di vini rossi e bianchi curata per ogni abbinamento.</p>
+      <a href="#" class="btn-gold" target="_blank">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+        Scarica la Carta
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERATE & EVENTI ───────────────────────────────────── -->
+<section class="section-eventi" id="eventi">
+  <div class="section-header">
+    <span class="section-eyebrow">Serate & Cene Private</span>
+    <h2 class="section-title">Un'esperienza <em>su misura</em></h2>
+  </div>
+  <div class="eventi-inner">
+    <p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:40px;text-align:center">
+      Organizziamo cene aziendali, eventi privati, serate a tema e compleanni.<br>
+      Raccontaci la tua occasione — creiamo qualcosa di indimenticabile insieme.
+    </p>
+
+    <form onsubmit="handleForm(event)">
+      <div class="form-row">
+        <div class="form-field">
+          <label>Nome e cognome</label>
+          <input type="text" placeholder="Mario Rossi" required>
+        </div>
+        <div class="form-field">
+          <label>Telefono</label>
+          <input type="tel" placeholder="+39 000 0000000" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field">
+          <label>Data dell'evento</label>
+          <input type="date" required>
+        </div>
+        <div class="form-field">
+          <label>Numero di persone</label>
+          <input type="number" min="2" placeholder="Es. 20" required>
+        </div>
+      </div>
+      <div class="form-field">
+        <label>Tipo di evento</label>
+        <select>
+          <option value="">Seleziona...</option>
+          <option>Cena aziendale</option>
+          <option>Compleanno / Anniversario</option>
+          <option>Evento privato</option>
+          <option>Serata a tema</option>
+          <option>Altro</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>Note o richieste particolari</label>
+        <textarea placeholder="Descrivi la tua occasione..."></textarea>
+      </div>
+      <div class="form-submit">
+        <button type="submit" class="btn-dark">Invia richiesta</button>
+        <span class="divider-or">oppure</span>
+        <a href="https://wa.me/390813357572?text=Ciao!%20Vorrei%20informazioni%20per%20un%20evento%20a%20Casa%20Rosebery." class="btn-wa" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Scrivici su WhatsApp
+        </a>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ── CONTATTI ──────────────────────────────────────────── -->
+<section class="section-contatti" id="contatti">
+  <div class="contatti-info">
+    <h2 class="contatti-title">Come raggiungerci</h2>
+
+    <div class="info-block">
+      <span class="info-label">Indirizzo</span>
+      <div class="info-value">Via Ferdinando Russo 13<br>80123 Posillipo, Napoli</div>
+    </div>
+
+    <div class="info-block">
+      <span class="info-label">Telefono & Prenotazioni</span>
+      <div class="info-value">
+        <a href="tel:0813357572">081 335 7572</a><br>
+        <a href="mailto:prenotazioni@casaroseberyristorante.it" style="font-size:12px;opacity:0.7">prenotazioni@casaroseberyristorante.it</a>
+      </div>
+    </div>
+
+    <div class="info-block">
+      <span class="info-label">Orari di apertura</span>
+      <div class="info-value orari-grid" id="orari-display">
+        <!-- Orari caricati da config -->
+      </div>
+    </div>
+
+    <div class="info-block">
+      <span class="info-label">Parcheggio</span>
+      <div class="info-value">Gratuito e riservato ai clienti<br><span style="font-size:12px;opacity:0.6">Nessun vincolo ZTL</span></div>
+    </div>
+
+    <div class="social-links">
+      <a href="https://www.instagram.com/casarosebery" class="social-link" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        Instagram
+      </a>
+      <a href="https://www.facebook.com/61567925834282" class="social-link" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </a>
+    </div>
+  </div>
+  <div class="contatti-map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.9!2d14.2018!3d40.8132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133b08f25b6f8c47%3A0x1!2sVia+Ferdinando+Russo+13%2C+Napoli!5e0!3m2!1sit!2sit!4v1"
+      allowfullscreen loading="lazy">
+    </iframe>
+  </div>
+</section>
+
+<!-- ── RECENSIONI ───────────────────────────────────────── -->
+<section class="section-recensioni" id="recensioni">
+  <div class="recensioni-header">
+    <span class="section-eyebrow">La voce dei nostri ospiti</span>
+    <h2 class="section-title">Cosa dicono <em>di noi</em></h2>
+  </div>
+
+  <!-- Badge Google + TripAdvisor -->
+  <div class="badges-row">
+    <div class="badge-google">
+      <div>
+        <div class="badge-google-logo">Google</div>
+        <div class="badge-stars">★★★★★</div>
+        <div class="badge-info">su Google Reviews</div>
+      </div>
+      <div>
+        <div class="badge-score">4.8</div>
+        <div class="badge-info">/ 5.0</div>
+      </div>
+    </div>
+    <div class="ta-widget-wrap">
+      <div id="TA_cdsratingsonlynarrow266" class="TA_cdsratingsonlynarrow">
+        <ul id="5gnLR2vnN4" class="TA_links BJQjv5Y">
+          <li id="niPdfqx8qn" class="Fjr5aRS">
+            <a target="_blank" href="https://www.tripadvisor.it/Restaurant_Review-g187785-d32726215-Reviews-Casa_Rosebery-Naples_Province_of_Naples_Campania.html">
+              <img src="https://www.tripadvisor.it/img/cdsi/img2/branding/v2/Tripadvisor_lockup_horizontal_secondary_registered-18034-2.svg" alt="TripAdvisor"/>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <script async src="https://www.jscache.com/wejs?wtype=cdsratingsonlynarrow&uniq=266&locationId=32726215&lang=it&border=true&display_version=2" data-loadtrk onload="this.loadtrk=true"></script>
+    </div>
+  </div>
+
+  <!-- Recensioni selezionate -->
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Il posto è molto accogliente, si sta tranquilli e la vista di Napoli è veramente meravigliosa. Il cibo ottimo. Un voto speciale oltre alla carne lo abbiamo dato ai ravioli ripieni al ragù di Anatra — una vera goduria.</p>
+      <div class="review-author">Ospite TripAdvisor</div>
+      <div class="review-source">TripAdvisor · 2025</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Esperienza straordinaria. La carne è di qualità eccezionale, cucinata alla perfezione. L'atmosfera è elegante ma accogliente, e il personale è attento e professionale. Torneremo sicuramente.</p>
+      <div class="review-author">Ospite Google</div>
+      <div class="review-source">Google Reviews · 2025</div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars">★★★★★</div>
+      <p class="review-text">Una serata indimenticabile a Posillipo. La selezione di champagne è sorprendente, abbinata alla brace in modo magistrale. Il panorama sul Golfo completa un'esperienza che vale ogni euro.</p>
+      <div class="review-author">Ospite Google</div>
+      <div class="review-source">Google Reviews · 2026</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:40px">
+    <a href="https://www.tripadvisor.it/Restaurant_Review-g187785-d32726215-Reviews-Casa_Rosebery-Naples_Province_of_Naples_Campania.html"
+       target="_blank"
+       style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);border-bottom:1px solid rgba(184,146,58,0.3);padding-bottom:2px;">
+      Leggi tutte le recensioni →
+    </a>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────────────────── -->
+<footer>
+  <div class="footer-logo"><img src="logo.png" alt="Casa Rosebery"></div>
+  <p>© 2026 Casa Rosebery · P.IVA [da completare] · All rights reserved</p>
+  <nav>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Cookie Policy</a>
+  </nav>
+</footer>
+
+<!-- ── PRENOTA STICKY ────────────────────────────────────── -->
+<a href="https://casarosebery.plateform.app/reserve" class="prenota-sticky" target="_blank">
+  Prenota ora
+</a>
+
+<!-- ── CONFIG ORARI (modifica qui) ──────────────────────── -->
+<script id="orari-config" type="application/json">
+{
+  "orari": [
+    { "giorni": "Martedì – Venerdì", "pranzo": "12:30 – 15:00", "cena": "19:30 – 23:00" },
+    { "giorni": "Sabato", "pranzo": "12:30 – 15:30", "cena": "19:30 – 23:30" },
+    { "giorni": "Domenica", "pranzo": "12:30 – 15:30", "cena": "—" },
+    { "giorni": "Lunedì", "pranzo": "—", "cena": "—", "chiuso": true }
+  ]
+}
+</script>
+
+<script>
+// ── NAV SCROLL ─────────────────────────────────────────
+window.addEventListener('scroll', () => {
+  document.getElementById('main-nav').classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// ── ORARI DA CONFIG ────────────────────────────────────
+(function() {
+  const config = JSON.parse(document.getElementById('orari-config').textContent);
+  const el = document.getElementById('orari-display');
+  el.innerHTML = config.orari.map(o => {
+    if (o.chiuso) return `<span style="opacity:0.5">${o.giorni}</span><span style="opacity:0.4">Chiuso</span>`;
+    return `<span>${o.giorni}</span><span>${o.pranzo !== '—' ? 'Pranzo '+o.pranzo : ''} ${o.cena !== '—' ? '· Cena '+o.cena : ''}</span>`;
+  }).join('');
+})();
+
+// ── SMOOTH SCROLL ──────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+  });
+});
+
+// ── FORM SUBMIT ────────────────────────────────────────
+function handleForm(e) {
+  e.preventDefault();
+  const form = e.target;
+  const nome = form.querySelector('input[type="text"]').value;
+  const tel  = form.querySelector('input[type="tel"]').value;
+  const data = form.querySelector('input[type="date"]').value;
+  const pax  = form.querySelector('input[type="number"]').value;
+  const tipo = form.querySelector('select').value;
+  const note = form.querySelector('textarea').value;
+
+  const msg = encodeURIComponent(
+    `Richiesta evento da ${nome}\n` +
+    `Tel: ${tel}\n` +
+    `Data: ${data}\n` +
+    `Persone: ${pax}\n` +
+    `Tipo: ${tipo}\n` +
+    `Note: ${note}`
+  );
+  window.open(`mailto:prenotazioni@casaroseberyristorante.it?subject=Richiesta evento Casa Rosebery&body=${msg}`, '_blank');
+}
+</script>
+</body>
+</html>
