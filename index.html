@@ -356,11 +356,14 @@ footer {
   background: var(--nero); padding: 32px 48px;
   display: flex; justify-content: space-between; align-items: center;
   border-top: 1px solid rgba(184,146,58,0.15);
+  gap: 24px;
 }
-footer .footer-logo img { height: 36px; filter: brightness(0) invert(1) brightness(0.6); }
-footer p { font-size: 11px; color: rgba(255,255,255,0.3); }
-footer nav a { font-size: 10px; letter-spacing: 1.5px; color: rgba(255,255,255,0.3); margin-left: 24px; text-transform: uppercase; transition: color 0.2s; }
-footer nav a:hover { color: var(--oro-lt); }
+footer .footer-logo { flex-shrink: 0; }
+footer .footer-logo img { height: 36px; filter: brightness(0) invert(1) brightness(0.6); display: block; }
+footer p { font-size: 11px; color: rgba(255,255,255,0.3); text-align: center; flex: 1; }
+footer .footer-nav { flex-shrink: 0; display: flex; gap: 0; }
+footer .footer-nav a { font-size: 10px; letter-spacing: 1.5px; color: rgba(255,255,255,0.3); margin-left: 24px; text-transform: uppercase; transition: color 0.2s; white-space: nowrap; }
+footer .footer-nav a:hover { color: var(--oro-lt); }
 
 /* ── PRENOTAZIONE STICKY ───────────────────────────────── */
 .prenota-sticky {
@@ -558,7 +561,7 @@ footer nav a:hover { color: var(--oro-lt); }
   .contatti-info { padding: 56px 28px; }
   .form-row { grid-template-columns: 1fr; gap: 0; }
   footer { flex-direction: column; gap: 16px; text-align: center; }
-  footer nav { margin-top: 8px; }
+  footer .footer-nav { margin-top: 8px; }
   .section-anime, .section-menu, .section-eventi { padding: 64px 24px; }
 }
 @media (prefers-reduced-motion: reduce) {
@@ -961,7 +964,7 @@ footer nav a:hover { color: var(--oro-lt); }
 <footer>
   <div class="footer-logo"><img src="logo.png" alt="Casa Rosebery"></div>
   <p>© 2026 Casa Rosebery · P.IVA [da completare] · All rights reserved</p>
-  <nav>
+  <nav class="footer-nav">
     <a href="#">Privacy Policy</a>
     <a href="#">Cookie Policy</a>
   </nav>
