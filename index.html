@@ -79,13 +79,13 @@ nav.scrolled {
   position: absolute; inset: 0;
 }
 .hero-half--braceria .hero-half-bg {
-  background-image: url('https://images.unsplash.com/photo-1558030006-450675393462?w=900&q=80');
+  background-image: url('img/8843EF97-F411-4595-B695-7439A9E8FF3B.jpg');
 }
 .hero-half--braceria .hero-half-overlay {
   background: linear-gradient(to top, rgba(14,13,10,0.92) 0%, rgba(14,13,10,0.3) 50%, transparent 100%);
 }
 .hero-half--dining .hero-half-bg {
-  background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=900&q=80');
+  background-image: url('img/IMG_1171.jpg');
 }
 .hero-half--dining .hero-half-overlay {
   background: linear-gradient(to top, rgba(10,20,14,0.88) 0%, rgba(10,20,14,0.25) 50%, transparent 100%);
@@ -164,10 +164,10 @@ nav.scrolled {
   background: linear-gradient(to top, rgba(14,13,10,0.9) 0%, rgba(14,13,10,0.1) 60%);
 }
 .anime-card--braceria .anime-card-bg {
-  background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80');
+  background-image: url('img/IMG_0414.jpg');
 }
 .anime-card--ristorante .anime-card-bg {
-  background-image: url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80');
+  background-image: url('img/IMG_1175.jpg');
 }
 
 .anime-card-content {
@@ -206,7 +206,7 @@ nav.scrolled {
   min-height: 480px;
 }
 .posillipo-image {
-  background-image: url('https://images.unsplash.com/photo-1516483638261-f4dbaf036963?w=900&q=80');
+  background-image: url('img/IMG_1154.jpg');
   background-size: cover; background-position: center;
 }
 .posillipo-text {
@@ -476,6 +476,63 @@ footer nav a:hover { color: var(--oro-lt); }
   letter-spacing: 1.5px; margin-top: 24px;
 }
 
+/* ── GALLERY ─────────────────────────────────────────────── */
+.section-gallery { padding: 100px 48px; background: var(--nero); }
+.gallery-header { text-align: center; margin-bottom: 40px; }
+.gallery-header .section-title { color: #fff; }
+.gallery-header .section-title em { color: var(--oro-lt); }
+.gallery-filters {
+  display: flex; justify-content: center; gap: 8px;
+  flex-wrap: wrap; margin-bottom: 40px;
+}
+.gallery-filter {
+  background: transparent; border: 1px solid rgba(184,146,58,0.3);
+  color: rgba(255,255,255,0.5); font-family: 'Inter', sans-serif;
+  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+  padding: 8px 20px; cursor: pointer; transition: all 0.2s;
+}
+.gallery-filter.active, .gallery-filter:hover {
+  border-color: var(--oro); color: var(--oro-lt);
+}
+.gallery-grid { columns: 3; column-gap: 8px; max-width: 1200px; margin: 0 auto; }
+.gallery-item {
+  break-inside: avoid; margin-bottom: 8px;
+  overflow: hidden; cursor: pointer;
+}
+.gallery-item img {
+  width: 100%; display: block;
+  transition: transform 0.5s ease; filter: brightness(0.9);
+}
+.gallery-item:hover img { transform: scale(1.03); filter: brightness(1); }
+.lightbox {
+  display: none; position: fixed; inset: 0; z-index: 1000;
+  background: rgba(14,13,10,0.96);
+  justify-content: center; align-items: center;
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
+.lightbox-close {
+  position: absolute; top: 24px; right: 32px;
+  background: none; border: none; color: rgba(255,255,255,0.6);
+  font-size: 32px; cursor: pointer; transition: color 0.2s;
+}
+.lightbox-close:hover { color: var(--oro-lt); }
+.lightbox-prev, .lightbox-next {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: none; border: 1px solid rgba(184,146,58,0.3);
+  color: rgba(255,255,255,0.6); font-size: 24px;
+  width: 48px; height: 48px; cursor: pointer;
+  transition: all 0.2s; display: flex; align-items: center; justify-content: center;
+}
+.lightbox-prev { left: 24px; }
+.lightbox-next { right: 24px; }
+.lightbox-prev:hover, .lightbox-next:hover { border-color: var(--oro); color: var(--oro-lt); }
+@media (max-width: 900px) {
+  .gallery-grid { columns: 2; }
+  .section-gallery { padding: 64px 24px; }
+}
+@media (max-width: 600px) { .gallery-grid { columns: 1; } }
+
 /* ── RESPONSIVE ────────────────────────────────────────── */
 @media (max-width: 900px) {
   .reviews-grid { grid-template-columns: 1fr; }
@@ -521,6 +578,7 @@ footer nav a:hover { color: var(--oro-lt); }
     <li><a href="#menu">Menu</a></li>
     <li><a href="#storia">La Nostra Storia</a></li>
     <li><a href="#eventi">Serate & Eventi</a></li>
+    <li><a href="#gallery">Gallery</a></li>
     <li><a href="#recensioni">Recensioni</a></li>
     <li><a href="#contatti">Contatti</a></li>
   </ul>
@@ -756,6 +814,63 @@ footer nav a:hover { color: var(--oro-lt); }
   </div>
 </section>
 
+<!-- ── GALLERY ────────────────────────────────────────────── -->
+<section class="section-gallery" id="gallery">
+  <div class="gallery-header">
+    <span class="section-eyebrow">Fotogallery</span>
+    <h2 class="section-title">Casa Rosebery in <em>immagini</em></h2>
+  </div>
+  <div class="gallery-filters">
+    <button class="gallery-filter active" onclick="filterGallery('all',this)">Tutto</button>
+    <button class="gallery-filter" onclick="filterGallery('braceria',this)">Braceria</button>
+    <button class="gallery-filter" onclick="filterGallery('cucina',this)">Cucina</button>
+    <button class="gallery-filter" onclick="filterGallery('locale',this)">Il Locale</button>
+    <button class="gallery-filter" onclick="filterGallery('posillipo',this)">Posillipo</button>
+  </div>
+  <div class="gallery-grid" id="gallery-grid">
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(0)"><img src="img/8843EF97-F411-4595-B695-7439A9E8FF3B.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(1)"><img src="img/EDFEC6D3-3CC5-4770-87F6-668E4FE563E1.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(2)"><img src="img/IMG_0414.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(3)"><img src="img/IMG_1504.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(4)"><img src="img/IMG_1623.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(5)"><img src="img/IMG_2744.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(6)"><img src="img/IMG_5372.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(7)"><img src="img/IMG_5412.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(8)"><img src="img/IMG_5417.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(9)"><img src="img/dolce.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(10)"><img src="img/IMG_1171.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(11)"><img src="img/IMG_1175.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(12)"><img src="img/IMG_2487.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(13)"><img src="img/IMG_2547.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(14)"><img src="img/IMG_2554.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(15)"><img src="img/IMG_2600.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(16)"><img src="img/IMG_2601.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(17)"><img src="img/IMG_4963.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(18)"><img src="img/IMG_5019.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(19)"><img src="img/IMG_5020.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(20)"><img src="img/IMG_6250.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(21)"><img src="img/IMG_6252.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(22)"><img src="img/IMG_7331.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(23)"><img src="img/IMG_7332.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(24)"><img src="img/IMG_8058.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="locale" onclick="openLightbox(25)"><img src="img/IMG_1176.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="locale" onclick="openLightbox(26)"><img src="img/IMG_1178.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="locale" onclick="openLightbox(27)"><img src="img/IMG_1179.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="locale" onclick="openLightbox(28)"><img src="img/IMG_1181.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="locale" onclick="openLightbox(29)"><img src="img/IMG_3216.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="locale" onclick="openLightbox(30)"><img src="img/IMG_6253.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="posillipo" onclick="openLightbox(31)"><img src="img/0076581a-c5de-4499-991e-eea7a98d8b48.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="posillipo" onclick="openLightbox(32)"><img src="img/IMG_1154.jpg" alt="Casa Rosebery" loading="lazy"></div>
+  </div>
+</section>
+
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">&#215;</button>
+  <button class="lightbox-prev" onclick="lightboxNav(-1)">&#8249;</button>
+  <img id="lightbox-img" src="" alt="">
+  <button class="lightbox-next" onclick="lightboxNav(1)">&#8250;</button>
+</div>
+
 <!-- ── SOCIAL ────────────────────────────────────────────── -->
 <section class="section-social">
   <h2 class="social-strip-title">Seguici su <em>Instagram</em></h2>
@@ -861,10 +976,8 @@ footer nav a:hover { color: var(--oro-lt); }
 <script id="orari-config" type="application/json">
 {
   "orari": [
-    { "giorni": "Martedì – Venerdì", "pranzo": "12:30 – 15:00", "cena": "19:30 – 23:00" },
-    { "giorni": "Sabato", "pranzo": "12:30 – 15:30", "cena": "19:30 – 23:30" },
-    { "giorni": "Domenica", "pranzo": "12:30 – 15:30", "cena": "—" },
-    { "giorni": "Lunedì", "pranzo": "—", "cena": "—", "chiuso": true }
+    { "giorni": "Domenica", "pranzo": "12:30 – 15:30", "cena": "19:30 – 23:30" },
+    { "giorni": "Lunedì – Sabato", "pranzo": "—", "cena": "19:30 – 23:30" }
   ]
 }
 </script>
@@ -912,7 +1025,7 @@ function handleForm(e) {
     `Tipo: ${tipo}\n` +
     `Note: ${note}`
   );
-  window.open(`mailto:prenotazioni@casaroseberyristorante.it?subject=Richiesta evento Casa Rosebery&body=${msg}`, '_blank');
+  window.open(`mailto:prenotazioni@casaroseberyristorante.it?subject=Richiesta%20evento%20Casa%20Rosebery&body=${msg}`, '_blank');
 }
 </script>
 </body>
