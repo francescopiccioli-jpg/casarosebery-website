@@ -3,15 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Casa Rosebery — Braceria premium e ristorante fine dining a Posillipo, Napoli. Carni pregiate e cucina mediterranea con vista sul Golfo.">
-<title>Casa Rosebery — Braceria & Ristorante · Napoli</title>
+<meta name="description" content="Casa Rosebery — Braceria premium e ristorante fine dining a Posillipo, Napoli. Carni pregiate da tutto il mondo, cucina mediterranea e vista sul Golfo di Napoli. Prenota il tuo tavolo.">
+<meta name="keywords" content="ristorante Posillipo Napoli, braceria Napoli, ristorante fine dining Napoli, carne alla brace Napoli, ristorante vista mare Napoli, steakhouse Napoli, wagyu Napoli, braceria premium Napoli">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Casa Rosebery">
+<meta name="geo.region" content="IT-NA">
+<meta name="geo.placename" content="Napoli">
+
+<!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+<meta property="og:type" content="restaurant">
+<meta property="og:title" content="Casa Rosebery — Braceria & Ristorante Fine Dining · Posillipo, Napoli">
+<meta property="og:description" content="Braceria premium e ristorante fine dining a Posillipo. Carni pregiate da tutto il mondo, cucina mediterranea e vista sul Golfo di Napoli.">
+<meta property="og:url" content="https://www.casaroseberyristorante.it/">
+<meta property="og:image" content="https://www.casaroseberyristorante.it/img/IMG_1623.jpg">
+<meta property="og:locale" content="it_IT">
+<meta property="og:site_name" content="Casa Rosebery">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Casa Rosebery — Braceria & Ristorante · Napoli">
+<meta name="twitter:description" content="Braceria premium e ristorante fine dining a Posillipo, Napoli.">
+<meta name="twitter:image" content="https://www.casaroseberyristorante.it/img/IMG_1623.jpg">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://www.casaroseberyristorante.it/">
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Casa Rosebery",
+  "description": "Braceria premium e ristorante fine dining a Posillipo, Napoli. Carni pregiate da tutto il mondo, cucina mediterranea e vista sul Golfo.",
+  "url": "https://www.casaroseberyristorante.it/",
+  "telephone": "+390813357572",
+  "email": "prenotazioni@casaroseberyristorante.it",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Via Ferdinando Russo 13",
+    "addressLocality": "Napoli",
+    "addressRegion": "Campania",
+    "postalCode": "80123",
+    "addressCountry": "IT"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "40.8132",
+    "longitude": "14.2018"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Sunday"],
+      "opens": "12:30",
+      "closes": "23:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+      "opens": "19:30",
+      "closes": "23:30"
+    }
+  ],
+  "servesCuisine": ["Italiana", "Braceria", "Mediterranea"],
+  "priceRange": "€€€",
+  "image": "https://www.casaroseberyristorante.it/img/IMG_1623.jpg",
+  "sameAs": [
+    "https://www.instagram.com/casarosebery",
+    "https://www.facebook.com/61567925834282",
+    "https://www.tripadvisor.it/Restaurant_Review-g187785-d32726215-Reviews-Casa_Rosebery-Naples_Province_of_Naples_Campania.html"
+  ],
+  "hasMap": "https://maps.google.com/?q=Via+Ferdinando+Russo+13+Napoli",
+  "menu": "https://www.casaroseberyristorante.it/#menu",
+  "reservations": "https://casarosebery.plateform.app/reserve",
+  "amenityFeature": [
+    {"@type": "LocationFeatureSpecification", "name": "Parcheggio gratuito", "value": true},
+    {"@type": "LocationFeatureSpecification", "name": "Vista mare", "value": true}
+  ]
+}
+</script>
+
+<title>Casa Rosebery — Braceria & Ristorante Fine Dining · Posillipo, Napoli</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-/* ── RESET & BASE ──────────────────────────────────────── */
+/* ── RESET ────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.6; color: #1a1208; background: #faf8f3; overflow-x: hidden; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.6;
+  color: #1a1208; background: #faf8f3; overflow-x: hidden; }
 img { max-width: 100%; display: block; }
 a { color: inherit; text-decoration: none; }
 
@@ -26,117 +106,104 @@ a { color: inherit; text-decoration: none; }
   --lino:    #f0ebe0;
   --sabbia:  #e8e0d0;
   --text:    #1a1208;
-  --muted:   #7a7060;
+  --muted:   #9a9080;
 }
 
 /* ── NAV ───────────────────────────────────────────────── */
-nav {
+nav#main-nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
-  padding: 0 48px;
-  height: 72px;
-  transition: background 0.4s, backdrop-filter 0.4s;
+  padding: 0 20px; height: 60px;
+  transition: background 0.4s;
 }
-nav.scrolled {
-  background: rgba(14,13,10,0.92);
+nav#main-nav.scrolled {
+  background: rgba(14,13,10,0.95);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(184,146,58,0.2);
 }
-.nav-logo img { height: 48px; filter: brightness(0) invert(1); }
-.nav-links { display: flex; gap: 40px; list-style: none; }
-.nav-links a {
-  font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
-  color: rgba(255,255,255,0.8); font-weight: 400;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--oro-lt); }
+.nav-logo img { height: 40px; filter: brightness(0) invert(1); }
+.nav-links { display: none; }
 .nav-cta {
   background: transparent; border: 1px solid var(--oro);
   color: var(--oro); font-family: 'Inter', sans-serif;
   font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
-  padding: 10px 24px; cursor: pointer; transition: all 0.2s;
+  padding: 10px 20px; min-height: 44px;
+  display: flex; align-items: center;
 }
-.nav-cta:hover { background: var(--oro); color: var(--nero); }
-.nav-mobile-toggle { display: none; background: none; border: none; cursor: pointer; }
 
-/* ── HERO SPLIT ────────────────────────────────────────── */
-.hero {
-  height: 100vh; min-height: 600px;
-  display: grid; grid-template-columns: 1fr 1fr;
-  position: relative;
-}
+/* ── HERO MOBILE FIRST ────────────────────────────────── */
+.hero { display: flex; flex-direction: column; }
+
 .hero-half {
   position: relative; overflow: hidden;
-  display: flex; align-items: flex-end; padding: 60px 56px;
+  min-height: 100svh;
+  display: flex; align-items: flex-end;
+  padding: 40px 24px 48px;
 }
 .hero-half-bg {
   position: absolute; inset: 0;
   background-size: cover; background-position: center;
-  transition: transform 0.6s ease;
 }
-.hero-half:hover .hero-half-bg { transform: scale(1.03); }
-.hero-half-overlay {
-  position: absolute; inset: 0;
-}
+.hero-half-overlay { position: absolute; inset: 0; }
 .hero-half--braceria .hero-half-bg {
   background-image: url('img/8843EF97-F411-4595-B695-7439A9E8FF3B.jpg');
 }
 .hero-half--braceria .hero-half-overlay {
-  background: linear-gradient(to top, rgba(14,13,10,0.92) 0%, rgba(14,13,10,0.3) 50%, transparent 100%);
+  background: linear-gradient(to top, rgba(14,13,10,0.92) 0%, rgba(14,13,10,0.2) 60%, transparent 100%);
 }
 .hero-half--dining .hero-half-bg {
   background-image: url('img/IMG_1171.jpg');
 }
 .hero-half--dining .hero-half-overlay {
-  background: linear-gradient(to top, rgba(10,20,14,0.88) 0%, rgba(10,20,14,0.25) 50%, transparent 100%);
+  background: linear-gradient(to top, rgba(10,20,14,0.90) 0%, rgba(10,20,14,0.2) 60%, transparent 100%);
 }
-.hero-divider {
-  position: absolute; top: 0; bottom: 0; left: 50%;
-  width: 1px; background: rgba(184,146,58,0.4);
-  transform: translateX(-50%); z-index: 10;
+
+/* Divisore tra le due anime su mobile */
+.hero-divider-mobile {
+  background: var(--nero);
+  display: flex; align-items: center; justify-content: center;
+  padding: 28px 24px;
+  border-top: 1px solid rgba(184,146,58,0.3);
+  border-bottom: 1px solid rgba(184,146,58,0.3);
 }
-.hero-content { position: relative; z-index: 2; }
+.hero-divider-mobile img { height: 56px; filter: brightness(0) invert(1); }
+.hero-divider { display: none; }
+.hero-logo-center { display: none; }
+
+.hero-content { position: relative; z-index: 2; width: 100%; }
 .hero-eyebrow {
   font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--oro-lt); margin-bottom: 12px; display: block;
+  color: var(--oro-lt); margin-bottom: 10px; display: block;
 }
 .hero-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(36px, 5vw, 64px);
-  font-weight: 300; color: #ffffff; line-height: 1.05;
-  margin-bottom: 16px;
+  font-size: clamp(32px, 10vw, 64px);
+  font-weight: 300; color: #fff; line-height: 1.05; margin-bottom: 14px;
 }
 .hero-title em { font-style: italic; color: var(--oro-lt); }
 .hero-desc {
   font-size: 13px; color: rgba(255,255,255,0.65);
-  max-width: 320px; line-height: 1.7; margin-bottom: 28px;
+  max-width: 340px; line-height: 1.7; margin-bottom: 24px;
 }
 .btn-ghost {
-  display: inline-block; border: 1px solid rgba(184,146,58,0.6);
+  display: inline-flex; align-items: center;
+  border: 1px solid rgba(184,146,58,0.6);
   color: var(--oro-lt); font-size: 10px; letter-spacing: 2px;
-  text-transform: uppercase; padding: 12px 28px;
+  text-transform: uppercase; padding: 12px 24px; min-height: 44px;
   transition: all 0.25s;
 }
 .btn-ghost:hover { background: var(--oro); border-color: var(--oro); color: var(--nero); }
-.hero-logo-center {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-  z-index: 20; text-align: center;
-}
-.hero-logo-center img { height: 80px; filter: brightness(0) invert(1); }
 
-/* ── SEZIONE CLAIM ─────────────────────────────────────── */
+/* ── CLAIM ─────────────────────────────────────────────── */
 .section-claim {
-  background: var(--nero);
-  padding: 80px 48px;
-  text-align: center;
+  background: var(--nero); padding: 56px 24px; text-align: center;
 }
 .section-claim blockquote {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(24px, 3.5vw, 44px);
+  font-size: clamp(20px, 5.5vw, 44px);
   font-weight: 300; font-style: italic;
   color: rgba(255,255,255,0.9);
-  max-width: 800px; margin: 0 auto 24px;
-  line-height: 1.3;
+  max-width: 700px; margin: 0 auto 20px; line-height: 1.35;
 }
 .section-claim blockquote em { color: var(--oro-lt); font-style: normal; }
 .section-claim cite {
@@ -144,107 +211,88 @@ nav.scrolled {
   color: var(--muted); font-style: normal;
 }
 
-/* ── TRE ANIME ─────────────────────────────────────────── */
-.section-anime { padding: 100px 48px; background: var(--crema); }
+/* ── SEZIONI COMUNI ─────────────────────────────────────── */
+.section-header { text-align: center; }
+.section-eyebrow {
+  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--oro); display: block; margin-bottom: 14px;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 7vw, 52px); font-weight: 300;
+  color: var(--text); line-height: 1.1;
+}
+.section-title em { font-style: italic; color: var(--oro); }
+
+/* ── TRE ANIME ──────────────────────────────────────────── */
+.section-anime { padding: 56px 24px; background: var(--crema); }
 .anime-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr);
-  gap: 2px; max-width: 1200px; margin: 60px auto 0;
+  display: flex; flex-direction: column; gap: 3px;
+  margin: 40px auto 0; max-width: 1200px;
 }
 .anime-card {
-  position: relative; overflow: hidden; aspect-ratio: 3/4;
-  cursor: default;
+  position: relative; overflow: hidden;
+  height: 70vw; max-height: 380px;
 }
 .anime-card-bg {
   position: absolute; inset: 0; background-size: cover; background-position: center;
   transition: transform 0.7s ease;
 }
-.anime-card:hover .anime-card-bg { transform: scale(1.05); }
+.anime-card:hover .anime-card-bg { transform: scale(1.04); }
 .anime-card-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(14,13,10,0.9) 0%, rgba(14,13,10,0.1) 60%);
+  background: linear-gradient(to top, rgba(14,13,10,0.88) 0%, rgba(14,13,10,0.1) 60%);
 }
-.anime-card--braceria .anime-card-bg {
-  background-image: url('img/IMG_0414.jpg');
-}
-.anime-card--ristorante .anime-card-bg {
-  background-image: url('img/IMG_1175.jpg');
-}
-
+.anime-card--braceria .anime-card-bg { background-image: url('img/IMG_0414.jpg'); }
+.anime-card--ristorante .anime-card-bg { background-image: url('img/IMG_1175.jpg'); }
 .anime-card-content {
   position: absolute; bottom: 0; left: 0; right: 0;
-  padding: 36px 32px; z-index: 2;
+  padding: 24px; z-index: 2;
 }
 .anime-card-num {
   font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--oro-lt); margin-bottom: 8px; display: block;
+  color: var(--oro-lt); margin-bottom: 6px; display: block;
 }
 .anime-card-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 28px; font-weight: 300; color: #fff;
-  margin-bottom: 12px; line-height: 1.1;
+  font-size: 26px; font-weight: 300; color: #fff;
+  margin-bottom: 8px; line-height: 1.1;
 }
 .anime-card-desc {
-  font-size: 12px; color: rgba(255,255,255,0.65);
-  line-height: 1.7; margin-bottom: 20px;
+  font-size: 12px; color: rgba(255,255,255,0.65); line-height: 1.7;
 }
-.section-header { text-align: center; }
-.section-eyebrow {
-  font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--oro); display: block; margin-bottom: 16px;
-}
-.section-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(30px, 4vw, 52px); font-weight: 300;
-  color: var(--text); line-height: 1.1;
-}
-.section-title em { font-style: italic; color: var(--oro); }
 
-/* ── POSILLIPO STRIP ───────────────────────────────────── */
-.section-posillipo {
-  background: var(--carbone);
-  display: grid; grid-template-columns: 1fr 1fr;
-  min-height: 480px;
-}
+/* ── POSILLIPO ───────────────────────────────────────────── */
+.section-posillipo { background: var(--carbone); }
 .posillipo-image {
+  height: 60vw; max-height: 400px;
   background-image: url('img/IMG_1154.jpg');
   background-size: cover; background-position: center;
 }
-.posillipo-text {
-  padding: 80px 72px;
-  display: flex; flex-direction: column; justify-content: center;
-}
+.posillipo-text { padding: 48px 24px; }
 .posillipo-text .section-eyebrow { text-align: left; }
 .posillipo-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(28px, 3.5vw, 46px); font-weight: 300;
-  color: #fff; line-height: 1.15; margin-bottom: 24px;
+  font-size: clamp(24px, 7vw, 46px); font-weight: 300;
+  color: #fff; line-height: 1.15; margin-bottom: 20px;
 }
 .posillipo-title em { color: var(--oro-lt); font-style: italic; }
 .posillipo-desc {
   font-size: 14px; color: rgba(255,255,255,0.6);
-  line-height: 1.85; margin-bottom: 36px; max-width: 420px;
+  line-height: 1.85; margin-bottom: 16px;
 }
-.posillipo-details {
-  display: flex; gap: 40px;
-}
+.posillipo-details { display: flex; gap: 32px; margin-top: 24px; flex-wrap: wrap; }
 .posillipo-detail-label {
   font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
   color: var(--oro); margin-bottom: 6px; display: block;
 }
-.posillipo-detail-value {
-  font-size: 13px; color: rgba(255,255,255,0.8);
-}
 
-/* ── MENU CTA ──────────────────────────────────────────── */
-.section-menu { padding: 100px 48px; background: var(--lino); }
-.menu-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 2px; max-width: 1000px; margin: 60px auto 0;
-}
+/* ── MENU ───────────────────────────────────────────────── */
+.section-menu { padding: 56px 24px; background: var(--lino); }
+.menu-grid { display: flex; flex-direction: column; gap: 3px; margin: 40px auto 0; max-width: 1000px; }
 .menu-card {
-  background: var(--nero); padding: 56px 48px;
+  background: var(--nero); padding: 40px 28px;
   position: relative; overflow: hidden;
-  transition: background 0.3s;
 }
 .menu-card::before {
   content: ''; position: absolute; top: 0; left: 0;
@@ -254,119 +302,209 @@ nav.scrolled {
 .menu-card:hover::before { height: 100%; }
 .menu-card-label {
   font-size: 9px; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--oro); margin-bottom: 16px; display: block;
+  color: var(--oro); margin-bottom: 14px; display: block;
 }
 .menu-card-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 32px; font-weight: 300; color: #fff;
-  margin-bottom: 16px; line-height: 1.1;
+  font-size: 28px; font-weight: 300; color: #fff;
+  margin-bottom: 14px; line-height: 1.1;
 }
 .menu-card-desc {
   font-size: 13px; color: rgba(255,255,255,0.5);
-  line-height: 1.7; margin-bottom: 32px;
+  line-height: 1.7; margin-bottom: 28px;
 }
 .btn-gold {
   display: inline-flex; align-items: center; gap: 10px;
   background: var(--oro); color: var(--nero);
   font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
-  padding: 13px 28px; font-weight: 500;
+  padding: 13px 24px; min-height: 44px; font-weight: 500;
   transition: background 0.2s;
 }
 .btn-gold:hover { background: var(--oro-lt); }
 .btn-gold svg { width: 14px; height: 14px; }
 
-/* ── SERATE & EVENTI ───────────────────────────────────── */
-.section-eventi { padding: 100px 48px; background: var(--crema); }
-.eventi-inner { max-width: 680px; margin: 60px auto 0; }
+/* ── GALLERY ─────────────────────────────────────────────── */
+.section-gallery { padding: 56px 16px; background: var(--nero); }
+.gallery-header { text-align: center; margin-bottom: 32px; }
+.gallery-header .section-title { color: #fff; }
+.gallery-header .section-title em { color: var(--oro-lt); }
+.gallery-filters {
+  display: flex; justify-content: center; gap: 6px;
+  flex-wrap: wrap; margin-bottom: 28px; padding: 0 8px;
+}
+.gallery-filter {
+  background: transparent; border: 1px solid rgba(184,146,58,0.3);
+  color: rgba(255,255,255,0.5); font-family: 'Inter', sans-serif;
+  font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 8px 14px; min-height: 36px; cursor: pointer; transition: all 0.2s;
+}
+.gallery-filter.active, .gallery-filter:hover {
+  border-color: var(--oro); color: var(--oro-lt);
+}
+.gallery-grid { columns: 2; column-gap: 6px; max-width: 1200px; margin: 0 auto; }
+.gallery-item { break-inside: avoid; margin-bottom: 6px; overflow: hidden; cursor: pointer; }
+.gallery-item img { width: 100%; display: block; transition: transform 0.5s; filter: brightness(0.88); }
+.gallery-item:hover img { transform: scale(1.03); filter: brightness(1); }
+
+/* Lightbox */
+.lightbox {
+  display: none; position: fixed; inset: 0; z-index: 1000;
+  background: rgba(14,13,10,0.97);
+  justify-content: center; align-items: center;
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 92vw; max-height: 85vh; object-fit: contain; }
+.lightbox-close {
+  position: absolute; top: 16px; right: 20px;
+  background: none; border: none; color: rgba(255,255,255,0.6);
+  font-size: 36px; cursor: pointer; line-height: 1; min-width: 44px; min-height: 44px;
+}
+.lightbox-prev, .lightbox-next {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: none; border: 1px solid rgba(184,146,58,0.3);
+  color: rgba(255,255,255,0.6); font-size: 22px;
+  width: 44px; height: 44px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.lightbox-prev { left: 12px; }
+.lightbox-next { right: 12px; }
+.lightbox-prev:hover, .lightbox-next:hover { border-color: var(--oro); color: var(--oro-lt); }
+
+/* ── SOCIAL ──────────────────────────────────────────────── */
+.section-social {
+  background: var(--carbone); padding: 48px 24px; text-align: center;
+  border-top: 1px solid rgba(184,146,58,0.1);
+  border-bottom: 1px solid rgba(184,146,58,0.1);
+}
+.social-strip-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 300; color: #fff; margin-bottom: 6px;
+}
+.social-strip-title em { color: var(--oro-lt); font-style: italic; }
+.social-strip-sub { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 1px; margin-bottom: 28px; }
+.social-buttons { display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; }
+.social-btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid rgba(184,146,58,0.3);
+  color: rgba(255,255,255,0.7);
+  font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 11px 20px; min-height: 44px; transition: all 0.25s;
+}
+.social-btn:hover { border-color: var(--oro); color: var(--oro-lt); }
+.social-btn svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
+.social-btn--wa { background: rgba(37,211,102,0.08); border-color: rgba(37,211,102,0.3); color: rgba(37,211,102,0.85); }
+.social-btn--wa:hover { background: rgba(37,211,102,0.15); border-color: #25D366; color: #25D366; }
+.social-tag { font-size: 10px; color: rgba(255,255,255,0.25); letter-spacing: 1.5px; margin-top: 20px; }
+
+/* ── RECENSIONI ──────────────────────────────────────────── */
+.section-recensioni { padding: 56px 24px; background: var(--nero); }
+.recensioni-header { text-align: center; margin-bottom: 36px; }
+.recensioni-header .section-title { color: #fff; }
+.recensioni-header .section-title em { color: var(--oro-lt); }
+.badges-row {
+  display: flex; justify-content: center; align-items: center;
+  gap: 24px; margin-bottom: 40px; flex-wrap: wrap;
+}
+.badge-google {
+  display: flex; align-items: center; gap: 12px;
+  border: 1px solid rgba(184,146,58,0.2); padding: 14px 22px;
+}
+.badge-google-logo {
+  font-size: 16px; font-weight: 700;
+  background: linear-gradient(135deg, #4285F4, #EA4335, #FBBC05, #34A853);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.badge-stars { color: #FBBC05; font-size: 16px; letter-spacing: 2px; }
+.badge-info { font-size: 10px; color: rgba(255,255,255,0.5); margin-top: 2px; }
+.badge-score { font-size: 26px; font-weight: 300; color: #fff; font-family: 'Cormorant Garamond', serif; }
+.ta-widget-wrap { display: flex; justify-content: center; filter: invert(1) brightness(0.7); }
+.reviews-grid { display: flex; flex-direction: column; gap: 16px; max-width: 1100px; margin: 0 auto; }
+.review-card {
+  background: var(--carbone); padding: 28px 24px;
+  border: 1px solid rgba(184,146,58,0.1); position: relative;
+}
+.review-card::before {
+  content: '"'; font-family: 'Cormorant Garamond', serif;
+  font-size: 72px; color: rgba(184,146,58,0.15);
+  position: absolute; top: 8px; left: 18px; line-height: 1;
+}
+.review-stars { color: #FBBC05; font-size: 13px; margin-bottom: 14px; }
+.review-text { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 18px; font-style: italic; }
+.review-author { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--oro); }
+.review-source { font-size: 10px; color: rgba(255,255,255,0.3); margin-top: 4px; }
+
+/* ── EVENTI ──────────────────────────────────────────────── */
+.section-eventi { padding: 56px 24px; background: var(--crema); }
+.eventi-inner { max-width: 680px; margin: 40px auto 0; }
 .form-field { margin-bottom: 20px; }
 .form-field label {
   display: block; font-size: 9px; letter-spacing: 2px;
   text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
 }
 .form-field input, .form-field textarea, .form-field select {
-  width: 100%; background: transparent;
-  border: none; border-bottom: 1px solid var(--sabbia);
+  width: 100%; background: transparent; border: none;
+  border-bottom: 1px solid var(--sabbia);
   padding: 10px 0; font-family: 'Inter', sans-serif;
-  font-size: 14px; color: var(--text); outline: none;
-  transition: border-color 0.2s;
+  font-size: 16px; /* 16px prevent iOS zoom */
+  color: var(--text); outline: none; transition: border-color 0.2s;
+  -webkit-appearance: none;
 }
-.form-field input:focus, .form-field textarea:focus, .form-field select:focus {
-  border-bottom-color: var(--oro);
-}
+.form-field input:focus, .form-field textarea:focus, .form-field select:focus { border-bottom-color: var(--oro); }
 .form-field textarea { resize: vertical; min-height: 80px; }
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-.form-submit {
-  display: flex; align-items: center; gap: 20px; margin-top: 36px;
-  flex-wrap: wrap;
-}
+.form-row { display: flex; flex-direction: column; gap: 0; }
+.form-submit { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
 .btn-dark {
-  background: var(--nero); color: #fff;
-  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
-  padding: 14px 32px; border: none; cursor: pointer;
-  font-family: 'Inter', sans-serif; font-weight: 400;
-  transition: background 0.2s;
+  background: var(--nero); color: #fff; font-size: 12px; letter-spacing: 2px;
+  text-transform: uppercase; padding: 16px 32px; min-height: 52px;
+  border: none; cursor: pointer; font-family: 'Inter', sans-serif;
+  width: 100%; text-align: center;
 }
-.btn-dark:hover { background: var(--fumo); }
 .btn-wa {
-  display: inline-flex; align-items: center; gap: 8px;
-  color: var(--muted); font-size: 12px;
-  transition: color 0.2s;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  color: #25D366; font-size: 13px; min-height: 44px;
+  border: 1px solid rgba(37,211,102,0.3); padding: 12px 20px; width: 100%;
 }
-.btn-wa:hover { color: #25D366; }
 .btn-wa svg { width: 20px; height: 20px; fill: currentColor; }
-.divider-or {
-  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--sabbia);
-}
+.divider-or { text-align: center; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--sabbia); }
 
-/* ── CONTATTI ──────────────────────────────────────────── */
-.section-contatti {
-  background: var(--carbone);
-  display: grid; grid-template-columns: 1fr 1fr;
-}
-.contatti-info { padding: 80px 72px; }
+/* ── CONTATTI ─────────────────────────────────────────────── */
+.section-contatti { background: var(--carbone); }
+.contatti-info { padding: 56px 24px; }
 .contatti-title {
   font-family: 'Cormorant Garamond', serif;
-  font-size: 36px; font-weight: 300; color: #fff;
-  margin-bottom: 48px;
+  font-size: 32px; font-weight: 300; color: #fff; margin-bottom: 40px;
 }
-.info-block { margin-bottom: 32px; }
-.info-label {
-  font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase;
-  color: var(--oro); margin-bottom: 8px; display: block;
-}
+.info-block { margin-bottom: 28px; }
+.info-label { font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--oro); margin-bottom: 8px; display: block; }
 .info-value { font-size: 14px; color: rgba(255,255,255,0.75); line-height: 1.7; }
 .info-value a { transition: color 0.2s; }
 .info-value a:hover { color: var(--oro-lt); }
-.orari-grid { display: grid; grid-template-columns: auto 1fr; gap: 4px 20px; }
+.orari-grid { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; }
 .orari-grid span { font-size: 13px; color: rgba(255,255,255,0.6); }
-.orari-grid span:nth-child(odd) { color: rgba(255,255,255,0.4); }
-.contatti-map { background: #2a2720; min-height: 400px; }
+.orari-grid span:nth-child(odd) { color: rgba(255,255,255,0.4); white-space: nowrap; }
+.contatti-map { height: 280px; }
 .contatti-map iframe { width: 100%; height: 100%; border: none; filter: grayscale(100%) contrast(0.8); }
-.social-links { display: flex; gap: 20px; margin-top: 24px; }
+.social-links { display: flex; gap: 20px; margin-top: 24px; flex-wrap: wrap; }
 .social-link {
   font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
   color: var(--muted); transition: color 0.2s;
-  display: flex; align-items: center; gap: 6px;
+  display: flex; align-items: center; gap: 6px; min-height: 44px;
 }
 .social-link:hover { color: var(--oro-lt); }
 
-/* ── FOOTER ────────────────────────────────────────────── */
+/* ── FOOTER ───────────────────────────────────────────────── */
 footer {
-  background: var(--nero); padding: 32px 48px;
-  display: flex; justify-content: space-between; align-items: center;
+  background: var(--nero); padding: 24px;
+  text-align: center;
   border-top: 1px solid rgba(184,146,58,0.15);
-  gap: 24px;
 }
-footer .footer-logo { flex-shrink: 0; }
-footer .footer-logo img { height: 36px; filter: brightness(0) invert(1) brightness(0.6); display: block; }
-footer p { font-size: 11px; color: rgba(255,255,255,0.3); text-align: center; flex: 1; }
-footer .footer-nav { flex-shrink: 0; display: flex; gap: 0; }
-footer .footer-nav a { font-size: 10px; letter-spacing: 1.5px; color: rgba(255,255,255,0.3); margin-left: 24px; text-transform: uppercase; transition: color 0.2s; white-space: nowrap; }
-footer .footer-nav a:hover { color: var(--oro-lt); }
+footer .footer-logo { margin-bottom: 12px; }
+footer .footer-logo img { height: 32px; filter: brightness(0) invert(1) brightness(0.5); margin: 0 auto; }
+footer p { font-size: 11px; color: rgba(255,255,255,0.3); line-height: 1.6; }
 
-/* ── PRENOTAZIONE STICKY ───────────────────────────────── */
+/* ── PRENOTA STICKY (desktop only) ───────────────────────── */
 .prenota-sticky {
+  display: none;
   position: fixed; bottom: 28px; right: 28px; z-index: 99;
   background: var(--oro); color: var(--nero);
   font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
@@ -376,196 +514,96 @@ footer .footer-nav a:hover { color: var(--oro-lt); }
 }
 .prenota-sticky:hover { background: var(--oro-lt); transform: translateY(-2px); }
 
-/* ── ORARI BANNER ──────────────────────────────────────── */
-.orari-config {
-  /* Modifica gli orari qui — si aggiornano automaticamente nel sito */
-  display: none;
+/* ── BOTTOM NAV MOBILE ────────────────────────────────────── */
+.bottom-nav {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(14,13,10,0.97);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(184,146,58,0.2);
+  padding: 6px 0 env(safe-area-inset-bottom, 6px);
+  display: grid; grid-template-columns: repeat(5, 1fr);
+}
+.bottom-nav a {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 3px; padding: 6px 4px; min-height: 52px;
+  color: rgba(255,255,255,0.4);
+  font-size: 9px; letter-spacing: 0.8px; text-transform: uppercase;
+  transition: color 0.2s;
+}
+.bottom-nav a:hover, .bottom-nav a.active { color: var(--oro-lt); }
+.bottom-nav a svg { width: 22px; height: 22px; }
+
+/* ── DESKTOP (min-width: 768px) ───────────────────────────── */
+@media (min-width: 768px) {
+  nav#main-nav { padding: 0 48px; height: 72px; }
+  .nav-logo img { height: 48px; }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: rgba(255,255,255,0.8); font-weight: 400; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--oro-lt); }
+
+  .hero { flex-direction: row; height: 100vh; }
+  .hero-half { min-height: 0; flex: 1; padding: 60px 56px; }
+  .hero-divider-mobile { display: none; }
+  .hero-divider {
+    display: block; position: absolute; top: 0; bottom: 0; left: 50%;
+    width: 1px; background: rgba(184,146,58,0.4); transform: translateX(-50%); z-index: 10;
+  }
+  .hero-logo-center {
+    display: block; position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%,-50%); z-index: 20; text-align: center;
+  }
+  .hero-logo-center img { height: 80px; filter: brightness(0) invert(1); }
+
+  .section-claim { padding: 80px 48px; }
+  .section-anime { padding: 100px 48px; }
+  .anime-grid { flex-direction: row; gap: 2px; }
+  .anime-card { flex: 1; height: auto; aspect-ratio: 3/4; max-height: none; }
+  .anime-card-content { padding: 36px 32px; }
+  .anime-card-title { font-size: 28px; }
+
+  .section-posillipo { display: grid; grid-template-columns: 1fr 1fr; }
+  .posillipo-image { height: auto; min-height: 480px; }
+  .posillipo-text { padding: 80px 72px; }
+
+  .section-menu { padding: 100px 48px; }
+  .menu-grid { flex-direction: row; gap: 2px; }
+  .menu-card { flex: 1; }
+
+  .section-gallery { padding: 100px 48px; }
+  .gallery-grid { columns: 3; column-gap: 8px; }
+  .gallery-item { margin-bottom: 8px; }
+  .gallery-filters { gap: 8px; }
+
+  .section-social { padding: 64px 48px; }
+  .section-recensioni { padding: 100px 48px; }
+  .reviews-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+
+  .section-eventi { padding: 100px 48px; }
+  .form-row { flex-direction: row; gap: 24px; }
+  .form-submit { flex-direction: row; align-items: center; }
+  .btn-dark { width: auto; }
+  .btn-wa { width: auto; }
+
+  .section-contatti { display: grid; grid-template-columns: 1fr 1fr; }
+  .contatti-info { padding: 80px 72px; }
+  .contatti-map { height: auto; min-height: 400px; }
+
+  footer { display: flex; justify-content: space-between; align-items: center; padding: 32px 48px; text-align: left; }
+  footer .footer-logo { margin-bottom: 0; }
+  footer .footer-logo img { margin: 0; }
+
+  .prenota-sticky { display: block; }
+  .bottom-nav { display: none; }
+  body { padding-bottom: 0; }
 }
 
-/* ── RECENSIONI ─────────────────────────────────────────── */
-.section-recensioni { padding: 100px 48px; background: var(--nero); }
-.recensioni-header { text-align: center; margin-bottom: 60px; }
-.recensioni-header .section-eyebrow { color: var(--oro); }
-.recensioni-header .section-title { color: #fff; }
-.recensioni-header .section-title em { color: var(--oro-lt); }
-.badges-row {
-  display: flex; justify-content: center; align-items: center;
-  gap: 48px; margin-bottom: 56px; flex-wrap: wrap;
-}
-.badge-google {
-  display: flex; align-items: center; gap: 14px;
-  border: 1px solid rgba(184,146,58,0.2);
-  padding: 16px 28px; border-radius: 4px;
-}
-.badge-google-logo {
-  font-size: 18px; font-weight: 700;
-  background: linear-gradient(135deg, #4285F4, #EA4335, #FBBC05, #34A853);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-.badge-stars { color: #FBBC05; font-size: 18px; letter-spacing: 2px; }
-.badge-info { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 2px; }
-.badge-score { font-size: 28px; font-weight: 300; color: #fff; font-family: 'Cormorant Garamond', serif; }
-.reviews-grid {
-  display: grid; grid-template-columns: repeat(2, 1fr);
-  gap: 20px; max-width: 1100px; margin: 0 auto;
-}
-.review-card {
-  background: var(--carbone); padding: 32px 28px;
-  border: 1px solid rgba(184,146,58,0.1);
-  position: relative;
-}
-.review-card::before {
-  content: '"';
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 80px; color: rgba(184,146,58,0.15);
-  position: absolute; top: 10px; left: 20px;
-  line-height: 1;
-}
-.review-stars { color: #FBBC05; font-size: 14px; margin-bottom: 16px; }
-.review-text {
-  font-size: 13px; color: rgba(255,255,255,0.65);
-  line-height: 1.8; margin-bottom: 20px; font-style: italic;
-}
-.review-author {
-  font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
-  color: var(--oro); font-style: normal;
-}
-.review-source { font-size: 10px; color: rgba(255,255,255,0.3); margin-top: 4px; }
-.ta-widget-wrap {
-  display: flex; justify-content: center;
-  filter: invert(1) brightness(0.7);
-}
-
-/* ── SOCIAL STRIP ───────────────────────────────────────── */
-.section-social {
-  background: var(--carbone);
-  padding: 64px 48px;
-  text-align: center;
-  border-top: 1px solid rgba(184,146,58,0.1);
-  border-bottom: 1px solid rgba(184,146,58,0.1);
-}
-.social-strip-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 28px; font-weight: 300; color: #fff;
-  margin-bottom: 8px;
-}
-.social-strip-title em { color: var(--oro-lt); font-style: italic; }
-.social-strip-sub {
-  font-size: 12px; color: rgba(255,255,255,0.4);
-  letter-spacing: 1px; margin-bottom: 36px;
-}
-.social-buttons {
-  display: flex; justify-content: center;
-  align-items: center; gap: 16px; flex-wrap: wrap;
-}
-.social-btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  border: 1px solid rgba(184,146,58,0.3);
-  color: rgba(255,255,255,0.75);
-  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
-  padding: 13px 28px; transition: all 0.25s;
-}
-.social-btn:hover { border-color: var(--oro); color: var(--oro-lt); }
-.social-btn svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
-.social-btn--wa {
-  background: rgba(37,211,102,0.08);
-  border-color: rgba(37,211,102,0.3);
-  color: rgba(37,211,102,0.85);
-}
-.social-btn--wa:hover { background: rgba(37,211,102,0.15); border-color: #25D366; color: #25D366; }
-.social-tag {
-  font-size: 10px; color: rgba(255,255,255,0.25);
-  letter-spacing: 1.5px; margin-top: 24px;
-}
-
-/* ── GALLERY ─────────────────────────────────────────────── */
-.section-gallery { padding: 100px 48px; background: var(--nero); }
-.gallery-header { text-align: center; margin-bottom: 40px; }
-.gallery-header .section-title { color: #fff; }
-.gallery-header .section-title em { color: var(--oro-lt); }
-.gallery-filters {
-  display: flex; justify-content: center; gap: 8px;
-  flex-wrap: wrap; margin-bottom: 40px;
-}
-.gallery-filter {
-  background: transparent; border: 1px solid rgba(184,146,58,0.3);
-  color: rgba(255,255,255,0.5); font-family: 'Inter', sans-serif;
-  font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
-  padding: 8px 20px; cursor: pointer; transition: all 0.2s;
-}
-.gallery-filter.active, .gallery-filter:hover {
-  border-color: var(--oro); color: var(--oro-lt);
-}
-.gallery-grid { columns: 3; column-gap: 8px; max-width: 1200px; margin: 0 auto; }
-.gallery-item {
-  break-inside: avoid; margin-bottom: 8px;
-  overflow: hidden; cursor: pointer;
-}
-.gallery-item img {
-  width: 100%; display: block;
-  transition: transform 0.5s ease; filter: brightness(0.9);
-}
-.gallery-item:hover img { transform: scale(1.03); filter: brightness(1); }
-.lightbox {
-  display: none; position: fixed; inset: 0; z-index: 1000;
-  background: rgba(14,13,10,0.96);
-  justify-content: center; align-items: center;
-}
-.lightbox.open { display: flex; }
-.lightbox img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
-.lightbox-close {
-  position: absolute; top: 24px; right: 32px;
-  background: none; border: none; color: rgba(255,255,255,0.6);
-  font-size: 32px; cursor: pointer; transition: color 0.2s;
-}
-.lightbox-close:hover { color: var(--oro-lt); }
-.lightbox-prev, .lightbox-next {
-  position: absolute; top: 50%; transform: translateY(-50%);
-  background: none; border: 1px solid rgba(184,146,58,0.3);
-  color: rgba(255,255,255,0.6); font-size: 24px;
-  width: 48px; height: 48px; cursor: pointer;
-  transition: all 0.2s; display: flex; align-items: center; justify-content: center;
-}
-.lightbox-prev { left: 24px; }
-.lightbox-next { right: 24px; }
-.lightbox-prev:hover, .lightbox-next:hover { border-color: var(--oro); color: var(--oro-lt); }
-@media (max-width: 900px) {
-  .gallery-grid { columns: 2; }
-  .section-gallery { padding: 64px 24px; }
-}
-@media (max-width: 600px) { .gallery-grid { columns: 1; } }
-
-/* ── RESPONSIVE ────────────────────────────────────────── */
-@media (max-width: 900px) {
-  .reviews-grid { grid-template-columns: 1fr; }
-  .section-recensioni { padding: 64px 24px; }
-  .badges-row { gap: 24px; }
-  .social-buttons { gap: 12px; }
-
-  nav { padding: 0 24px; }
-  .nav-links { display: none; }
-  .nav-mobile-toggle { display: block; }
-  .hero { grid-template-columns: 1fr; height: auto; }
-  .hero-half { min-height: 50vh; padding: 48px 28px; }
-  .hero-divider { display: none; }
-  .hero-logo-center { display: none; }
-  .anime-grid { grid-template-columns: 1fr; }
-  .anime-card { aspect-ratio: 4/3; }
-  .menu-grid { grid-template-columns: 1fr; }
-  .section-posillipo { grid-template-columns: 1fr; }
-  .posillipo-image { min-height: 280px; }
-  .posillipo-text { padding: 56px 28px; }
-  .section-contatti { grid-template-columns: 1fr; }
-  .contatti-map { min-height: 280px; }
-  .contatti-info { padding: 56px 28px; }
-  .form-row { grid-template-columns: 1fr; gap: 0; }
-  footer { flex-direction: column; gap: 16px; text-align: center; }
-  footer .footer-nav { margin-top: 8px; }
-  .section-anime, .section-menu, .section-eventi { padding: 64px 24px; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero-half-bg, .anime-card-bg { transition: none; }
+@media (min-width: 768px) and (max-width: 1024px) {
+  .anime-card-desc { font-size: 11px; }
+  .posillipo-text { padding: 60px 40px; }
+  .contatti-info { padding: 60px 40px; }
 }
 </style>
 </head>
@@ -601,6 +639,7 @@ footer .footer-nav a:hover { color: var(--oro-lt); }
     </div>
   </div>
 
+  <div class="hero-divider-mobile"><img src="logo.png" alt="Casa Rosebery"></div>
   <div class="hero-divider"></div>
   <div class="hero-logo-center">
     <img src="logo.png" alt="Casa Rosebery">
@@ -1081,6 +1120,67 @@ document.addEventListener('keydown', function(e) {
   if (e.key === 'ArrowRight') lightboxNav(1);
   if (e.key === 'ArrowLeft') lightboxNav(-1);
 });
+
+// ── BOTTOM NAV ACTIVE STATE ────────────────────────────
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateBottomNav() {
+  var sections = [
+    { id: 'menu',     btn: 'bn-menu' },
+    { id: 'gallery',  btn: 'bn-gallery' },
+    { id: 'contatti', btn: 'bn-contatti' },
+  ];
+  var scrollY = window.scrollY;
+  var active = 'bn-home';
+  sections.forEach(function(sec) {
+    var el = document.getElementById(sec.id);
+    if (el && el.offsetTop - 100 <= scrollY) active = sec.btn;
+  });
+  document.querySelectorAll('.bottom-nav a').forEach(function(a) {
+    a.classList.remove('active');
+  });
+  var activeEl = document.getElementById(active);
+  if (activeEl) activeEl.classList.add('active');
+}
+
+window.addEventListener('scroll', updateBottomNav, { passive: true });
 </script>
+
+<!-- ── BOTTOM NAV MOBILE ──────────────────────────────────── -->
+<nav class="bottom-nav" id="bottom-nav">
+  <a href="#" onclick="scrollToTop()" id="bn-home">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+    </svg>
+    <span>Home</span>
+  </a>
+  <a href="#menu" id="bn-menu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+    </svg>
+    <span>Menu</span>
+  </a>
+  <a href="https://casarosebery.plateform.app/reserve" target="_blank" id="bn-prenota" style="color:var(--oro)">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+    </svg>
+    <span style="color:var(--oro);font-weight:600">Prenota</span>
+  </a>
+  <a href="#gallery" id="bn-gallery">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 16M14 8h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+    </svg>
+    <span>Gallery</span>
+  </a>
+  <a href="#contatti" id="bn-contatti">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+    </svg>
+    <span>Dove siamo</span>
+  </a>
+</nav>
+
 </body>
 </html>
