@@ -513,6 +513,11 @@ footer p { font-size: 11px; color: rgba(255,255,255,0.3); line-height: 1.6; }
   transition: background 0.2s, transform 0.2s;
 }
 .prenota-sticky:hover { background: var(--oro-lt); transform: translateY(-2px); }
+.prenota-sticky.nascosto { opacity: 0; pointer-events: none; transform: translateY(12px); }
+.prenota-sticky { transition: background 0.2s, transform 0.3s, opacity 0.3s; }
+
+/* Spazio sotto la pagina su mobile, per non coprire il footer con la barra in basso */
+footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
 
 /* ── BOTTOM NAV MOBILE ────────────────────────────────────── */
 .bottom-nav {
@@ -1018,6 +1023,17 @@ footer p { font-size: 11px; color: rgba(255,255,255,0.3); line-height: 1.6; }
 <a href="https://casarosebery.plateform.app/reserve" class="prenota-sticky" target="_blank">
   Prenota ora
 </a>
+<script>
+// Nasconde il pulsante "Prenota ora" quando il footer è visibile
+(function () {
+  var btn = document.querySelector('.prenota-sticky');
+  var footer = document.querySelector('footer');
+  if (!btn || !footer || !('IntersectionObserver' in window)) return;
+  new IntersectionObserver(function (entries) {
+    btn.classList.toggle('nascosto', entries[0].isIntersecting);
+  }).observe(footer);
+})();
+</script>
 
 <!-- ── CONFIG ORARI (modifica qui) ──────────────────────── -->
 <script id="orari-config" type="application/json">
