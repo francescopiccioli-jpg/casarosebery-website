@@ -1,0 +1,28 @@
+name: Pubblica su Aruba
+
+# Ad ogni modifica sul ramo main, carica il sito sull'hosting Aruba via FTP.
+# Carica solo i file cambiati e NON cancella nulla sul server (il vecchio WordPress resta dov'e').
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Scarica il repo
+        uses: actions/checkout@v4
+
+      - name: Carica su Aruba via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: ${{ secrets.FTP_DIR }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            casarosebery_site.html
