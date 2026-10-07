@@ -554,6 +554,49 @@ a.anime-card { display:block; color:inherit; text-decoration:none; }
   .percorsi-mini { grid-template-columns:1fr 1fr; }
 }
 
+
+/* ── PROSSIME SERATE ───────────────────────────────────── */
+.section-serate { padding:72px 20px; background:var(--nero); color:#fff; }
+.section-serate .section-title { color:#fff; }
+.section-serate .section-title em { color:var(--oro-lt); }
+.serate-intro { font-size:14px; color:rgba(255,255,255,.55); margin:16px auto 0; max-width:520px; line-height:1.7; }
+.serate-lista { max-width:1100px; margin:44px auto 0; display:grid; gap:28px; }
+.serata { display:grid; background:var(--carbone); border:1px solid rgba(184,146,58,.3); }
+.serata-foto { min-height:240px; background-size:cover; background-position:center 30%; }
+.serata-corpo { padding:28px 24px; }
+.serata-bozza { display:inline-block; background:#c00000; color:#fff; font-size:10px; letter-spacing:2px; padding:4px 10px; margin-bottom:12px; }
+.serata-quando { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--oro); }
+.serata-titolo { font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(28px,5vw,40px); line-height:1.1; margin:8px 0 6px; }
+.serata-artista { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:22px; color:var(--oro-lt); }
+.serata-sotto { font-size:13px; color:rgba(255,255,255,.55); margin-top:4px; }
+.serata-menu { margin-top:24px; padding-top:22px; border-top:1px solid rgba(184,146,58,.25); }
+.serata-prezzo b { font-family:'Cormorant Garamond',serif; font-size:34px; font-weight:400; }
+.serata-prezzo span { display:block; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.45); }
+.serata-portate { list-style:none; margin-top:16px; }
+.serata-portate li { padding:9px 0; border-bottom:1px solid rgba(255,255,255,.07); }
+.serata-portate b { font-family:'Cormorant Garamond',serif; font-weight:600; font-size:19px; display:block; }
+.serata-portate span { font-size:12.5px; color:rgba(255,255,255,.55); line-height:1.6; }
+.serata-integr { margin-top:18px; padding:16px 18px; border:1px dashed rgba(184,146,58,.5); }
+.serata-integr span { font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--oro); display:block; }
+.serata-integr b { font-family:'Cormorant Garamond',serif; font-size:20px; font-weight:600; display:block; margin-top:4px; }
+.serata-integr em { font-size:12.5px; color:rgba(255,255,255,.55); }
+.serata-extra { margin-top:18px; }
+.serata-extra summary { cursor:pointer; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--oro-lt); padding:10px 0; }
+.serata-extra h5 { font-size:9px; letter-spacing:2px; text-transform:uppercase; color:var(--oro); margin:14px 0 4px; font-weight:500; }
+.serata-extra ul { list-style:none; }
+.serata-extra li { display:flex; justify-content:space-between; gap:14px; padding:8px 0; border-bottom:1px solid rgba(255,255,255,.07); }
+.serata-extra li b { font-weight:500; font-size:13.5px; display:block; }
+.serata-extra li span { font-size:12px; color:rgba(255,255,255,.5); }
+.serata-extra li i { font-style:normal; font-size:13px; white-space:nowrap; }
+.serata-cta { display:flex; flex-wrap:wrap; gap:10px; margin-top:26px; }
+.serata-cta a { padding:14px 22px; }
+@media (min-width:900px) {
+  .section-serate { padding:110px 48px; }
+  .serata { grid-template-columns:5fr 7fr; }
+  .serata-foto { min-height:0; aspect-ratio:4/5; align-self:start; position:sticky; top:90px; }
+  .serata-corpo { padding:40px 44px; }
+}
+
 /* ── PRENOTA STICKY (desktop only) ───────────────────────── */
 .prenota-sticky {
   display: none;
@@ -912,6 +955,9 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
     </div>
   </div>
 </section>
+
+<!-- EVENTI:INIZIO -->
+<!-- EVENTI:FINE -->
 
 <!-- ── SERATE & EVENTI ───────────────────────────────────── -->
 <section class="section-eventi" id="eventi">
@@ -1275,6 +1321,7 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
     if (a.classList.contains('nav-cta')) return 'menu_alto';
     if (a.classList.contains('prenota-sticky')) return 'pulsante_fisso';
     if (a.id === 'bn-prenota') return 'barra_mobile';
+    if (a.dataset.serata) return 'serata_' + a.dataset.serata;
     return 'altro';
   }
 
@@ -1284,7 +1331,7 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
     var h = a.getAttribute('href');
     if (h.indexOf('plateform.app') !== -1)        window.traccia('click_prenota', { posizione: posizionePrenota(a) });
     else if (h.indexOf('tel:') === 0)             window.traccia('click_telefono');
-    else if (h.indexOf('wa.me') !== -1)           window.traccia('click_whatsapp', { motivo: h.indexOf('evento') !== -1 ? 'evento' : 'generico' });
+    else if (h.indexOf('wa.me') !== -1)           window.traccia('click_whatsapp', { motivo: a.dataset.serata ? 'serata_' + a.dataset.serata : (h.indexOf('evento') !== -1 ? 'evento' : 'generico') });
     else if (h.indexOf('mailto:') === 0)          window.traccia('click_email');
     else if (h.indexOf('menu.html') !== -1)       window.traccia('click_menu', { da: (a.closest('section[id]') || {}).id || 'altro' });
     else if (h.indexOf('google.com/maps/dir') !== -1) window.traccia('click_indicazioni');

@@ -1,0 +1,33 @@
+{
+  "_istruzioni": "Ogni serata è un elemento di 'serate'. data = AAAA-MM-GG, ora = HH:MM. Le serate passate spariscono da sole. Se 'pubblica' è false la serata non compare sul sito.",
+  "serate": [
+    {
+      "pubblica": false,
+      "data": "2026-10-24",
+      "ora": "20:30",
+      "titolo": "Cena con musica dal vivo",
+      "artista": "",
+      "sottotitolo": "Voce soul dal vivo durante la cena",
+      "foto": "img/eventi/serata-esempio.jpg",
+      "prezzo": "70",
+      "menu": [
+        {"nome": "Ciabatta Mediterraneo", "desc": "Con insalatina di puntarelle, alici di Cetara, stracciatella di bufala e dressing di miele e senape."},
+        {"nome": "Brasato", "desc": "Stracotto di manzo al vino rosso, servito con fonduta di parmigiano."},
+        {"nome": "Scarpariello secondo Casa Rosebery", "desc": "Bombardone ripieno di crema al pecorino e salsa di pomodoro leggermente piccante."},
+        {"nome": "Locena di maiale", "desc": "Dalla finitura croccante, accompagnata da papaccelle saltate in padella e riduzione vellutata alla mela."},
+        {"nome": "Tiramisù", "desc": "Spuma di mascarpone d'alpeggio, pan di Spagna al caffè e cacao fine."}
+      ],
+      "integrazione": {"prezzo": "25", "nome": "Cuberoll argentino (300 g)", "desc": "Servito con patate al forno"},
+      "extra_titolo": "Alla carta durante la serata",
+      "extra": [
+        {"gruppo": "Exclusive grill", "nome": "Ribeye Canada", "prezzo": "120 / kg", "desc": "Cuberoll canadese nutrito a cereali: tenero, succoso, marezzatura perfetta."},
+        {"gruppo": "Exclusive grill", "nome": "Kobe giapponese", "prezzo": "400 / kg", "desc": "Razza Tajima, prefettura di Hyogo: marezzatura straordinaria e consistenza burrosa."},
+        {"gruppo": "Exclusive grill", "nome": "Red Hereford – Irlanda", "prezzo": "85 / kg", "desc": "Allevata al pascolo (grass-fed): morbida, ricca, marezzatura fine."},
+        {"gruppo": "Exclusive grill", "nome": "Red Dan – Danimarca", "prezzo": "120 / kg", "desc": "Marezzatura straordinaria, consistenza tenerissima e note dolci e burrose."},
+        {"gruppo": "Dolci", "nome": "Brownie", "prezzo": "8", "desc": "Servito tiepido, cuore umido e fondente, con noci pecan."},
+        {"gruppo": "Dolci", "nome": "New York Cheesecake", "prezzo": "8", "desc": "Con base di biscotto e salsa ai frutti rossi."},
+        {"gruppo": "Dolci", "nome": "Tiramisù", "prezzo": "8", "desc": "Con mascarpone fresco, savoiardi artigianali all'espresso e cacao amaro."}
+      ]
+    }
+  ]
+}
