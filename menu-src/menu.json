@@ -1,0 +1,148 @@
+{
+  "aggiornato": "Ottobre 2026",
+  "percorsi": [
+    {
+      "nome": "Dal Vesuvio all'Etna",
+      "prezzo": "40",
+      "portate": [
+        {"titolo": "Gli antipasti", "piatti": [
+          {"nome": "Ciabatta Mediterraneo", "desc": "Con insalatina di puntarelle, alici di Cetara, stracciatella di bufala e dressing di miele e senape."},
+          {"nome": "Polpettine alla gricia", "all": "1,5,4,10", "desc": "Morbide polpettine di manzetta prussiana selezionata, impreziosite da guanciale croccante e adagiate su una vellutata crema al cacio e pepe."},
+          {"nome": "Grissino di pollo", "all": "1,3,5", "desc": "Cialda di pane croccante, ripiena di pulled chicken, cetriolini, salsa BBQ e maionese al lime."}
+        ]},
+        {"titolo": "Il primo", "piatti": [
+          {"nome": "Scarpariello secondo Casa Rosebery", "all": "1,3", "desc": "Bombardone ripieno di crema al pecorino e salsa di pomodoro leggermente piccante."}
+        ]},
+        {"titolo": "Il secondo", "piatti": [
+          {"nome": "Stinco di maiale al forno", "all": "7,10", "desc": "Pregiato taglio di suino cotto lentamente a bassa temperatura, sfumato al vino bianco e profumato con un trito fine di rosmarino, aglio e aromi freschi. Servito con il suo fondo di cottura ristretto, rostie di patate e riduzione alla birra."}
+        ]},
+        {"titolo": "Il dessert", "piatti": [
+          {"nome": "Tiramisù", "all": "5", "desc": "La nostra interpretazione del classico dessert trevigiano: spuma di mascarpone d'alpeggio, pan di Spagna al caffè e cacao fine."}
+        ]}
+      ]
+    },
+    {
+      "nome": "Memorie del Gusto",
+      "prezzo": "50",
+      "portate": [
+        {"titolo": "Gli antipasti", "piatti": [
+          {"nome": "Brasato", "all": "5,12", "desc": "Stracotto di manzo al vino rosso, servito con fonduta di parmigiano."},
+          {"nome": "Ribs in salsa BBQ", "all": "12", "desc": "Costine di maiale cotte lentamente al forno e rifinite alla griglia, con la nostra salsa BBQ dolce e affumicata."}
+        ]},
+        {"titolo": "Il primo", "piatti": [
+          {"nome": "Genovese", "all": "1,5,12", "desc": "Zito alla genovese, secondo la tradizione napoletana."}
+        ]},
+        {"titolo": "Il secondo", "piatti": [
+          {"nome": "Tagliata Flambè", "all": "5,12", "desc": "Cuberoll Black Angus argentino, brandy, crema di mascarpone e melanzana fondente, flambata al tavolo."}
+        ]},
+        {"titolo": "Il dessert", "piatti": [
+          {"nome": "Tris di gelati", "all": "5,8", "desc": "Gelati fatti in casa: nocciola, pistacchio e cioccolato ruby."}
+        ]}
+      ]
+    },
+    {
+      "nome": "Tagli d'Oro",
+      "prezzo": "80",
+      "portate": [
+        {"titolo": "Duetto di tartare", "piatti": [
+          {"nome": "Fassona Piemontese 80 g", "desc": "Filetto di vitella di razza Fassona, battuto al coltello al momento e servito al naturale."},
+          {"nome": "Wagyu Giapponese A5 80 g", "desc": "Wagyu giapponese certificato, grado di marezzatura A5, il massimo livello mondiale."}
+        ]},
+        {"titolo": "Mini hamburger", "piatti": [
+          {"nome": "Manzetta Prussiana 100 g", "desc": "Pregiata razza polacca dalla marezzatura straordinaria: carne succosa e morbida al morso."}
+        ]},
+        {"titolo": "Exclusive grill", "nota": "con contorno di stagione", "piatti": [
+          {"nome": "Entrecôte Argentina", "desc": "Allevata allo stato brado nella Pampa e alimentata a erba: sapore verace e tenerezza impareggiabile."},
+          {"nome": "Ribeye Canada", "desc": "Alimentazione a cereali, infiltrazione di grasso elevatissima: consistenza burrosa e gusto dolce e caramellato."},
+          {"nome": "Maiale affumicato a legno di ciliegio", "desc": "Suino pesante di razza Duroc, affumicato lentamente a bassa temperatura con legno di ciliegio."}
+        ]},
+        {"titolo": "Il dessert", "piatti": [
+          {"nome": "Delizia al limone", "all": "1,3", "desc": "Pan di Spagna allo sciroppo di limone, farcito e ricoperto di crema ai limoni di Sorrento IGP."}
+        ]}
+      ]
+    }
+  ],
+  "sezioni": [
+    {"titolo": "Ciabatta affumicata", "piatti": [
+      {"nome": "Ciabatta Mediterraneo", "all": "1,4,9,10", "prezzo": "10", "desc": "Con insalatina di puntarelle, alici di Cetara, stracciatella di bufala e dressing di miele e senape."},
+      {"nome": "Rosebery", "all": "1,9,12", "prezzo": "10", "desc": "Con salsiccia croccante, crema di friarielli e provola affumicata."},
+      {"nome": "Bianca", "all": "1", "prezzo": "5", "desc": "Servita al naturale con fiocchi di sale."}
+    ]},
+    {"titolo": "Antipasti", "piatti": [
+      {"nome": "Ribs in salsa BBQ", "all": "12", "prezzo": "14", "desc": "Costine di maiale cotte lentamente al forno e rifinite alla griglia, spennellate con la nostra iconica salsa BBQ dolce e affumicata."},
+      {"nome": "Polpettine alla gricia", "all": "1,3,5", "prezzo": "12", "desc": "Polpettine di manzetta prussiana con guanciale croccante, su vellutata crema al cacio e pepe."},
+      {"nome": "Vellutata di zucca", "all": "5", "prezzo": "12", "desc": "Montata al mascarpone e rosmarino."},
+      {"nome": "Grissino di pollo", "all": "1,3", "prezzo": "12", "desc": "Cialda di pane croccante, ripiena di pulled chicken, cetriolini, salsa BBQ e maionese al lime."},
+      {"nome": "Brasato", "all": "5,12", "prezzo": "14", "desc": "Stracotto di manzo al vino rosso, servito con fonduta di parmigiano."}
+    ]},
+    {"titolo": "Cruderia", "piatti": [
+      {"nome": "Gran crudo in cinque consistenze", "all": "3,5,7,12", "prezzo": "35", "desc": "Carpaccio di Wagyu con salsa teriyaki; straccetti di manzo con stracciata di bufala; tartare di filetto con salsa all'uovo; mousse di fesa con salsa alle mele; carpaccio di sottofesa con salsa alla cipolla rossa."},
+      {"nome": "Carpaccio di Wagyu Giappone", "all": "5", "prezzo": "38", "desc": "Sottilissime fettine di autentico Wagyu giapponese A5, marezzatura 10/12: consistenza setosa che si scioglie in bocca."},
+      {"nome": "Carpaccio di Creekstone Farms", "all": "5", "prezzo": "25", "desc": "Black Angus Creekstone Farms con salsa acidula artigianale e note agrumate."},
+      {"nome": "Tartare al naturale", "prezzo": "20", "desc": "Filetto di Fassona piemontese in purezza, con giardiniera di verdure fatta in casa."},
+      {"nome": "Tartare Rosebery", "all": "12", "prezzo": "22", "desc": "Con zucca e pera croccante: un antipasto che celebra i sapori d'autunno."}
+    ]},
+    {"titolo": "Salumi e formaggi", "piatti": [
+      {"nome": "Pata Negra 100% Bellota", "all": "12", "prezzo": "35", "desc": "Prosciutto iberico da allevamento estensivo, alimentazione a ghiande, stagionatura minima 36 mesi, tagliato al coltello."},
+      {"nome": "Tagliere salumi e formaggi", "all": "5,12", "prezzo": "28", "desc": "Salumi artigianali Tomaso Salumi e formaggi del territorio, con confetture artigianali e pane caldo."},
+      {"nome": "Culatta di Maiale Tranquillo", "all": "12", "prezzo": "22", "desc": "Salume emiliano da filiera etica: consistenza morbida, profumo delicato, stagionatura naturale."},
+      {"nome": "Pancetta di Maiale Tranquillo", "all": "12", "prezzo": "18", "desc": "Pancetta artigianale da suini a crescita lenta, grasso dolce e speziatura leggera."},
+      {"nome": "Degustazione iberica", "all": "12", "prezzo": "35", "desc": "Longaniza, guanciale 100% Bellota e Pata Negra 100% Bellota."},
+      {"nome": "Formaggi (al pezzo)", "all": "5,12", "prezzo": "6"}
+    ]},
+    {"titolo": "Primi", "piatti": [
+      {"nome": "Scarpariello secondo Casa Rosebery", "all": "1,5", "prezzo": "16", "desc": "Bombardone ripieno di crema al pecorino e salsa di pomodoro leggermente piccante."},
+      {"nome": "Pappardelle al tartufo", "all": "1,3,5", "prezzo": "40", "desc": "Mantecate al carrello con burro, parmigiano 36 mesi e tartufo bianco. Secondo reperibilità stagionale."},
+      {"nome": "Genovese", "all": "1,5", "prezzo": "18", "desc": "Zito alla genovese, secondo la tradizione napoletana."},
+      {"nome": "Risotto ai funghi porcini", "all": "5", "prezzo": "24", "desc": "Risotto Carnaroli mantecato ai funghi porcini."},
+      {"nome": "Manfredi con la ricotta", "all": "1,5,12", "prezzo": "18", "desc": "Pasta Manfredi al ragù napoletano, mantecata con ricotta fresca e parmigiano reggiano."}
+    ]},
+    {"titolo": "Secondi", "piatti": [
+      {"nome": "Agnello in crosta di verdure", "all": "12", "prezzo": "20", "desc": "Controfiletto di agnello in crosta di verdure dell'orto disidratate, con riduzione al fondo bruno."},
+      {"nome": "Stinco di maiale al forno", "all": "12", "prezzo": "18", "desc": "Cotto lentamente a bassa temperatura, sfumato al vino bianco, con rostie di patate e riduzione alla birra."},
+      {"nome": "Tagliata Flambè", "all": "5,12", "prezzo": "30", "desc": "Cuberoll Black Angus argentino, brandy, crema di mascarpone e melanzana fondente, flambata al tavolo."},
+      {"nome": "Filetto al Bleu", "all": "5,12", "prezzo": "38", "desc": "Tournedos di filetto al punto rosa, fondente di Bleu di bufala e noci croccanti, su lingotti di polenta."},
+      {"nome": "Locena di maiale CBT", "all": "12", "prezzo": "18", "desc": "Dalla finitura croccante, con papaccelle saltate e riduzione vellutata alla mela."}
+    ]},
+    {"titolo": "Dalla brace", "sotto": "Con osso", "unita": " /etto", "piatti": [
+      {"nome": "Marchigiana Bio", "prezzo": "9", "desc": "Incrocio tra Chianina e Romagnola, allevamento biologico: carne tenera, succosa e identitaria."},
+      {"nome": "Pezzata Nera", "prezzo": "9", "desc": "Razza storica italiana a duplice attitudine, rivalutata dai migliori maestri macellai."},
+      {"nome": "Tronchetto Black Angus U.S.A.", "prezzo": "14", "desc": "Taglio nobile dai migliori allevamenti statunitensi: marezzatura straordinaria, sapore burroso e avvolgente."},
+      {"nome": "Kobieta Marmur", "prezzo": "8,50", "desc": "Lombata di vacca baltica dal Nord Europa, marezzatura finissima e aromi ricchi."},
+      {"nome": "Red Hereford", "prezzo": "8", "desc": "Carne irlandese da allevamenti al pascolo: rosso brillante, tenera e dal sapore equilibrato."},
+      {"nome": "Red Dan", "prezzo": "13", "desc": "Razza Rossa Danese: colore rubino profondo, marezzatura impeccabile, sentori dei pascoli del Nord."},
+      {"nome": "T-Bone Black Angus Selezione Canada", "prezzo": "14", "desc": "Black Angus grain-fed canadese: la morbidezza del filetto e la ricchezza del controfiletto."},
+      {"nome": "Tomahawk U.S.A. Black Angus", "prezzo": "14", "desc": "Osso scalzato e consistenza burrosa, finitura a mais. Servita su pietra o tagliere."},
+      {"nome": "Simmental Selezione Austria", "prezzo": "13", "desc": "Vacche allevate allo stato brado nei pascoli alpini: grana finissima, gusto rotondo e dolce."}
+    ]},
+    {"titolo": "Dalla brace", "sotto": "Senza osso", "unita": " /etto", "piatti": [
+      {"nome": "Entrecôte Argentina Rioplatense 1920", "prezzo": "10", "desc": "Costata di bovini al pascolo nella Pampa: marezzatura fine, note erbacee e dolci."},
+      {"nome": "Ribeye Canadese extramarezzata", "prezzo": "13", "desc": "Il cuore della costata canadese, fitta marezzatura intramuscolare e consistenza burrosa."},
+      {"nome": "Ribeye Creekstone Farms U.S.A.", "prezzo": "18", "desc": "Black Angus certificato, 120 giorni di finitura a grano, con il celebre cuore di grasso."},
+      {"nome": "Picanha Black Angus Ocean Beef – Australia", "prezzo": "9,50", "desc": "Allevata al pascolo e rifinita a cereali, con il caratteristico strato di grasso esterno."},
+      {"nome": "Wagyu Giapponese Kagoshima A5", "prezzo": "40", "desc": "Manzo Kuroge della prefettura di Kagoshima, certificazione A5. Servito con verdure saltate."},
+      {"nome": "Pluma de Bellota 100% Ibérica", "prezzo": "9", "desc": "Il taglio più nobile del maiale iberico alimentato a ghiande. Servita con cottura media al sangue."}
+    ]},
+    {"titolo": "Contorni", "piatti": [
+      {"nome": "Scarola saltata", "prezzo": "8", "desc": "Con aglio, olio EVO, olive nere di Gaeta e capperi."},
+      {"nome": "Le nostre patate stick artigianali", "prezzo": "6", "desc": "Tagliate a mano ogni giorno e fritte fino a doratura, con sale marino grosso."},
+      {"nome": "Patate al forno alla paprika", "prezzo": "6", "desc": "Croccanti fuori e morbide dentro, con paprika e spezie mediterranee."},
+      {"nome": "Purè di patate (metodo francese)", "prezzo": "7", "desc": "Patate di montagna setacciate e montate con burro d'alpeggio."},
+      {"nome": "Verdure grigliate di stagione", "prezzo": "7"}
+    ]},
+    {"titolo": "Dolci", "piatti": [
+      {"nome": "Tiramisù", "all": "1,3,5,8,12", "prezzo": "8", "desc": "La nostra interpretazione del classico trevigiano: spuma di mascarpone d'alpeggio, pan di Spagna al caffè e cacao fine."},
+      {"nome": "New York Cheesecake ai frutti di bosco", "all": "1,3,5,8,12", "prezzo": "8", "desc": "Crema densa e vellutata su base di biscotto Graham, con riduzione artigianale di frutti di bosco."},
+      {"nome": "Crêpe Suzette al flambé", "all": "1,3,5,8,12", "prezzo": "12", "desc": "Burro d'alpeggio, arancia fresca e agrumi, flambata in sala al Grand Marnier."},
+      {"nome": "Millefoglie di lingue di gatto", "all": "3,5", "prezzo": "10", "desc": "Con crema pasticcera alla vaniglia e amarene Fabbri."},
+      {"nome": "Delizia al limone", "all": "1,3,5,8,12", "prezzo": "8", "desc": "Pan di Spagna allo sciroppo di limone e crema ai limoni di Sorrento IGP."},
+      {"nome": "Tris di gelati", "prezzo": "8", "desc": "Gelati fatti in casa: nocciola, pistacchio e cioccolato ruby."},
+      {"nome": "Tortino al cioccolato fondente", "prezzo": "8", "desc": "Dal cuore caldo e colante, servito tiepido con zucchero a velo."}
+    ]},
+    {"titolo": "Bevande", "piatti": [
+      {"nome": "Acqua naturale", "prezzo": "3,50"},
+      {"nome": "Acqua effervescente – Ferrarelle", "prezzo": "3,50"},
+      {"nome": "Coca-Cola Original Taste / Zero", "prezzo": "4"}
+    ]}
+  ]
+}

@@ -26,3 +26,4 @@ jobs:
             **/.git*/**
             .github/**
             casarosebery_site.html
+            menu-src/**

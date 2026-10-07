@@ -22,7 +22,7 @@ RewriteRule \.php$ - [F,L]
 RewriteRule ^(readme\.html|license\.txt|wp-config.*)$ - [F,L]
 
 # 4. Bozza non pubblica
-RewriteRule ^casarosebery_site\.html$ - [F,L]
+RewriteRule ^(casarosebery_site\.html|menu-src)(/|$) - [F,L]
 
 # 5. Vecchi URL WordPress (pagine, articoli, categorie) -> home
 RewriteCond %{REQUEST_FILENAME} !-f
