@@ -834,7 +834,8 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
 
     <div class="info-block">
       <span class="info-label">Indirizzo</span>
-      <div class="info-value">Via Ferdinando Russo 13<br>80123 Posillipo, Napoli</div>
+      <div class="info-value">Via Ferdinando Russo 13<br>80123 Posillipo, Napoli<br>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Casa+Rosebery+Via+Ferdinando+Russo+13+80123+Napoli" target="_blank" rel="noopener" class="link-indicazioni" style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--oro);border-bottom:1px solid rgba(184,146,58,0.4);display:inline-block;margin-top:10px;padding-bottom:2px">Indicazioni stradali →</a></div>
     </div>
 
     <div class="info-block">
@@ -1116,6 +1117,36 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
 })();
 </script>
 
+<!-- ── TRACCIAMENTO CLIC (inviato solo se il visitatore ha accettato i cookie) ── -->
+<script>
+(function () {
+  window.traccia = function (evento, parametri) {
+    if (!window.__gaCaricato) return; // nessun consenso: nessun invio
+    gtag('event', evento, parametri || {});
+  };
+
+  function posizionePrenota(a) {
+    if (a.classList.contains('nav-cta')) return 'menu_alto';
+    if (a.classList.contains('prenota-sticky')) return 'pulsante_fisso';
+    if (a.id === 'bn-prenota') return 'barra_mobile';
+    return 'altro';
+  }
+
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href]');
+    if (!a) return;
+    var h = a.getAttribute('href');
+    if (h.indexOf('plateform.app') !== -1)        window.traccia('click_prenota', { posizione: posizionePrenota(a) });
+    else if (h.indexOf('tel:') === 0)             window.traccia('click_telefono');
+    else if (h.indexOf('wa.me') !== -1)           window.traccia('click_whatsapp', { motivo: h.indexOf('evento') !== -1 ? 'evento' : 'generico' });
+    else if (h.indexOf('mailto:') === 0)          window.traccia('click_email');
+    else if (h.indexOf('google.com/maps/dir') !== -1) window.traccia('click_indicazioni');
+    else if (/instagram\.com|facebook\.com|tripadvisor\./.test(h))
+      window.traccia('click_social', { rete: (h.match(/instagram|facebook|tripadvisor/) || ['altro'])[0] });
+  }, true);
+})();
+</script>
+
 <!-- ── CONFIG ORARI (modifica qui) ──────────────────────── -->
 <script id="orari-config" type="application/json">
 {
@@ -1169,6 +1200,7 @@ function handleForm(e) {
     `Tipo: ${tipo}\n` +
     `Note: ${note}`
   );
+  if (window.traccia) window.traccia('richiesta_evento', { tipo_evento: tipo, persone: pax });
   window.open(`mailto:prenotazioni@casaroseberyristorante.it?subject=Richiesta%20evento%20Casa%20Rosebery&body=${msg}`, '_blank');
 }
 
