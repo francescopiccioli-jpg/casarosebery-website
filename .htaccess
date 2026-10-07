@@ -17,7 +17,7 @@ RewriteCond %{HTTP_HOST} ^casaroseberyristorante\.it$ [NC]
 RewriteRule ^ https://www.casaroseberyristorante.it%{REQUEST_URI} [L,R=301]
 
 # 3. Blocca il vecchio WordPress (resta sul server ma non e' raggiungibile)
-RewriteRule ^(wp-admin|wp-includes|wp-content|_old_wordpress)(/|$) - [F,L]
+RewriteRule ^(wp-admin|wp-includes|wp-content|_old_wordpress|_OLD)(/|$) - [F,L,NC]
 RewriteRule \.php$ - [F,L]
 RewriteRule ^(readme\.html|license\.txt|wp-config.*)$ - [F,L]
 
