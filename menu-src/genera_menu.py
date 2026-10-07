@@ -18,7 +18,8 @@ def slug(s):
 
 
 def allergeni(p):
-    if not p.get("all"):
+    # numeri nascosti finché la cucina non verifica gli allergeni (vedi menu.json: mostra_allergeni)
+    if not dati.get("mostra_allergeni", True) or not p.get("all"):
         return ""
     return f' <span class="all" title="Allergeni">{e(p["all"].replace(",", " · "))}</span>'
 
@@ -57,6 +58,15 @@ for s in dati["sezioni"]:
     sotto = f'<p class="sotto">{e(s["sotto"])} · prezzo all\'etto</p>' if s.get("sotto") else ""
     voci = "".join(piatto(p, s.get("unita", "")) for p in s["piatti"])
     corpo.append(f'<section id="{sid}" class="sez"><h2>{e(s["titolo"])}</h2>{sotto}<ul class="lista">{voci}</ul></section>')
+
+TESTO_ALLERGENI = ("I numeri accanto ai piatti indicano gli allergeni presenti secondo il Regolamento UE n. 1169/2011. "
+                   "Per qualsiasi allergia o intolleranza chiedi al nostro personale prima di ordinare."
+                   if dati.get("mostra_allergeni", True) else
+                   "Alcuni piatti possono contenere allergeni (Regolamento UE n. 1169/2011). "
+                   "Prima di ordinare, comunica al nostro personale qualsiasi allergia o intolleranza: "
+                   "ti indicheremo con precisione gli ingredienti di ogni piatto.")
+LINK_PDF = ('  <a class="btn" href="menu-casa-rosebery.pdf" target="_blank">Scarica il menu in PDF</a>\n'
+            if dati.get("mostra_pdf", False) else "")
 
 pagina = f'''<!DOCTYPE html>
 <html lang="it">
@@ -137,12 +147,11 @@ footer a {{ text-decoration:underline; }}
 {"".join(corpo)}
 <section class="info" id="allergeni">
   <h3>Allergeni e intolleranze</h3>
-  <p>I numeri accanto ai piatti indicano gli allergeni presenti, secondo il Regolamento UE n. 1169/2011. La legenda completa è disponibile in sala: per qualsiasi allergia o intolleranza chiedi al nostro personale prima di ordinare.</p>
+  <p>{TESTO_ALLERGENI}</p>
 </section>
 <div class="azioni">
   <a class="btn pieno" href="https://casarosebery.plateform.app/reserve" target="_blank" rel="noopener">Prenota un tavolo</a>
-  <a class="btn" href="menu-casa-rosebery.pdf" target="_blank">Scarica il menu in PDF</a>
-</div>
+{LINK_PDF}</div>
 </main>
 <footer>© 2026 Casa Rosebery · Nado Advertising S.r.l. · P.IVA 07284940488 · <a href="privacy.html">Privacy e Cookie Policy</a></footer>
 <script>

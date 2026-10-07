@@ -24,6 +24,9 @@ RewriteRule ^(readme\.html|license\.txt|wp-config.*)$ - [F,L]
 # 4. Bozza non pubblica
 RewriteRule ^(casarosebery_site\.html|menu-src)(/|$) - [F,L]
 
+# 4b. Menu PDF sospeso finché non vengono corretti gli allergeni (togliere questa riga per riattivarlo)
+RewriteRule ^menu-casa-rosebery\.pdf$ - [F,L]
+
 # 5. Vecchi URL WordPress (pagine, articoli, categorie) -> home
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
