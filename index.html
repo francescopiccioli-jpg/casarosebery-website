@@ -52,18 +52,8 @@
     "longitude": "14.2018"
   },
   "openingHoursSpecification": [
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Sunday"],
-      "opens": "12:30",
-      "closes": "23:30"
-    },
-    {
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
-      "opens": "19:30",
-      "closes": "23:30"
-    }
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "19:30", "closes": "23:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "12:30", "closes": "15:30" }
   ],
   "servesCuisine": ["Italiana", "Napoletana", "Braceria", "Steakhouse"],
   "priceRange": "€€€",
@@ -1345,8 +1335,9 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
 <script id="orari-config" type="application/json">
 {
   "orari": [
-    { "giorni": "Domenica", "pranzo": "12:30 – 15:30", "cena": "19:30 – 23:30" },
-    { "giorni": "Lunedì – Sabato", "pranzo": "—", "cena": "19:30 – 23:30" }
+    { "giorni": "Lunedì – Venerdì", "pranzo": "—", "cena": "19:30 – 23:30" },
+    { "giorni": "Sabato", "pranzo": "12:30 – 15:30", "cena": "19:30 – 23:30" },
+    { "giorni": "Domenica", "pranzo": "12:30 – 15:30", "cena": "—" }
   ]
 }
 </script>
@@ -1363,7 +1354,10 @@ window.addEventListener('scroll', () => {
   const el = document.getElementById('orari-display');
   el.innerHTML = config.orari.map(o => {
     if (o.chiuso) return `<span style="opacity:0.5">${o.giorni}</span><span style="opacity:0.4">Chiuso</span>`;
-    return `<span>${o.giorni}</span><span>${o.pranzo !== '—' ? 'Pranzo '+o.pranzo : ''} ${o.cena !== '—' ? '· Cena '+o.cena : ''}</span>`;
+    const fasce = [];
+    if (o.pranzo && o.pranzo !== '—') fasce.push('Pranzo ' + o.pranzo);
+    if (o.cena && o.cena !== '—') fasce.push('Cena ' + o.cena);
+    return `<span>${o.giorni}</span><span>${fasce.join(' · ')}</span>`;
   }).join('');
 })();
 
