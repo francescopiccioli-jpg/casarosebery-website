@@ -611,13 +611,20 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
   .contatti-info { padding: 60px 40px; }
 }
 </style>
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-60070819GQ"></script>
+<!-- Google Analytics: caricato SOLO dopo il consenso (vedi banner cookie in fondo alla pagina) -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-60070819GQ');
+  window.caricaAnalytics = function () {
+    if (window.__gaCaricato) return;
+    window.__gaCaricato = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-60070819GQ';
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', 'G-60070819GQ', { anonymize_ip: true });
+  };
 </script>
 </head>
 <body>
@@ -1015,7 +1022,7 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
 <!-- ── FOOTER ────────────────────────────────────────────── -->
 <footer>
   <div class="footer-logo"><img src="logo.png" alt="Casa Rosebery"></div>
-  <p>© 2026 Casa Rosebery · Nado Advertising S.r.l. · P.IVA 07284940488 · All rights reserved · <a href="privacy.html" style="color:rgba(255,255,255,0.3);text-decoration:underline">Privacy Policy</a></p>
+  <p>© 2026 Casa Rosebery · Nado Advertising S.r.l. · P.IVA 07284940488 · All rights reserved · <a href="privacy.html" style="color:rgba(255,255,255,0.3);text-decoration:underline">Privacy e Cookie Policy</a> · <a href="#" id="apri-preferenze-cookie" style="color:rgba(255,255,255,0.3);text-decoration:underline">Preferenze cookie</a></p>
 
 </footer>
 
@@ -1032,6 +1039,80 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
   new IntersectionObserver(function (entries) {
     btn.classList.toggle('nascosto', entries[0].isIntersecting);
   }).observe(footer);
+})();
+</script>
+
+<!-- ── BANNER COOKIE ─────────────────────────────────────── -->
+<style>
+#cookie-banner {
+  display: none; position: fixed; z-index: 300;
+  left: 12px; right: 12px; bottom: calc(76px + env(safe-area-inset-bottom, 0px));
+  background: var(--carbone); color: rgba(255,255,255,0.8);
+  border: 1px solid rgba(184,146,58,0.35);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.45);
+  padding: 22px 20px 18px; font-size: 13px; line-height: 1.6;
+}
+#cookie-banner.visibile { display: block; }
+#cookie-banner p { margin: 0 28px 16px 0; }
+#cookie-banner a { color: var(--oro-lt); text-decoration: underline; }
+#cookie-banner .cb-azioni { display: flex; gap: 10px; }
+#cookie-banner button.cb-btn {
+  flex: 1; padding: 12px 16px; cursor: pointer;
+  font: 500 10px/1 'Inter', sans-serif; letter-spacing: 2px; text-transform: uppercase;
+  background: transparent; color: var(--oro-lt); border: 1px solid var(--oro);
+}
+#cookie-banner button.cb-btn:hover { background: var(--oro); color: var(--nero); }
+#cookie-banner .cb-chiudi {
+  position: absolute; top: 10px; right: 12px; background: none; border: 0; cursor: pointer;
+  color: rgba(255,255,255,0.5); font-size: 20px; line-height: 1; padding: 4px;
+}
+@media (min-width: 1025px) {
+  #cookie-banner { left: 28px; right: auto; bottom: 28px; max-width: 420px; }
+}
+</style>
+<div id="cookie-banner" role="dialog" aria-live="polite" aria-label="Preferenze cookie">
+  <button type="button" class="cb-chiudi" aria-label="Chiudi e rifiuta">&times;</button>
+  <p>Usiamo cookie tecnici necessari al funzionamento del sito e, solo con il tuo consenso, cookie analitici di Google Analytics per capire come viene visitato. Puoi cambiare idea in qualsiasi momento da "Preferenze cookie" in fondo alla pagina. <a href="privacy.html#cookie">Maggiori informazioni</a></p>
+  <div class="cb-azioni">
+    <button type="button" class="cb-btn" data-scelta="rifiutato">Rifiuta</button>
+    <button type="button" class="cb-btn" data-scelta="accettato">Accetta</button>
+  </div>
+</div>
+<script>
+(function () {
+  var CHIAVE = 'cr_cookie_consenso';
+  var DURATA = 1000 * 60 * 60 * 24 * 180; // 6 mesi
+  var banner = document.getElementById('cookie-banner');
+
+  function leggi() {
+    try {
+      var d = JSON.parse(localStorage.getItem(CHIAVE));
+      if (d && d.t && Date.now() - d.t < DURATA) return d.v;
+    } catch (e) {}
+    return null;
+  }
+  function salva(v) {
+    try { localStorage.setItem(CHIAVE, JSON.stringify({ v: v, t: Date.now() })); } catch (e) {}
+  }
+  function scegli(v) {
+    var prima = leggi();
+    salva(v);
+    banner.classList.remove('visibile');
+    if (v === 'accettato') window.caricaAnalytics();
+    else if (prima === 'accettato') location.reload(); // revoca: ricarica senza Analytics
+  }
+
+  banner.querySelectorAll('[data-scelta]').forEach(function (b) {
+    b.addEventListener('click', function () { scegli(b.getAttribute('data-scelta')); });
+  });
+  banner.querySelector('.cb-chiudi').addEventListener('click', function () { scegli('rifiutato'); });
+  document.getElementById('apri-preferenze-cookie').addEventListener('click', function (e) {
+    e.preventDefault(); banner.classList.add('visibile');
+  });
+
+  var stato = leggi();
+  if (stato === 'accettato') window.caricaAnalytics();
+  else if (stato === null) banner.classList.add('visibile');
 })();
 </script>
 
