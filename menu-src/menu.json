@@ -492,13 +492,15 @@
           "nome": "Tiramisù",
           "all": "3,7,8",
           "prezzo": "8",
-          "desc": "La nostra interpretazione del classico trevigiano: spuma di mascarpone d'alpeggio, pan di Spagna al caffè e cacao fine."
+          "desc": "La nostra interpretazione del classico trevigiano: spuma di mascarpone d'alpeggio, pan di Spagna al caffè e cacao fine.",
+          "senza_glutine": true
         },
         {
           "nome": "New York Cheesecake ai frutti di bosco",
           "all": "3,7,8",
           "prezzo": "8",
-          "desc": "Crema densa e vellutata su base di biscotto Graham, con riduzione artigianale di frutti di bosco."
+          "desc": "Crema densa e vellutata su base di biscotto Graham, con riduzione artigianale di frutti di bosco.",
+          "senza_glutine": true
         },
         {
           "nome": "Crêpe Suzette al flambé",
@@ -516,7 +518,8 @@
           "nome": "Delizia al limone",
           "all": "3,7",
           "prezzo": "8",
-          "desc": "Pan di Spagna allo sciroppo di limone e crema ai limoni di Sorrento IGP."
+          "desc": "Pan di Spagna allo sciroppo di limone e crema ai limoni di Sorrento IGP.",
+          "senza_glutine": true
         },
         {
           "nome": "Tris di gelati",
