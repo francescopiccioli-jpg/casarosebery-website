@@ -15,7 +15,7 @@
 <meta property="og:title" content="Casa Rosebery — Braceria & Ristorante Fine Dining · Posillipo, Napoli">
 <meta property="og:description" content="Braceria premium e ristorante fine dining a Posillipo. Carni pregiate da tutto il mondo, cucina della tradizione napoletana e vista sul Golfo di Napoli.">
 <meta property="og:url" content="https://www.casaroseberyristorante.it/">
-<meta property="og:image" content="https://www.casaroseberyristorante.it/img/IMG_1623.jpg">
+<meta property="og:image" content="https://www.casaroseberyristorante.it/img/og-casa-rosebery.jpg">
 <meta property="og:locale" content="it_IT">
 <meta property="og:site_name" content="Casa Rosebery">
 
@@ -23,8 +23,12 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Casa Rosebery — Braceria & Ristorante · Napoli">
 <meta name="twitter:description" content="Braceria premium e ristorante fine dining a Posillipo, Napoli.">
-<meta name="twitter:image" content="https://www.casaroseberyristorante.it/img/IMG_1623.jpg">
+<meta name="twitter:image" content="https://www.casaroseberyristorante.it/img/og-casa-rosebery.jpg">
 
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="favicon-512.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0e0d0a">
 <!-- Canonical -->
 <link rel="canonical" href="https://www.casaroseberyristorante.it/">
 
@@ -57,7 +61,8 @@
   ],
   "servesCuisine": ["Italiana", "Napoletana", "Braceria", "Steakhouse"],
   "priceRange": "€€€",
-  "image": "https://www.casaroseberyristorante.it/img/IMG_1623.jpg",
+  "image": "https://www.casaroseberyristorante.it/img/og-casa-rosebery.jpg",
+  "logo": "https://www.casaroseberyristorante.it/favicon-512.png",
   "sameAs": [
     "https://www.instagram.com/casarosebery",
     "https://www.facebook.com/61567925834282",
@@ -111,7 +116,7 @@ nav#main-nav.scrolled {
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(184,146,58,0.2);
 }
-.nav-logo img { height: 40px; filter: brightness(0) invert(1); }
+.nav-logo img { height: 46px; width: auto; }
 .nav-links { display: none; }
 .nav-cta {
   background: transparent; border: 1px solid var(--oro);
@@ -156,7 +161,7 @@ nav#main-nav.scrolled {
   border-top: 1px solid rgba(184,146,58,0.3);
   border-bottom: 1px solid rgba(184,146,58,0.3);
 }
-.hero-divider-mobile img { height: 56px; filter: brightness(0) invert(1); }
+.hero-divider-mobile img { height: auto; width: min(78vw, 340px); }
 .hero-divider { display: none; }
 .hero-logo-center { display: none; }
 
@@ -196,6 +201,7 @@ nav#main-nav.scrolled {
   max-width: 700px; margin: 0 auto 20px; line-height: 1.35;
 }
 .section-claim blockquote em { color: var(--oro-lt); font-style: normal; }
+.section-claim .brand-nome { display: block; margin-top: 10px; font-style: normal; font-weight: 500; color: var(--oro-lt); letter-spacing: 3px; text-transform: uppercase; font-size: 1.15em; }
 .section-claim cite {
   font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
   color: var(--muted); font-style: normal;
@@ -489,7 +495,7 @@ footer {
   border-top: 1px solid rgba(184,146,58,0.15);
 }
 footer .footer-logo { margin-bottom: 12px; }
-footer .footer-logo img { height: 32px; filter: brightness(0) invert(1) brightness(0.5); margin: 0 auto; }
+footer .footer-logo img { height: 72px; width: auto; margin: 0 auto; }
 footer p { font-size: 11px; color: rgba(255,255,255,0.3); line-height: 1.6; }
 
 
@@ -637,7 +643,7 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
 /* ── DESKTOP (min-width: 768px) ───────────────────────────── */
 @media (min-width: 768px) {
   nav#main-nav { padding: 0 48px; height: 72px; }
-  .nav-logo img { height: 48px; }
+  .nav-logo img { height: 56px; }
   .nav-links { display: flex; gap: 36px; list-style: none; }
   .nav-links a {
     font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
@@ -653,10 +659,14 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
     width: 1px; background: rgba(184,146,58,0.4); transform: translateX(-50%); z-index: 10;
   }
   .hero-logo-center {
-    display: block; position: absolute; top: 50%; left: 50%;
+    display: block; position: absolute; top: 40%; left: 50%;
     transform: translate(-50%,-50%); z-index: 20; text-align: center;
   }
-  .hero-logo-center img { height: 80px; filter: brightness(0) invert(1); }
+  .hero-logo-center {
+    padding: 70px 80px;
+    background: radial-gradient(ellipse at center, rgba(14,13,10,.92) 0%, rgba(14,13,10,.78) 42%, rgba(14,13,10,0) 72%);
+  }
+  .hero-logo-center img { width: clamp(280px, 26vw, 400px); height: auto; filter: drop-shadow(0 4px 24px rgba(0,0,0,.6)); }
 
   .section-claim { padding: 80px 48px; }
   .section-anime { padding: 100px 48px; }
@@ -728,7 +738,7 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
 <!-- ── NAV ─────────────────────────────────────────────── -->
 <nav id="main-nav">
   <div class="nav-logo">
-    <a href="#"><img src="logo.png" alt="Casa Rosebery"></a>
+    <a href="#"><img src="logo-chiaro.png" alt="Casa Rosebery — Champagneria, Ristorante, Braceria · Napoli"></a>
   </div>
   <ul class="nav-links">
     <li><a href="#anime">Il Ristorante</a></li>
@@ -755,10 +765,10 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
     </div>
   </div>
 
-  <div class="hero-divider-mobile"><img src="logo.png" alt="Casa Rosebery"></div>
+  <div class="hero-divider-mobile"><img src="logo-chiaro.png" alt="Casa Rosebery — Champagneria, Ristorante, Braceria · Napoli"></div>
   <div class="hero-divider"></div>
   <div class="hero-logo-center">
-    <img src="logo.png" alt="Casa Rosebery">
+    <img src="logo-chiaro.png" alt="Casa Rosebery — Champagneria, Ristorante, Braceria · Napoli">
   </div>
 
   <div class="hero-half hero-half--dining">
@@ -776,7 +786,7 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
 <!-- ── CLAIM ────────────────────────────────────────────── -->
 <section class="section-claim">
   <blockquote>
-    "Il profumo della brace, il tintinnio dei calici, la luce sul mare di <em>Posillipo</em>.<br>Benvenuti a Casa Rosebery."
+    "Il profumo della brace, il tintinnio dei calici, la luce sul mare di <em>Posillipo</em>."<br>Benvenuti a <strong class="brand-nome">Casa Rosebery</strong>
   </blockquote>
   <cite>Via Ferdinando Russo 13, Napoli</cite>
 </section>
@@ -1218,7 +1228,7 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
 
 <!-- ── FOOTER ────────────────────────────────────────────── -->
 <footer>
-  <div class="footer-logo"><img src="logo.png" alt="Casa Rosebery"></div>
+  <div class="footer-logo"><img src="logo-chiaro.png" alt="Casa Rosebery — Champagneria, Ristorante, Braceria · Napoli"></div>
   <p>© 2026 Casa Rosebery · Nado Advertising S.r.l. · P.IVA 07284940488 · All rights reserved · <a href="privacy.html" style="color:rgba(255,255,255,0.3);text-decoration:underline">Privacy e Cookie Policy</a> · <a href="#" id="apri-preferenze-cookie" style="color:rgba(255,255,255,0.3);text-decoration:underline">Preferenze cookie</a></p>
 
 </footer>

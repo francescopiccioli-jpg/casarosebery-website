@@ -56,7 +56,9 @@ pagina = f'''<!DOCTYPE html>
 <title>Carta dei vini — Casa Rosebery · Posillipo, Napoli</title>
 <meta name="description" content="La carta dei vini di Casa Rosebery a Posillipo: {totale} etichette tra Champagne e Franciacorta, i grandi rossi di Campania, Toscana, Piemonte e Veneto, bianchi vulcanici e rosati.">
 <link rel="canonical" href="https://www.casaroseberyristorante.it/vini.html">
-<link rel="icon" href="logo.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="favicon-512.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -67,7 +69,7 @@ body {{ font-family:'Inter',sans-serif; font-weight:300; background:var(--crema)
 a {{ color:inherit; text-decoration:none; }}
 .top {{ position:relative; background:var(--nero); color:#fff; text-align:center; padding:28px 20px 34px; }}
 .top .back {{ position:absolute; left:20px; top:24px; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.5); }}
-.top img {{ height:56px; filter:brightness(0) invert(1); margin:0 auto 18px; display:block; }}
+.top img {{ width:min(70vw,300px); height:auto; margin:0 auto 14px; display:block; }}
 .top .eyebrow {{ font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--oro); }}
 .top h1 {{ font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(40px,8vw,64px); line-height:1.1; margin-top:6px; }}
 .top h1 em {{ color:var(--oro-lt); }}
@@ -106,7 +108,7 @@ footer a {{ text-decoration:underline; }}
 <body>
 <header class="top">
   <a class="back" href="/">← Home</a>
-  <a href="/"><img src="logo.png" alt="Casa Rosebery"></a>
+  <a href="/"><img src="logo-chiaro.png" alt="Casa Rosebery"></a>
   <span class="eyebrow">Braceria &amp; Ristorante · Posillipo</span>
   <h1>Carta dei <em>vini</em></h1>
   <p class="agg">{totale} etichette · aggiornata a {e(dati["aggiornato"])}</p>
