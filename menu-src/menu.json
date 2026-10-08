@@ -193,19 +193,19 @@
       "piatti": [
         {
           "nome": "Ribs in salsa BBQ",
-          "all": "12",
+          "all": "6,10,12",
           "prezzo": "14",
           "desc": "Costine di maiale cotte lentamente al forno e rifinite alla griglia, spennellate con la nostra iconica salsa BBQ dolce e affumicata."
         },
         {
           "nome": "Polpettine alla gricia",
-          "all": "1,3,5",
+          "all": "1,3,7",
           "prezzo": "12",
           "desc": "Polpettine di manzetta prussiana con guanciale croccante, su vellutata crema al cacio e pepe."
         },
         {
           "nome": "Vellutata di zucca",
-          "all": "5",
+          "all": "7",
           "prezzo": "12",
           "desc": "Montata al mascarpone e rosmarino."
         },
@@ -217,7 +217,7 @@
         },
         {
           "nome": "Brasato",
-          "all": "5,12",
+          "all": "7,12",
           "prezzo": "14",
           "desc": "Stracotto di manzo al vino rosso, servito con fonduta di parmigiano."
         }
@@ -228,7 +228,7 @@
       "piatti": [
         {
           "nome": "Gran crudo in cinque consistenze",
-          "all": "3,5,7,12",
+          "all": "3,5,6,12",
           "prezzo": "35",
           "desc": "Carpaccio di Wagyu con salsa teriyaki; straccetti di manzo con stracciata di bufala; tartare di filetto con salsa all'uovo; mousse di fesa con salsa alle mele; carpaccio di sottofesa con salsa alla cipolla rossa."
         },
@@ -302,31 +302,31 @@
       "piatti": [
         {
           "nome": "Scarpariello secondo Casa Rosebery",
-          "all": "1,5",
+          "all": "1,7",
           "prezzo": "16",
           "desc": "Bombardone ripieno di crema al pecorino e salsa di pomodoro leggermente piccante."
         },
         {
           "nome": "Pappardelle al tartufo",
-          "all": "1,3,5",
+          "all": "1,3,7",
           "prezzo": "40",
           "desc": "Mantecate al carrello con burro, parmigiano 36 mesi e tartufo bianco. Secondo reperibilità stagionale."
         },
         {
           "nome": "Genovese",
-          "all": "1,5",
+          "all": "1,7,9,12",
           "prezzo": "18",
           "desc": "Zito alla genovese, secondo la tradizione napoletana."
         },
         {
           "nome": "Risotto ai funghi porcini",
-          "all": "5",
+          "all": "7",
           "prezzo": "24",
           "desc": "Risotto Carnaroli mantecato ai funghi porcini."
         },
         {
           "nome": "Manfredi con la ricotta",
-          "all": "1,5,12",
+          "all": "1,7,12",
           "prezzo": "18",
           "desc": "Pasta Manfredi al ragù napoletano, mantecata con ricotta fresca e parmigiano reggiano."
         }
@@ -337,7 +337,7 @@
       "piatti": [
         {
           "nome": "Agnello in crosta di verdure",
-          "all": "12",
+          "all": "6,9,10,12",
           "prezzo": "20",
           "desc": "Controfiletto di agnello in crosta di verdure dell'orto disidratate, con riduzione al fondo bruno."
         },
@@ -349,13 +349,13 @@
         },
         {
           "nome": "Tagliata Flambè",
-          "all": "5,12",
+          "all": "7,12",
           "prezzo": "30",
           "desc": "Cuberoll Black Angus argentino, brandy, crema di mascarpone e melanzana fondente, flambata al tavolo."
         },
         {
           "nome": "Filetto al Bleu",
-          "all": "5,12",
+          "all": "7,12",
           "prezzo": "38",
           "desc": "Tournedos di filetto al punto rosa, fondente di Bleu di bufala e noci croccanti, su lingotti di polenta."
         },
@@ -490,38 +490,39 @@
       "piatti": [
         {
           "nome": "Tiramisù",
-          "all": "1,3,5,8,12",
+          "all": "3,7,8",
           "prezzo": "8",
           "desc": "La nostra interpretazione del classico trevigiano: spuma di mascarpone d'alpeggio, pan di Spagna al caffè e cacao fine."
         },
         {
           "nome": "New York Cheesecake ai frutti di bosco",
-          "all": "1,3,5,8,12",
+          "all": "3,7,8",
           "prezzo": "8",
           "desc": "Crema densa e vellutata su base di biscotto Graham, con riduzione artigianale di frutti di bosco."
         },
         {
           "nome": "Crêpe Suzette al flambé",
-          "all": "1,3,5,8,12",
+          "all": "1,3,7,12",
           "prezzo": "12",
           "desc": "Burro d'alpeggio, arancia fresca e agrumi, flambata in sala al Grand Marnier."
         },
         {
           "nome": "Millefoglie di lingue di gatto",
-          "all": "3,5",
+          "all": "1,3,7",
           "prezzo": "10",
           "desc": "Con crema pasticcera alla vaniglia e amarene Fabbri."
         },
         {
           "nome": "Delizia al limone",
-          "all": "1,3,5,8,12",
+          "all": "3,7",
           "prezzo": "8",
           "desc": "Pan di Spagna allo sciroppo di limone e crema ai limoni di Sorrento IGP."
         },
         {
           "nome": "Tris di gelati",
           "prezzo": "8",
-          "desc": "Gelati fatti in casa: nocciola, pistacchio e cioccolato ruby."
+          "desc": "Gelati fatti in casa: nocciola, pistacchio e cioccolato ruby.",
+          "all": "7,8"
         },
         {
           "nome": "Tortino al cioccolato fondente",
