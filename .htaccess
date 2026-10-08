@@ -22,7 +22,7 @@ RewriteRule \.php$ - [F,L]
 RewriteRule ^(readme\.html|license\.txt|wp-config.*)$ - [F,L]
 
 # 4. Bozza non pubblica
-RewriteRule ^(casarosebery_site\.html|menu-src|eventi-src)(/|$) - [F,L]
+RewriteRule ^(casarosebery_site\.html|menu-src|eventi-src|vini-src)(/|$) - [F,L]
 
 # 4b. Menu PDF sospeso finché non vengono corretti gli allergeni (togliere questa riga per riattivarlo)
 RewriteRule ^menu-casa-rosebery\.pdf$ - [F,L]

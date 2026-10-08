@@ -1,0 +1,1181 @@
+{
+ "aggiornato": "Ottobre 2026",
+ "vini": [
+  {
+   "sez": "bollicine",
+   "nome": "Trento DOC Brut Rosé Metodo Classico",
+   "produttore": "Altemasi",
+   "regione": "Trentino-Alto Adige",
+   "prezzo": "55"
+  },
+  {
+   "sez": "bollicine",
+   "nome": "Trento DOC Brut Millesimato",
+   "produttore": "Altemasi",
+   "regione": "Trentino-Alto Adige",
+   "prezzo": "50"
+  },
+  {
+   "sez": "bollicine",
+   "nome": "Franciacorta Riserva DOCG \"Annamaria Clementi\" Dosaggio Zero",
+   "produttore": "Ca' del Bosco",
+   "regione": "Lombardia",
+   "prezzo": "300"
+  },
+  {
+   "sez": "bollicine",
+   "nome": "Franciacorta Rosé DOCG \"Cuvée Prestige\" (Edizione 47)",
+   "produttore": "Ca' del Bosco",
+   "regione": "Lombardia",
+   "prezzo": "69"
+  },
+  {
+   "sez": "bollicine",
+   "nome": "Franciacorta Extra Brut DOCG \"Cuvée Prestige\" (Edizione 48)",
+   "produttore": "Ca' del Bosco",
+   "regione": "Lombardia",
+   "prezzo": "95"
+  },
+  {
+   "sez": "bollicine",
+   "nome": "Spumante Metodo Classico Brut \"Pietrafumante\" Millesimato",
+   "produttore": "Casa Setaro",
+   "regione": "Campania",
+   "prezzo": "40"
+  },
+  {
+   "sez": "bollicine",
+   "nome": "Spumante Metodo Classico Brut Rosé \"Pietrafumante\" Millesimato",
+   "produttore": "Casa Setaro",
+   "regione": "Campania",
+   "prezzo": "45"
+  },
+  {
+   "sez": "bollicine",
+   "nome": "Müller Thurgau Spumante Brut \"Vigneti delle Dolomiti\" IGT",
+   "produttore": "Cavit",
+   "regione": "Trentino-Alto Adige",
+   "prezzo": "30"
+  },
+  {
+   "sez": "bollicine",
+   "nome": "Trento DOC Brut Millesimato",
+   "produttore": "",
+   "regione": "Trentino-Alto Adige",
+   "prezzo": "35"
+  },
+  {
+   "sez": "bollicine",
+   "nome": "Franciacorta Rosé DOCG Brut",
+   "produttore": "Ferghettina",
+   "regione": "Lombardia",
+   "prezzo": "70"
+  },
+  {
+   "sez": "bollicine",
+   "nome": "Franciacorta Brut DOCG \"Milledì\" Millesimato",
+   "produttore": "Ferghettina",
+   "regione": "Lombardia",
+   "prezzo": "65"
+  },
+  {
+   "sez": "bollicine",
+   "nome": "Franciacorta Satèn DOCG Millesimato",
+   "produttore": "Ferghettina",
+   "regione": "Lombardia",
+   "prezzo": "65"
+  },
+  {
+   "sez": "bollicine",
+   "nome": "Alghero Torbato Spumante DOC \"Mirall\" Metodo Classico",
+   "produttore": "Sella & Mosca",
+   "regione": "Sardegna",
+   "prezzo": "30"
+  },
+  {
+   "sez": "bollicine",
+   "nome": "Franciacorta Rosé DOCG \"Ammonites\" Dosaggio Zero",
+   "produttore": "Camilucci",
+   "regione": "Lombardia",
+   "prezzo": "68"
+  },
+  {
+   "sez": "bollicine",
+   "nome": "Spumante Rosato Brut \"Il Fresco\"",
+   "produttore": "Villa Sandi",
+   "regione": "Veneto",
+   "prezzo": "35"
+  },
+  {
+   "sez": "bollicine",
+   "nome": "Champagne AOC \"Special Cuvée\" Brut",
+   "produttore": "Bollinger",
+   "regione": "Francia",
+   "prezzo": "130"
+  },
+  {
+   "sez": "bollicine",
+   "nome": "Champagne AOC \"Ice Impérial\" Demi-Sec",
+   "produttore": "Moët & Chandon",
+   "regione": "Francia",
+   "prezzo": "130"
+  },
+  {
+   "sez": "bollicine",
+   "nome": "Crémant d'Alsace AOC Brut",
+   "produttore": "Gérard Neumeyer",
+   "regione": "Francia",
+   "prezzo": "60"
+  },
+  {
+   "sez": "bollicine",
+   "nome": "Champagne AOC \"Collection 243\" Brut",
+   "produttore": "Louis Roederer",
+   "regione": "Francia",
+   "prezzo": "160"
+  },
+  {
+   "sez": "bollicine",
+   "nome": "Champagne AOC \"Blanc de Blancs\" Brut",
+   "produttore": "Ruinart",
+   "regione": "Francia",
+   "prezzo": "180"
+  },
+  {
+   "sez": "bollicine",
+   "nome": "Champagne AOC \"Grand Brut\"",
+   "produttore": "Perrier-Jouët",
+   "regione": "Francia",
+   "prezzo": "135"
+  },
+  {
+   "sez": "bollicine",
+   "nome": "Crémant de Bourgogne AOC \"Grande Cuvée\" Rosé Brut",
+   "produttore": "Veuve Ambal",
+   "regione": "Francia",
+   "prezzo": "50"
+  },
+  {
+   "sez": "bollicine",
+   "nome": "Champagne AOC \"Grand Brut\"",
+   "produttore": "Perrier-Jouët",
+   "regione": "Francia",
+   "prezzo": "150"
+  },
+  {
+   "sez": "bollicine",
+   "nome": "Champagne AOC \"Belle Epoque\" Millesimato – 2016",
+   "produttore": "Perrier-Jouët",
+   "regione": "Francia",
+   "prezzo": "400"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Vesuvio Piedirosso DOP \"Vipt\"",
+   "produttore": "Cantine Olivella",
+   "regione": "Campania",
+   "prezzo": "30"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Lacryma Christi del Vesuvio Rosso DOP \"Lacrimanero\"",
+   "produttore": "Cantine Olivella",
+   "regione": "Campania",
+   "prezzo": "30"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Irpinia Aglianico DOC \"Vadantico\"",
+   "produttore": "Colli di Castelfranci",
+   "regione": "Campania",
+   "prezzo": "30"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Casavecchia di Pontelatone DOC Riserva \"Trebulanum\"",
+   "produttore": "Fattoria Alois",
+   "regione": "Campania",
+   "prezzo": "110"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Falerno del Massico Primitivo DOP \"Conclave\"",
+   "produttore": "Gennaro Papa",
+   "regione": "Campania",
+   "prezzo": "39"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Falerno del Massico Primitivo DOP \"Campantuono\"",
+   "produttore": "Gennaro Papa",
+   "regione": "Campania",
+   "prezzo": "95"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Taurasi Riserva DOCG \"Vigna Quintodecimo\" Gran Cru Luigi Moio – 2019",
+   "produttore": "Quintodecimo",
+   "regione": "Campania",
+   "prezzo": "480"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Taurasi Riserva DOCG \"Vigna Grande Cérzito\" – 2020",
+   "produttore": "Quintodecimo",
+   "regione": "Campania",
+   "prezzo": "250"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Irpinia Aglianico DOC \"Terre d'Eclano\"",
+   "produttore": "Quintodecimo",
+   "regione": "Campania",
+   "prezzo": "95"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Penisola Sorrentina DOC Gragnano \"Ottouve\"",
+   "produttore": "Salvatore Martusciello",
+   "regione": "Campania",
+   "prezzo": "32"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Taurasi Riserva DOCG \"Campore\"",
+   "produttore": "Terredora",
+   "regione": "Campania",
+   "prezzo": "100"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Irpinia Aglianico DOC \"Il Principio\"",
+   "produttore": "Terredora",
+   "regione": "Campania",
+   "prezzo": "38"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Toscana IGT \"Summus\" (Super Tuscan)",
+   "produttore": "Castello Banfi",
+   "regione": "Toscana",
+   "prezzo": "95"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Toscana IGT \"Excelsus\" (Super Tuscan)",
+   "produttore": "Castello Banfi",
+   "regione": "Toscana",
+   "prezzo": "100"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Toscana IGT \"Cum Laude\" (Super Tuscan)",
+   "produttore": "Castello Banfi",
+   "regione": "Toscana",
+   "prezzo": "45"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Toscana IGT \"Belnero\"",
+   "produttore": "Castello Banfi",
+   "regione": "Toscana",
+   "prezzo": "45"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Bolgheri Rosso DOC \"Aska\"",
+   "produttore": "Castello Banfi",
+   "regione": "Toscana",
+   "prezzo": "50"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Bolgheri Superiore DOC \"Deinos\"",
+   "produttore": "Castello Banfi",
+   "regione": "Toscana",
+   "prezzo": "120"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Toscana IGT Sangiovese \"Casamatta\"",
+   "produttore": "Bibi Graetz",
+   "regione": "Toscana",
+   "prezzo": "47"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Toscana IGT \"Testamatta\" (Super Tuscan)",
+   "produttore": "Bibi Graetz",
+   "regione": "Toscana",
+   "prezzo": "160"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Toscana IGT \"Colore\"",
+   "produttore": "Bibi Graetz",
+   "regione": "Toscana",
+   "prezzo": "380"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Bolgheri Rosso DOC \"Adeo\"",
+   "produttore": "Campo alla Sughera",
+   "regione": "Toscana",
+   "prezzo": "55"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Bolgheri DOC Superiore \"Arnione\"",
+   "produttore": "Campo alla Sughera",
+   "regione": "Toscana",
+   "prezzo": "140"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Toscana IGT \"Petra Petra\"",
+   "produttore": "Famiglia Moretti",
+   "regione": "Toscana",
+   "prezzo": "105"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Bolgheri DOC Superiore \"Grattamacco\"",
+   "produttore": "Grattamacco",
+   "regione": "Toscana",
+   "prezzo": "55"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Toscana IGT \"Tignanello\" 2022",
+   "produttore": "Marchesi Antinori",
+   "regione": "Toscana",
+   "prezzo": "170"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Toscana IGT \"Solaia\" 2022",
+   "produttore": "Marchesi Antinori",
+   "regione": "Toscana",
+   "prezzo": "450"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Bolgheri DOC Superiore \"Guado al Tasso\"",
+   "produttore": "Marchesi Antinori",
+   "regione": "Toscana",
+   "prezzo": "270"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Maremma Toscana DOC \"Poggio alle Nane\"",
+   "produttore": "Tenuta Le Mortelle (Marchesi Antinori)",
+   "regione": "Toscana",
+   "prezzo": "120"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Rosso di Montalcino DOC \"Pian delle Vigne\"",
+   "produttore": "Pian delle Vigne (Marchesi Antinori)",
+   "regione": "Toscana",
+   "prezzo": "40"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Morellino di Scansano DOCG",
+   "produttore": "Podere 414",
+   "regione": "Toscana",
+   "prezzo": "45"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Maremma Toscana DOC \"Messiio\" (Merlot)",
+   "produttore": "Tenuta Fertuna",
+   "regione": "Toscana",
+   "prezzo": "55"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Bolgheri Sassicaia DOC \"Sassicaia\" 2023",
+   "produttore": "Tenuta San Guido",
+   "regione": "Toscana",
+   "prezzo": "380"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Toscana IGT \"Le Difese\"",
+   "produttore": "Tenuta San Guido",
+   "regione": "Toscana",
+   "prezzo": "60"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Toscana IGT \"Guidalberto\"",
+   "produttore": "Tenuta San Guido",
+   "regione": "Toscana",
+   "prezzo": "120"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Amarone della Valpolicella DOCG \"Conte Gastone\"",
+   "produttore": "Massimago",
+   "regione": "Veneto",
+   "prezzo": "100"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Valpolicella DOC \"Duca Fedele\"",
+   "produttore": "Massimago",
+   "regione": "Veneto",
+   "prezzo": "30"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Veneto Rosso IGT \"Novecentonovantanove\"",
+   "produttore": "Nevio Scala",
+   "regione": "Veneto",
+   "prezzo": "36"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Valpolicella Classico DOC \"Bio\"",
+   "produttore": "Speri",
+   "regione": "Veneto",
+   "prezzo": "28"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Valpolicella Classico Superiore DOC \"Vigneto Sant’Urbano\"",
+   "produttore": "Speri",
+   "regione": "Veneto",
+   "prezzo": "42"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Valpolicella Classico Superiore DOC \"Ripasso\"",
+   "produttore": "Speri",
+   "regione": "Veneto",
+   "prezzo": "40"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Valpolicella DOC \"Nanfrè\"",
+   "produttore": "Tenuta Sant’Antonio",
+   "regione": "Veneto",
+   "prezzo": "28"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Valpolicella Ripasso Superiore DOC \"Monti Garbi\"",
+   "produttore": "Tenuta Sant’Antonio",
+   "regione": "Veneto",
+   "prezzo": "36"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Valpolicella Superiore DOC \"La Bandina\"",
+   "produttore": "Tenuta Sant’Antonio",
+   "regione": "Veneto",
+   "prezzo": "46"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Valpolicella Classico Superiore DOC \"Rafael\"",
+   "produttore": "Tommasi",
+   "regione": "Veneto",
+   "prezzo": "32"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Valpolicella Classico Superiore DOC \"Ripasso\"",
+   "produttore": "Tommasi",
+   "regione": "Veneto",
+   "prezzo": "35"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Amarone della Valpolicella Classico DOCG",
+   "produttore": "Fornaser",
+   "regione": "Veneto",
+   "prezzo": "160"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Amarone della Valpolicella Classico DOCG Riserva \"Il Maestro\"",
+   "produttore": "Fornaser",
+   "regione": "Veneto",
+   "prezzo": "100"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Amarone della Valpolicella Classico DOCG Riserva",
+   "produttore": "Fornaser",
+   "regione": "Veneto",
+   "prezzo": "180"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Valpolicella Classico Superiore DOC \"Il Ripetente\"",
+   "produttore": "Fornaser",
+   "regione": "Veneto",
+   "prezzo": "38"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Primitivo di Manduria DOC \"Es 23\" – 2023",
+   "produttore": "Gianfranco Fino",
+   "regione": "Puglia",
+   "prezzo": "110"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Primitivo di Manduria Riserva DOC \"Dionysos\"",
+   "produttore": "Masseria Surani (Tommasi)",
+   "regione": "Puglia",
+   "prezzo": "35"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Primitivo di Manduria DOC \"Emèra\"",
+   "produttore": "Masseria Surani (Tommasi)",
+   "regione": "Puglia",
+   "prezzo": "28"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Primitivo di Manduria DOP \"Sessantanni\"",
+   "produttore": "Cantine San Marzano",
+   "regione": "Puglia",
+   "prezzo": "55"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Primitivo del Salento IGP \"Soltema\"",
+   "produttore": "Jorche",
+   "regione": "Puglia",
+   "prezzo": "30"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Primitivo di Manduria Riserva DOC",
+   "produttore": "Jorche",
+   "regione": "Puglia",
+   "prezzo": "45"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Trentino DOC \"Pinot Noir\"",
+   "produttore": "La Bottega dei Vinai (Cavit)",
+   "regione": "Trentino-Alto Adige",
+   "prezzo": "30"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Trentino DOC Pinot Noir \"Ritratti\"",
+   "produttore": "Cantina Lavis",
+   "regione": "Trentino-Alto Adige",
+   "prezzo": "58"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Trentino DOC \"Merlot\"",
+   "produttore": "Cantina Lavis",
+   "regione": "Trentino-Alto Adige",
+   "prezzo": "38"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Trentino DOC \"Cabernet\"",
+   "produttore": "Cantina Lavis",
+   "regione": "Trentino-Alto Adige",
+   "prezzo": "30"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Trentino DOC \"Pinot Nero\"",
+   "produttore": "Cantina Lavis",
+   "regione": "Trentino-Alto Adige",
+   "prezzo": "30"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Alto Adige DOC Pinot Nero Riserva \"Abtei Muri\"",
+   "produttore": "Muri-Gries",
+   "regione": "Trentino-Alto Adige",
+   "prezzo": "56"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Alto Adige DOC \"Pinot Nero\"",
+   "produttore": "Muri-Gries",
+   "regione": "Trentino-Alto Adige",
+   "prezzo": "32"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Alto Adige DOC \"Lagrein\"",
+   "produttore": "Muri-Gries",
+   "regione": "Trentino-Alto Adige",
+   "prezzo": "32"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Alto Adige DOC Pinot Nero \"Fuxleiten\"",
+   "produttore": "Tenuta Pfitscher",
+   "regione": "Trentino-Alto Adige",
+   "prezzo": "50"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Alto Adige DOC Lagrein \"Rivus\"",
+   "produttore": "Tenuta Pfitscher",
+   "regione": "Trentino-Alto Adige",
+   "prezzo": "36"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Barbera del Monferrato DOC Vivace \"La Monella\"",
+   "produttore": "Braida (Giacomo Bologna)",
+   "regione": "Piemonte",
+   "prezzo": "30"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Barbera d'Asti DOCG \"Bricco dell'Uccellone\"",
+   "produttore": "Braida (Giacomo Bologna)",
+   "regione": "Piemonte",
+   "prezzo": "110"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Grignolino d'Asti DOC \"Limonte\"",
+   "produttore": "Braida (Giacomo Bologna)",
+   "regione": "Piemonte",
+   "prezzo": "75"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Barbaresco DOCG",
+   "produttore": "Bruno Rocca",
+   "regione": "Piemonte",
+   "prezzo": "90"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Barbaresco DOCG \"Currà\"",
+   "produttore": "Bruno Rocca",
+   "regione": "Piemonte",
+   "prezzo": "240"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Ghemme DOCG",
+   "produttore": "Cà Nova",
+   "regione": "Piemonte",
+   "prezzo": "55"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Barolo DOCG",
+   "produttore": "Castello di Perno",
+   "regione": "Piemonte",
+   "prezzo": "75"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Barolo DOCG Riserva",
+   "produttore": "Castello di Perno",
+   "regione": "Piemonte",
+   "prezzo": "220"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Barolo DOCG \"Castelletto\"",
+   "produttore": "Castello di Perno",
+   "regione": "Piemonte",
+   "prezzo": "110"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Barolo DOCG \"Vigna Bricco San Biagio\"",
+   "produttore": "Ciabòt Berton",
+   "regione": "Piemonte",
+   "prezzo": "38"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Dolcetto d'Alba DOC \"Rutuin\"",
+   "produttore": "Ciabòt Berton",
+   "regione": "Piemonte",
+   "prezzo": "32"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Barolo DOCG del Comune di La Morra",
+   "produttore": "Ciabòt Berton",
+   "regione": "Piemonte",
+   "prezzo": "60"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Dolcetto d'Alba DOC \"Monte Aribaldo\"",
+   "produttore": "Marchesi di Grésy",
+   "regione": "Piemonte",
+   "prezzo": "30"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Langhe Nebbiolo DOC \"Martinenga\"",
+   "produttore": "Marchesi di Grésy",
+   "regione": "Piemonte",
+   "prezzo": "45"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Rosso Piceno DOC \"Kérmes\"",
+   "produttore": "Accadia",
+   "regione": "Marche",
+   "prezzo": "35"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Cirò DOC Classico Superiore Riserva \"Colli di Mancuso\"",
+   "produttore": "Ippolito 1845",
+   "regione": "Calabria",
+   "prezzo": "40"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Sagrantino di Montefalco DOCG \"Collepiano\"",
+   "produttore": "Arnaldo Caprai",
+   "regione": "Umbria",
+   "prezzo": "70"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Montefalco Rosso DOC",
+   "produttore": "Arnaldo Caprai",
+   "regione": "Umbria",
+   "prezzo": "32"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Friuli DOC Merlot",
+   "produttore": "Augusta Bargilli",
+   "regione": "Friuli-Venezia Giulia",
+   "prezzo": "65"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Refosco dal Peduncolo Rosso Friuli DOC",
+   "produttore": "Augusta Bargilli",
+   "regione": "Friuli-Venezia Giulia",
+   "prezzo": "65"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Friuli Colli Orientali DOC Refosco dal Peduncolo Rosso",
+   "produttore": "Conte d’Attimis-Maniago",
+   "regione": "Friuli-Venezia Giulia",
+   "prezzo": "35"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Venezia Giulia Rosso IGT \"Vignaricco\"",
+   "produttore": "Conte d’Attimis-Maniago",
+   "regione": "Friuli-Venezia Giulia",
+   "prezzo": "30"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Collio DOC Merlot \"Perilla\"",
+   "produttore": "Venica & Venica",
+   "regione": "Friuli-Venezia Giulia",
+   "prezzo": "70"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Cannonau di Sardegna DOC \"Thurcalesu\"",
+   "produttore": "Cantina Berritta",
+   "regione": "Sardegna",
+   "prezzo": "50"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Curtefranca Rosso DOC \"Corte del Lupo\"",
+   "produttore": "Ca' del Bosco",
+   "regione": "Lombardia",
+   "prezzo": "52"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Etna Rosso DOC \"Sul Vulcano\"",
+   "produttore": "Donnafugata",
+   "regione": "Sicilia",
+   "prezzo": "50"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Cerasuolo di Vittoria DOCG",
+   "produttore": "Tenuta Valle delle Ferle",
+   "regione": "Sicilia",
+   "prezzo": "45"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Frappato DOC",
+   "produttore": "Tenuta Valle delle Ferle",
+   "regione": "Sicilia",
+   "prezzo": "35"
+  },
+  {
+   "sez": "rossi",
+   "nome": "Nero d’Avola DOC",
+   "produttore": "Tenuta Valle delle Ferle",
+   "regione": "Sicilia",
+   "prezzo": "35"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Forastera Isola d’Ischia DOC",
+   "produttore": "Antonio Mazzella",
+   "regione": "Campania",
+   "prezzo": "32"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Greco di Tufo DOCG \"Vigna Cicogna\"",
+   "produttore": "Benito Ferrara",
+   "regione": "Campania",
+   "prezzo": "40"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Campi Flegrei Falanghina DOC \"Luce Flegrea\"",
+   "produttore": "Cantine del Mare",
+   "regione": "Campania",
+   "prezzo": "35"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Summa Catalanesca del Monte Somma IGP",
+   "produttore": "Cantine Olivella",
+   "regione": "Campania",
+   "prezzo": "50"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Vesuvio Caprettone DOC \"Aryete\"",
+   "produttore": "Casa Setaro",
+   "regione": "Campania",
+   "prezzo": "38"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Pallagrello Bianco Terre del Volturno IGT \"Caiatì\"",
+   "produttore": "Fattoria Alois",
+   "regione": "Campania",
+   "prezzo": "30"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Falerno del Massico Bianco DOP \"Memoriae\"",
+   "produttore": "Gennaro Papa",
+   "regione": "Campania",
+   "prezzo": "38"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Costa d’Amalfi Bianco DOC",
+   "produttore": "Marisa Cuomo",
+   "regione": "Campania",
+   "prezzo": "40"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Furore Bianco Costa d’Amalfi DOC",
+   "produttore": "Marisa Cuomo",
+   "regione": "Campania",
+   "prezzo": "48"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Furore Bianco Costa d’Amalfi DOC \"Fiorduva\"",
+   "produttore": "Marisa Cuomo",
+   "regione": "Campania",
+   "prezzo": "120"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Fiano di Avellino DOCG \"Exultet\"",
+   "produttore": "Quintodecimo",
+   "regione": "Campania",
+   "prezzo": "70"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Irpinia Falanghina DOC \"Via del Campo\"",
+   "produttore": "Quintodecimo",
+   "regione": "Campania",
+   "prezzo": "75"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Fiano di Avellino DOCG",
+   "produttore": "Colli di Lapio (Romano Clelia)",
+   "regione": "Campania",
+   "prezzo": "38"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Campi Flegrei Falanghina DOC \"Settevulcani\"",
+   "produttore": "Salvatore Martusciello",
+   "regione": "Campania",
+   "prezzo": "30"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Sannio Fiano DOP \"Genius Loci\"",
+   "produttore": "Terre Stregate",
+   "regione": "Campania",
+   "prezzo": "30"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Falanghina Beneventano IGP \"Trama\"",
+   "produttore": "Terre Stregate",
+   "regione": "Campania",
+   "prezzo": "28"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Sannio Greco DOP \"Aurora\"",
+   "produttore": "Terre Stregate",
+   "regione": "Campania",
+   "prezzo": "30"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Fiano di Avellino Riserva DOCG \"Campore\"",
+   "produttore": "Terredora",
+   "regione": "Campania",
+   "prezzo": "40"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Ischia Biancolella DOC",
+   "produttore": "Tommasone",
+   "regione": "Campania",
+   "prezzo": "40"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Alto Adige Chardonnay DOC \"Kalk\"",
+   "produttore": "Nals Margreid",
+   "regione": "Trentino-Alto Adige",
+   "prezzo": "35"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Trentino Gewürztraminer DOC",
+   "produttore": "Terrazze della Luna (Cavit)",
+   "regione": "Trentino-Alto Adige",
+   "prezzo": "30"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Trentino Chardonnay DOC",
+   "produttore": "Terrazze della Luna (Cavit)",
+   "regione": "Trentino-Alto Adige",
+   "prezzo": "30"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Alto Adige Sauvignon DOC",
+   "produttore": "Abbazia di Novacella",
+   "regione": "Trentino-Alto Adige",
+   "prezzo": "35"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Alto Adige Gewürztraminer DOC",
+   "produttore": "Abbazia di Novacella",
+   "regione": "Trentino-Alto Adige",
+   "prezzo": "32"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Valle Isarco Riesling \"Kaiton\"",
+   "produttore": "Kuenhof – Peter Pliger",
+   "regione": "Trentino-Alto Adige",
+   "prezzo": "52"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Verdicchio dei Castelli di Jesi Classico DOC 2022",
+   "produttore": "Accadia",
+   "regione": "Marche",
+   "prezzo": "32"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Verdicchio dei Castelli di Jesi Classico Superiore",
+   "produttore": "Santa Barbara",
+   "regione": "Marche",
+   "prezzo": "38"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Colline Pescaresi Pecorino IGT 2022",
+   "produttore": "Mormaj",
+   "regione": "Abruzzo",
+   "prezzo": "36"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Abruzzo Pecorino DOP \"Avalos\"",
+   "produttore": "I Lauri",
+   "regione": "Abruzzo",
+   "prezzo": "30"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Vermentino di Gallura DOCG \"Loe\"",
+   "produttore": "Tenute Sa Conca",
+   "regione": "Sardegna",
+   "prezzo": "35"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Umbria Chardonnay IGT \"Bramìto della Sala\"",
+   "produttore": "Marchesi Antinori",
+   "regione": "Umbria",
+   "prezzo": "55"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Umbria Sauvignon Blanc IGT \"Conte della Vipera\"",
+   "produttore": "Marchesi Antinori",
+   "regione": "Umbria",
+   "prezzo": "60"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Umbria IGT \"Cervaro della Sala\"",
+   "produttore": "Marchesi Antinori",
+   "regione": "Umbria",
+   "prezzo": "110"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Sicilia Grillo DOC \"SurSur\"",
+   "produttore": "Donnafugata",
+   "regione": "Sicilia",
+   "prezzo": "32"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Sicilia Zibibbo DOC \"Lighea\"",
+   "produttore": "Donnafugata",
+   "regione": "Sicilia",
+   "prezzo": "35"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Terre Siciliane IGT \"Angimbé\"",
+   "produttore": "Cusumano",
+   "regione": "Sicilia",
+   "prezzo": "32"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Maremma Toscana DOC \"Vivia\"",
+   "produttore": "Fattoria Le Mortelle",
+   "regione": "Toscana",
+   "prezzo": "40"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Puglia Chardonnay IGT",
+   "produttore": "Tormaresca (Antinori)",
+   "regione": "Puglia",
+   "prezzo": "30"
+  },
+  {
+   "sez": "bianchi",
+   "nome": "Curtefranca Bianco DOC \"Corte del Lupo\"",
+   "produttore": "Ca' del Bosco",
+   "regione": "Lombardia",
+   "prezzo": "55"
+  },
+  {
+   "sez": "bianchi-estero",
+   "nome": "Bordeaux Sauvignon 2023",
+   "produttore": "Domaine du Cheval Blanc",
+   "regione": "Francia",
+   "prezzo": "70"
+  },
+  {
+   "sez": "bianchi-estero",
+   "nome": "Chablis 2023",
+   "produttore": "Jean-François Protheau",
+   "regione": "Francia",
+   "prezzo": "65"
+  },
+  {
+   "sez": "bianchi-estero",
+   "nome": "Riesling Trocken 2021",
+   "produttore": "Siegbert Bimmerle",
+   "regione": "Germania",
+   "prezzo": "55"
+  },
+  {
+   "sez": "bianchi-estero",
+   "nome": "Chablis \"Les Vénérables\" Vieilles Vignes",
+   "produttore": "La Chablisienne",
+   "regione": "Francia",
+   "prezzo": "70"
+  },
+  {
+   "sez": "rosati",
+   "nome": "Alto Adige Lagrein Rosato DOC",
+   "produttore": "Muri-Gries",
+   "regione": "Trentino-Alto Adige",
+   "prezzo": "32"
+  },
+  {
+   "sez": "rosati",
+   "nome": "Toscana Rosato IGT \"Eco\"",
+   "produttore": "Fattoria La Magia",
+   "regione": "Toscana",
+   "prezzo": "30"
+  },
+  {
+   "sez": "rosati",
+   "nome": "Terre Siciliane Rosato IGT",
+   "produttore": "Tenuta Valle delle Ferle",
+   "regione": "Sicilia",
+   "prezzo": "35"
+  },
+  {
+   "sez": "rosati",
+   "nome": "Costa d'Amalfi Rosato DOC",
+   "produttore": "Marisa Cuomo",
+   "regione": "Campania",
+   "prezzo": "40"
+  },
+  {
+   "sez": "rosati",
+   "nome": "Paestum Aglianico Rosato IGP \"Vetere\"",
+   "produttore": "San Salvatore 1988",
+   "regione": "Campania",
+   "prezzo": "35"
+  },
+  {
+   "sez": "rosati",
+   "nome": "Sicilia Rosato DOC \"Rosa\" (Dolce & Gabbana)",
+   "produttore": "Donnafugata",
+   "regione": "Sicilia",
+   "prezzo": "50"
+  }
+ ]
+}

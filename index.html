@@ -940,8 +940,11 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
     <div class="menu-card">
       <span class="menu-card-label">Vini & Bollicine</span>
       <h3 class="menu-card-title">Carta dei Vini</h3>
-      <p class="menu-card-desc">Bollicine italiane e una selezione di vini rossi e bianchi curata per ogni abbinamento.</p>
-      <span class="btn-gold" style="opacity:.55;cursor:default">Disponibile in sala</span>
+      <p class="menu-card-desc">Oltre 160 etichette: Champagne e Franciacorta, i grandi rossi italiani per la brace, bianchi vulcanici della Campania.</p>
+      <a href="vini.html" class="btn-gold">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+        Sfoglia la Carta
+      </a>
     </div>
   </div>
 </section>
@@ -1323,6 +1326,7 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
     else if (h.indexOf('tel:') === 0)             window.traccia('click_telefono');
     else if (h.indexOf('wa.me') !== -1)           window.traccia('click_whatsapp', { motivo: a.dataset.serata ? 'serata_' + a.dataset.serata : (h.indexOf('evento') !== -1 ? 'evento' : 'generico') });
     else if (h.indexOf('mailto:') === 0)          window.traccia('click_email');
+    else if (h.indexOf('vini.html') !== -1)       window.traccia('click_vini', { da: (a.closest('section[id]') || {}).id || 'altro' });
     else if (h.indexOf('menu.html') !== -1)       window.traccia('click_menu', { da: (a.closest('section[id]') || {}).id || 'altro' });
     else if (h.indexOf('google.com/maps/dir') !== -1) window.traccia('click_indicazioni');
     else if (/instagram\.com|facebook\.com|tripadvisor\./.test(h))
