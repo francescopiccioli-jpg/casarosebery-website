@@ -535,6 +535,17 @@ a.anime-card { display:block; color:inherit; text-decoration:none; }
 .cta-anima .btn-ghost { padding:15px 26px; }
 .sez-anima--cucina .btn-ghost { color:var(--text); }
 .sez-anima--cucina .btn-ghost:hover { color:var(--nero); }
+
+/* Cucina (fondo chiaro): testo più pieno e oro scurito per leggibilità */
+.sez-anima--cucina { --oro-testo:#7a5c1c; }
+.sez-anima--cucina .lead { opacity:1; color:#3a3022; font-weight:400; font-size:16px; }
+.sez-anima--cucina .scheda p { opacity:1; color:#3a3022; font-weight:400; font-size:14.5px; }
+.sez-anima--cucina .num,
+.sez-anima--cucina .scheda .origine,
+.sez-anima--cucina .sottotitolo { color:var(--oro-testo); font-weight:500; }
+.sez-anima--cucina .scheda .origine, .sez-anima--cucina .sottotitolo { font-size:10px; }
+.sez-anima--cucina h2 em { color:#8a6a22; }
+.sez-anima--cucina .scheda h3 { color:var(--text); font-weight:500; }
 @media (min-width:768px) {
   .sez-anima { padding:110px 48px; }
   .sez-anima .intro { grid-template-columns:1fr 1fr; gap:64px; }
