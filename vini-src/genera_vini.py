@@ -12,8 +12,9 @@ RADICE = pathlib.Path(__file__).resolve().parent.parent
 dati = json.loads((RADICE / "vini-src" / "vini.json").read_text(encoding="utf-8"))
 e = html.escape
 
-SEZIONI = [("bollicine", "Bollicine"), ("bianchi", "Bianchi"), ("bianchi-estero", "Bianchi dal mondo"),
-           ("rosati", "Rosati"), ("rossi", "Rossi")]
+# ordine delle sezioni; "bianchi-estero" confluisce nei Bianchi (dopo le regioni italiane)
+SEZIONI = [("bollicine", "Bollicine"), ("rossi", "Rossi"), ("bianchi", "Bianchi"), ("rosati", "Rosati")]
+UNISCI = {"bianchi-estero": "bianchi"}
 
 
 def ordina_regioni(vini):
@@ -29,7 +30,7 @@ def ordina_regioni(vini):
 
 nav, corpo = [], []
 for sid, titolo in SEZIONI:
-    vini = [v for v in dati["vini"] if v["sez"] == sid]
+    vini = [v for v in dati["vini"] if UNISCI.get(v["sez"], v["sez"]) == sid]
     if not vini:
         continue
     nav.append(f'<a href="#{sid}">{e(titolo)}</a>')
