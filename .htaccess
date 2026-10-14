@@ -28,7 +28,7 @@ RewriteRule ^(casarosebery_site\.html|menu-src|eventi-src|vini-src)(/|$) - [F,L]
 RewriteRule ^menu-casa-rosebery\.pdf$ - [F,L]
 
 # 4c. Vecchi URL del menu (WordPress / QR code stampati) -> nuova pagina menu
-RewriteRule ^menu-1/?$ https://www.casaroseberyristorante.it/menu.html [L,R=301,NC]
+RewriteRule ^(menu|menu-1|menu-2|il-menu|menu-casa-rosebery)/?$ https://www.casaroseberyristorante.it/menu.html [L,R=301,NC]
 
 # 5. Vecchi URL WordPress (pagine, articoli, categorie) -> home
 RewriteCond %{REQUEST_FILENAME} !-f
