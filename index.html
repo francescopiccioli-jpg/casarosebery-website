@@ -750,7 +750,7 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
     <li><a href="#anime">Il Ristorante</a></li>
     <li><a href="#menu">Menu</a></li>
     <li><a href="#storia">La Nostra Storia</a></li>
-    <li><a href="#eventi">Serate & Eventi</a></li>
+    <li><a href="#serate">Serate & Eventi</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#recensioni">Recensioni</a></li>
     <li><a href="#contatti">Contatti</a></li>
@@ -977,6 +977,42 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
 </section>
 
 <!-- EVENTI:INIZIO -->
+<section class="section-serate" id="serate">
+  <div class="section-header">
+    <span class="section-eyebrow">In programma</span>
+    <h2 class="section-title">Prossime <em>serate</em></h2>
+    <p class="serate-intro">Cene con musica dal vivo e ospiti speciali. I posti sono limitati: prenota in anticipo.</p>
+  </div>
+  <div class="serate-lista">
+    <article class="serata" data-data="2026-10-17">
+      <div class="serata-foto" style="background-image:url('img/eventi/2026-10-17-alberto-miranda.jpg')"></div>
+      <div class="serata-corpo">
+        
+        <p class="serata-quando">sabato 17 ottobre · ore 21:00</p>
+        <h3 class="serata-titolo">Cena e live music</h3>
+        <p class="serata-artista">Alberto Miranda</p><p class="serata-sotto">Musica dal vivo durante la cena</p>
+        <div class="serata-menu"><div class="serata-prezzo"><b>Menu alla carta</b><span>nessun minimo di spesa</span></div></div>
+        
+        <div class="serata-cta">
+          <a href="https://casarosebery.plateform.app/reserve" target="_blank" rel="noopener" class="btn-gold" data-serata="2026-10-17">Prenota la serata</a>
+          <a href="https://wa.me/390813357572?text=Ciao%21%20Vorrei%20prenotare%20per%20la%20serata%20del%2017%20ottobre%20%28Cena%20e%20live%20music%29.%20Siamo%20in%20" target="_blank" rel="noopener" class="btn-ghost serata-wa" data-serata="2026-10-17">Prenota su WhatsApp</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "name": "Cena e live music – Alberto Miranda", "startDate": "2026-10-17T21:00:00+02:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Restaurant", "name": "Casa Rosebery", "address": {"@type": "PostalAddress", "streetAddress": "Via Ferdinando Russo 13", "postalCode": "80123", "addressLocality": "Napoli", "addressCountry": "IT"}}, "organizer": {"@type": "Organization", "name": "Casa Rosebery", "url": "https://www.casaroseberyristorante.it/"}, "image": "https://www.casaroseberyristorante.it/img/eventi/2026-10-17-alberto-miranda.jpg", "performer": {"@type": "Person", "name": "Alberto Miranda"}}</script>
+<script>
+// nasconde le serate già passate e, se non ne resta nessuna, l'intera sezione
+(function () {
+  var oggi = new Date(); oggi.setHours(0, 0, 0, 0);
+  var vis = 0;
+  document.querySelectorAll('.serata[data-data]').forEach(function (s) {
+    if (new Date(s.getAttribute('data-data') + 'T23:59:59') < oggi) s.remove(); else vis++;
+  });
+  if (!vis) { var sec = document.getElementById('serate'); if (sec) sec.remove(); }
+})();
+</script>
 <!-- EVENTI:FINE -->
 
 <!-- ── SERATE & EVENTI ───────────────────────────────────── -->

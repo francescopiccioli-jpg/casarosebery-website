@@ -36,7 +36,7 @@ def carta(s):
     bozza = '' if s.get("pubblica") else '<span class="serata-bozza">BOZZA – non pubblicata</span>'
     artista = f'<p class="serata-artista">{e(s["artista"])}</p>' if s.get("artista") else ""
     sotto = f'<p class="serata-sotto">{e(s["sottotitolo"])}</p>' if s.get("sottotitolo") else ""
-    portate = "".join(f'<li><b>{e(p["nome"])}</b><span>{e(p.get("desc", ""))}</span></li>' for p in s["menu"])
+    portate = "".join(f'<li><b>{e(p["nome"])}</b><span>{e(p.get("desc", ""))}</span></li>' for p in s.get("menu", []))
     integr = ""
     if s.get("integrazione"):
         i = s["integrazione"]
@@ -53,6 +53,12 @@ def carta(s):
                 for x in xs) + '</ul>'
             for g, xs in gruppi.items())
         extra = f'<details class="serata-extra"><summary>{e(s.get("extra_titolo", "Alla carta"))}</summary>{blocchi}</details>'
+    if s.get("prezzo") and s.get("menu"):
+        menu_html = (f'<div class="serata-menu"><div class="serata-prezzo"><b>€ {e(s["prezzo"])}</b>'
+                     f'<span>a persona · menu fisso</span></div><ul class="serata-portate">{portate}</ul>{integr}</div>')
+    else:
+        menu_html = (f'<div class="serata-menu"><div class="serata-prezzo"><b>Menu alla carta</b>'
+                     f'<span>{e(s.get("nota_menu", "nessun minimo di spesa"))}</span></div></div>')
     testo_wa = f"Ciao! Vorrei prenotare per la serata del {d.day} {MESI[d.month - 1]} ({s['titolo']}). Siamo in "
     wa = "https://wa.me/390813357572?text=" + urllib.parse.quote(testo_wa)
     foto = f'<div class="serata-foto" style="background-image:url(\'{e(s["foto"])}\')"></div>' if s.get("foto") else ""
@@ -64,11 +70,7 @@ def carta(s):
         <p class="serata-quando">{quando}</p>
         <h3 class="serata-titolo">{e(s["titolo"])}</h3>
         {artista}{sotto}
-        <div class="serata-menu">
-          <div class="serata-prezzo"><b>€ {e(s["prezzo"])}</b><span>a persona · menu fisso</span></div>
-          <ul class="serata-portate">{portate}</ul>
-          {integr}
-        </div>
+        {menu_html}
         {extra}
         <div class="serata-cta">
           <a href="https://casarosebery.plateform.app/reserve" target="_blank" rel="noopener" class="btn-gold" data-serata="{e(s["data"])}">Prenota la serata</a>
@@ -91,10 +93,11 @@ def jsonld(s):
         "location": {"@type": "Restaurant", "name": "Casa Rosebery",
                      "address": {"@type": "PostalAddress", "streetAddress": "Via Ferdinando Russo 13",
                                  "postalCode": "80123", "addressLocality": "Napoli", "addressCountry": "IT"}},
-        "offers": {"@type": "Offer", "price": s["prezzo"], "priceCurrency": "EUR",
-                   "url": "https://www.casaroseberyristorante.it/#serate", "availability": "https://schema.org/InStock"},
         "organizer": {"@type": "Organization", "name": "Casa Rosebery", "url": "https://www.casaroseberyristorante.it/"},
     }
+    if s.get("prezzo"):
+        ev["offers"] = {"@type": "Offer", "price": s["prezzo"], "priceCurrency": "EUR",
+                        "url": "https://www.casaroseberyristorante.it/#serate", "availability": "https://schema.org/InStock"}
     if s.get("foto"):
         ev["image"] = "https://www.casaroseberyristorante.it/" + s["foto"]
     if s.get("artista"):
@@ -108,7 +111,7 @@ if serate:
   <div class="section-header">
     <span class="section-eyebrow">In programma</span>
     <h2 class="section-title">Prossime <em>serate</em></h2>
-    <p class="serate-intro">Cene a menu fisso con musica dal vivo e ospiti speciali. I posti sono limitati: prenota in anticipo.</p>
+    <p class="serate-intro">Cene con musica dal vivo e ospiti speciali. I posti sono limitati: prenota in anticipo.</p>
   </div>
   <div class="serate-lista">{"".join(carta(s) for s in serate)}
   </div>
