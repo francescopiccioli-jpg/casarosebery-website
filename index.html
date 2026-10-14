@@ -575,7 +575,8 @@ a.anime-card { display:block; color:inherit; text-decoration:none; }
 .serate-intro { font-size:14px; color:rgba(255,255,255,.55); margin:16px auto 0; max-width:520px; line-height:1.7; }
 .serate-lista { max-width:1100px; margin:44px auto 0; display:grid; gap:28px; }
 .serata { display:grid; background:var(--carbone); border:1px solid rgba(184,146,58,.3); }
-.serata-foto { min-height:240px; background-size:cover; background-position:center 30%; }
+.serata-foto { background:#000; }
+.serata-foto img { display:block; width:100%; height:auto; }
 .serata-corpo { padding:28px 24px; }
 .serata-bozza { display:inline-block; background:#c00000; color:#fff; font-size:10px; letter-spacing:2px; padding:4px 10px; margin-bottom:12px; }
 .serata-quando { font-size:10px; letter-spacing:3px; text-transform:uppercase; color:var(--oro); }
@@ -606,7 +607,7 @@ a.anime-card { display:block; color:inherit; text-decoration:none; }
 @media (min-width:900px) {
   .section-serate { padding:110px 48px; }
   .serata { grid-template-columns:5fr 7fr; }
-  .serata-foto { min-height:0; aspect-ratio:4/5; align-self:start; position:sticky; top:90px; }
+  .serata-foto { align-self:start; position:sticky; top:90px; }
   .serata-corpo { padding:40px 44px; }
 }
 
@@ -985,7 +986,7 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
   </div>
   <div class="serate-lista">
     <article class="serata" data-data="2026-10-17">
-      <div class="serata-foto" style="background-image:url('img/eventi/2026-10-17-alberto-miranda.jpg')"></div>
+      <div class="serata-foto"><img src="img/eventi/2026-10-17-alberto-miranda.jpg" alt="Locandina: Cena e live music – Alberto Miranda" loading="lazy"></div>
       <div class="serata-corpo">
         
         <p class="serata-quando">sabato 17 ottobre · ore 21:00</p>

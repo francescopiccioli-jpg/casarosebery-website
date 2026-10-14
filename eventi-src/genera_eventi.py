@@ -61,7 +61,8 @@ def carta(s):
                      f'<span>{e(s.get("nota_menu", "nessun minimo di spesa"))}</span></div></div>')
     testo_wa = f"Ciao! Vorrei prenotare per la serata del {d.day} {MESI[d.month - 1]} ({s['titolo']}). Siamo in "
     wa = "https://wa.me/390813357572?text=" + urllib.parse.quote(testo_wa)
-    foto = f'<div class="serata-foto" style="background-image:url(\'{e(s["foto"])}\')"></div>' if s.get("foto") else ""
+    foto = (f'<div class="serata-foto"><img src="{e(s["foto"])}" alt="Locandina: {e(s["titolo"])}'
+            + (f' – {e(s["artista"])}' if s.get("artista") else "") + '" loading="lazy"></div>') if s.get("foto") else ""
     return f'''
     <article class="serata" data-data="{e(s["data"])}">
       {foto}
