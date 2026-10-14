@@ -27,6 +27,9 @@ RewriteRule ^(casarosebery_site\.html|menu-src|eventi-src|vini-src)(/|$) - [F,L]
 # 4b. Menu PDF sospeso finché non vengono corretti gli allergeni (togliere questa riga per riattivarlo)
 RewriteRule ^menu-casa-rosebery\.pdf$ - [F,L]
 
+# 4c. Vecchi URL del menu (WordPress / QR code stampati) -> nuova pagina menu
+RewriteRule ^menu-1/?$ https://www.casaroseberyristorante.it/menu.html [L,R=301,NC]
+
 # 5. Vecchi URL WordPress (pagine, articoli, categorie) -> home
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
