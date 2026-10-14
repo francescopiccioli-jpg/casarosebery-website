@@ -73,9 +73,9 @@ def carta(s):
         {artista}{sotto}
         {menu_html}
         {extra}
+        <p class="serata-avviso">Prenotazione obbligatoria via WhatsApp</p>
         <div class="serata-cta">
-          <a href="https://casarosebery.plateform.app/reserve" target="_blank" rel="noopener" class="btn-gold" data-serata="{e(s["data"])}">Prenota la serata</a>
-          <a href="{wa}" target="_blank" rel="noopener" class="btn-ghost serata-wa" data-serata="{e(s["data"])}">Prenota su WhatsApp</a>
+          <a href="{wa}" target="_blank" rel="noopener" class="btn-gold serata-wa" data-serata="{e(s["data"])}">Prenota su WhatsApp</a>
         </div>
       </div>
     </article>'''
@@ -112,7 +112,7 @@ if serate:
   <div class="section-header">
     <span class="section-eyebrow">In programma</span>
     <h2 class="section-title">Prossime <em>serate</em></h2>
-    <p class="serate-intro">Cene con musica dal vivo e ospiti speciali. I posti sono limitati: prenota in anticipo.</p>
+    <p class="serate-intro">Cene con musica dal vivo e ospiti speciali. Posti limitati: la prenotazione è obbligatoria e si effettua solo via WhatsApp.</p>
   </div>
   <div class="serate-lista">{"".join(carta(s) for s in serate)}
   </div>
