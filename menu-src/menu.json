@@ -329,6 +329,11 @@
           "all": "1,7,12",
           "prezzo": "18",
           "desc": "Pasta Manfredi al ragù napoletano, mantecata con ricotta fresca e parmigiano reggiano."
+        },
+        {
+          "nome": "Nerano",
+          "prezzo": "18",
+          "desc": "Spaghetti, zucchine, provolone del Monaco DOP, basilico e pepe."
         }
       ]
     },
@@ -364,6 +369,16 @@
           "all": "12",
           "prezzo": "18",
           "desc": "Dalla finitura croccante, con papaccelle saltate e riduzione vellutata alla mela."
+        },
+        {
+          "nome": "Misto brace (per due persone)",
+          "prezzo": "55",
+          "desc": "Salsiccia di maiale nero casertano, costata di maiale affumicata al legno di ciliegio e Cuberoll argentino, con contorno di stagione."
+        },
+        {
+          "nome": "Brisket Casa Rosebery",
+          "prezzo": "24",
+          "desc": "Dodici ore di cottura lenta, servito su purea di patate e provola."
         }
       ]
     },
@@ -416,6 +431,11 @@
           "nome": "Simmental Selezione Austria",
           "prezzo": "13",
           "desc": "Vacche allevate allo stato brado nei pascoli alpini: grana finissima, gusto rotondo e dolce."
+        },
+        {
+          "nome": "Rubia Gallega",
+          "prezzo": "15",
+          "desc": "Razza bovina della Galizia, nel nord-ovest della Spagna, apprezzata per il sapore intenso."
         }
       ]
     },
@@ -442,7 +462,7 @@
         {
           "nome": "Picanha Black Angus Ocean Beef – Australia",
           "prezzo": "9,50",
-          "desc": "Allevata al pascolo e rifinita a cereali, con il caratteristico strato di grasso esterno."
+          "desc": "Allevata al pascolo e rifinita a cereali, con il caratteristico strato di grasso esterno. Servita sullo spiedo con patate al forno."
         },
         {
           "nome": "Wagyu Giapponese Kagoshima A5",
