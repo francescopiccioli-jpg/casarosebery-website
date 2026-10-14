@@ -432,6 +432,12 @@ nav#main-nav.scrolled {
 /* ── EVENTI ──────────────────────────────────────────────── */
 .section-eventi { padding: 56px 24px; background: var(--crema); }
 .eventi-inner { max-width: 680px; margin: 40px auto 0; }
+.live-band { max-width: 680px; margin: 0 auto 8px; border: 1px solid rgba(184,146,58,0.45); background: #fff; padding: 22px 24px; text-align: center; }
+.live-band .live-eyebrow { display: block; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: var(--oro); margin-bottom: 6px; }
+.live-band .live-titolo { font-family: 'Cormorant Garamond', serif; font-size: 28px; line-height: 1.2; color: var(--text, #1a1208); }
+.live-band .live-titolo em { color: var(--oro); }
+.live-band p { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.orari-nota { font-style: normal; color: var(--oro-lt, #d4aa5a); font-size: 12px; }
 .form-field { margin-bottom: 20px; }
 .form-field label {
   display: block; font-size: 9px; letter-spacing: 2px;
@@ -979,6 +985,11 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
     <span class="section-eyebrow">Serate & Cene Private</span>
     <h2 class="section-title">Un'esperienza <em>su misura</em></h2>
   </div>
+  <div class="live-band" id="musica-dal-vivo">
+    <span class="live-eyebrow">Ogni sabato sera</span>
+    <div class="live-titolo">Musica <em>dal vivo</em></div>
+    <p>Ogni sabato, a cena, la serata è accompagnata da musica dal vivo.</p>
+  </div>
   <div class="eventi-inner">
     <p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:40px;text-align:center">
       Organizziamo cene aziendali, eventi privati, serate a tema e compleanni.<br>
@@ -1361,7 +1372,7 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
 {
   "orari": [
     { "giorni": "Lunedì – Venerdì", "pranzo": "—", "cena": "19:30 – 23:30" },
-    { "giorni": "Sabato", "pranzo": "12:30 – 15:30", "cena": "19:30 – 23:30" },
+    { "giorni": "Sabato", "pranzo": "12:30 – 15:30", "cena": "19:30 – 23:30", "nota": "Sabato sera musica dal vivo" },
     { "giorni": "Domenica", "pranzo": "12:30 – 15:30", "cena": "—" }
   ]
 }
@@ -1382,7 +1393,8 @@ window.addEventListener('scroll', () => {
     const fasce = [];
     if (o.pranzo && o.pranzo !== '—') fasce.push('Pranzo ' + o.pranzo);
     if (o.cena && o.cena !== '—') fasce.push('Cena ' + o.cena);
-    return `<span>${o.giorni}</span><span>${fasce.join(' · ')}</span>`;
+    const nota = o.nota ? `<br><em class="orari-nota">♪ ${o.nota}</em>` : '';
+    return `<span>${o.giorni}</span><span>${fasce.join(' · ')}${nota}</span>`;
   }).join('');
 })();
 
