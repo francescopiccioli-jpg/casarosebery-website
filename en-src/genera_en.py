@@ -229,6 +229,9 @@ T = [
     ('alt="Involtini di verza con provola filante e salsiccia croccante, Vesuvio al tramonto sullo sfondo"',
      'alt="Savoy cabbage rolls with melted provola and crispy sausage, Mount Vesuvius at sunset in the background"'),
 
+    ('alt="Bistecche con osso frollate nella nostra cella, pronte per la brace"',
+     'alt="Bone-in steaks dry-aged in our ageing room, ready for the grill"'),
+
     # ── social ──
     ('<h2 class="social-strip-title">Seguici su <em>Instagram</em></h2>', '<h2 class="social-strip-title">Follow us on <em>Instagram</em></h2>'),
     ('<p class="social-strip-sub">@casarosebery · Napoli, Posillipo</p>', '<p class="social-strip-sub">@casarosebery · Posillipo, Naples</p>'),
