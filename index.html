@@ -31,6 +31,9 @@
 <meta name="theme-color" content="#0e0d0a">
 <!-- Canonical -->
 <link rel="canonical" href="https://www.casaroseberyristorante.it/">
+<link rel="alternate" hreflang="it" href="https://www.casaroseberyristorante.it/">
+<link rel="alternate" hreflang="en" href="https://www.casaroseberyristorante.it/en/">
+<link rel="alternate" hreflang="x-default" href="https://www.casaroseberyristorante.it/">
 
 <!-- Schema.org structured data -->
 <script type="application/ld+json">
@@ -118,6 +121,13 @@ nav#main-nav.scrolled {
 }
 .nav-logo img { height: 46px; width: auto; }
 .nav-links { display: none; }
+.nav-dx { display: flex; align-items: center; gap: 14px; }
+.nav-lang {
+  font-family: 'Inter', sans-serif; font-size: 10px; letter-spacing: 2px;
+  color: rgba(255,255,255,0.75); padding: 12px 4px; min-height: 44px;
+  display: flex; align-items: center;
+}
+.nav-lang:hover { color: var(--oro-lt); }
 .nav-cta {
   background: transparent; border: 1px solid var(--oro);
   color: var(--oro); font-family: 'Inter', sans-serif;
@@ -724,6 +734,20 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
   .posillipo-text { padding: 60px 40px; }
   .contatti-info { padding: 60px 40px; }
 }
+
+/* Tablet: le voci del menu in alto non ci stanno, si usa la barra in basso come su mobile */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .nav-links { display: none; }
+  .prenota-sticky { display: none; }
+  .bottom-nav { display: grid; }
+  footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
+}
+.nav-links a { white-space: nowrap; }
+@media (min-width: 1200px) and (max-width: 1439px) {
+  nav#main-nav { padding: 0 32px; }
+  .nav-links { gap: 22px; }
+  .nav-links a { letter-spacing: 1.5px; }
+}
 </style>
 <!-- Google Analytics: caricato SOLO dopo il consenso (vedi banner cookie in fondo alla pagina) -->
 <script>
@@ -757,7 +781,10 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
     <li><a href="#recensioni">Recensioni</a></li>
     <li><a href="#contatti">Contatti</a></li>
   </ul>
-  <a href="https://casarosebery.plateform.app/reserve" class="nav-cta" target="_blank">Prenota</a>
+  <div class="nav-dx">
+    <a href="/en/" class="nav-lang" hreflang="en" lang="en" title="English version">EN</a>
+    <a href="https://casarosebery.plateform.app/reserve" class="nav-cta" target="_blank">Prenota</a>
+  </div>
 </nav>
 
 <!-- ── HERO SPLIT ───────────────────────────────────────── -->
@@ -1191,39 +1218,44 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
     <button class="gallery-filter" onclick="filterGallery('posillipo',this)">Posillipo</button>
   </div>
   <div class="gallery-grid" id="gallery-grid">
-<div class="gallery-item" data-cat="braceria" onclick="openLightbox(0)"><img src="img/8843EF97-F411-4595-B695-7439A9E8FF3B.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="braceria" onclick="openLightbox(1)"><img src="img/EDFEC6D3-3CC5-4770-87F6-668E4FE563E1.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="braceria" onclick="openLightbox(2)"><img src="img/IMG_0414.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="braceria" onclick="openLightbox(3)"><img src="img/IMG_1504.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="braceria" onclick="openLightbox(4)"><img src="img/IMG_1623.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="braceria" onclick="openLightbox(5)"><img src="img/IMG_2744.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="braceria" onclick="openLightbox(6)"><img src="img/IMG_5372.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="braceria" onclick="openLightbox(7)"><img src="img/IMG_5412.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="braceria" onclick="openLightbox(8)"><img src="img/IMG_5417.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(9)"><img src="img/dolce.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(10)"><img src="img/IMG_1171.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(11)"><img src="img/IMG_1175.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(12)"><img src="img/IMG_2487.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(13)"><img src="img/IMG_2547.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(14)"><img src="img/IMG_2554.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(15)"><img src="img/IMG_2600.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(16)"><img src="img/IMG_2601.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(17)"><img src="img/IMG_4963.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(18)"><img src="img/IMG_5019.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(19)"><img src="img/IMG_5020.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(20)"><img src="img/IMG_6250.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(21)"><img src="img/IMG_6252.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(22)"><img src="img/IMG_7331.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(23)"><img src="img/IMG_7332.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(24)"><img src="img/IMG_8058.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="locale" onclick="openLightbox(25)"><img src="img/IMG_1176.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="locale" onclick="openLightbox(26)"><img src="img/IMG_1178.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="locale" onclick="openLightbox(27)"><img src="img/IMG_1179.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="locale" onclick="openLightbox(28)"><img src="img/IMG_1181.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="locale" onclick="openLightbox(29)"><img src="img/IMG_3216.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="locale" onclick="openLightbox(30)"><img src="img/IMG_6253.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="posillipo" onclick="openLightbox(31)"><img src="img/0076581a-c5de-4499-991e-eea7a98d8b48.jpg" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="posillipo" onclick="openLightbox(32)"><img src="img/IMG_1154.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(0)"><img src="img/braceria-picanha-spiedo-vesuvio.jpg" alt="Picanha alla brace servita sullo spiedo con patate al forno, Vesuvio al tramonto sullo sfondo" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(1)"><img src="img/braceria-tagliata-verdure.jpg" alt="Tagliata alla brace con verdure saltate e sale in fiocchi" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(2)"><img src="img/braceria-brisket-golfo-napoli.jpg" alt="Brisket Casa Rosebery su purea di patate, con il porticciolo e il Golfo di Napoli sullo sfondo" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(3)"><img src="img/8843EF97-F411-4595-B695-7439A9E8FF3B.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(4)"><img src="img/EDFEC6D3-3CC5-4770-87F6-668E4FE563E1.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(5)"><img src="img/IMG_0414.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(6)"><img src="img/IMG_1504.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(7)"><img src="img/IMG_1623.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(8)"><img src="img/IMG_2744.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(9)"><img src="img/IMG_5372.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(10)"><img src="img/IMG_5412.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(11)"><img src="img/IMG_5417.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(12)"><img src="img/cucina-ciabatta-friarielli-vesuvio.jpg" alt="Ciabatta con friarielli, stracciatella e prosciutto croccante, Vesuvio al tramonto sullo sfondo" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(13)"><img src="img/cucina-involtini-verza-vesuvio.jpg" alt="Involtini di verza con provola filante e salsiccia croccante, Vesuvio al tramonto sullo sfondo" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(14)"><img src="img/dolce.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(15)"><img src="img/IMG_1171.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(16)"><img src="img/IMG_1175.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(17)"><img src="img/IMG_2487.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(18)"><img src="img/IMG_2547.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(19)"><img src="img/IMG_2554.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(20)"><img src="img/IMG_2600.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(21)"><img src="img/IMG_2601.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(22)"><img src="img/IMG_4963.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(23)"><img src="img/IMG_5019.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(24)"><img src="img/IMG_5020.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(25)"><img src="img/IMG_6250.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(26)"><img src="img/IMG_6252.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(27)"><img src="img/IMG_7331.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(28)"><img src="img/IMG_7332.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(29)"><img src="img/IMG_8058.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="locale" onclick="openLightbox(30)"><img src="img/IMG_1176.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="locale" onclick="openLightbox(31)"><img src="img/IMG_1178.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="locale" onclick="openLightbox(32)"><img src="img/IMG_1179.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="locale" onclick="openLightbox(33)"><img src="img/IMG_1181.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="locale" onclick="openLightbox(34)"><img src="img/IMG_3216.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="locale" onclick="openLightbox(35)"><img src="img/IMG_6253.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="posillipo" onclick="openLightbox(36)"><img src="img/0076581a-c5de-4499-991e-eea7a98d8b48.jpg" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="posillipo" onclick="openLightbox(37)"><img src="img/IMG_1154.jpg" alt="Casa Rosebery" loading="lazy"></div>
   </div>
 </section>
 

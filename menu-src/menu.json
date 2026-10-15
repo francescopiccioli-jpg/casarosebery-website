@@ -10,19 +10,25 @@
           "piatti": [
             {
               "nome": "Ciabatta Mediterraneo",
-              "desc": "Con insalatina di puntarelle, alici di Cetara, stracciatella di bufala e dressing di miele e senape."
+              "desc": "Con insalatina di puntarelle, alici di Cetara, stracciatella di bufala e dressing di miele e senape.",
+              "desc_en": "With puntarelle chicory salad, Cetara anchovies, buffalo stracciatella and a honey-mustard dressing."
             },
             {
               "nome": "Polpettine alla gricia",
               "all": "1,5,4,10",
-              "desc": "Morbide polpettine di manzetta prussiana selezionata, impreziosite da guanciale croccante e adagiate su una vellutata crema al cacio e pepe."
+              "desc": "Morbide polpettine di manzetta prussiana selezionata, impreziosite da guanciale croccante e adagiate su una vellutata crema al cacio e pepe.",
+              "desc_en": "Tender meatballs of select Prussian heifer beef, topped with crispy guanciale and served on a smooth cacio e pepe cream.",
+              "nome_en": "Polpettine alla gricia (meatballs)"
             },
             {
               "nome": "Grissino di pollo",
               "all": "1,3,5",
-              "desc": "Cialda di pane croccante, ripiena di pulled chicken, cetriolini, salsa BBQ e maionese al lime."
+              "desc": "Cialda di pane croccante, ripiena di pulled chicken, cetriolini, salsa BBQ e maionese al lime.",
+              "desc_en": "Crisp bread shell filled with pulled chicken, gherkins, BBQ sauce and lime mayonnaise.",
+              "nome_en": "Chicken grissino"
             }
-          ]
+          ],
+          "titolo_en": "Starters"
         },
         {
           "titolo": "Il primo",
@@ -30,9 +36,11 @@
             {
               "nome": "Scarpariello secondo Casa Rosebery",
               "all": "1,3",
-              "desc": "Bombardone ripieno di crema al pecorino e salsa di pomodoro leggermente piccante."
+              "desc": "Bombardone ripieno di crema al pecorino e salsa di pomodoro leggermente piccante.",
+              "desc_en": "Large pasta tubes filled with pecorino cream, with a lightly spicy tomato sauce."
             }
-          ]
+          ],
+          "titolo_en": "Pasta course"
         },
         {
           "titolo": "Il secondo",
@@ -40,9 +48,12 @@
             {
               "nome": "Stinco di maiale al forno",
               "all": "7,10",
-              "desc": "Pregiato taglio di suino cotto lentamente a bassa temperatura, sfumato al vino bianco e profumato con un trito fine di rosmarino, aglio e aromi freschi. Servito con il suo fondo di cottura ristretto, rostie di patate e riduzione alla birra."
+              "desc": "Pregiato taglio di suino cotto lentamente a bassa temperatura, sfumato al vino bianco e profumato con un trito fine di rosmarino, aglio e aromi freschi. Servito con il suo fondo di cottura ristretto, rostie di patate e riduzione alla birra.",
+              "desc_en": "Prime pork shank slow-cooked at low temperature, deglazed with white wine and scented with finely chopped rosemary, garlic and fresh herbs. Served with its reduced cooking juices, potato rösti and a beer reduction.",
+              "nome_en": "Roast pork shank"
             }
-          ]
+          ],
+          "titolo_en": "Main course"
         },
         {
           "titolo": "Il dessert",
@@ -50,9 +61,11 @@
             {
               "nome": "Tiramisù",
               "all": "5",
-              "desc": "La nostra interpretazione del classico dessert trevigiano: spuma di mascarpone d'alpeggio, pan di Spagna al caffè e cacao fine."
+              "desc": "La nostra interpretazione del classico dessert trevigiano: spuma di mascarpone d'alpeggio, pan di Spagna al caffè e cacao fine.",
+              "desc_en": "Our take on the Treviso classic: alpine mascarpone mousse, coffee-soaked sponge and fine cocoa."
             }
-          ]
+          ],
+          "titolo_en": "Dessert"
         }
       ]
     },
@@ -66,14 +79,19 @@
             {
               "nome": "Brasato",
               "all": "5,12",
-              "desc": "Stracotto di manzo al vino rosso, servito con fonduta di parmigiano."
+              "desc": "Stracotto di manzo al vino rosso, servito con fonduta di parmigiano.",
+              "desc_en": "Beef slow-braised in red wine, served with Parmigiano fondue.",
+              "nome_en": "Brasato (braised beef)"
             },
             {
               "nome": "Ribs in salsa BBQ",
               "all": "12",
-              "desc": "Costine di maiale cotte lentamente al forno e rifinite alla griglia, con la nostra salsa BBQ dolce e affumicata."
+              "desc": "Costine di maiale cotte lentamente al forno e rifinite alla griglia, con la nostra salsa BBQ dolce e affumicata.",
+              "desc_en": "Pork ribs slow-roasted in the oven and finished on the grill, with our sweet, smoky BBQ sauce.",
+              "nome_en": "BBQ ribs"
             }
-          ]
+          ],
+          "titolo_en": "Starters"
         },
         {
           "titolo": "Il primo",
@@ -81,9 +99,11 @@
             {
               "nome": "Genovese",
               "all": "1,5,12",
-              "desc": "Zito alla genovese, secondo la tradizione napoletana."
+              "desc": "Zito alla genovese, secondo la tradizione napoletana.",
+              "desc_en": "Zito pasta with Genovese sauce (slow-cooked onion and beef ragù), the traditional Neapolitan way."
             }
-          ]
+          ],
+          "titolo_en": "Pasta course"
         },
         {
           "titolo": "Il secondo",
@@ -91,9 +111,11 @@
             {
               "nome": "Tagliata Flambè",
               "all": "5,12",
-              "desc": "Cuberoll Black Angus argentino, brandy, crema di mascarpone e melanzana fondente, flambata al tavolo."
+              "desc": "Cuberoll Black Angus argentino, brandy, crema di mascarpone e melanzana fondente, flambata al tavolo.",
+              "desc_en": "Argentine Black Angus rib eye, brandy, mascarpone cream and melting aubergine, flambéed at your table."
             }
-          ]
+          ],
+          "titolo_en": "Main course"
         },
         {
           "titolo": "Il dessert",
@@ -101,9 +123,12 @@
             {
               "nome": "Tris di gelati",
               "all": "5,8",
-              "desc": "Gelati fatti in casa: nocciola, pistacchio e cioccolato ruby."
+              "desc": "Gelati fatti in casa: nocciola, pistacchio e cioccolato ruby.",
+              "desc_en": "Homemade ice cream: hazelnut, pistachio and ruby chocolate.",
+              "nome_en": "Trio of ice creams"
             }
-          ]
+          ],
+          "titolo_en": "Dessert"
         }
       ]
     },
@@ -116,22 +141,30 @@
           "piatti": [
             {
               "nome": "Fassona Piemontese 80 g",
-              "desc": "Filetto di vitella di razza Fassona, battuto al coltello al momento e servito al naturale."
+              "desc": "Filetto di vitella di razza Fassona, battuto al coltello al momento e servito al naturale.",
+              "desc_en": "Fassona veal fillet, hand-chopped to order and served plain.",
+              "nome_en": "Piedmontese Fassona 80 g"
             },
             {
               "nome": "Wagyu Giapponese A5 80 g",
-              "desc": "Wagyu giapponese certificato, grado di marezzatura A5, il massimo livello mondiale."
+              "desc": "Wagyu giapponese certificato, grado di marezzatura A5, il massimo livello mondiale.",
+              "desc_en": "Certified Japanese Wagyu, A5 marbling grade — the highest in the world.",
+              "nome_en": "Japanese Wagyu A5 80 g"
             }
-          ]
+          ],
+          "titolo_en": "Tartare duo"
         },
         {
           "titolo": "Mini hamburger",
           "piatti": [
             {
               "nome": "Manzetta Prussiana 100 g",
-              "desc": "Pregiata razza polacca dalla marezzatura straordinaria: carne succosa e morbida al morso."
+              "desc": "Pregiata razza polacca dalla marezzatura straordinaria: carne succosa e morbida al morso.",
+              "desc_en": "A prized Polish breed with extraordinary marbling: juicy and tender to the bite.",
+              "nome_en": "Prussian heifer 100 g"
             }
-          ]
+          ],
+          "titolo_en": "Mini burger"
         },
         {
           "titolo": "Exclusive grill",
@@ -139,17 +172,24 @@
           "piatti": [
             {
               "nome": "Entrecôte Argentina",
-              "desc": "Allevata allo stato brado nella Pampa e alimentata a erba: sapore verace e tenerezza impareggiabile."
+              "desc": "Allevata allo stato brado nella Pampa e alimentata a erba: sapore verace e tenerezza impareggiabile.",
+              "desc_en": "Free-range and grass-fed on the Pampas: genuine flavour and unrivalled tenderness.",
+              "nome_en": "Argentine entrecôte"
             },
             {
               "nome": "Ribeye Canada",
-              "desc": "Alimentazione a cereali, infiltrazione di grasso elevatissima: consistenza burrosa e gusto dolce e caramellato."
+              "desc": "Alimentazione a cereali, infiltrazione di grasso elevatissima: consistenza burrosa e gusto dolce e caramellato.",
+              "desc_en": "Grain-fed with very high intramuscular fat: a buttery texture and a sweet, caramelised taste."
             },
             {
               "nome": "Maiale affumicato a legno di ciliegio",
-              "desc": "Suino pesante di razza Duroc, affumicato lentamente a bassa temperatura con legno di ciliegio."
+              "desc": "Suino pesante di razza Duroc, affumicato lentamente a bassa temperatura con legno di ciliegio.",
+              "desc_en": "Heavy Duroc pork, slow-smoked at low temperature over cherry wood.",
+              "nome_en": "Cherry-wood smoked pork"
             }
-          ]
+          ],
+          "titolo_en": "Exclusive grill",
+          "nota_en": "with a seasonal side"
         },
         {
           "titolo": "Il dessert",
@@ -157,9 +197,12 @@
             {
               "nome": "Delizia al limone",
               "all": "1,3",
-              "desc": "Pan di Spagna allo sciroppo di limone, farcito e ricoperto di crema ai limoni di Sorrento IGP."
+              "desc": "Pan di Spagna allo sciroppo di limone, farcito e ricoperto di crema ai limoni di Sorrento IGP.",
+              "desc_en": "Sponge soaked in lemon syrup, filled and covered with Sorrento IGP lemon cream.",
+              "nome_en": "Delizia al limone (lemon cake)"
             }
-          ]
+          ],
+          "titolo_en": "Dessert"
         }
       ]
     }
@@ -172,21 +215,26 @@
           "nome": "Ciabatta Mediterraneo",
           "all": "1,4,9,10",
           "prezzo": "10",
-          "desc": "Con insalatina di puntarelle, alici di Cetara, stracciatella di bufala e dressing di miele e senape."
+          "desc": "Con insalatina di puntarelle, alici di Cetara, stracciatella di bufala e dressing di miele e senape.",
+          "desc_en": "With puntarelle chicory salad, Cetara anchovies, buffalo stracciatella and a honey-mustard dressing."
         },
         {
           "nome": "Rosebery",
           "all": "1,9,12",
           "prezzo": "10",
-          "desc": "Con salsiccia croccante, crema di friarielli e provola affumicata."
+          "desc": "Con salsiccia croccante, crema di friarielli e provola affumicata.",
+          "desc_en": "With crispy sausage, friarielli (Neapolitan broccoli rabe) cream and smoked provola."
         },
         {
           "nome": "Bianca",
           "all": "1",
           "prezzo": "5",
-          "desc": "Servita al naturale con fiocchi di sale."
+          "desc": "Servita al naturale con fiocchi di sale.",
+          "desc_en": "Served plain with sea salt flakes.",
+          "nome_en": "Plain"
         }
-      ]
+      ],
+      "titolo_en": "Smoked ciabatta"
     },
     {
       "titolo": "Antipasti",
@@ -195,33 +243,44 @@
           "nome": "Ribs in salsa BBQ",
           "all": "6,10,12",
           "prezzo": "14",
-          "desc": "Costine di maiale cotte lentamente al forno e rifinite alla griglia, spennellate con la nostra iconica salsa BBQ dolce e affumicata."
+          "desc": "Costine di maiale cotte lentamente al forno e rifinite alla griglia, spennellate con la nostra iconica salsa BBQ dolce e affumicata.",
+          "desc_en": "Pork ribs slow-roasted in the oven and finished on the grill, brushed with our signature sweet, smoky BBQ sauce.",
+          "nome_en": "BBQ ribs"
         },
         {
           "nome": "Polpettine alla gricia",
           "all": "1,3,7",
           "prezzo": "12",
-          "desc": "Polpettine di manzetta prussiana con guanciale croccante, su vellutata crema al cacio e pepe."
+          "desc": "Polpettine di manzetta prussiana con guanciale croccante, su vellutata crema al cacio e pepe.",
+          "desc_en": "Prussian heifer meatballs with crispy guanciale, on a smooth cacio e pepe cream.",
+          "nome_en": "Polpettine alla gricia (meatballs)"
         },
         {
           "nome": "Vellutata di zucca",
           "all": "7",
           "prezzo": "12",
-          "desc": "Montata al mascarpone e rosmarino."
+          "desc": "Montata al mascarpone e rosmarino.",
+          "desc_en": "Whipped with mascarpone and rosemary.",
+          "nome_en": "Pumpkin velouté"
         },
         {
           "nome": "Grissino di pollo",
           "all": "1,3",
           "prezzo": "12",
-          "desc": "Cialda di pane croccante, ripiena di pulled chicken, cetriolini, salsa BBQ e maionese al lime."
+          "desc": "Cialda di pane croccante, ripiena di pulled chicken, cetriolini, salsa BBQ e maionese al lime.",
+          "desc_en": "Crisp bread shell filled with pulled chicken, gherkins, BBQ sauce and lime mayonnaise.",
+          "nome_en": "Chicken grissino"
         },
         {
           "nome": "Brasato",
           "all": "7,12",
           "prezzo": "14",
-          "desc": "Stracotto di manzo al vino rosso, servito con fonduta di parmigiano."
+          "desc": "Stracotto di manzo al vino rosso, servito con fonduta di parmigiano.",
+          "desc_en": "Beef slow-braised in red wine, served with Parmigiano fondue.",
+          "nome_en": "Brasato (braised beef)"
         }
-      ]
+      ],
+      "titolo_en": "Starters"
     },
     {
       "titolo": "Cruderia",
@@ -230,32 +289,41 @@
           "nome": "Gran crudo in cinque consistenze",
           "all": "3,5,6,12",
           "prezzo": "35",
-          "desc": "Carpaccio di Wagyu con salsa teriyaki; straccetti di manzo con stracciata di bufala; tartare di filetto con salsa all'uovo; mousse di fesa con salsa alle mele; carpaccio di sottofesa con salsa alla cipolla rossa."
+          "desc": "Carpaccio di Wagyu con salsa teriyaki; straccetti di manzo con stracciata di bufala; tartare di filetto con salsa all'uovo; mousse di fesa con salsa alle mele; carpaccio di sottofesa con salsa alla cipolla rossa.",
+          "desc_en": "Wagyu carpaccio with teriyaki sauce; beef strips with buffalo stracciata; fillet tartare with egg sauce; topside mousse with apple sauce; silverside carpaccio with red onion sauce.",
+          "nome_en": "Raw beef in five textures"
         },
         {
           "nome": "Carpaccio di Wagyu Giappone",
           "all": "5",
           "prezzo": "38",
-          "desc": "Sottilissime fettine di autentico Wagyu giapponese A5, marezzatura 10/12: consistenza setosa che si scioglie in bocca."
+          "desc": "Sottilissime fettine di autentico Wagyu giapponese A5, marezzatura 10/12: consistenza setosa che si scioglie in bocca.",
+          "desc_en": "Wafer-thin slices of authentic Japanese A5 Wagyu, marbling score 10/12: a silky texture that melts in the mouth.",
+          "nome_en": "Japanese Wagyu carpaccio"
         },
         {
           "nome": "Carpaccio di Creekstone Farms",
           "all": "5",
           "prezzo": "25",
-          "desc": "Black Angus Creekstone Farms con salsa acidula artigianale e note agrumate."
+          "desc": "Black Angus Creekstone Farms con salsa acidula artigianale e note agrumate.",
+          "desc_en": "Creekstone Farms Black Angus with a house-made tangy sauce and citrus notes."
         },
         {
           "nome": "Tartare al naturale",
           "prezzo": "20",
-          "desc": "Filetto di Fassona piemontese in purezza, con giardiniera di verdure fatta in casa."
+          "desc": "Filetto di Fassona piemontese in purezza, con giardiniera di verdure fatta in casa.",
+          "desc_en": "Pure Piedmontese Fassona fillet, with homemade pickled vegetables.",
+          "nome_en": "Classic tartare"
         },
         {
           "nome": "Tartare Rosebery",
           "all": "12",
           "prezzo": "22",
-          "desc": "Con zucca e pera croccante: un antipasto che celebra i sapori d'autunno."
+          "desc": "Con zucca e pera croccante: un antipasto che celebra i sapori d'autunno.",
+          "desc_en": "With pumpkin and crisp pear: a starter that celebrates the flavours of autumn."
         }
-      ]
+      ],
+      "titolo_en": "Raw bar"
     },
     {
       "titolo": "Salumi e formaggi",
@@ -264,38 +332,49 @@
           "nome": "Pata Negra 100% Bellota",
           "all": "12",
           "prezzo": "35",
-          "desc": "Prosciutto iberico da allevamento estensivo, alimentazione a ghiande, stagionatura minima 36 mesi, tagliato al coltello."
+          "desc": "Prosciutto iberico da allevamento estensivo, alimentazione a ghiande, stagionatura minima 36 mesi, tagliato al coltello.",
+          "desc_en": "Free-range, acorn-fed Iberian ham, aged at least 36 months, hand-carved."
         },
         {
           "nome": "Tagliere salumi e formaggi",
           "all": "5,12",
           "prezzo": "28",
-          "desc": "Salumi artigianali Tomaso Salumi e formaggi del territorio, con confetture artigianali e pane caldo."
+          "desc": "Salumi artigianali Tomaso Salumi e formaggi del territorio, con confetture artigianali e pane caldo.",
+          "desc_en": "Artisan cured meats by Tomaso Salumi and local cheeses, with artisan preserves and warm bread.",
+          "nome_en": "Charcuterie and cheese board"
         },
         {
           "nome": "Culatta di Maiale Tranquillo",
           "all": "12",
           "prezzo": "22",
-          "desc": "Salume emiliano da filiera etica: consistenza morbida, profumo delicato, stagionatura naturale."
+          "desc": "Salume emiliano da filiera etica: consistenza morbida, profumo delicato, stagionatura naturale.",
+          "desc_en": "Cured pork from Emilia, ethically sourced: soft texture, delicate aroma, naturally aged.",
+          "nome_en": "Culatta (cured pork) – Maiale Tranquillo"
         },
         {
           "nome": "Pancetta di Maiale Tranquillo",
           "all": "12",
           "prezzo": "18",
-          "desc": "Pancetta artigianale da suini a crescita lenta, grasso dolce e speziatura leggera."
+          "desc": "Pancetta artigianale da suini a crescita lenta, grasso dolce e speziatura leggera.",
+          "desc_en": "Artisan pancetta from slow-grown pigs, sweet fat and light spicing.",
+          "nome_en": "Pancetta – Maiale Tranquillo"
         },
         {
           "nome": "Degustazione iberica",
           "all": "12",
           "prezzo": "35",
-          "desc": "Longaniza, guanciale 100% Bellota e Pata Negra 100% Bellota."
+          "desc": "Longaniza, guanciale 100% Bellota e Pata Negra 100% Bellota.",
+          "desc_en": "Longaniza sausage, 100% Bellota guanciale and 100% Bellota Pata Negra.",
+          "nome_en": "Iberian tasting"
         },
         {
           "nome": "Formaggi (al pezzo)",
           "all": "5,12",
-          "prezzo": "6"
+          "prezzo": "6",
+          "nome_en": "Cheeses (by the piece)"
         }
-      ]
+      ],
+      "titolo_en": "Charcuterie & cheese"
     },
     {
       "titolo": "Primi",
@@ -304,38 +383,48 @@
           "nome": "Scarpariello secondo Casa Rosebery",
           "all": "1,7",
           "prezzo": "16",
-          "desc": "Bombardone ripieno di crema al pecorino e salsa di pomodoro leggermente piccante."
+          "desc": "Bombardone ripieno di crema al pecorino e salsa di pomodoro leggermente piccante.",
+          "desc_en": "Large pasta tubes filled with pecorino cream, with a lightly spicy tomato sauce."
         },
         {
           "nome": "Pappardelle al tartufo",
           "all": "1,3,7",
           "prezzo": "40",
-          "desc": "Mantecate al carrello con burro, parmigiano 36 mesi e tartufo bianco. Secondo reperibilità stagionale."
+          "desc": "Mantecate al carrello con burro, parmigiano 36 mesi e tartufo bianco. Secondo reperibilità stagionale.",
+          "desc_en": "Tossed tableside with butter, 36-month Parmigiano and white truffle. Subject to seasonal availability.",
+          "nome_en": "Pappardelle with truffle"
         },
         {
           "nome": "Genovese",
           "all": "1,7,9,12",
           "prezzo": "18",
-          "desc": "Zito alla genovese, secondo la tradizione napoletana."
+          "desc": "Zito alla genovese, secondo la tradizione napoletana.",
+          "desc_en": "Zito pasta with Genovese sauce (slow-cooked onion and beef ragù), the traditional Neapolitan way."
         },
         {
           "nome": "Risotto ai funghi porcini",
           "all": "7",
           "prezzo": "24",
-          "desc": "Risotto Carnaroli mantecato ai funghi porcini."
+          "desc": "Risotto Carnaroli mantecato ai funghi porcini.",
+          "desc_en": "Carnaroli risotto with porcini mushrooms.",
+          "nome_en": "Porcini mushroom risotto"
         },
         {
           "nome": "Manfredi con la ricotta",
           "all": "1,7,12",
           "prezzo": "18",
-          "desc": "Pasta Manfredi al ragù napoletano, mantecata con ricotta fresca e parmigiano reggiano."
+          "desc": "Pasta Manfredi al ragù napoletano, mantecata con ricotta fresca e parmigiano reggiano.",
+          "desc_en": "Manfredi pasta with Neapolitan ragù, finished with fresh ricotta and Parmigiano Reggiano.",
+          "nome_en": "Manfredi with ricotta"
         },
         {
           "nome": "Nerano",
           "prezzo": "18",
-          "desc": "Spaghetti, zucchine, provolone del Monaco DOP, basilico e pepe."
+          "desc": "Spaghetti, zucchine, provolone del Monaco DOP, basilico e pepe.",
+          "desc_en": "Spaghetti, courgettes, Provolone del Monaco DOP, basil and pepper."
         }
-      ]
+      ],
+      "titolo_en": "Pasta & risotto"
     },
     {
       "titolo": "Secondi",
@@ -344,43 +433,56 @@
           "nome": "Agnello in crosta di verdure",
           "all": "6,9,10,12",
           "prezzo": "20",
-          "desc": "Controfiletto di agnello in crosta di verdure dell'orto disidratate, con riduzione al fondo bruno."
+          "desc": "Controfiletto di agnello in crosta di verdure dell'orto disidratate, con riduzione al fondo bruno.",
+          "desc_en": "Lamb loin in a crust of dried garden vegetables, with a brown stock reduction.",
+          "nome_en": "Lamb in a vegetable crust"
         },
         {
           "nome": "Stinco di maiale al forno",
           "all": "12",
           "prezzo": "18",
-          "desc": "Cotto lentamente a bassa temperatura, sfumato al vino bianco, con rostie di patate e riduzione alla birra."
+          "desc": "Cotto lentamente a bassa temperatura, sfumato al vino bianco, con rostie di patate e riduzione alla birra.",
+          "desc_en": "Slow-cooked at low temperature, deglazed with white wine, with potato rösti and a beer reduction.",
+          "nome_en": "Roast pork shank"
         },
         {
           "nome": "Tagliata Flambè",
           "all": "7,12",
           "prezzo": "30",
-          "desc": "Cuberoll Black Angus argentino, brandy, crema di mascarpone e melanzana fondente, flambata al tavolo."
+          "desc": "Cuberoll Black Angus argentino, brandy, crema di mascarpone e melanzana fondente, flambata al tavolo.",
+          "desc_en": "Argentine Black Angus rib eye, brandy, mascarpone cream and melting aubergine, flambéed at your table."
         },
         {
           "nome": "Filetto al Bleu",
           "all": "7,12",
           "prezzo": "38",
-          "desc": "Tournedos di filetto al punto rosa, fondente di Bleu di bufala e noci croccanti, su lingotti di polenta."
+          "desc": "Tournedos di filetto al punto rosa, fondente di Bleu di bufala e noci croccanti, su lingotti di polenta.",
+          "desc_en": "Fillet tournedos cooked pink, with melting buffalo blue cheese and crunchy walnuts, on polenta bars.",
+          "nome_en": "Fillet with blue cheese"
         },
         {
           "nome": "Locena di maiale CBT",
           "all": "12",
           "prezzo": "18",
-          "desc": "Dalla finitura croccante, con papaccelle saltate e riduzione vellutata alla mela."
+          "desc": "Dalla finitura croccante, con papaccelle saltate e riduzione vellutata alla mela.",
+          "desc_en": "Pork loin with a crisp finish, sautéed papaccelle peppers and a smooth apple reduction.",
+          "nome_en": "Slow-cooked pork loin"
         },
         {
           "nome": "Misto brace (per due persone)",
           "prezzo": "55",
-          "desc": "Salsiccia di maiale nero casertano, costata di maiale affumicata al legno di ciliegio e Cuberoll argentino, con contorno di stagione."
+          "desc": "Salsiccia di maiale nero casertano, costata di maiale affumicata al legno di ciliegio e Cuberoll argentino, con contorno di stagione.",
+          "desc_en": "Casertano black pork sausage, cherry-wood smoked pork chop and Argentine rib eye, with a seasonal side.",
+          "nome_en": "Mixed grill (for two)"
         },
         {
           "nome": "Brisket Casa Rosebery",
           "prezzo": "24",
-          "desc": "Dodici ore di cottura lenta, servito su purea di patate e provola."
+          "desc": "Dodici ore di cottura lenta, servito su purea di patate e provola.",
+          "desc_en": "Twelve hours of slow cooking, served on mashed potato and provola."
         }
-      ]
+      ],
+      "titolo_en": "Main courses"
     },
     {
       "titolo": "Dalla brace",
@@ -390,54 +492,68 @@
         {
           "nome": "Marchigiana Bio",
           "prezzo": "9",
-          "desc": "Incrocio tra Chianina e Romagnola, allevamento biologico: carne tenera, succosa e identitaria."
+          "desc": "Incrocio tra Chianina e Romagnola, allevamento biologico: carne tenera, succosa e identitaria.",
+          "desc_en": "A Chianina–Romagnola cross, organically raised: tender, juicy beef with real character."
         },
         {
           "nome": "Pezzata Nera",
           "prezzo": "9",
-          "desc": "Razza storica italiana a duplice attitudine, rivalutata dai migliori maestri macellai."
+          "desc": "Razza storica italiana a duplice attitudine, rivalutata dai migliori maestri macellai.",
+          "desc_en": "A historic Italian dual-purpose breed, rediscovered by the best master butchers."
         },
         {
           "nome": "Tronchetto Black Angus U.S.A.",
           "prezzo": "14",
-          "desc": "Taglio nobile dai migliori allevamenti statunitensi: marezzatura straordinaria, sapore burroso e avvolgente."
+          "desc": "Taglio nobile dai migliori allevamenti statunitensi: marezzatura straordinaria, sapore burroso e avvolgente.",
+          "desc_en": "A noble cut from the best US farms: extraordinary marbling, a rich, buttery flavour."
         },
         {
           "nome": "Kobieta Marmur",
           "prezzo": "8,50",
-          "desc": "Lombata di vacca baltica dal Nord Europa, marezzatura finissima e aromi ricchi."
+          "desc": "Lombata di vacca baltica dal Nord Europa, marezzatura finissima e aromi ricchi.",
+          "desc_en": "Baltic cow sirloin from Northern Europe, very fine marbling and rich aromas."
         },
         {
           "nome": "Red Hereford",
           "prezzo": "8",
-          "desc": "Carne irlandese da allevamenti al pascolo: rosso brillante, tenera e dal sapore equilibrato."
+          "desc": "Carne irlandese da allevamenti al pascolo: rosso brillante, tenera e dal sapore equilibrato.",
+          "desc_en": "Pasture-raised Irish beef: bright red, tender and well balanced."
         },
         {
           "nome": "Red Dan",
           "prezzo": "13",
-          "desc": "Razza Rossa Danese: colore rubino profondo, marezzatura impeccabile, sentori dei pascoli del Nord."
+          "desc": "Razza Rossa Danese: colore rubino profondo, marezzatura impeccabile, sentori dei pascoli del Nord.",
+          "desc_en": "Danish Red breed: deep ruby colour, impeccable marbling, hints of northern pastures."
         },
         {
           "nome": "T-Bone Black Angus Selezione Canada",
           "prezzo": "14",
-          "desc": "Black Angus grain-fed canadese: la morbidezza del filetto e la ricchezza del controfiletto."
+          "desc": "Black Angus grain-fed canadese: la morbidezza del filetto e la ricchezza del controfiletto.",
+          "desc_en": "Canadian grain-fed Black Angus: the tenderness of the fillet and the richness of the sirloin.",
+          "nome_en": "T-Bone Black Angus, Canadian selection"
         },
         {
           "nome": "Tomahawk U.S.A. Black Angus",
           "prezzo": "14",
-          "desc": "Osso scalzato e consistenza burrosa, finitura a mais. Servita su pietra o tagliere."
+          "desc": "Osso scalzato e consistenza burrosa, finitura a mais. Servita su pietra o tagliere.",
+          "desc_en": "Frenched bone and a buttery texture from corn finishing. Served on a hot stone or board."
         },
         {
           "nome": "Simmental Selezione Austria",
           "prezzo": "13",
-          "desc": "Vacche allevate allo stato brado nei pascoli alpini: grana finissima, gusto rotondo e dolce."
+          "desc": "Vacche allevate allo stato brado nei pascoli alpini: grana finissima, gusto rotondo e dolce.",
+          "desc_en": "Cows raised free-range on Alpine pastures: very fine grain, a round, sweet taste.",
+          "nome_en": "Simmental, Austrian selection"
         },
         {
           "nome": "Rubia Gallega",
           "prezzo": "15",
-          "desc": "Razza bovina della Galizia, nel nord-ovest della Spagna, apprezzata per il sapore intenso."
+          "desc": "Razza bovina della Galizia, nel nord-ovest della Spagna, apprezzata per il sapore intenso.",
+          "desc_en": "A cattle breed from Galicia, north-west Spain, prized for its intense flavour."
         }
-      ]
+      ],
+      "titolo_en": "From the grill",
+      "sotto_en": "Bone-in"
     },
     {
       "titolo": "Dalla brace",
@@ -447,34 +563,45 @@
         {
           "nome": "Entrecôte Argentina Rioplatense 1920",
           "prezzo": "10",
-          "desc": "Costata di bovini al pascolo nella Pampa: marezzatura fine, note erbacee e dolci."
+          "desc": "Costata di bovini al pascolo nella Pampa: marezzatura fine, note erbacee e dolci.",
+          "desc_en": "Rib steak from cattle grazed on the Pampas: fine marbling, grassy and sweet notes.",
+          "nome_en": "Argentine entrecôte Rioplatense 1920"
         },
         {
           "nome": "Ribeye Canadese extramarezzata",
           "prezzo": "13",
-          "desc": "Il cuore della costata canadese, fitta marezzatura intramuscolare e consistenza burrosa."
+          "desc": "Il cuore della costata canadese, fitta marezzatura intramuscolare e consistenza burrosa.",
+          "desc_en": "The heart of the Canadian rib, dense intramuscular marbling and a buttery texture.",
+          "nome_en": "Extra-marbled Canadian ribeye"
         },
         {
           "nome": "Ribeye Creekstone Farms U.S.A.",
           "prezzo": "18",
-          "desc": "Black Angus certificato, 120 giorni di finitura a grano, con il celebre cuore di grasso."
+          "desc": "Black Angus certificato, 120 giorni di finitura a grano, con il celebre cuore di grasso.",
+          "desc_en": "Certified Black Angus, 120 days of grain finishing, with the famous fat eye."
         },
         {
           "nome": "Picanha Black Angus Ocean Beef – Australia",
           "prezzo": "9,50",
-          "desc": "Allevata al pascolo e rifinita a cereali, con il caratteristico strato di grasso esterno. Servita sullo spiedo con patate al forno."
+          "desc": "Allevata al pascolo e rifinita a cereali, con il caratteristico strato di grasso esterno. Servita sullo spiedo con patate al forno.",
+          "desc_en": "Pasture-raised and grain-finished, with its characteristic fat cap. Served on the skewer with roast potatoes."
         },
         {
           "nome": "Wagyu Giapponese Kagoshima A5",
           "prezzo": "40",
-          "desc": "Manzo Kuroge della prefettura di Kagoshima, certificazione A5. Servito con verdure saltate."
+          "desc": "Manzo Kuroge della prefettura di Kagoshima, certificazione A5. Servito con verdure saltate.",
+          "desc_en": "Kuroge beef from Kagoshima prefecture, A5 certified. Served with sautéed vegetables.",
+          "nome_en": "Japanese Wagyu Kagoshima A5"
         },
         {
           "nome": "Pluma de Bellota 100% Ibérica",
           "prezzo": "9",
-          "desc": "Il taglio più nobile del maiale iberico alimentato a ghiande. Servita con cottura media al sangue."
+          "desc": "Il taglio più nobile del maiale iberico alimentato a ghiande. Servita con cottura media al sangue.",
+          "desc_en": "The noblest cut of acorn-fed Iberian pork. Served medium-rare."
         }
-      ]
+      ],
+      "titolo_en": "From the grill",
+      "sotto_en": "Boneless"
     },
     {
       "titolo": "Contorni",
@@ -482,28 +609,38 @@
         {
           "nome": "Scarola saltata",
           "prezzo": "8",
-          "desc": "Con aglio, olio EVO, olive nere di Gaeta e capperi."
+          "desc": "Con aglio, olio EVO, olive nere di Gaeta e capperi.",
+          "desc_en": "With garlic, extra virgin olive oil, Gaeta black olives and capers.",
+          "nome_en": "Sautéed escarole"
         },
         {
           "nome": "Le nostre patate stick artigianali",
           "prezzo": "6",
-          "desc": "Tagliate a mano ogni giorno e fritte fino a doratura, con sale marino grosso."
+          "desc": "Tagliate a mano ogni giorno e fritte fino a doratura, con sale marino grosso.",
+          "desc_en": "Hand-cut every day and fried until golden, with coarse sea salt.",
+          "nome_en": "Our hand-cut fries"
         },
         {
           "nome": "Patate al forno alla paprika",
           "prezzo": "6",
-          "desc": "Croccanti fuori e morbide dentro, con paprika e spezie mediterranee."
+          "desc": "Croccanti fuori e morbide dentro, con paprika e spezie mediterranee.",
+          "desc_en": "Crisp outside and soft inside, with paprika and Mediterranean spices.",
+          "nome_en": "Roast paprika potatoes"
         },
         {
           "nome": "Purè di patate (metodo francese)",
           "prezzo": "7",
-          "desc": "Patate di montagna setacciate e montate con burro d'alpeggio."
+          "desc": "Patate di montagna setacciate e montate con burro d'alpeggio.",
+          "desc_en": "Mountain potatoes, sieved and whipped with alpine butter.",
+          "nome_en": "Mashed potatoes (French style)"
         },
         {
           "nome": "Verdure grigliate di stagione",
-          "prezzo": "7"
+          "prezzo": "7",
+          "nome_en": "Seasonal grilled vegetables"
         }
-      ]
+      ],
+      "titolo_en": "Sides"
     },
     {
       "titolo": "Dolci",
@@ -513,64 +650,82 @@
           "all": "3,7,8",
           "prezzo": "8",
           "desc": "La nostra interpretazione del classico trevigiano: spuma di mascarpone d'alpeggio, pan di Spagna al caffè e cacao fine.",
-          "senza_glutine": true
+          "senza_glutine": true,
+          "desc_en": "Our take on the Treviso classic: alpine mascarpone mousse, coffee-soaked sponge and fine cocoa."
         },
         {
           "nome": "New York Cheesecake ai frutti di bosco",
           "all": "3,7,8",
           "prezzo": "8",
           "desc": "Crema densa e vellutata su base di biscotto Graham, con riduzione artigianale di frutti di bosco.",
-          "senza_glutine": true
+          "senza_glutine": true,
+          "desc_en": "Rich, velvety cream on a Graham cracker base, with a house-made berry reduction.",
+          "nome_en": "New York cheesecake with berries"
         },
         {
           "nome": "Crêpe Suzette al flambé",
           "all": "1,3,7,12",
           "prezzo": "12",
-          "desc": "Burro d'alpeggio, arancia fresca e agrumi, flambata in sala al Grand Marnier."
+          "desc": "Burro d'alpeggio, arancia fresca e agrumi, flambata in sala al Grand Marnier.",
+          "desc_en": "Alpine butter, fresh orange and citrus, flambéed with Grand Marnier in the dining room.",
+          "nome_en": "Crêpe Suzette flambé"
         },
         {
           "nome": "Millefoglie di lingue di gatto",
           "all": "1,3,7",
           "prezzo": "10",
-          "desc": "Con crema pasticcera alla vaniglia e amarene Fabbri."
+          "desc": "Con crema pasticcera alla vaniglia e amarene Fabbri.",
+          "desc_en": "With vanilla custard and Fabbri amarena cherries.",
+          "nome_en": "Langue de chat millefeuille"
         },
         {
           "nome": "Delizia al limone",
           "all": "3,7",
           "prezzo": "8",
           "desc": "Pan di Spagna allo sciroppo di limone e crema ai limoni di Sorrento IGP.",
-          "senza_glutine": true
+          "senza_glutine": true,
+          "desc_en": "Sponge soaked in lemon syrup with Sorrento IGP lemon cream.",
+          "nome_en": "Delizia al limone (lemon cake)"
         },
         {
           "nome": "Tris di gelati",
           "prezzo": "8",
           "desc": "Gelati fatti in casa: nocciola, pistacchio e cioccolato ruby.",
-          "all": "7,8"
+          "all": "7,8",
+          "desc_en": "Homemade ice cream: hazelnut, pistachio and ruby chocolate.",
+          "nome_en": "Trio of ice creams"
         },
         {
           "nome": "Tortino al cioccolato fondente",
           "prezzo": "8",
-          "desc": "Dal cuore caldo e colante, servito tiepido con zucchero a velo."
+          "desc": "Dal cuore caldo e colante, servito tiepido con zucchero a velo.",
+          "desc_en": "With a warm, molten centre, served warm with icing sugar.",
+          "nome_en": "Dark chocolate fondant"
         }
-      ]
+      ],
+      "titolo_en": "Desserts"
     },
     {
       "titolo": "Bevande",
       "piatti": [
         {
           "nome": "Acqua naturale",
-          "prezzo": "3,50"
+          "prezzo": "3,50",
+          "nome_en": "Still water"
         },
         {
           "nome": "Acqua effervescente – Ferrarelle",
-          "prezzo": "3,50"
+          "prezzo": "3,50",
+          "nome_en": "Sparkling water – Ferrarelle"
         },
         {
           "nome": "Coca-Cola Original Taste / Zero",
           "prezzo": "4"
         }
-      ]
+      ],
+      "titolo_en": "Drinks"
     }
   ],
-  "mostra_allergeni": false
+  "mostra_allergeni": false,
+  "aggiornato_en": "October 2026"
 }

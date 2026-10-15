@@ -1,8 +1,13 @@
-"""Inserisce in index.html la sezione "Prossime serate" a partire da eventi-src/eventi.json.
+"""Inserisce la sezione "Prossime serate" in index.html (italiano) e in en/index.html (inglese)
+a partire da eventi-src/eventi.json.
 
 Uso (dalla cartella del repo):
   python3 eventi-src/genera_eventi.py              -> solo serate con "pubblica": true
   python3 eventi-src/genera_eventi.py --anteprima  -> include anche le bozze (NON fare commit di questo risultato)
+
+Testi inglesi: per ogni campo di testo si può aggiungere la versione inglese con il suffisso _en
+(titolo_en, sottotitolo_en, nota_menu_en, extra_titolo_en; nei piatti desc_en, nome_en, gruppo_en).
+Se manca, la pagina inglese usa il testo italiano.
 """
 import datetime as dt
 import html
@@ -13,14 +18,43 @@ import urllib.parse
 from zoneinfo import ZoneInfo
 
 RADICE = pathlib.Path(__file__).resolve().parent.parent
-INDEX = RADICE / "index.html"
+SITO = "https://www.casaroseberyristorante.it"
 INIZIO, FINE = "<!-- EVENTI:INIZIO -->", "<!-- EVENTI:FINE -->"
 ANTEPRIMA = "--anteprima" in sys.argv
 e = html.escape
 
-GIORNI = ["lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato", "domenica"]
-MESI = ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto",
-        "settembre", "ottobre", "novembre", "dicembre"]
+TESTI = {
+    "it": {
+        "file": RADICE / "index.html", "url": f"{SITO}/",
+        "giorni": ["lunedì", "martedì", "mercoledì", "giovedì", "venerdì", "sabato", "domenica"],
+        "mesi": ["gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno", "luglio", "agosto",
+                 "settembre", "ottobre", "novembre", "dicembre"],
+        "ore": "ore", "bozza": "BOZZA – non pubblicata", "integr": "Integrazione · + € {p} a persona",
+        "alla_carta": "Alla carta", "pp": "a persona · menu fisso", "menu_carta": "Menu alla carta",
+        "nota_default": "nessun minimo di spesa", "avviso": "Prenotazione obbligatoria via WhatsApp",
+        "cta": "Prenota su WhatsApp", "locandina": "Locandina",
+        "wa": "Ciao! Vorrei prenotare per la serata del {g} {m} ({t}). Siamo in ",
+        "eyebrow": "In programma", "titolo": "Prossime <em>serate</em>",
+        "intro": "Cene con musica dal vivo e ospiti speciali. Posti limitati: la prenotazione è obbligatoria e si effettua solo via WhatsApp.",
+        "menu_fisso": " Menu fisso a {p} € a persona.", "descr_default": "{t} a Casa Rosebery, Napoli.",
+        "nav": "Serate",
+    },
+    "en": {
+        "file": RADICE / "en" / "index.html", "url": f"{SITO}/en/",
+        "giorni": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "mesi": ["January", "February", "March", "April", "May", "June", "July", "August",
+                 "September", "October", "November", "December"],
+        "ore": "", "bozza": "DRAFT – not published", "integr": "Upgrade · + € {p} per person",
+        "alla_carta": "À la carte", "pp": "per person · set menu", "menu_carta": "À la carte menu",
+        "nota_default": "no minimum spend", "avviso": "Booking required via WhatsApp",
+        "cta": "Book on WhatsApp", "locandina": "Poster",
+        "wa": "Hi! I'd like to book for the {t} evening on {m} {g}. We are ",
+        "eyebrow": "Coming up", "titolo": "Upcoming <em>evenings</em>",
+        "intro": "Dinners with live music and special guests. Limited seating: booking is required and can only be made via WhatsApp.",
+        "menu_fisso": " Set menu at €{p} per person.", "descr_default": "{t} at Casa Rosebery, Naples.",
+        "nav": "Live",
+    },
+}
 
 dati = json.loads((RADICE / "eventi-src" / "eventi.json").read_text(encoding="utf-8"))
 oggi = dt.date.today()
@@ -30,102 +64,137 @@ serate = sorted(
     key=lambda s: (s["data"], s.get("ora", "")))
 
 
-def carta(s):
+def tr(obj, campo, lingua, default=""):
+    """Testo nella lingua richiesta, con ripiego sull'italiano."""
+    if lingua != "it" and obj.get(f"{campo}_{lingua}"):
+        return obj[f"{campo}_{lingua}"]
+    return obj.get(campo, default)
+
+
+def ora_en(hhmm):
+    h, m = map(int, hhmm.split(":"))
+    return f"{(h - 1) % 12 + 1}{':%02d' % m if m else ''} {'pm' if h >= 12 else 'am'}"
+
+
+def quando(s, L, lingua):
     d = dt.date.fromisoformat(s["data"])
-    quando = f'{GIORNI[d.weekday()]} {d.day} {MESI[d.month - 1]}' + (f' · ore {e(s["ora"])}' if s.get("ora") else "")
-    bozza = '' if s.get("pubblica") else '<span class="serata-bozza">BOZZA – non pubblicata</span>'
+    if lingua == "en":
+        q = f'{L["giorni"][d.weekday()]} {d.day} {L["mesi"][d.month - 1]}'
+        return q + (f' · {ora_en(s["ora"])}' if s.get("ora") else "")
+    q = f'{L["giorni"][d.weekday()]} {d.day} {L["mesi"][d.month - 1]}'
+    return q + (f' · {L["ore"]} {e(s["ora"])}' if s.get("ora") else "")
+
+
+def carta(s, lingua):
+    L = TESTI[lingua]
+    d = dt.date.fromisoformat(s["data"])
+    titolo = tr(s, "titolo", lingua)
+    bozza = '' if s.get("pubblica") else f'<span class="serata-bozza">{L["bozza"]}</span>'
     artista = f'<p class="serata-artista">{e(s["artista"])}</p>' if s.get("artista") else ""
-    sotto = f'<p class="serata-sotto">{e(s["sottotitolo"])}</p>' if s.get("sottotitolo") else ""
-    portate = "".join(f'<li><b>{e(p["nome"])}</b><span>{e(p.get("desc", ""))}</span></li>' for p in s.get("menu", []))
+    sotto_t = tr(s, "sottotitolo", lingua)
+    sotto = f'<p class="serata-sotto">{e(sotto_t)}</p>' if sotto_t else ""
+    portate = "".join(f'<li><b>{e(tr(p, "nome", lingua))}</b><span>{e(tr(p, "desc", lingua))}</span></li>'
+                      for p in s.get("menu", []))
     integr = ""
     if s.get("integrazione"):
         i = s["integrazione"]
-        integr = (f'<div class="serata-integr"><span>Integrazione · + € {e(i["prezzo"])} a persona</span>'
-                  f'<b>{e(i["nome"])}</b><em>{e(i.get("desc", ""))}</em></div>')
+        integr = (f'<div class="serata-integr"><span>{e(L["integr"].format(p=i["prezzo"]))}</span>'
+                  f'<b>{e(tr(i, "nome", lingua))}</b><em>{e(tr(i, "desc", lingua))}</em></div>')
     extra = ""
     if s.get("extra"):
         gruppi = {}
         for x in s["extra"]:
-            gruppi.setdefault(x.get("gruppo", ""), []).append(x)
+            gruppi.setdefault(tr(x, "gruppo", lingua), []).append(x)
         blocchi = "".join(
             f'<h5>{e(g)}</h5><ul>' + "".join(
-                f'<li><div><b>{e(x["nome"])}</b><span>{e(x.get("desc", ""))}</span></div><i>€ {e(x["prezzo"])}</i></li>'
+                f'<li><div><b>{e(tr(x, "nome", lingua))}</b><span>{e(tr(x, "desc", lingua))}</span></div>'
+                f'<i>€ {e(x["prezzo"])}</i></li>'
                 for x in xs) + '</ul>'
             for g, xs in gruppi.items())
-        extra = f'<details class="serata-extra"><summary>{e(s.get("extra_titolo", "Alla carta"))}</summary>{blocchi}</details>'
+        extra = (f'<details class="serata-extra"><summary>{e(tr(s, "extra_titolo", lingua, L["alla_carta"]))}'
+                 f'</summary>{blocchi}</details>')
     if s.get("prezzo") and s.get("menu"):
         menu_html = (f'<div class="serata-menu"><div class="serata-prezzo"><b>€ {e(s["prezzo"])}</b>'
-                     f'<span>a persona · menu fisso</span></div><ul class="serata-portate">{portate}</ul>{integr}</div>')
+                     f'<span>{L["pp"]}</span></div><ul class="serata-portate">{portate}</ul>{integr}</div>')
     else:
-        menu_html = (f'<div class="serata-menu"><div class="serata-prezzo"><b>Menu alla carta</b>'
-                     f'<span>{e(s.get("nota_menu", "nessun minimo di spesa"))}</span></div></div>')
-    testo_wa = f"Ciao! Vorrei prenotare per la serata del {d.day} {MESI[d.month - 1]} ({s['titolo']}). Siamo in "
+        menu_html = (f'<div class="serata-menu"><div class="serata-prezzo"><b>{L["menu_carta"]}</b>'
+                     f'<span>{e(tr(s, "nota_menu", lingua, L["nota_default"]))}</span></div></div>')
+    testo_wa = L["wa"].format(g=d.day, m=L["mesi"][d.month - 1], t=titolo)
     wa = "https://wa.me/390813357572?text=" + urllib.parse.quote(testo_wa)
-    foto = (f'<div class="serata-foto"><img src="{e(s["foto"])}" alt="Locandina: {e(s["titolo"])}'
-            + (f' – {e(s["artista"])}' if s.get("artista") else "") + '" loading="lazy"></div>') if s.get("foto") else ""
+    foto_src = s.get("foto", "")
+    if foto_src and lingua != "it":
+        foto_src = "/" + foto_src
+    foto = (f'<div class="serata-foto"><img src="{e(foto_src)}" alt="{L["locandina"]}: {e(titolo)}'
+            + (f' – {e(s["artista"])}' if s.get("artista") else "") + '" loading="lazy"></div>') if foto_src else ""
     return f'''
     <article class="serata" data-data="{e(s["data"])}">
       {foto}
       <div class="serata-corpo">
         {bozza}
-        <p class="serata-quando">{quando}</p>
-        <h3 class="serata-titolo">{e(s["titolo"])}</h3>
+        <p class="serata-quando">{quando(s, L, lingua)}</p>
+        <h3 class="serata-titolo">{e(titolo)}</h3>
         {artista}{sotto}
         {menu_html}
         {extra}
-        <p class="serata-avviso">Prenotazione obbligatoria via WhatsApp</p>
+        <p class="serata-avviso">{L["avviso"]}</p>
         <div class="serata-cta">
-          <a href="{wa}" target="_blank" rel="noopener" class="btn-gold serata-wa" data-serata="{e(s["data"])}">Prenota su WhatsApp</a>
+          <a href="{wa}" target="_blank" rel="noopener" class="btn-gold serata-wa" data-serata="{e(s["data"])}">{L["cta"]}</a>
         </div>
       </div>
     </article>'''
 
 
-def jsonld(s):
+def jsonld(s, lingua):
+    L = TESTI[lingua]
+    tz = ZoneInfo("Europe/Rome")
     if s.get("ora"):
-        inizio = dt.datetime.fromisoformat(f'{s["data"]}T{s["ora"]}').replace(tzinfo=ZoneInfo("Europe/Rome")).isoformat()
+        inizio = dt.datetime.fromisoformat(f'{s["data"]}T{s["ora"]}').replace(tzinfo=tz).isoformat()
         # fine: "ora_fine" se indicata, altrimenti chiusura cucina (23:30)
-        fine = dt.datetime.fromisoformat(f'{s["data"]}T{s.get("ora_fine", "23:30")}').replace(tzinfo=ZoneInfo("Europe/Rome")).isoformat()
+        fine = dt.datetime.fromisoformat(f'{s["data"]}T{s.get("ora_fine", "23:30")}').replace(tzinfo=tz).isoformat()
     else:
         inizio = fine = s["data"]
+    titolo = tr(s, "titolo", lingua)
     ev = {
         "@context": "https://schema.org", "@type": "Event",
-        "name": s["titolo"] + (f' – {s["artista"]}' if s.get("artista") else ""),
+        "name": titolo + (f' – {s["artista"]}' if s.get("artista") else ""),
         "startDate": inizio, "endDate": fine, "eventStatus": "https://schema.org/EventScheduled",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
         "location": {"@type": "Restaurant", "name": "Casa Rosebery",
                      "address": {"@type": "PostalAddress", "streetAddress": "Via Ferdinando Russo 13",
                                  "postalCode": "80123", "addressLocality": "Napoli", "addressCountry": "IT"}},
-        "organizer": {"@type": "Organization", "name": "Casa Rosebery", "url": "https://www.casaroseberyristorante.it/"},
+        "organizer": {"@type": "Organization", "name": "Casa Rosebery", "url": L["url"]},
     }
-    descr = s.get("sottotitolo") or (s["titolo"] + " a Casa Rosebery, Napoli.")
+    descr = tr(s, "sottotitolo", lingua) or L["descr_default"].format(t=titolo)
     if s.get("prezzo") and s.get("menu"):
-        descr += f' Menu fisso a {s["prezzo"]} € a persona.'
+        descr += L["menu_fisso"].format(p=s["prezzo"])
     ev["description"] = descr
     if s.get("prezzo"):
         ev["offers"] = {"@type": "Offer", "price": s["prezzo"], "priceCurrency": "EUR",
-                        "url": "https://www.casaroseberyristorante.it/#serate", "availability": "https://schema.org/InStock"}
+                        "url": L["url"] + "#serate", "availability": "https://schema.org/InStock"}
         if s.get("prenotabile_dal"):
             ev["offers"]["validFrom"] = s["prenotabile_dal"]
     if s.get("foto"):
-        ev["image"] = "https://www.casaroseberyristorante.it/" + s["foto"]
+        ev["image"] = f"{SITO}/" + s["foto"]
     if s.get("artista"):
         ev["performer"] = {"@type": "Person", "name": s["artista"]}
     return json.dumps(ev, ensure_ascii=False)
 
 
-if serate:
-    blocco = f'''{INIZIO}
+def blocco(lingua):
+    L = TESTI[lingua]
+    if not serate:
+        return f"{INIZIO}\n{FINE}"
+    return f'''{INIZIO}
 <section class="section-serate" id="serate">
   <div class="section-header">
-    <span class="section-eyebrow">In programma</span>
-    <h2 class="section-title">Prossime <em>serate</em></h2>
-    <p class="serate-intro">Cene con musica dal vivo e ospiti speciali. Posti limitati: la prenotazione è obbligatoria e si effettua solo via WhatsApp.</p>
+    <span class="section-eyebrow">{L["eyebrow"]}</span>
+    <h2 class="section-title">{L["titolo"]}</h2>
+    <p class="serate-intro">{L["intro"]}</p>
   </div>
-  <div class="serate-lista">{"".join(carta(s) for s in serate)}
+  <div class="serate-lista">{"".join(carta(s, lingua) for s in serate)}
   </div>
 </section>
-{"".join(f'<script type="application/ld+json">{jsonld(s)}</script>' for s in serate if s.get("pubblica"))}
+{"".join(f'<script type="application/ld+json">{jsonld(s, lingua)}</script>' for s in serate if s.get("pubblica"))}
 <script>
 // nasconde le serate già passate e, se non ne resta nessuna, l'intera sezione
 (function () {{
@@ -138,16 +207,19 @@ if serate:
 }})();
 </script>
 {FINE}'''
-else:
-    blocco = f"{INIZIO}\n{FINE}"
 
-testo = INDEX.read_text(encoding="utf-8")
-a, b = testo.index(INIZIO), testo.index(FINE) + len(FINE)
-testo = testo[:a] + blocco + testo[b:]
-# il link "Serate & Eventi" del menu punta alle serate solo se ce ne sono
-if serate:
-    testo = testo.replace('href="#eventi">Serate', 'href="#serate">Serate')
-else:
-    testo = testo.replace('href="#serate">Serate', 'href="#eventi">Serate')
-INDEX.write_text(testo, encoding="utf-8")
-print(f"{len(serate)} serate inserite" + (" (ANTEPRIMA, non pubblicare)" if ANTEPRIMA else ""))
+
+for lingua, L in TESTI.items():
+    f = L["file"]
+    if not f.exists():
+        continue
+    testo = f.read_text(encoding="utf-8")
+    a, b = testo.index(INIZIO), testo.index(FINE) + len(FINE)
+    testo = testo[:a] + blocco(lingua) + testo[b:]
+    # il link "Serate & Eventi" del menu punta alle serate solo se ce ne sono
+    if serate:
+        testo = testo.replace(f'href="#eventi">{L["nav"]}', f'href="#serate">{L["nav"]}')
+    else:
+        testo = testo.replace(f'href="#serate">{L["nav"]}', f'href="#eventi">{L["nav"]}')
+    f.write_text(testo, encoding="utf-8")
+    print(f"{f.relative_to(RADICE)}: {len(serate)} serate inserite" + (" (ANTEPRIMA, non pubblicare)" if ANTEPRIMA else ""))

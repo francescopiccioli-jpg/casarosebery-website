@@ -1,7 +1,9 @@
-"""Genera menu.html a partire da menu-src/menu.json.
+"""Genera menu.html (italiano) e en/menu.html (inglese) a partire da menu-src/menu.json.
 
 Uso (dalla cartella del repo):  python3 menu-src/genera_menu.py
 Per aggiornare il menu: modificare menu.json e rilanciare lo script.
+Inglese: campi con suffisso _en (titolo_en, sotto_en, nota_en, desc_en, nome_en). Se mancano,
+la pagina inglese mostra il testo italiano (i nomi dei piatti possono restare in italiano).
 """
 import html
 import json
@@ -11,74 +13,120 @@ import re
 RADICE = pathlib.Path(__file__).resolve().parent.parent
 dati = json.loads((RADICE / "menu-src" / "menu.json").read_text(encoding="utf-8"))
 e = html.escape
+SITO = "https://www.casaroseberyristorante.it"
+
+TESTI = {
+    "it": {"lang": "it", "file": RADICE / "menu.html", "rad": "", "home": "/", "link": "/en/menu.html", "link_lang": "en", "link_txt": "EN",
+           "degu_nav": "Degustazione", "degu_tit": "Percorsi degustazione", "pp": "a persona · minimo 2 persone",
+           "escl": "Bevande escluse", "etto": " · prezzo all'etto", "all_title": "Allergeni",
+           "title": "Menu — Casa Rosebery · Braceria & Ristorante a Posillipo, Napoli",
+           "descr": "Il menu di Casa Rosebery a Posillipo: percorsi degustazione, cruderia, carni pregiate alla brace (Wagyu A5, Tomahawk, Black Angus), primi della tradizione napoletana e dolci.",
+           "eyebrow": "Braceria &amp; Ristorante · Posillipo", "h1": "Il nostro <em>menu</em>", "agg": "Aggiornato a",
+           "nav_aria": "Sezioni del menu", "all_h": "Allergeni e intolleranze",
+           "all_1": ("I numeri accanto ai piatti indicano gli allergeni presenti secondo il Regolamento UE n. 1169/2011. "
+                     "Per qualsiasi allergia o intolleranza chiedi al nostro personale prima di ordinare."),
+           "all_0": ("Alcuni piatti possono contenere allergeni (Regolamento UE n. 1169/2011). "
+                     "Prima di ordinare, comunica al nostro personale qualsiasi allergia o intolleranza: "
+                     "ti indicheremo con precisione gli ingredienti di ogni piatto."),
+           "prenota": "Prenota un tavolo", "vini": "Carta dei vini", "vini_url": "vini.html", "pdf": "Scarica il menu in PDF",
+           "privacy": "Privacy e Cookie Policy"},
+    "en": {"lang": "en", "file": RADICE / "en" / "menu.html", "rad": "/", "home": "/en/", "link": "/menu.html", "link_lang": "it", "link_txt": "IT",
+           "degu_nav": "Tasting menus", "degu_tit": "Tasting menus", "pp": "per person · minimum 2 people",
+           "escl": "Drinks not included", "etto": " · price per 100 g", "all_title": "Allergens",
+           "title": "Menu — Casa Rosebery · Steakhouse & Restaurant in Posillipo, Naples",
+           "descr": "The Casa Rosebery menu in Posillipo, Naples: tasting menus, raw bar, prime grilled steaks (A5 Wagyu, Tomahawk, Black Angus), traditional Neapolitan pasta and desserts.",
+           "eyebrow": "Steakhouse &amp; Restaurant · Posillipo", "h1": "Our <em>menu</em>", "agg": "Updated",
+           "nav_aria": "Menu sections", "all_h": "Allergies and intolerances",
+           "all_1": ("The numbers next to each dish indicate the allergens present under EU Regulation No 1169/2011. "
+                     "If you have any allergy or intolerance, please ask our staff before ordering."),
+           "all_0": ("Some dishes may contain allergens (EU Regulation No 1169/2011). "
+                     "Before ordering, please tell our staff about any allergy or intolerance: "
+                     "we will tell you exactly what goes into each dish."),
+           "prenota": "Book a table", "vini": "Wine list", "vini_url": "vini.html", "pdf": "Download the menu (PDF, Italian)",
+           "privacy": "Privacy &amp; Cookie Policy (Italian)"},
+}
+
+
+def tr(obj, campo, lingua):
+    if lingua != "it" and obj.get(f"{campo}_{lingua}"):
+        return obj[f"{campo}_{lingua}"]
+    return obj.get(campo, "")
 
 
 def slug(s):
     return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
 
 
-def allergeni(p):
+def allergeni(p, L):
     # numeri nascosti finché la cucina non verifica gli allergeni (vedi menu.json: mostra_allergeni)
     if not dati.get("mostra_allergeni", True) or not p.get("all"):
         return ""
-    return f' <span class="all" title="Allergeni">{e(p["all"].replace(",", " · "))}</span>'
+    return f' <span class="all" title="{L["all_title"]}">{e(p["all"].replace(",", " · "))}</span>'
 
 
-def piatto(p, unita=""):
+def piatto(p, L, unita=""):
+    lg = L["lang"]
     prezzo = f'<span class="prezzo">€ {e(p["prezzo"])}{e(unita)}</span>' if p.get("prezzo") else ""
-    desc = f'<p class="desc">{e(p["desc"])}</p>' if p.get("desc") else ""
-    return (f'<li class="piatto"><div class="riga"><h4>{e(p["nome"])}{allergeni(p)}</h4>'
+    desc = f'<p class="desc">{e(tr(p, "desc", lg))}</p>' if p.get("desc") else ""
+    return (f'<li class="piatto"><div class="riga"><h4>{e(tr(p, "nome", lg))}{allergeni(p, L)}</h4>'
             f'<span class="punti"></span>{prezzo}</div>{desc}</li>')
 
 
-nav, corpo = [], []
+def contenuto(L):
+    lg = L["lang"]
+    nav, corpo = [], []
+    # Percorsi degustazione
+    nav.append(f'<a href="#degustazione">{L["degu_nav"]}</a>')
+    schede = []
+    for pc in dati["percorsi"]:
+        portate = "".join(
+            f'<div class="portata"><h5>{e(tr(pt, "titolo", lg))}'
+            + (f' <small>({e(tr(pt, "nota", lg))})</small>' if pt.get("nota") else "")
+            + "</h5><ul>" + "".join(piatto(p, L) for p in pt["piatti"]) + "</ul></div>"
+            for pt in pc["portate"])
+        schede.append(f'<article class="percorso"><header><h3>{e(pc["nome"])}</h3>'
+                      f'<p class="pp">€ {e(pc["prezzo"])} <span>{L["pp"]}</span></p></header>'
+                      f'{portate}<p class="escl">{L["escl"]}</p></article>')
+    corpo.append(f'<section id="degustazione" class="sez"><h2>{L["degu_tit"]}</h2>'
+                 f'<div class="percorsi">{"".join(schede)}</div></section>')
+    # Sezioni alla carta (gli id restano quelli italiani, così i link funzionano in entrambe le lingue)
+    visti = set()
+    for s in dati["sezioni"]:
+        sid = slug(s["titolo"] + (" " + s["sotto"] if s.get("sotto") else ""))
+        if s["titolo"] not in visti:
+            nav.append(f'<a href="#{sid}">{e(tr(s, "titolo", lg))}</a>')
+            visti.add(s["titolo"])
+        sotto = f'<p class="sotto">{e(tr(s, "sotto", lg))}{L["etto"]}</p>' if s.get("sotto") else ""
+        unita = s.get("unita", "")
+        if lg == "en" and unita.strip() == "/etto":
+            unita = " / 100 g"
+        voci = "".join(piatto(p, L, unita) for p in s["piatti"])
+        corpo.append(f'<section id="{sid}" class="sez"><h2>{e(tr(s, "titolo", lg))}</h2>{sotto}<ul class="lista">{voci}</ul></section>')
+    return nav, corpo
 
-# Percorsi degustazione
-nav.append('<a href="#degustazione">Degustazione</a>')
-schede = []
-for pc in dati["percorsi"]:
-    portate = "".join(
-        f'<div class="portata"><h5>{e(pt["titolo"])}'
-        + (f' <small>({e(pt["nota"])})</small>' if pt.get("nota") else "")
-        + "</h5><ul>" + "".join(piatto(p) for p in pt["piatti"]) + "</ul></div>"
-        for pt in pc["portate"])
-    schede.append(f'<article class="percorso"><header><h3>{e(pc["nome"])}</h3>'
-                  f'<p class="pp">€ {e(pc["prezzo"])} <span>a persona · minimo 2 persone</span></p></header>'
-                  f'{portate}<p class="escl">Bevande escluse</p></article>')
-corpo.append('<section id="degustazione" class="sez"><h2>Percorsi degustazione</h2>'
-             f'<div class="percorsi">{"".join(schede)}</div></section>')
 
-# Sezioni alla carta
-visti = set()
-for s in dati["sezioni"]:
-    sid = slug(s["titolo"] + (" " + s["sotto"] if s.get("sotto") else ""))
-    if s["titolo"] not in visti:
-        nav.append(f'<a href="#{sid}">{e(s["titolo"])}</a>')
-        visti.add(s["titolo"])
-    sotto = f'<p class="sotto">{e(s["sotto"])} · prezzo all\'etto</p>' if s.get("sotto") else ""
-    voci = "".join(piatto(p, s.get("unita", "")) for p in s["piatti"])
-    corpo.append(f'<section id="{sid}" class="sez"><h2>{e(s["titolo"])}</h2>{sotto}<ul class="lista">{voci}</ul></section>')
-
-TESTO_ALLERGENI = ("I numeri accanto ai piatti indicano gli allergeni presenti secondo il Regolamento UE n. 1169/2011. "
-                   "Per qualsiasi allergia o intolleranza chiedi al nostro personale prima di ordinare."
-                   if dati.get("mostra_allergeni", True) else
-                   "Alcuni piatti possono contenere allergeni (Regolamento UE n. 1169/2011). "
-                   "Prima di ordinare, comunica al nostro personale qualsiasi allergia o intolleranza: "
-                   "ti indicheremo con precisione gli ingredienti di ogni piatto.")
-LINK_PDF = ('  <a class="btn" href="menu-casa-rosebery.pdf" target="_blank">Scarica il menu in PDF</a>\n'
-            if dati.get("mostra_pdf", False) else "")
-
-pagina = f'''<!DOCTYPE html>
-<html lang="it">
+def pagina(L):
+    nav, corpo = contenuto(L)
+    TESTO_ALLERGENI = L["all_1"] if dati.get("mostra_allergeni", True) else L["all_0"]
+    LINK_PDF = (f'  <a class="btn" href="{L["rad"]}menu-casa-rosebery.pdf" target="_blank">{L["pdf"]}</a>\n'
+                if dati.get("mostra_pdf", False) else "")
+    rad = L["rad"]
+    agg = dati.get("aggiornato_en", dati["aggiornato"]) if L["lang"] == "en" else dati["aggiornato"]
+    canon = f'{SITO}/menu.html' if L["lang"] == "it" else f'{SITO}/en/menu.html'
+    return f'''<!DOCTYPE html>
+<html lang="{L["lang"]}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Menu — Casa Rosebery · Braceria & Ristorante a Posillipo, Napoli</title>
-<meta name="description" content="Il menu di Casa Rosebery a Posillipo: percorsi degustazione, cruderia, carni pregiate alla brace (Wagyu A5, Tomahawk, Black Angus), primi della tradizione napoletana e dolci.">
-<link rel="canonical" href="https://www.casaroseberyristorante.it/menu.html">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="favicon-512.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>{L["title"]}</title>
+<meta name="description" content="{L["descr"]}">
+<link rel="canonical" href="{canon}">
+<link rel="alternate" hreflang="it" href="{SITO}/menu.html">
+<link rel="alternate" hreflang="en" href="{SITO}/en/menu.html">
+<link rel="alternate" hreflang="x-default" href="{SITO}/menu.html">
+<link rel="icon" href="{rad}favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="{rad}favicon-512.png">
+<link rel="apple-touch-icon" href="{rad}apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -88,6 +136,7 @@ html {{ scroll-behavior:smooth; scroll-padding-top:120px; }}
 body {{ font-family:'Inter',sans-serif; font-weight:300; background:var(--crema); color:var(--text); line-height:1.6; }}
 a {{ color:inherit; text-decoration:none; }}
 .top {{ background:var(--nero); color:#fff; text-align:center; padding:28px 20px 34px; }}
+.top .lang {{ position:absolute; right:20px; top:24px; font-size:10px; letter-spacing:2px; color:rgba(255,255,255,.6); }}
 .top .back {{ position:absolute; left:20px; top:24px; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.5); }}
 .top img {{ width:min(70vw,300px); height:auto; margin:0 auto 14px; display:block; }}
 .top .eyebrow {{ font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--oro); }}
@@ -138,25 +187,26 @@ footer a {{ text-decoration:underline; }}
 </head>
 <body>
 <header class="top" style="position:relative">
-  <a class="back" href="/">← Home</a>
-  <a href="/"><img src="logo-chiaro.png" alt="Casa Rosebery"></a>
-  <span class="eyebrow">Braceria &amp; Ristorante · Posillipo</span>
-  <h1>Il nostro <em>menu</em></h1>
-  <p class="agg">Aggiornato a {e(dati["aggiornato"])}</p>
+  <a class="back" href="{L["home"]}">← Home</a>
+  <a class="lang" href="{L["link"]}" hreflang="{L["link_lang"]}" lang="{L["link_lang"]}">{L["link_txt"]}</a>
+  <a href="{L["home"]}"><img src="{rad}logo-chiaro.png" alt="Casa Rosebery"></a>
+  <span class="eyebrow">{L["eyebrow"]}</span>
+  <h1>{L["h1"]}</h1>
+  <p class="agg">{L["agg"]} {e(agg)}</p>
 </header>
-<nav class="cat" aria-label="Sezioni del menu">{"".join(nav)}</nav>
+<nav class="cat" aria-label="{L["nav_aria"]}">{"".join(nav)}</nav>
 <main>
 {"".join(corpo)}
 <section class="info" id="allergeni">
-  <h3>Allergeni e intolleranze</h3>
+  <h3>{L["all_h"]}</h3>
   <p>{TESTO_ALLERGENI}</p>
 </section>
 <div class="azioni">
-  <a class="btn pieno" href="https://casarosebery.plateform.app/reserve" target="_blank" rel="noopener">Prenota un tavolo</a>
-  <a class="btn" href="vini.html">Carta dei vini</a>
+  <a class="btn pieno" href="https://casarosebery.plateform.app/reserve" target="_blank" rel="noopener">{L["prenota"]}</a>
+  <a class="btn" href="{L["vini_url"]}">{L["vini"]}</a>
 {LINK_PDF}</div>
 </main>
-<footer>© 2026 Casa Rosebery · Nado Advertising S.r.l. · P.IVA 07284940488 · <a href="privacy.html">Privacy e Cookie Policy</a></footer>
+<footer>© 2026 Casa Rosebery · Nado Advertising S.r.l. · P.IVA 07284940488 · <a href="{rad}privacy.html">{L["privacy"]}</a></footer>
 <script>
 (function () {{
   var links = document.querySelectorAll('nav.cat a');
@@ -182,5 +232,7 @@ footer a {{ text-decoration:underline; }}
 </html>
 '''
 
-(RADICE / "menu.html").write_text(pagina, encoding="utf-8")
-print("menu.html generato")
+for L in TESTI.values():
+    L["file"].parent.mkdir(exist_ok=True)
+    L["file"].write_text(pagina(L), encoding="utf-8")
+    print(f'{L["file"].relative_to(RADICE)} generato')

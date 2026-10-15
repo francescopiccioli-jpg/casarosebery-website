@@ -1,4 +1,4 @@
-"""Genera vini.html a partire da vini-src/vini.json.
+"""Genera vini.html (italiano) e en/vini.html (inglese) a partire da vini-src/vini.json.
 
 Uso (dalla cartella del repo):  python3 vini-src/genera_vini.py
 Per aggiornare la carta: modificare vini.json e rilanciare lo script.
@@ -28,37 +28,84 @@ def ordina_regioni(vini):
     return ordine
 
 
-nav, corpo = [], []
-for sid, titolo in SEZIONI:
-    vini = [v for v in dati["vini"] if UNISCI.get(v["sez"], v["sez"]) == sid]
-    if not vini:
-        continue
-    nav.append(f'<a href="#{sid}">{e(titolo)}</a>')
-    blocchi = []
-    for reg in ordina_regioni(vini):
-        righe = "".join(
-            f'<li class="vino" data-cerca="{e((v["nome"] + " " + v["produttore"] + " " + reg).lower())}">'
-            f'<div class="riga"><h4>{e(v["nome"])}</h4><span class="punti"></span>'
-            f'<span class="prezzo">€ {e(v["prezzo"])}</span></div>'
-            + (f'<p class="prod">{e(v["produttore"])}</p>' if v["produttore"] else "")
-            + '</li>'
-            for v in vini if v["regione"] == reg)
-        blocchi.append(f'<div class="regione"><h3>{e(reg)}</h3><ul>{righe}</ul></div>')
-    corpo.append(f'<section id="{sid}" class="sez"><h2>{e(titolo)}</h2>'
-                 f'<p class="conta">{len(vini)} etichette</p>{"".join(blocchi)}</section>')
+SITO = "https://www.casaroseberyristorante.it"
+TESTI = {
+    "it": {"lang": "it", "file": RADICE / "vini.html", "rad": "", "home": "/", "link": "/en/vini.html", "link_lang": "en", "link_txt": "EN",
+           "sez": dict(SEZIONI), "regioni": {}, "etichette": "etichette",
+           "title": "Carta dei vini — Casa Rosebery · Posillipo, Napoli",
+           "descr": "La carta dei vini di Casa Rosebery a Posillipo: {n} etichette tra Champagne e Franciacorta, i grandi rossi di Campania, Toscana, Piemonte e Veneto, bianchi vulcanici e rosati.",
+           "eyebrow": "Braceria &amp; Ristorante · Posillipo", "h1": "Carta dei <em>vini</em>", "agg": "{n} etichette · aggiornata a {d}",
+           "tip": "Tipologie", "cerca": "Cerca un vino, un produttore o una regione…", "cerca_aria": "Cerca nella carta dei vini",
+           "vuoto": "Nessun vino trovato. Chiedi al nostro personale: la cantina riserva sempre qualche sorpresa.",
+           "nota": "Prezzi a bottiglia. Annate e disponibilità possono variare: il nostro personale di sala ti consiglia l'abbinamento migliore con i tagli alla brace.",
+           "prenota": "Prenota un tavolo", "menu": "Sfoglia il menu", "privacy": "Privacy e Cookie Policy"},
+    "en": {"lang": "en", "file": RADICE / "en" / "vini.html", "rad": "/", "home": "/en/", "link": "/vini.html", "link_lang": "it", "link_txt": "IT",
+           "sez": {"bollicine": "Sparkling", "rossi": "Reds", "bianchi": "Whites", "rosati": "Rosés"},
+           "regioni": {"Francia": "France", "Germania": "Germany", "Lombardia": "Lombardy", "Piemonte": "Piedmont",
+                       "Sardegna": "Sardinia", "Sicilia": "Sicily", "Toscana": "Tuscany", "Puglia": "Apulia"},
+           "etichette": "labels",
+           "title": "Wine List — Casa Rosebery · Posillipo, Naples",
+           "descr": "The Casa Rosebery wine list in Posillipo, Naples: {n} labels including Champagne and Franciacorta, great reds from Campania, Tuscany, Piedmont and Veneto, volcanic whites and rosés.",
+           "eyebrow": "Steakhouse &amp; Restaurant · Posillipo", "h1": "Wine <em>list</em>", "agg": "{n} labels · updated {d}",
+           "tip": "Wine types", "cerca": "Search for a wine, producer or region…", "cerca_aria": "Search the wine list",
+           "vuoto": "No wines found. Ask our staff: the cellar always has a few surprises in store.",
+           "nota": "Prices are per bottle. Vintages and availability may vary: our dining room staff will suggest the best pairing for your grilled cuts.",
+           "prenota": "Book a table", "menu": "Browse the menu", "privacy": "Privacy &amp; Cookie Policy (Italian)"},
+}
+
+
+def contenuto(L):
+    nav, corpo = [], []
+    for sid, _ in SEZIONI:
+        titolo = L["sez"][sid]
+        vini = [v for v in dati["vini"] if UNISCI.get(v["sez"], v["sez"]) == sid]
+        if not vini:
+            continue
+        nav.append(f'<a href="#{sid}">{e(titolo)}</a>')
+        blocchi = []
+        for reg in ordina_regioni(vini):
+            nome_reg = L["regioni"].get(reg, reg)
+            cerca_reg = reg + (" " + nome_reg if nome_reg != reg else "")
+            righe = "".join(
+                f'<li class="vino" data-cerca="{e((v["nome"] + " " + v["produttore"] + " " + cerca_reg).lower())}">'
+                f'<div class="riga"><h4>{e(v["nome"])}</h4><span class="punti"></span>'
+                f'<span class="prezzo">€ {e(v["prezzo"])}</span></div>'
+                + (f'<p class="prod">{e(v["produttore"])}</p>' if v["produttore"] else "")
+                + '</li>'
+                for v in vini if v["regione"] == reg)
+            blocchi.append(f'<div class="regione"><h3>{e(nome_reg)}</h3><ul>{righe}</ul></div>')
+        corpo.append(f'<section id="{sid}" class="sez"><h2>{e(titolo)}</h2>'
+                     f'<p class="conta">{len(vini)} {L["etichette"]}</p>{"".join(blocchi)}</section>')
+    return nav, corpo
+
 
 totale = len(dati["vini"])
-pagina = f'''<!DOCTYPE html>
-<html lang="it">
+MESI_EN = {"Gennaio": "January", "Febbraio": "February", "Marzo": "March", "Aprile": "April", "Maggio": "May", "Giugno": "June",
+           "Luglio": "July", "Agosto": "August", "Settembre": "September", "Ottobre": "October", "Novembre": "November", "Dicembre": "December"}
+
+
+def pagina(L):
+    nav, corpo = contenuto(L)
+    rad = L["rad"]
+    agg = dati["aggiornato"]
+    if L["lang"] == "en":
+        m, _, a = agg.partition(" ")
+        agg = f"{MESI_EN.get(m.capitalize(), m)} {a}".strip()
+    canon = f'{SITO}/vini.html' if L["lang"] == "it" else f'{SITO}/en/vini.html'
+    return f'''<!DOCTYPE html>
+<html lang="{L["lang"]}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Carta dei vini — Casa Rosebery · Posillipo, Napoli</title>
-<meta name="description" content="La carta dei vini di Casa Rosebery a Posillipo: {totale} etichette tra Champagne e Franciacorta, i grandi rossi di Campania, Toscana, Piemonte e Veneto, bianchi vulcanici e rosati.">
-<link rel="canonical" href="https://www.casaroseberyristorante.it/vini.html">
-<link rel="icon" href="favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="favicon-512.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<title>{L["title"]}</title>
+<meta name="description" content="{L["descr"].format(n=totale)}">
+<link rel="canonical" href="{canon}">
+<link rel="alternate" hreflang="it" href="{SITO}/vini.html">
+<link rel="alternate" hreflang="en" href="{SITO}/en/vini.html">
+<link rel="alternate" hreflang="x-default" href="{SITO}/vini.html">
+<link rel="icon" href="{rad}favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="{rad}favicon-512.png">
+<link rel="apple-touch-icon" href="{rad}apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -68,6 +115,7 @@ html {{ scroll-behavior:smooth; scroll-padding-top:130px; }}
 body {{ font-family:'Inter',sans-serif; font-weight:300; background:var(--crema); color:var(--text); line-height:1.6; }}
 a {{ color:inherit; text-decoration:none; }}
 .top {{ position:relative; background:var(--nero); color:#fff; text-align:center; padding:28px 20px 34px; }}
+.top .lang {{ position:absolute; right:20px; top:24px; font-size:10px; letter-spacing:2px; color:rgba(255,255,255,.6); }}
 .top .back {{ position:absolute; left:20px; top:24px; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.5); }}
 .top img {{ width:min(70vw,300px); height:auto; margin:0 auto 14px; display:block; }}
 .top .eyebrow {{ font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--oro); }}
@@ -107,26 +155,27 @@ footer a {{ text-decoration:underline; }}
 </head>
 <body>
 <header class="top">
-  <a class="back" href="/">← Home</a>
-  <a href="/"><img src="logo-chiaro.png" alt="Casa Rosebery"></a>
-  <span class="eyebrow">Braceria &amp; Ristorante · Posillipo</span>
-  <h1>Carta dei <em>vini</em></h1>
-  <p class="agg">{totale} etichette · aggiornata a {e(dati["aggiornato"])}</p>
+  <a class="back" href="{L["home"]}">← Home</a>
+  <a class="lang" href="{L["link"]}" hreflang="{L["link_lang"]}" lang="{L["link_lang"]}">{L["link_txt"]}</a>
+  <a href="{L["home"]}"><img src="{rad}logo-chiaro.png" alt="Casa Rosebery"></a>
+  <span class="eyebrow">{L["eyebrow"]}</span>
+  <h1>{L["h1"]}</h1>
+  <p class="agg">{L["agg"].format(n=totale, d=e(agg))}</p>
 </header>
 <div class="barra">
-  <nav class="cat" aria-label="Tipologie">{"".join(nav)}</nav>
-  <div class="cerca"><input type="search" id="cerca" placeholder="Cerca un vino, un produttore o una regione…" aria-label="Cerca nella carta dei vini"></div>
+  <nav class="cat" aria-label="{L["tip"]}">{"".join(nav)}</nav>
+  <div class="cerca"><input type="search" id="cerca" placeholder="{L["cerca"]}" aria-label="{L["cerca_aria"]}"></div>
 </div>
 <main>
 {"".join(corpo)}
-<p class="vuoto" id="vuoto">Nessun vino trovato. Chiedi al nostro personale: la cantina riserva sempre qualche sorpresa.</p>
-<p class="nota">Prezzi a bottiglia. Annate e disponibilità possono variare: il nostro personale di sala ti consiglia l'abbinamento migliore con i tagli alla brace.</p>
+<p class="vuoto" id="vuoto">{L["vuoto"]}</p>
+<p class="nota">{L["nota"]}</p>
 <div class="azioni">
-  <a class="btn pieno" href="https://casarosebery.plateform.app/reserve" target="_blank" rel="noopener">Prenota un tavolo</a>
-  <a class="btn" href="menu.html">Sfoglia il menu</a>
+  <a class="btn pieno" href="https://casarosebery.plateform.app/reserve" target="_blank" rel="noopener">{L["prenota"]}</a>
+  <a class="btn" href="menu.html">{L["menu"]}</a>
 </div>
 </main>
-<footer>© 2026 Casa Rosebery · Nado Advertising S.r.l. · P.IVA 07284940488 · <a href="privacy.html">Privacy e Cookie Policy</a></footer>
+<footer>© 2026 Casa Rosebery · Nado Advertising S.r.l. · P.IVA 07284940488 · <a href="{rad}privacy.html">{L["privacy"]}</a></footer>
 <script>
 (function () {{
   // ricerca
@@ -163,5 +212,7 @@ footer a {{ text-decoration:underline; }}
 </body>
 </html>
 '''
-(RADICE / "vini.html").write_text(pagina, encoding="utf-8")
-print(f"vini.html generato: {totale} vini")
+for L in TESTI.values():
+    L["file"].parent.mkdir(exist_ok=True)
+    L["file"].write_text(pagina(L), encoding="utf-8")
+    print(f'{L["file"].relative_to(RADICE)} generato: {totale} vini')
