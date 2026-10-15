@@ -84,21 +84,29 @@ def carta(s):
 def jsonld(s):
     if s.get("ora"):
         inizio = dt.datetime.fromisoformat(f'{s["data"]}T{s["ora"]}').replace(tzinfo=ZoneInfo("Europe/Rome")).isoformat()
+        # fine: "ora_fine" se indicata, altrimenti chiusura cucina (23:30)
+        fine = dt.datetime.fromisoformat(f'{s["data"]}T{s.get("ora_fine", "23:30")}').replace(tzinfo=ZoneInfo("Europe/Rome")).isoformat()
     else:
-        inizio = s["data"]
+        inizio = fine = s["data"]
     ev = {
         "@context": "https://schema.org", "@type": "Event",
         "name": s["titolo"] + (f' – {s["artista"]}' if s.get("artista") else ""),
-        "startDate": inizio, "eventStatus": "https://schema.org/EventScheduled",
+        "startDate": inizio, "endDate": fine, "eventStatus": "https://schema.org/EventScheduled",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
         "location": {"@type": "Restaurant", "name": "Casa Rosebery",
                      "address": {"@type": "PostalAddress", "streetAddress": "Via Ferdinando Russo 13",
                                  "postalCode": "80123", "addressLocality": "Napoli", "addressCountry": "IT"}},
         "organizer": {"@type": "Organization", "name": "Casa Rosebery", "url": "https://www.casaroseberyristorante.it/"},
     }
+    descr = s.get("sottotitolo") or (s["titolo"] + " a Casa Rosebery, Napoli.")
+    if s.get("prezzo") and s.get("menu"):
+        descr += f' Menu fisso a {s["prezzo"]} € a persona.'
+    ev["description"] = descr
     if s.get("prezzo"):
         ev["offers"] = {"@type": "Offer", "price": s["prezzo"], "priceCurrency": "EUR",
                         "url": "https://www.casaroseberyristorante.it/#serate", "availability": "https://schema.org/InStock"}
+        if s.get("prenotabile_dal"):
+            ev["offers"]["validFrom"] = s["prenotabile_dal"]
     if s.get("foto"):
         ev["image"] = "https://www.casaroseberyristorante.it/" + s["foto"]
     if s.get("artista"):

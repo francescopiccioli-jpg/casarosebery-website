@@ -1,5 +1,5 @@
 {
-  "_istruzioni": "Ogni serata è un elemento di 'serate'. data = AAAA-MM-GG, ora = HH:MM. Le serate passate spariscono da sole. Se 'pubblica' è false la serata non compare sul sito.",
+  "_istruzioni": "Ogni serata è un elemento di 'serate'. data = AAAA-MM-GG, ora = HH:MM. Le serate passate spariscono da sole. Se 'pubblica' è false la serata non compare sul sito. Facoltativi: 'ora_fine' (HH:MM, default 23:30 se c'è 'ora'); 'prenotabile_dal' (AAAA-MM-GG, data di apertura prenotazioni, usata da Google).",
   "serate": [
     {
       "pubblica": true,
@@ -90,7 +90,9 @@
           "prezzo": "8",
           "desc": "Con mascarpone fresco, savoiardi artigianali all'espresso e cacao amaro."
         }
-      ]
+      ],
+      "prenotabile_dal": "2026-10-15",
+      "ora": "21:00"
     },
     {
       "pubblica": true,
@@ -171,7 +173,9 @@
           "prezzo": "8",
           "desc": "Con mascarpone fresco, savoiardi artigianali all'espresso e cacao amaro."
         }
-      ]
+      ],
+      "prenotabile_dal": "2026-10-15",
+      "ora": "21:00"
     },
     {
       "pubblica": true,
@@ -252,7 +256,9 @@
           "prezzo": "8",
           "desc": "Con mascarpone fresco, savoiardi artigianali all'espresso e cacao amaro."
         }
-      ]
+      ],
+      "prenotabile_dal": "2026-10-15",
+      "ora": "21:00"
     }
   ]
 }
