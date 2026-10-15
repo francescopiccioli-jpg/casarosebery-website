@@ -218,10 +218,6 @@ T = [
     ("onclick=\"filterGallery('locale',this)\">Il Locale</button>", "onclick=\"filterGallery('locale',this)\">The Venue</button>"),
 
     # descrizioni delle foto (alt)
-    ('alt="Picanha alla brace servita sullo spiedo con patate al forno, Vesuvio al tramonto sullo sfondo"',
-     'alt="Grilled picanha served on the skewer with roast potatoes, Mount Vesuvius at sunset in the background"'),
-    ('alt="Tagliata alla brace con verdure saltate e sale in fiocchi"',
-     'alt="Grilled sliced steak with sautéed vegetables and sea salt flakes"'),
     ('alt="Brisket Casa Rosebery su purea di patate, con il porticciolo e il Golfo di Napoli sullo sfondo"',
      'alt="Casa Rosebery brisket on mashed potato, with the marina and the Bay of Naples in the background"'),
     ('alt="Ciabatta con friarielli, stracciatella e prosciutto croccante, Vesuvio al tramonto sullo sfondo"',
