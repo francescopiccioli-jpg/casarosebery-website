@@ -168,11 +168,15 @@ def jsonld(s, lingua):
     if s.get("prezzo") and s.get("menu"):
         descr += L["menu_fisso"].format(p=s["prezzo"])
     ev["description"] = descr
-    if s.get("prezzo"):
-        ev["offers"] = {"@type": "Offer", "price": s["prezzo"], "priceCurrency": "EUR",
-                        "url": L["url"] + "#serate", "availability": "https://schema.org/InStock"}
-        if s.get("prenotabile_dal"):
-            ev["offers"]["validFrom"] = s["prenotabile_dal"]
+    # "offers" sempre presente (Search Console lo segnala se manca):
+    # menu fisso = prezzo a persona; serata alla carta = ingresso libero (price 0)
+    ev["offers"] = {"@type": "Offer", "price": s["prezzo"] if s.get("prezzo") else "0", "priceCurrency": "EUR",
+                    "url": L["url"] + "#serate", "availability": "https://schema.org/InStock"}
+    if not s.get("prezzo"):
+        ev["offers"]["description"] = ("Ingresso libero, menu alla carta" if lingua == "it"
+                                       else "Free entry, à la carte menu")
+    if s.get("prenotabile_dal"):
+        ev["offers"]["validFrom"] = s["prenotabile_dal"]
     if s.get("foto"):
         ev["image"] = f"{SITO}/" + s["foto"]
     if s.get("artista"):
