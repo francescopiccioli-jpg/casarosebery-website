@@ -904,7 +904,7 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
 
     <div class="cta-anima">
       <a href="menu.html#dalla-brace-con-osso" class="btn-gold">Carta delle carni</a>
-      <a href="menu.html#degustazione" class="btn-ghost">Percorso Tagli d'Oro · € 80</a>
+      <a href="menu.html#degustazione" data-nascondi-il="2026-10-17" class="btn-ghost">Percorso Tagli d'Oro · € 80</a>
     </div>
   </div>
 </section>
@@ -1658,5 +1658,15 @@ window.addEventListener('scroll', updateBottomNav, { passive: true });
   </a>
 </nav>
 
+<script>
+// Nasconde gli elementi con data-nascondi-il="AAAA-MM-GG" in quella data (ora di Roma; la serata vale fino alle 4 del mattino dopo)
+(function () {
+  var d = new Date(Date.now() - 4 * 3600 * 1000);
+  var oggi = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Rome' }).format(d);
+  document.querySelectorAll('[data-nascondi-il]').forEach(function (el) {
+    if (el.getAttribute('data-nascondi-il').split(',').indexOf(oggi) >= 0) el.style.display = 'none';
+  });
+})();
+</script>
 </body>
 </html>

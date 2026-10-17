@@ -84,7 +84,8 @@ def contenuto(L):
             + (f' <small>({e(tr(pt, "nota", lg))})</small>' if pt.get("nota") else "")
             + "</h5><ul>" + "".join(piatto(p, L) for p in pt["piatti"]) + "</ul></div>"
             for pt in pc["portate"])
-        schede.append(f'<article class="percorso"><header><h3>{e(pc["nome"])}</h3>'
+        nasc = f' data-nascondi-il="{",".join(pc["nascondi_il"])}"' if pc.get("nascondi_il") else ""
+        schede.append(f'<article class="percorso"{nasc}><header><h3>{e(pc["nome"])}</h3>'
                       f'<p class="pp">€ {e(pc["prezzo"])} <span>{L["pp"]}</span></p></header>'
                       f'{portate}<p class="escl">{L["escl"]}</p></article>')
     corpo.append(f'<section id="degustazione" class="sez"><h2>{L["degu_tit"]}</h2>'
@@ -226,6 +227,16 @@ footer a {{ text-decoration:underline; }}
     }});
   }}, {{ rootMargin: '-130px 0px -70% 0px' }});
   document.querySelectorAll('.sez').forEach(function (s) {{ obs.observe(s); }});
+}})();
+</script>
+<script>
+// Nasconde gli elementi con data-nascondi-il="AAAA-MM-GG" in quella data (ora di Roma; la serata vale fino alle 4 del mattino dopo)
+(function () {{
+  var d = new Date(Date.now() - 4 * 3600 * 1000);
+  var oggi = new Intl.DateTimeFormat('en-CA', {{ timeZone: 'Europe/Rome' }}).format(d);
+  document.querySelectorAll('[data-nascondi-il]').forEach(function (el) {{
+    if (el.getAttribute('data-nascondi-il').split(',').indexOf(oggi) >= 0) el.style.display = 'none';
+  }});
 }})();
 </script>
 </body>
