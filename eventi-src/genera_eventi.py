@@ -32,10 +32,10 @@ TESTI = {
         "ore": "ore", "bozza": "BOZZA – non pubblicata", "integr": "Integrazione · + € {p} a persona",
         "alla_carta": "Alla carta", "pp": "a persona · menu fisso", "menu_carta": "Menu alla carta",
         "nota_default": "nessun minimo di spesa", "avviso": "Prenotazione obbligatoria via WhatsApp",
-        "cta": "Prenota su WhatsApp", "locandina": "Locandina",
+        "cta": "Prenota su WhatsApp", "cta_carta": "Prenota un tavolo", "locandina": "Locandina",
         "wa": "Ciao! Vorrei prenotare per la serata del {g} {m} ({t}). Siamo in ",
         "eyebrow": "In programma", "titolo": "Prossime <em>serate</em>",
-        "intro": "Cene con musica dal vivo e ospiti speciali. Posti limitati: la prenotazione è obbligatoria e si effettua solo via WhatsApp.",
+        "intro": "Cene con musica dal vivo e ospiti speciali. Le serate a menu fisso hanno posti limitati e si prenotano solo via WhatsApp; le serate alla carta si prenotano come sempre.",
         "menu_fisso": " Menu fisso a {p} € a persona.", "descr_default": "{t} a Casa Rosebery, Napoli.",
         "nav": "Serate",
     },
@@ -47,10 +47,10 @@ TESTI = {
         "ore": "", "bozza": "DRAFT – not published", "integr": "Upgrade · + € {p} per person",
         "alla_carta": "À la carte", "pp": "per person · set menu", "menu_carta": "À la carte menu",
         "nota_default": "no minimum spend", "avviso": "Booking required via WhatsApp",
-        "cta": "Book on WhatsApp", "locandina": "Poster",
+        "cta": "Book on WhatsApp", "cta_carta": "Book a table", "locandina": "Poster",
         "wa": "Hi! I'd like to book for the {t} evening on {m} {g}. We are ",
         "eyebrow": "Coming up", "titolo": "Upcoming <em>evenings</em>",
-        "intro": "Dinners with live music and special guests. Limited seating: booking is required and can only be made via WhatsApp.",
+        "intro": "Dinners with live music and special guests. Set-menu evenings have limited seating and can only be booked via WhatsApp; à la carte evenings are booked as usual.",
         "menu_fisso": " Set menu at €{p} per person.", "descr_default": "{t} at Casa Rosebery, Naples.",
         "nav": "Live",
     },
@@ -121,6 +121,14 @@ def carta(s, lingua):
                      f'<span>{e(tr(s, "nota_menu", lingua, L["nota_default"]))}</span></div></div>')
     testo_wa = L["wa"].format(g=d.day, m=L["mesi"][d.month - 1], t=titolo)
     wa = "https://wa.me/390813357572?text=" + urllib.parse.quote(testo_wa)
+    if s.get("prezzo"):
+        # menu fisso: posti limitati, solo WhatsApp
+        prenota = (f'<p class="serata-avviso">{L["avviso"]}</p>\n        <div class="serata-cta">'
+                   f'<a href="{wa}" target="_blank" rel="noopener" class="btn-gold serata-wa" data-serata="{e(s["data"])}">{L["cta"]}</a></div>')
+    else:
+        # alla carta: prenotazione libera dai canali abituali
+        prenota = (f'<div class="serata-cta"><a href="https://casarosebery.plateform.app/reserve" target="_blank" rel="noopener" '
+                   f'class="btn-gold" data-serata="{e(s["data"])}">{L["cta_carta"]}</a></div>')
     foto_src = s.get("foto", "")
     if foto_src and lingua != "it":
         foto_src = "/" + foto_src
@@ -136,10 +144,7 @@ def carta(s, lingua):
         {artista}{sotto}
         {menu_html}
         {extra}
-        <p class="serata-avviso">{L["avviso"]}</p>
-        <div class="serata-cta">
-          <a href="{wa}" target="_blank" rel="noopener" class="btn-gold serata-wa" data-serata="{e(s["data"])}">{L["cta"]}</a>
-        </div>
+        {prenota}
       </div>
     </article>'''
 
