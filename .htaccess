@@ -35,6 +35,14 @@ RewriteRule ^menu-casa-rosebery\.pdf$ - [F,L]
 # 4c. Vecchi URL del menu (WordPress / QR code stampati) -> nuova pagina menu
 RewriteRule ^(menu|menu-1|menu-2|il-menu|menu-casa-rosebery)/?$ https://www.casaroseberyristorante.it/menu.html [L,R=301,NC]
 
+# 4d. Vecchie pagine WordPress ancora presenti su Google -> pagina o sezione corrispondente
+RewriteRule ^chi-siamo/?$ https://www.casaroseberyristorante.it/#storia [L,R=301,NE,NC]
+RewriteRule ^contatti/?$ https://www.casaroseberyristorante.it/#contatti [L,R=301,NE,NC]
+RewriteRule ^(discover-our-new-menu|menu/[^/]+)/?$ https://www.casaroseberyristorante.it/menu.html [L,R=301,NC]
+RewriteRule ^privacy-policy(-2)?/?$ https://www.casaroseberyristorante.it/privacy.html [L,R=301,NC]
+# Pagine del tema WordPress che non sono mai state del ristorante -> rimosse (410)
+RewriteRule ^(home-cloned|author|culinary-history|reception-bar)(/|$) - [G,L,NC]
+
 # 5. Vecchi URL WordPress (pagine, articoli, categorie) -> home
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

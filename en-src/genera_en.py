@@ -19,8 +19,8 @@ SITO = "https://www.casaroseberyristorante.it"
 T = [
     # ── <head> ──
     ('<html lang="it">', '<html lang="en">'),
-    ('content="Casa Rosebery — Braceria premium e ristorante fine dining a Posillipo, Napoli. Carni pregiate da tutto il mondo, cucina della tradizione napoletana e vista sul Golfo di Napoli. Prenota il tuo tavolo."',
-     'content="Casa Rosebery — premium steakhouse and fine dining restaurant in Posillipo, Naples. Prime cuts from around the world, traditional Neapolitan cuisine and views over the Bay of Naples. Book your table."'),
+    ('content="Casa Rosebery, braceria e ristorante a Posillipo, a due passi da Marechiaro: carni pregiate alla brace da tutto il mondo, cucina della tradizione napoletana e vista sul Golfo di Napoli. Prenota il tuo tavolo."',
+     'content="Casa Rosebery, steakhouse and restaurant in Posillipo, steps from Marechiaro: prime cuts from around the world grilled over embers, traditional Neapolitan cuisine and views over the Bay of Naples. Book your table."'),
     ('content="ristorante Posillipo Napoli, braceria Napoli, ristorante fine dining Napoli, carne alla brace Napoli, ristorante vista mare Napoli, steakhouse Napoli, wagyu Napoli, braceria premium Napoli"',
      'content="restaurant Posillipo Naples, steakhouse Naples, fine dining Naples, grill restaurant Naples, sea view restaurant Naples, wagyu Naples, best steak Naples, Neapolitan cuisine"'),
     ('<meta property="og:title" content="Casa Rosebery — Braceria & Ristorante Fine Dining · Posillipo, Napoli">',
@@ -42,8 +42,8 @@ T = [
      '{"@type": "LocationFeatureSpecification", "name": "Free parking", "value": true},'),
     ('{"@type": "LocationFeatureSpecification", "name": "Vista mare", "value": true}',
      '{"@type": "LocationFeatureSpecification", "name": "Sea view", "value": true}'),
-    ('<title>Casa Rosebery — Braceria & Ristorante Fine Dining · Posillipo, Napoli</title>',
-     '<title>Casa Rosebery — Steakhouse & Fine Dining Restaurant · Posillipo, Naples</title>'),
+    ('<title>Casa Rosebery — Braceria e Ristorante vista mare · Posillipo, Marechiaro (Napoli)</title>',
+     '<title>Casa Rosebery — Steakhouse & Sea-View Restaurant · Posillipo, Marechiaro (Naples)</title>'),
 
     # ── nav ──
     ('<a href="/en/" class="nav-lang" hreflang="en" lang="en" title="English version">EN</a>',
