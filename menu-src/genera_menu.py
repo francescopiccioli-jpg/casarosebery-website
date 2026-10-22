@@ -12,6 +12,26 @@ import re
 
 RADICE = pathlib.Path(__file__).resolve().parent.parent
 dati = json.loads((RADICE / "menu-src" / "menu.json").read_text(encoding="utf-8"))
+_vs = RADICE / "menu-src" / "vista_serata.json"
+vista = json.loads(_vs.read_text(encoding="utf-8")) if _vs.exists() else {}
+
+
+def vista_serata_html():
+    """Vista limitata per una serata (solo pagina italiana): nascosta di default, la attiva lo script nelle date indicate."""
+    if not vista.get("date"):
+        return ""
+    m = vista["menu"]
+    voce = lambda n, d, pr="": (f'<li class="piatto"><div class="riga"><h4>{e(n)}</h4><span class="punti"></span>'
+                                + (f'<span class="prezzo">{e(pr)}</span>' if pr else "") + f'</div><p class="desc">{e(d)}</p></li>')
+    integ = m.get("integrazione")
+    perc = (f'<article class="percorso"><header><h3>{e(m["titolo"])}</h3><p class="pp">€ {e(m["prezzo"])} <span>{e(m["nota"])}</span></p></header>'
+            f'<div class="portata"><ul>{"".join(voce(n, d) for n, d in m["piatti"])}</ul></div>'
+            + (f'<div class="portata"><h5>{e(integ[0])}</h5><ul>{voce(integ[1], integ[2])}</ul></div>' if integ else "")
+            + '</article>')
+    sez = "".join(f'<section class="sez"><h2>{e(x["titolo"])}</h2><ul class="lista">{"".join(voce(*v) for v in x["voci"])}</ul></section>'
+                  for x in vista.get("sezioni", []))
+    return (f'<section id="vista-serata" data-mostra-il="{",".join(vista["date"])}" hidden>'
+            f'<section class="sez"><h2>{e(vista.get("titolo", "Menu della serata"))}</h2><div class="percorsi">{perc}</div></section>{sez}</section>')
 e = html.escape
 SITO = "https://www.casaroseberyristorante.it"
 
@@ -197,6 +217,7 @@ footer a {{ text-decoration:underline; }}
 </header>
 <nav class="cat" aria-label="{L["nav_aria"]}">{"".join(nav)}</nav>
 <main>
+{vista_serata_html() if L["lang"] == "it" else ""}
 {"".join(corpo)}
 <section class="info" id="allergeni">
   <h3>{L["all_h"]}</h3>
@@ -230,6 +251,15 @@ footer a {{ text-decoration:underline; }}
 }})();
 </script>
 <script>
+// Vista limitata della serata: nelle date indicate mostra solo #vista-serata (fino alle 4 del mattino dopo)
+(function () {{
+  var v = document.getElementById('vista-serata'); if (!v) return;
+  var d = new Date(Date.now() - 4 * 3600 * 1000);
+  var oggi = new Intl.DateTimeFormat('en-CA', {{ timeZone: 'Europe/Rome' }}).format(d);
+  if (v.getAttribute('data-mostra-il').split(',').indexOf(oggi) < 0) return;
+  v.hidden = false;
+  document.querySelectorAll('nav.cat, main > .sez, main > .info, .azioni a[href*="vini"], .top .lang, .top .agg').forEach(function (el) {{ el.style.display = 'none'; }});
+}})();
 // Nasconde gli elementi con data-nascondi-il="AAAA-MM-GG" in quella data (ora di Roma; la serata vale fino alle 4 del mattino dopo)
 (function () {{
   var d = new Date(Date.now() - 4 * 3600 * 1000);
