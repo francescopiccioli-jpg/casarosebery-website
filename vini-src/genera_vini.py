@@ -209,6 +209,7 @@ footer a {{ text-decoration:underline; }}
   document.querySelectorAll('.sez').forEach(function (s) {{ obs.observe(s); }});
 }})();
 </script>
+<script src="/js/analytics.js" defer></script>
 </body>
 </html>
 '''

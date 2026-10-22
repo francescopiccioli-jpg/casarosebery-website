@@ -239,6 +239,7 @@ footer a {{ text-decoration:underline; }}
   }});
 }})();
 </script>
+<script src="/js/analytics.js" defer></script>
 </body>
 </html>
 '''
