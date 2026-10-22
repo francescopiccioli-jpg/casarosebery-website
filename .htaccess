@@ -16,8 +16,13 @@ RewriteRule ^ https://www.casaroseberyristorante.it%{REQUEST_URI} [L,R=301]
 RewriteCond %{HTTP_HOST} ^casaroseberyristorante\.it$ [NC]
 RewriteRule ^ https://www.casaroseberyristorante.it%{REQUEST_URI} [L,R=301]
 
+# 3a. Vecchi file del WordPress indicizzati da Google
+#     PDF (era il menu) -> pagina menu; tutto il resto di wp-content -> rimosso definitivamente (410)
+RewriteRule ^wp-content/.*\.pdf$ https://www.casaroseberyristorante.it/menu.html [L,R=301,NC]
+RewriteRule ^wp-content(/|$) - [G,L,NC]
+
 # 3. Blocca il vecchio WordPress (resta sul server ma non e' raggiungibile)
-RewriteRule ^(wp-admin|wp-includes|wp-content|_old_wordpress|_OLD)(/|$) - [F,L,NC]
+RewriteRule ^(wp-admin|wp-includes|_old_wordpress|_OLD)(/|$) - [F,L,NC]
 RewriteRule \.php$ - [F,L]
 RewriteRule ^(readme\.html|license\.txt|wp-config.*)$ - [F,L]
 
