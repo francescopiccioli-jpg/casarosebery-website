@@ -49,6 +49,16 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^ https://www.casaroseberyristorante.it/ [L,R=301]
 </IfModule>
 
+# Intestazioni di sicurezza (solo HTTPS forzato, nessun effetto sull'aspetto del sito)
+<IfModule mod_headers.c>
+Header always set Strict-Transport-Security "max-age=15552000"
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+Header always unset X-Powered-By
+</IfModule>
+
 # Cache per immagini e file statici
 <IfModule mod_expires.c>
 ExpiresActive On
