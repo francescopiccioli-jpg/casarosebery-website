@@ -50,7 +50,7 @@ TESTI = {
         "cap_nota": "La capienza dipende dalla formula: con la cena seduta arriviamo a {s} persone, in piedi fino a {p}. Per gruppi più piccoli riserviamo una parte della sala.",
         "occ_tit": "Le occasioni",
         "occasioni": [
-            ("Cene aziendali", "Cene con clienti e colleghi, festa di fine anno, team building a tavola."),
+            ("Cene aziendali e team building", "Cene con clienti e colleghi, feste di fine anno e team building con sommelier, costruiti su percorsi enologici."),
             ("Compleanni e anniversari", "Dal tavolo riservato alla sala intera, con torta e brindisi."),
             ("Battesimi e comunioni", "Pranzi in famiglia con un menu dedicato anche ai più piccoli."),
             ("Feste di laurea e feste private", "Lauree, rimpatriate, feste tra amici: la sala è vostra."),
@@ -94,7 +94,7 @@ TESTI = {
         "cap_nota": "Capacity depends on the format: up to {s} guests for a seated dinner, up to {p} standing. For smaller groups we reserve part of the dining room.",
         "occ_tit": "Occasions",
         "occasioni": [
-            ("Corporate dinners", "Client dinners, end-of-year parties, team events around the table."),
+            ("Corporate dinners & team building", "Client and team dinners, end-of-year parties and team building with a sommelier, built around wine journeys."),
             ("Birthdays & anniversaries", "From a reserved table to the whole room, with cake and a toast."),
             ("Christenings & communions", "Family lunches with a dedicated menu for children too."),
             ("Graduation & private parties", "Graduations, reunions, parties with friends: the room is yours."),
