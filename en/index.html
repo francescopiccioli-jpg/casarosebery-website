@@ -163,13 +163,13 @@ nav#main-nav.scrolled {
   background-image: url('/img/8843EF97-F411-4595-B695-7439A9E8FF3B.webp');
 }
 .hero-half--braceria .hero-half-overlay {
-  background: linear-gradient(to top, rgba(14,13,10,0.92) 0%, rgba(14,13,10,0.2) 60%, transparent 100%);
+  background: linear-gradient(to top, rgba(14,13,10,0.95) 0%, rgba(14,13,10,0.8) 22%, rgba(14,13,10,0.2) 60%, transparent 100%);
 }
 .hero-half--dining .hero-half-bg {
   background-image: url('/img/IMG_1171.webp');
 }
 .hero-half--dining .hero-half-overlay {
-  background: linear-gradient(to top, rgba(10,20,14,0.90) 0%, rgba(10,20,14,0.2) 60%, transparent 100%);
+  background: linear-gradient(to top, rgba(10,20,14,0.95) 0%, rgba(10,20,14,0.8) 22%, rgba(10,20,14,0.2) 60%, transparent 100%);
 }
 
 /* Divisore tra le due anime su mobile */
@@ -207,6 +207,9 @@ nav#main-nav.scrolled {
   transition: all 0.25s;
 }
 .btn-ghost:hover { background: var(--oro); border-color: var(--oro); color: var(--nero); }
+/* sopra le foto dell'hero un oro più chiaro, per restare leggibile */
+.hero-content .btn-ghost { color: #e0ba72; }
+.hero-content .btn-ghost:hover { color: var(--nero); }
 
 /* ── CLAIM ─────────────────────────────────────────────── */
 .section-claim {
@@ -664,13 +667,13 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
   backdrop-filter: blur(16px);
   border-top: 1px solid rgba(184,146,58,0.2);
   padding: 6px 0 env(safe-area-inset-bottom, 6px);
-  display: grid; grid-template-columns: repeat(5, 1fr);
+  display: grid; grid-template-columns: repeat(6, 1fr);
 }
 .bottom-nav a {
   display: flex; flex-direction: column; align-items: center;
   gap: 3px; padding: 6px 4px; min-height: 52px;
   color: rgba(255,255,255,0.65);
-  font-size: 11px; letter-spacing: 0.8px; text-transform: uppercase;
+  font-size: 11px; letter-spacing: 0.5px; text-transform: uppercase;
   transition: color 0.2s;
 }
 .bottom-nav a:hover, .bottom-nav a.active { color: var(--oro-lt); }
@@ -1230,41 +1233,41 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
   <div class="gallery-grid" id="gallery-grid">
 <div class="gallery-item" data-cat="braceria" onclick="openLightbox(0)"><img src="/img/braceria-bistecche-frollate.webp" alt="Bone-in steaks dry-aged in our ageing room, ready for the grill" loading="lazy"></div>
 <div class="gallery-item" data-cat="braceria" onclick="openLightbox(1)"><img src="/img/braceria-brisket-golfo-napoli.webp" alt="Casa Rosebery brisket on mashed potato, with the marina and the Bay of Naples in the background" loading="lazy"></div>
-<div class="gallery-item" data-cat="braceria" onclick="openLightbox(2)"><img src="/img/8843EF97-F411-4595-B695-7439A9E8FF3B.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="braceria" onclick="openLightbox(3)"><img src="/img/EDFEC6D3-3CC5-4770-87F6-668E4FE563E1.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="braceria" onclick="openLightbox(4)"><img src="/img/IMG_0414.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="braceria" onclick="openLightbox(5)"><img src="/img/IMG_1504.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="braceria" onclick="openLightbox(6)"><img src="/img/IMG_1623.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="braceria" onclick="openLightbox(7)"><img src="/img/IMG_2744.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="braceria" onclick="openLightbox(8)"><img src="/img/IMG_5372.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="braceria" onclick="openLightbox(9)"><img src="/img/IMG_5412.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="braceria" onclick="openLightbox(10)"><img src="/img/IMG_5417.webp" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(2)"><img src="/img/8843EF97-F411-4595-B695-7439A9E8FF3B.webp" alt="Grilled beef medallions with peppers and microgreens on slate" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(3)"><img src="/img/EDFEC6D3-3CC5-4770-87F6-668E4FE563E1.webp" alt="Rare sliced steak served on a black plate" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(4)"><img src="/img/IMG_0414.webp" alt="Grilled steak with coarse salt" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(5)"><img src="/img/IMG_1504.webp" alt="Bone-in steak sliced and served on a stone" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(6)"><img src="/img/IMG_1623.webp" alt="Bone-in beef cuts on display" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(7)"><img src="/img/IMG_2744.webp" alt="Our butcher with a cleaver behind the beef cuts" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(8)"><img src="/img/IMG_5372.webp" alt="Close-up of a dry-aged beef cut" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(9)"><img src="/img/IMG_5412.webp" alt="The chef at work at the griddle, in black and white" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(10)"><img src="/img/IMG_5417.webp" alt="A board of meat carried into the dining room" loading="lazy"></div>
 <div class="gallery-item" data-cat="cucina" onclick="openLightbox(11)"><img src="/img/cucina-ciabatta-friarielli-vesuvio.webp" alt="Ciabatta with friarielli, stracciatella and crispy prosciutto, Mount Vesuvius at sunset in the background" loading="lazy"></div>
 <div class="gallery-item" data-cat="cucina" onclick="openLightbox(12)"><img src="/img/cucina-involtini-verza-vesuvio.webp" alt="Savoy cabbage rolls with melted provola and crispy sausage, Mount Vesuvius at sunset in the background" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(13)"><img src="/img/dolce.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(14)"><img src="/img/IMG_1171.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(15)"><img src="/img/IMG_1175.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(16)"><img src="/img/IMG_2487.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(17)"><img src="/img/IMG_2547.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(18)"><img src="/img/IMG_2554.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(19)"><img src="/img/IMG_2600.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(20)"><img src="/img/IMG_2601.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(21)"><img src="/img/IMG_4963.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(22)"><img src="/img/IMG_5019.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(23)"><img src="/img/IMG_5020.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(24)"><img src="/img/IMG_6250.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(25)"><img src="/img/IMG_6252.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(26)"><img src="/img/IMG_7331.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(27)"><img src="/img/IMG_7332.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(28)"><img src="/img/IMG_8058.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="locale" onclick="openLightbox(29)"><img src="/img/IMG_1176.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="locale" onclick="openLightbox(30)"><img src="/img/IMG_1178.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="locale" onclick="openLightbox(31)"><img src="/img/IMG_1179.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="locale" onclick="openLightbox(32)"><img src="/img/IMG_1181.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="locale" onclick="openLightbox(33)"><img src="/img/IMG_3216.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="locale" onclick="openLightbox(34)"><img src="/img/IMG_6253.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="posillipo" onclick="openLightbox(35)"><img src="/img/0076581a-c5de-4499-991e-eea7a98d8b48.webp" alt="Casa Rosebery" loading="lazy"></div>
-<div class="gallery-item" data-cat="posillipo" onclick="openLightbox(36)"><img src="/img/IMG_1154.webp" alt="Casa Rosebery" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(13)"><img src="/img/dolce.webp" alt="Glazed meat with sauce on a turquoise plate" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(14)"><img src="/img/IMG_1171.webp" alt="Spaghetti with tomato and a cheese cream" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(15)"><img src="/img/IMG_1175.webp" alt="Beef carpaccio" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(16)"><img src="/img/IMG_2487.webp" alt="Pulled meat with herb oil, by the window" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(17)"><img src="/img/IMG_2547.webp" alt="Crêpe with custard and berries" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(18)"><img src="/img/IMG_2554.webp" alt="Single-serve cream dessert on a biscuit base" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(19)"><img src="/img/IMG_2600.webp" alt="Pulled meat with green sauce, a boat in the background" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(20)"><img src="/img/IMG_2601.webp" alt="Pasta alla Genovese with ziti, the sea in the background" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(21)"><img src="/img/IMG_4963.webp" alt="Fried meatballs in a creamy sauce" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(22)"><img src="/img/IMG_5019.webp" alt="Platter of raw and cured meats with sauces" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(23)"><img src="/img/IMG_5020.webp" alt="Sandwich with meat and melted cheese" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(24)"><img src="/img/IMG_6250.webp" alt="Spaghetti with fried courgettes" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(25)"><img src="/img/IMG_6252.webp" alt="Close-up of fried meatballs" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(26)"><img src="/img/IMG_7331.webp" alt="Dessert on a stick with crumble and redcurrants" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(27)"><img src="/img/IMG_7332.webp" alt="Chocolate dessert with pistachios" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(28)"><img src="/img/IMG_8058.webp" alt="Close-up of pasta alla Genovese with ziti" loading="lazy"></div>
+<div class="gallery-item" data-cat="locale" onclick="openLightbox(29)"><img src="/img/IMG_1176.webp" alt="Table set by the window with Vesuvius in view" loading="lazy"></div>
+<div class="gallery-item" data-cat="locale" onclick="openLightbox(30)"><img src="/img/IMG_1178.webp" alt="Shelves of wine, olive oil and pantry products" loading="lazy"></div>
+<div class="gallery-item" data-cat="locale" onclick="openLightbox(31)"><img src="/img/IMG_1179.webp" alt="Wine glasses on a set table" loading="lazy"></div>
+<div class="gallery-item" data-cat="locale" onclick="openLightbox(32)"><img src="/img/IMG_1181.webp" alt="The dining room with large windows over the Gulf" loading="lazy"></div>
+<div class="gallery-item" data-cat="locale" onclick="openLightbox(33)"><img src="/img/IMG_3216.webp" alt="Cutlery with the Casa Rosebery logo" loading="lazy"></div>
+<div class="gallery-item" data-cat="locale" onclick="openLightbox(34)"><img src="/img/IMG_6253.webp" alt="Niche with wine, olive oil and pasta" loading="lazy"></div>
+<div class="gallery-item" data-cat="posillipo" onclick="openLightbox(35)"><img src="/img/0076581a-c5de-4499-991e-eea7a98d8b48.webp" alt="A dish on the terrace overlooking Naples and Vesuvius" loading="lazy"></div>
+<div class="gallery-item" data-cat="posillipo" onclick="openLightbox(36)"><img src="/img/IMG_1154.webp" alt="Vesuvius and the Gulf at dusk, seen from the rocks" loading="lazy"></div>
   </div>
 </section>
 
@@ -1648,8 +1651,8 @@ function scrollToTop() {
 function updateBottomNav() {
   var sections = [
     { id: 'menu',       btn: 'bn-menu' },
-    { id: 'serate',     btn: null },
-    { id: 'eventi',     btn: null },
+    { id: 'serate',     btn: 'bn-serate' },
+    { id: 'eventi',     btn: 'bn-serate' },
     { id: 'contatti',   btn: 'bn-contatti' },
     { id: 'gallery',    btn: 'bn-gallery' },
     { id: 'recensioni', btn: null },
@@ -1668,6 +1671,9 @@ function updateBottomNav() {
 }
 
 window.addEventListener('scroll', updateBottomNav, { passive: true });
+
+// senza serate in programma la voce "Serate" porta alla musica del sabato
+if (!document.getElementById('serate')) document.getElementById('bn-serate').setAttribute('href', '#eventi');
 </script>
 
 <!-- ── BOTTOM NAV MOBILE ──────────────────────────────────── -->
@@ -1689,6 +1695,12 @@ window.addEventListener('scroll', updateBottomNav, { passive: true });
       <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
     </svg>
     <span style="color:var(--oro);font-weight:600">Book</span>
+  </a>
+  <a href="#serate" id="bn-serate">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+      <path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/>
+    </svg>
+    <span>Events</span>
   </a>
   <a href="#gallery" id="bn-gallery">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
