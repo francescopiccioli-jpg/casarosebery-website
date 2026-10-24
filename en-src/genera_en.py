@@ -38,6 +38,8 @@ T = [
      '"description": "Premium steakhouse and fine dining restaurant in Posillipo, Naples. Prime cuts from around the world, traditional Neapolitan cuisine and views over the Bay.",'),
     ('"servesCuisine": ["Italiana", "Napoletana", "Braceria", "Steakhouse"],', '"servesCuisine": ["Italian", "Neapolitan", "Steakhouse", "Grill"],'),
     (f'"menu": "{SITO}/#menu",', f'"menu": "{SITO}/en/menu.html",'),
+    ('<h1 class="sr-only">Casa Rosebery — Braceria e ristorante vista mare a Posillipo, Napoli</h1>',
+     '<h1 class="sr-only">Casa Rosebery — Steakhouse and sea-view restaurant in Posillipo, Naples</h1>'),
     ('{"@type": "LocationFeatureSpecification", "name": "Parcheggio gratuito", "value": true},',
      '{"@type": "LocationFeatureSpecification", "name": "Free parking", "value": true},'),
     ('{"@type": "LocationFeatureSpecification", "name": "Vista mare", "value": true}',
@@ -253,8 +255,8 @@ T = [
     ('      Leggi tutte le recensioni →\n', '      Read all reviews →\n'),
 
     # ── footer, sticky, cookie ──
-    ('Privacy e Cookie Policy</a> · <a href="#" id="apri-preferenze-cookie" style="color:rgba(255,255,255,0.3);text-decoration:underline">Preferenze cookie</a>',
-     'Privacy & Cookie Policy (Italian)</a> · <a href="#" id="apri-preferenze-cookie" style="color:rgba(255,255,255,0.3);text-decoration:underline">Cookie preferences</a>'),
+    ('Privacy e Cookie Policy</a> · <a href="#" id="apri-preferenze-cookie" style="color:rgba(255,255,255,0.65);text-decoration:underline">Preferenze cookie</a>',
+     'Privacy & Cookie Policy (Italian)</a> · <a href="#" id="apri-preferenze-cookie" style="color:rgba(255,255,255,0.65);text-decoration:underline">Cookie preferences</a>'),
     ('class="prenota-sticky" target="_blank">\n  Prenota ora\n</a>', 'class="prenota-sticky" target="_blank">\n  Book now\n</a>'),
     ('aria-label="Preferenze cookie"', 'aria-label="Cookie preferences"'),
     ('aria-label="Chiudi e rifiuta"', 'aria-label="Close and reject"'),
