@@ -1,0 +1,231 @@
+{
+  "_istruzioni": "Menu delle serate evento, mostrati su /serata (QR code dedicato). Ogni elemento di 'serate' vale per la sua data, fino alle 4 del mattino dopo. Per un'anteprima: /serata?data=AAAA-MM-GG. Campi: data, titolo, menu {titolo, prezzo, nota, piatti [[nome, descrizione]], integrazione [titolo, nome, descrizione]}, sezioni [{titolo, voci [[nome, descrizione, prezzo]]}].",
+  "serate": [
+    {
+      "data": "2026-10-22",
+      "titolo": "Serata con Ste",
+      "menu": {
+        "titolo": "Menu della serata",
+        "prezzo": "70",
+        "nota": "a persona · escluso beverage, coperto e servizio 10%",
+        "piatti": [
+          [
+            "Ciabatta Mediterraneo",
+            "Con insalatina di puntarelle, alici di Cetara, stracciatella di bufala e dressing di miele e senape."
+          ],
+          [
+            "Brasato",
+            "Stracotto di manzo al vino rosso, servito con fonduta di parmigiano."
+          ],
+          [
+            "Scarpariello secondo Casa Rosebery",
+            "Bombardone ripieno di crema al pecorino e salsa di pomodoro leggermente piccante."
+          ],
+          [
+            "Locena di maiale",
+            "Dalla finitura croccante, accompagnata da papaccelle saltate in padella e riduzione vellutata alla mela."
+          ],
+          [
+            "Tiramisù",
+            "La nostra interpretazione del classico dessert trevigiano: spuma leggera di mascarpone d'alpeggio e uova pastorizzate su pan di Spagna imbevuto di caffè, con texture di cacao fine."
+          ]
+        ],
+        "integrazione": [
+          "Integrazione menu · + € 25 a persona",
+          "Cuberoll argentino (300 g)",
+          "Servito con patate al forno"
+        ]
+      },
+      "sezioni": [
+        {
+          "titolo": "Exclusive grill",
+          "voci": [
+            [
+              "Ribeye Canada",
+              "Cuberoll di manzo canadese d'eccellenza, da allevamento nutrito a cereali. Taglio eccezionalmente tenero, succoso e ricco di sapore grazie alla perfetta marezzatura.",
+              "€ 120 / kg"
+            ],
+            [
+              "Kobe Japanese",
+              "La carne più pregiata al mondo, da bovini di pura razza Tajima (Prefettura di Hyogo). Straordinaria marezzatura di grasso nobile, consistenza burrosa che si scioglie in bocca.",
+              "€ 400 / kg"
+            ],
+            [
+              "Red Hereford · Irlanda",
+              "Pregiata carne allevata al pascolo naturale in Irlanda (grass-fed): eccellente morbidezza, gusto ricco e marezzatura fine che si scioglie in cottura.",
+              "€ 85 / kg"
+            ],
+            [
+              "Red Dan · Danimarca",
+              "Pregiata selezione dalle pianure della Danimarca, celebre per la straordinaria marezzatura: tenerissima, succosa, con note dolci e burrose.",
+              "€ 120 / kg"
+            ]
+          ]
+        },
+        {
+          "titolo": "Dolci",
+          "voci": [
+            [
+              "Brownie",
+              "Tipico dolcetto della tradizione americana, servito tiepido: cuore fondente, sottile crosticina croccante e noci pecan.",
+              "€ 8"
+            ],
+            [
+              "New York Cheese Cake",
+              "Iconica torta cotta al formaggio con base croccante di biscotto, servita con salsa ai frutti rossi.",
+              "€ 8"
+            ],
+            [
+              "Tiramisù",
+              "Tiramisù classico fatto in casa con mascarpone fresco, savoiardi artigianali all'espresso e cacao amaro.",
+              "€ 8"
+            ]
+          ]
+        },
+        {
+          "titolo": "Bollicine",
+          "vini": true,
+          "voci": [
+            [
+              "Anthologie Noir Camillucci",
+              "Franciacorta · Italia",
+              "€ 70"
+            ],
+            [
+              "Ferghettina Brut",
+              "Franciacorta · Italia",
+              "€ 60"
+            ],
+            [
+              "Altemasi",
+              "Trento DOC · Italia",
+              "€ 65"
+            ],
+            [
+              "Mirall Brut",
+              "Alghero · Spumante",
+              "€ 35"
+            ],
+            [
+              "Mirall Rosé",
+              "Alghero · Spumante",
+              "€ 40"
+            ],
+            [
+              "Perrier-Jouët Blanc de Blancs",
+              "Champagne · Francia",
+              "€ 180"
+            ],
+            [
+              "Ruinart Blanc de Blancs",
+              "Champagne · Francia",
+              "€ 175"
+            ]
+          ]
+        },
+        {
+          "titolo": "Bianchi",
+          "vini": true,
+          "voci": [
+            [
+              "Chardonnay",
+              "Cavit · Trentino",
+              "€ 40"
+            ],
+            [
+              "Gewürztraminer",
+              "Cavit · Trentino",
+              "€ 40"
+            ],
+            [
+              "Fiano di Avellino",
+              "Donna Giorgia · Campania",
+              "€ 35"
+            ],
+            [
+              "Greco di Tufo",
+              "Terrazze della Luna · Campania",
+              "€ 35"
+            ]
+          ]
+        },
+        {
+          "titolo": "Rossi",
+          "vini": true,
+          "voci": [
+            [
+              "Barbera del Sannio",
+              "Afè · Campania",
+              "€ 40"
+            ],
+            [
+              "Bolgheri",
+              "Adeo · Toscana",
+              "€ 60"
+            ],
+            [
+              "Brunello di Montalcino",
+              "La Magia · Toscana",
+              "€ 65"
+            ],
+            [
+              "Brunello di Montalcino",
+              "Patrizia Cencioni · Toscana",
+              "€ 75"
+            ],
+            [
+              "Campi Taurasini",
+              "Tenuta De Gregorio · Campania",
+              "€ 40"
+            ],
+            [
+              "Amarone della Valpolicella",
+              "Conte Gastone · Veneto",
+              "€ 100"
+            ],
+            [
+              "Merlot del Collio DOC",
+              "Venica & Venica · Friuli Venezia Giulia",
+              "€ 80"
+            ],
+            [
+              "Morellino di Scansano",
+              "Podere 414 · Toscana",
+              "€ 50"
+            ],
+            [
+              "Pinot Nero",
+              "Muri Gries · Alto Adige",
+              "€ 35"
+            ],
+            [
+              "Primitivo di Manduria Riserva",
+              "Jorche · Puglia",
+              "€ 100"
+            ],
+            [
+              "Valpolicella Ripasso",
+              "Il Ripetente · Veneto",
+              "€ 40"
+            ],
+            [
+              "Taurasi",
+              "Tenuta De Gregorio · Campania",
+              "€ 55"
+            ],
+            [
+              "Sul Vulcano Etna Rosso",
+              "Donnafugata · Sicilia",
+              "€ 50"
+            ],
+            [
+              "Valpolicella",
+              "Duca Fedele · Veneto",
+              "€ 35"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

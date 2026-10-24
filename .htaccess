@@ -26,8 +26,11 @@ RewriteRule ^(wp-admin|wp-includes|_old_wordpress|_OLD)(/|$) - [F,L,NC]
 RewriteRule \.php$ - [F,L]
 RewriteRule ^(readme\.html|license\.txt|wp-config.*)$ - [F,L]
 
+# 4e. Indirizzo breve del QR delle serate evento
+RewriteRule ^serata/?$ serata.html [L,NC]
+
 # 4. Bozza non pubblica
-RewriteRule ^(casarosebery_site\.html|menu-src|eventi-src|eventi-privati-src|vini-src|en-src)(/|$) - [F,L]
+RewriteRule ^(casarosebery_site\.html|menu-src|eventi-src|eventi-privati-src|serata-src|vini-src|en-src)(/|$) - [F,L]
 
 # 4b. Menu PDF sospeso finché non vengono corretti gli allergeni (togliere questa riga per riattivarlo)
 RewriteRule ^menu-casa-rosebery\.pdf$ - [F,L]

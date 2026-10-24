@@ -29,5 +29,6 @@ jobs:
             menu-src/**
             eventi-src/**
             eventi-privati-src/**
+            serata-src/**
             vini-src/**
             en-src/**

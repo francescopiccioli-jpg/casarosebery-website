@@ -72,7 +72,7 @@
 
   // ── tracciamento clic (stessi nomi evento della home) ──
   function traccia(ev, p) { if (window.__gaCaricato) gtag('event', ev, p || {}); }
-  var pagina = /vini/.test(location.pathname) ? 'pagina_vini' : 'pagina_menu';
+  var pagina = /vini/.test(location.pathname) ? 'pagina_vini' : /serata/.test(location.pathname) ? 'pagina_serata' : 'pagina_menu';
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
     var h = a.getAttribute('href');
