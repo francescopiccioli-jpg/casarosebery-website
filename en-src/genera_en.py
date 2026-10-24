@@ -37,7 +37,7 @@ T = [
     ('"description": "Braceria premium e ristorante fine dining a Posillipo, Napoli. Carni pregiate da tutto il mondo, cucina della tradizione napoletana e vista sul Golfo.",',
      '"description": "Premium steakhouse and fine dining restaurant in Posillipo, Naples. Prime cuts from around the world, traditional Neapolitan cuisine and views over the Bay.",'),
     ('"servesCuisine": ["Italiana", "Napoletana", "Braceria", "Steakhouse"],', '"servesCuisine": ["Italian", "Neapolitan", "Steakhouse", "Grill"],'),
-    (f'"menu": "{SITO}/#menu",', f'"menu": "{SITO}/en/menu.html",'),
+    (f'"menu": "{SITO}/menu.html",\n  "hasMenu": "{SITO}/menu.html",', f'"menu": "{SITO}/en/menu.html",\n  "hasMenu": "{SITO}/en/menu.html",'),
     ('<h1 class="sr-only">Casa Rosebery — Braceria e ristorante vista mare a Posillipo, Napoli</h1>',
      '<h1 class="sr-only">Casa Rosebery — Steakhouse and sea-view restaurant in Posillipo, Naples</h1>'),
     ('{"@type": "LocationFeatureSpecification", "name": "Parcheggio gratuito", "value": true},',
