@@ -33,6 +33,7 @@ TESTI = {
         "alla_carta": "Alla carta", "pp": "a persona · menu fisso", "menu_carta": "Menu alla carta",
         "nota_default": "nessun minimo di spesa", "avviso": "Prenotazione obbligatoria via WhatsApp",
         "cta": "Prenota su WhatsApp", "cta_carta": "Prenota un tavolo", "locandina": "Locandina",
+        "oggi": "Stasera", "domani": "Domani",
         "wa": "Ciao! Vorrei prenotare per la serata del {g} {m} ({t}). Siamo in ",
         "eyebrow": "In programma", "titolo": "Prossime <em>serate</em>",
         "intro": "Cene con musica dal vivo e ospiti speciali. Le serate a menu fisso hanno posti limitati e si prenotano solo via WhatsApp; le serate alla carta si prenotano come sempre.",
@@ -48,6 +49,7 @@ TESTI = {
         "alla_carta": "À la carte", "pp": "per person · set menu", "menu_carta": "À la carte menu",
         "nota_default": "no minimum spend", "avviso": "Booking required via WhatsApp",
         "cta": "Book on WhatsApp", "cta_carta": "Book a table", "locandina": "Poster",
+        "oggi": "Tonight", "domani": "Tomorrow",
         "wa": "Hi! I'd like to book for the {t} evening on {m} {g}. We are ",
         "eyebrow": "Coming up", "titolo": "Upcoming <em>evenings</em>",
         "intro": "Dinners with live music and special guests. Set-menu evenings have limited seating and can only be booked via WhatsApp; à la carte evenings are booked as usual.",
@@ -106,7 +108,7 @@ def carta(s, lingua):
         for x in s["extra"]:
             gruppi.setdefault(tr(x, "gruppo", lingua), []).append(x)
         blocchi = "".join(
-            f'<h5>{e(g)}</h5><ul>' + "".join(
+            f'<h4>{e(g)}</h4><ul>' + "".join(
                 f'<li><div><b>{e(tr(x, "nome", lingua))}</b><span>{e(tr(x, "desc", lingua))}</span></div>'
                 f'<i>€ {e(x["prezzo"])}</i></li>'
                 for x in xs) + '</ul>'
@@ -205,12 +207,23 @@ def blocco(lingua):
 </section>
 {"".join(f'<script type="application/ld+json">{jsonld(s, lingua)}</script>' for s in serate if s.get("pubblica"))}
 <script>
-// nasconde le serate già passate e, se non ne resta nessuna, l'intera sezione
+// nasconde le serate già passate e, se non ne resta nessuna, l'intera sezione;
+// segna con un'etichetta la serata di stasera e quella di domani
 (function () {{
   var oggi = new Date(); oggi.setHours(0, 0, 0, 0);
-  var vis = 0;
+  var GIORNO = 86400000, vis = 0;
   document.querySelectorAll('.serata[data-data]').forEach(function (s) {{
-    if (new Date(s.getAttribute('data-data') + 'T23:59:59') < oggi) s.remove(); else vis++;
+    var d = new Date(s.getAttribute('data-data') + 'T00:00:00');
+    if (d < oggi) {{ s.remove(); return; }}
+    vis++;
+    var diff = Math.round((d - oggi) / GIORNO);
+    var quando = s.querySelector('.serata-quando');
+    if (diff <= 1 && quando) {{
+      var tag = document.createElement('span');
+      tag.className = 'serata-oggi';
+      tag.textContent = diff === 0 ? '{L["oggi"]}' : '{L["domani"]}';
+      quando.insertBefore(tag, quando.firstChild);
+    }}
   }});
   if (!vis) {{ var sec = document.getElementById('serate'); if (sec) sec.remove(); }}
 }})();

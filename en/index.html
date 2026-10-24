@@ -89,6 +89,13 @@
 /* ── RESET ────────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+section[id] { scroll-margin-top: 72px; }
+::selection { background: var(--oro); color: var(--nero); }
+:focus-visible { outline: 2px solid var(--oro-testo, var(--oro)); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
+}
 body { font-family: 'Jost', sans-serif; font-size: 15px; line-height: 1.6;
   color: #1a1208; background: #faf8f3; overflow-x: hidden; }
 img { max-width: 100%; display: block; }
@@ -189,7 +196,7 @@ nav#main-nav.scrolled {
 }
 .hero-title em { font-style: italic; color: var(--oro-lt); }
 .hero-desc {
-  font-size: 13px; color: rgba(255,255,255,0.65);
+  font-size: 14px; color: rgba(255,255,255,0.78);
   max-width: 340px; line-height: 1.7; margin-bottom: 24px;
 }
 .btn-ghost {
@@ -223,17 +230,17 @@ nav#main-nav.scrolled {
 .section-header { text-align: center; }
 .section-eyebrow {
   font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--oro); display: block; margin-bottom: 14px;
+  color: var(--oro-testo, var(--oro)); display: block; margin-bottom: 14px;
 }
 .section-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(26px, 7vw, 52px); font-weight: 300;
   color: var(--text); line-height: 1.1;
 }
-.section-title em { font-style: italic; color: var(--oro); }
+.section-title em { font-style: italic; color: var(--oro-testo, var(--oro)); }
 
 /* ── TRE ANIME ──────────────────────────────────────────── */
-.section-anime { padding: 56px 24px; background: var(--crema); }
+.section-anime { padding: 56px 24px; background: var(--crema); --oro-testo: #7a5c1c; }
 .anime-grid {
   display: flex; flex-direction: column; gap: 3px;
   margin: 40px auto 0; max-width: 1200px;
@@ -296,7 +303,7 @@ nav#main-nav.scrolled {
 }
 
 /* ── MENU ───────────────────────────────────────────────── */
-.section-menu { padding: 56px 24px; background: var(--lino); }
+.section-menu { padding: 56px 24px; background: var(--lino); --oro-testo: #7a5c1c; }
 .menu-grid { display: flex; flex-direction: column; gap: 3px; margin: 40px auto 0; max-width: 1000px; }
 .menu-card {
   background: var(--nero); padding: 40px 28px;
@@ -352,7 +359,9 @@ nav#main-nav.scrolled {
 .gallery-grid { columns: 2; column-gap: 6px; max-width: 1200px; margin: 0 auto; }
 .gallery-item { break-inside: avoid; margin-bottom: 6px; overflow: hidden; cursor: pointer; }
 .gallery-item img { width: 100%; display: block; transition: transform 0.5s; filter: brightness(0.88); }
-.gallery-item:hover img { transform: scale(1.03); filter: brightness(1); }
+.gallery-item:hover img, .gallery-item:focus-visible img { transform: scale(1.03); filter: brightness(1); }
+.gallery-grid.filtrata { display: grid; columns: auto; grid-template-columns: repeat(2, 1fr); gap: 6px; }
+.gallery-grid.filtrata .gallery-item { margin-bottom: 0; }
 
 /* Lightbox */
 .lightbox {
@@ -425,7 +434,7 @@ nav#main-nav.scrolled {
 .badge-stars { color: #FBBC05; font-size: 16px; letter-spacing: 2px; }
 .badge-info { font-size: 11px; color: rgba(255,255,255,0.72); margin-top: 2px; }
 .badge-score { font-size: 26px; font-weight: 300; color: #fff; font-family: 'Cormorant Garamond', serif; }
-.ta-widget-wrap { display: flex; justify-content: center; filter: invert(1) brightness(0.7); }
+.ta-widget-wrap { display: flex; justify-content: center; filter: invert(1) hue-rotate(180deg) brightness(0.85); }
 .reviews-grid { display: flex; flex-direction: column; gap: 16px; max-width: 1100px; margin: 0 auto; }
 .review-card {
   background: var(--carbone); padding: 28px 24px;
@@ -437,18 +446,18 @@ nav#main-nav.scrolled {
   position: absolute; top: 8px; left: 18px; line-height: 1;
 }
 .review-stars { color: #FBBC05; font-size: 13px; margin-bottom: 14px; }
-.review-text { font-size: 13px; color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 18px; font-style: italic; }
+.review-text { font-size: 14px; color: rgba(255,255,255,0.78); line-height: 1.8; margin-bottom: 18px; font-style: italic; }
 .review-author { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--oro); }
 .review-source { font-size: 11px; color: rgba(255,255,255,0.65); margin-top: 4px; }
 
 /* ── EVENTI ──────────────────────────────────────────────── */
 .section-eventi { padding: 56px 24px; background: var(--crema); }
-.section-eventi { --muted: #6b6252; }
+.section-eventi { --muted: #6b6252; --oro-testo: #7a5c1c; }
 .eventi-inner { max-width: 680px; margin: 40px auto 0; }
 .live-band { max-width: 680px; margin: 0 auto 8px; border: 1px solid rgba(184,146,58,0.45); background: #fff; padding: 22px 24px; text-align: center; }
-.live-band .live-eyebrow { display: block; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--oro); margin-bottom: 6px; }
+.live-band .live-eyebrow { display: block; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--oro-testo); margin-bottom: 6px; }
 .live-band .live-titolo { font-family: 'Cormorant Garamond', serif; font-size: 28px; line-height: 1.2; color: var(--text, #1a1208); }
-.live-band .live-titolo em { color: var(--oro); }
+.live-band .live-titolo em { color: var(--oro-testo); }
 .live-band p { font-size: 13px; color: var(--muted); margin-top: 6px; }
 .orari-nota { font-style: normal; color: var(--oro-lt, #d4aa5a); font-size: 12px; }
 .form-field { margin-bottom: 20px; }
@@ -461,10 +470,13 @@ nav#main-nav.scrolled {
   border-bottom: 1px solid var(--sabbia);
   padding: 10px 0; font-family: 'Jost', sans-serif;
   font-size: 16px; /* 16px prevent iOS zoom */
-  color: var(--text); outline: none; transition: border-color 0.2s;
+  color: var(--text); border-radius: 0; transition: border-color 0.2s;
   -webkit-appearance: none;
 }
-.form-field input:focus, .form-field textarea:focus, .form-field select:focus { border-bottom-color: var(--oro); }
+.form-field input:focus, .form-field textarea:focus, .form-field select:focus { border-bottom-color: var(--oro-testo); }
+.form-field input::placeholder, .form-field textarea::placeholder { color: var(--muted); opacity: 1; }
+.form-esito { margin-top: 24px; padding: 18px 20px; border: 1px solid rgba(184,146,58,0.45); background: #fff; font-size: 14px; line-height: 1.7; color: var(--text); }
+.form-esito a { color: var(--oro-testo); text-decoration: underline; text-underline-offset: 3px; }
 .form-field textarea { resize: vertical; min-height: 80px; }
 .form-row { display: flex; flex-direction: column; gap: 0; }
 .form-submit { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; }
@@ -476,11 +488,14 @@ nav#main-nav.scrolled {
 }
 .btn-wa {
   display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-  color: #25D366; font-size: 13px; min-height: 44px;
-  border: 1px solid rgba(37,211,102,0.3); padding: 12px 20px; width: 100%;
+  color: var(--text); font-size: 13px; min-height: 44px;
+  border: 1px solid rgba(18,140,67,0.5); padding: 12px 20px; width: 100%;
+  transition: background 0.2s, color 0.2s;
 }
-.btn-wa svg { width: 20px; height: 20px; fill: currentColor; }
-.divider-or { text-align: center; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--sabbia); }
+.btn-wa svg { width: 20px; height: 20px; fill: #128c43; transition: fill 0.2s; }
+.btn-wa:hover { background: #128c43; color: #fff; }
+.btn-wa:hover svg { fill: #fff; }
+.divider-or { text-align: center; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
 
 /* ── CONTATTI ─────────────────────────────────────────────── */
 .section-contatti { background: var(--carbone); }
@@ -594,6 +609,7 @@ a.anime-card { display:block; color:inherit; text-decoration:none; }
 .serata-corpo { padding:28px 24px; }
 .serata-bozza { display:inline-block; background:#c00000; color:#fff; font-size:11px; letter-spacing:2px; padding:4px 10px; margin-bottom:12px; }
 .serata-quando { font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--oro); }
+.serata-oggi { display:inline-block; margin-right:10px; padding:3px 8px; background:var(--oro); color:var(--nero); font-weight:500; letter-spacing:2px; }
 .serata-titolo { font-family:'Cormorant Garamond',serif; font-weight:400; font-size:clamp(28px,5vw,40px); line-height:1.1; margin:8px 0 6px; }
 .serata-artista { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:22px; color:var(--oro-lt); }
 .serata-sotto { font-size:13px; color:rgba(255,255,255,0.72); margin-top:4px; }
@@ -610,7 +626,7 @@ a.anime-card { display:block; color:inherit; text-decoration:none; }
 .serata-integr em { font-size:12.5px; color:rgba(255,255,255,0.72); }
 .serata-extra { margin-top:18px; }
 .serata-extra summary { cursor:pointer; font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--oro-lt); padding:10px 0; }
-.serata-extra h5 { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--oro); margin:14px 0 4px; font-weight:500; }
+.serata-extra h4 { font-size:11px; letter-spacing:2px; text-transform:uppercase; color:var(--oro); margin:14px 0 4px; font-weight:500; }
 .serata-extra ul { list-style:none; }
 .serata-extra li { display:flex; justify-content:space-between; gap:14px; padding:8px 0; border-bottom:1px solid rgba(255,255,255,.07); }
 .serata-extra li b { font-weight:500; font-size:13.5px; display:block; }
@@ -633,11 +649,10 @@ a.anime-card { display:block; color:inherit; text-decoration:none; }
   font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
   padding: 14px 28px; font-weight: 500;
   box-shadow: 0 8px 32px rgba(0,0,0,0.3);
-  transition: background 0.2s, transform 0.2s;
+  transition: background 0.2s, transform 0.3s, opacity 0.3s;
 }
 .prenota-sticky:hover { background: var(--oro-lt); transform: translateY(-2px); }
 .prenota-sticky.nascosto { opacity: 0; pointer-events: none; transform: translateY(12px); }
-.prenota-sticky { transition: background 0.2s, transform 0.3s, opacity 0.3s; }
 
 /* Spazio sotto la pagina su mobile, per non coprire il footer con la barra in basso */
 footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
@@ -707,6 +722,7 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
   .section-gallery { padding: 100px 48px; }
   .gallery-grid { columns: 3; column-gap: 8px; }
   .gallery-item { margin-bottom: 8px; }
+  .gallery-grid.filtrata { grid-template-columns: repeat(3, 1fr); gap: 8px; }
   .gallery-filters { gap: 8px; }
 
   .section-social { padding: 64px 48px; }
@@ -1037,7 +1053,7 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
         <h3 class="serata-titolo">Dinner &amp; live swing music</h3>
         <p class="serata-artista">Raoul &amp; Swing Orchestra</p><p class="serata-sotto">Raoul — real name Luigi De Luca, radio voice of Kiss Kiss and Radio Ibiza — leads a swing and jazz ensemble with twenty years on stages across Italy: from Sinatra and Dean Martin to Michael Bublé.</p>
         <div class="serata-menu"><div class="serata-prezzo"><b>€ 80</b><span>per person · set menu</span></div><ul class="serata-portate"><li><b>Ciabatta Mediterraneo</b><span>With puntarelle chicory salad, Cetara anchovies, buffalo stracciatella and a honey-mustard dressing.</span></li><li><b>Brasato (braised beef)</b><span>Beef slow-braised in red wine, served with Parmigiano fondue.</span></li><li><b>Scarpariello secondo Casa Rosebery</b><span>Large pasta tubes filled with pecorino cream, with a lightly spicy tomato sauce.</span></li><li><b>Locena di maiale (pork loin)</b><span>Pork loin with a crisp finish, served with pan-fried papaccelle peppers and a smooth apple reduction.</span></li><li><b>Tiramisù</b><span>Our take on the Treviso classic: alpine mascarpone mousse, coffee-soaked sponge and fine cocoa.</span></li></ul><div class="serata-integr"><span>Upgrade · + € 25 per person</span><b>Argentine rib eye (300 g)</b><em>Served with roast potatoes</em></div></div>
-        <details class="serata-extra"><summary>À la carte during the evening</summary><h5>Exclusive grill</h5><ul><li><div><b>Ribeye Canada</b><span>Grain-fed Canadian rib eye: tender, juicy, perfectly marbled.</span></div><i>€ 120 / kg</i></li><li><div><b>Japanese Kobe</b><span>Tajima breed, Hyogo prefecture: extraordinary marbling and a buttery texture.</span></div><i>€ 400 / kg</i></li><li><div><b>Red Hereford – Ireland</b><span>Pasture-raised (grass-fed): soft, rich, finely marbled.</span></div><i>€ 85 / kg</i></li><li><div><b>Red Dan – Denmark</b><span>Extraordinary marbling, a very tender texture and sweet, buttery notes.</span></div><i>€ 120 / kg</i></li></ul><h5>Desserts</h5><ul><li><div><b>Brownie</b><span>Served warm, with a moist, fudgy centre and pecans.</span></div><i>€ 8</i></li><li><div><b>New York Cheesecake</b><span>With a biscuit base and red berry sauce.</span></div><i>€ 8</i></li><li><div><b>Tiramisù</b><span>With fresh mascarpone, artisan ladyfingers soaked in espresso and bitter cocoa.</span></div><i>€ 8</i></li></ul></details>
+        <details class="serata-extra"><summary>À la carte during the evening</summary><h4>Exclusive grill</h4><ul><li><div><b>Ribeye Canada</b><span>Grain-fed Canadian rib eye: tender, juicy, perfectly marbled.</span></div><i>€ 120 / kg</i></li><li><div><b>Japanese Kobe</b><span>Tajima breed, Hyogo prefecture: extraordinary marbling and a buttery texture.</span></div><i>€ 400 / kg</i></li><li><div><b>Red Hereford – Ireland</b><span>Pasture-raised (grass-fed): soft, rich, finely marbled.</span></div><i>€ 85 / kg</i></li><li><div><b>Red Dan – Denmark</b><span>Extraordinary marbling, a very tender texture and sweet, buttery notes.</span></div><i>€ 120 / kg</i></li></ul><h4>Desserts</h4><ul><li><div><b>Brownie</b><span>Served warm, with a moist, fudgy centre and pecans.</span></div><i>€ 8</i></li><li><div><b>New York Cheesecake</b><span>With a biscuit base and red berry sauce.</span></div><i>€ 8</i></li><li><div><b>Tiramisù</b><span>With fresh mascarpone, artisan ladyfingers soaked in espresso and bitter cocoa.</span></div><i>€ 8</i></li></ul></details>
         <p class="serata-avviso">Booking required via WhatsApp</p>
         <div class="serata-cta"><a href="https://wa.me/390813357572?text=Hi%21%20I%27d%20like%20to%20book%20for%20the%20Dinner%20%26%20live%20swing%20music%20evening%20on%20November%205.%20We%20are%20" target="_blank" rel="noopener" class="btn-gold serata-wa" data-serata="2026-11-05">Book on WhatsApp</a></div>
       </div>
@@ -1050,7 +1066,7 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
         <h3 class="serata-titolo">Dinner &amp; live swing music</h3>
         <p class="serata-artista">Raoul &amp; Swing Orchestra</p><p class="serata-sotto">Raoul — real name Luigi De Luca, radio voice of Kiss Kiss and Radio Ibiza — leads a swing and jazz ensemble with twenty years on stages across Italy: from Sinatra and Dean Martin to Michael Bublé.</p>
         <div class="serata-menu"><div class="serata-prezzo"><b>€ 80</b><span>per person · set menu</span></div><ul class="serata-portate"><li><b>Ciabatta Mediterraneo</b><span>With puntarelle chicory salad, Cetara anchovies, buffalo stracciatella and a honey-mustard dressing.</span></li><li><b>Brasato (braised beef)</b><span>Beef slow-braised in red wine, served with Parmigiano fondue.</span></li><li><b>Scarpariello secondo Casa Rosebery</b><span>Large pasta tubes filled with pecorino cream, with a lightly spicy tomato sauce.</span></li><li><b>Locena di maiale (pork loin)</b><span>Pork loin with a crisp finish, served with pan-fried papaccelle peppers and a smooth apple reduction.</span></li><li><b>Tiramisù</b><span>Our take on the Treviso classic: alpine mascarpone mousse, coffee-soaked sponge and fine cocoa.</span></li></ul><div class="serata-integr"><span>Upgrade · + € 25 per person</span><b>Argentine rib eye (300 g)</b><em>Served with roast potatoes</em></div></div>
-        <details class="serata-extra"><summary>À la carte during the evening</summary><h5>Exclusive grill</h5><ul><li><div><b>Ribeye Canada</b><span>Grain-fed Canadian rib eye: tender, juicy, perfectly marbled.</span></div><i>€ 120 / kg</i></li><li><div><b>Japanese Kobe</b><span>Tajima breed, Hyogo prefecture: extraordinary marbling and a buttery texture.</span></div><i>€ 400 / kg</i></li><li><div><b>Red Hereford – Ireland</b><span>Pasture-raised (grass-fed): soft, rich, finely marbled.</span></div><i>€ 85 / kg</i></li><li><div><b>Red Dan – Denmark</b><span>Extraordinary marbling, a very tender texture and sweet, buttery notes.</span></div><i>€ 120 / kg</i></li></ul><h5>Desserts</h5><ul><li><div><b>Brownie</b><span>Served warm, with a moist, fudgy centre and pecans.</span></div><i>€ 8</i></li><li><div><b>New York Cheesecake</b><span>With a biscuit base and red berry sauce.</span></div><i>€ 8</i></li><li><div><b>Tiramisù</b><span>With fresh mascarpone, artisan ladyfingers soaked in espresso and bitter cocoa.</span></div><i>€ 8</i></li></ul></details>
+        <details class="serata-extra"><summary>À la carte during the evening</summary><h4>Exclusive grill</h4><ul><li><div><b>Ribeye Canada</b><span>Grain-fed Canadian rib eye: tender, juicy, perfectly marbled.</span></div><i>€ 120 / kg</i></li><li><div><b>Japanese Kobe</b><span>Tajima breed, Hyogo prefecture: extraordinary marbling and a buttery texture.</span></div><i>€ 400 / kg</i></li><li><div><b>Red Hereford – Ireland</b><span>Pasture-raised (grass-fed): soft, rich, finely marbled.</span></div><i>€ 85 / kg</i></li><li><div><b>Red Dan – Denmark</b><span>Extraordinary marbling, a very tender texture and sweet, buttery notes.</span></div><i>€ 120 / kg</i></li></ul><h4>Desserts</h4><ul><li><div><b>Brownie</b><span>Served warm, with a moist, fudgy centre and pecans.</span></div><i>€ 8</i></li><li><div><b>New York Cheesecake</b><span>With a biscuit base and red berry sauce.</span></div><i>€ 8</i></li><li><div><b>Tiramisù</b><span>With fresh mascarpone, artisan ladyfingers soaked in espresso and bitter cocoa.</span></div><i>€ 8</i></li></ul></details>
         <p class="serata-avviso">Booking required via WhatsApp</p>
         <div class="serata-cta"><a href="https://wa.me/390813357572?text=Hi%21%20I%27d%20like%20to%20book%20for%20the%20Dinner%20%26%20live%20swing%20music%20evening%20on%20December%2010.%20We%20are%20" target="_blank" rel="noopener" class="btn-gold serata-wa" data-serata="2026-12-10">Book on WhatsApp</a></div>
       </div>
@@ -1059,12 +1075,23 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
 </section>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "name": "Dinner & live music – Alberto Miranda", "startDate": "2026-10-24T21:00:00+02:00", "endDate": "2026-10-24T23:30:00+02:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Restaurant", "name": "Casa Rosebery", "address": {"@type": "PostalAddress", "streetAddress": "Via Ferdinando Russo 13", "postalCode": "80123", "addressLocality": "Napoli", "addressCountry": "IT"}}, "organizer": {"@type": "Organization", "name": "Casa Rosebery", "url": "https://www.casaroseberyristorante.it/en/"}, "description": "Live music throughout dinner", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR", "url": "https://www.casaroseberyristorante.it/en/#serate", "availability": "https://schema.org/InStock", "description": "Free entry, à la carte menu"}, "image": "https://www.casaroseberyristorante.it/img/eventi/2026-10-24-alberto-miranda.jpg", "performer": {"@type": "Person", "name": "Alberto Miranda"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "name": "Dinner & live swing music – Raoul & Swing Orchestra", "startDate": "2026-11-05T21:00:00+01:00", "endDate": "2026-11-05T23:30:00+01:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Restaurant", "name": "Casa Rosebery", "address": {"@type": "PostalAddress", "streetAddress": "Via Ferdinando Russo 13", "postalCode": "80123", "addressLocality": "Napoli", "addressCountry": "IT"}}, "organizer": {"@type": "Organization", "name": "Casa Rosebery", "url": "https://www.casaroseberyristorante.it/en/"}, "description": "Raoul — real name Luigi De Luca, radio voice of Kiss Kiss and Radio Ibiza — leads a swing and jazz ensemble with twenty years on stages across Italy: from Sinatra and Dean Martin to Michael Bublé. Set menu at €80 per person.", "offers": {"@type": "Offer", "price": "80", "priceCurrency": "EUR", "url": "https://www.casaroseberyristorante.it/en/#serate", "availability": "https://schema.org/InStock", "validFrom": "2026-10-15"}, "image": "https://www.casaroseberyristorante.it/img/eventi/raoul-swing-orchestra.jpg", "performer": {"@type": "Person", "name": "Raoul & Swing Orchestra"}}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Event", "name": "Dinner & live swing music – Raoul & Swing Orchestra", "startDate": "2026-12-10T21:00:00+01:00", "endDate": "2026-12-10T23:30:00+01:00", "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "location": {"@type": "Restaurant", "name": "Casa Rosebery", "address": {"@type": "PostalAddress", "streetAddress": "Via Ferdinando Russo 13", "postalCode": "80123", "addressLocality": "Napoli", "addressCountry": "IT"}}, "organizer": {"@type": "Organization", "name": "Casa Rosebery", "url": "https://www.casaroseberyristorante.it/en/"}, "description": "Raoul — real name Luigi De Luca, radio voice of Kiss Kiss and Radio Ibiza — leads a swing and jazz ensemble with twenty years on stages across Italy: from Sinatra and Dean Martin to Michael Bublé. Set menu at €80 per person.", "offers": {"@type": "Offer", "price": "80", "priceCurrency": "EUR", "url": "https://www.casaroseberyristorante.it/en/#serate", "availability": "https://schema.org/InStock", "validFrom": "2026-10-15"}, "image": "https://www.casaroseberyristorante.it/img/eventi/raoul-swing-orchestra.jpg", "performer": {"@type": "Person", "name": "Raoul & Swing Orchestra"}}</script>
 <script>
-// nasconde le serate già passate e, se non ne resta nessuna, l'intera sezione
+// nasconde le serate già passate e, se non ne resta nessuna, l'intera sezione;
+// segna con un'etichetta la serata di stasera e quella di domani
 (function () {
   var oggi = new Date(); oggi.setHours(0, 0, 0, 0);
-  var vis = 0;
+  var GIORNO = 86400000, vis = 0;
   document.querySelectorAll('.serata[data-data]').forEach(function (s) {
-    if (new Date(s.getAttribute('data-data') + 'T23:59:59') < oggi) s.remove(); else vis++;
+    var d = new Date(s.getAttribute('data-data') + 'T00:00:00');
+    if (d < oggi) { s.remove(); return; }
+    vis++;
+    var diff = Math.round((d - oggi) / GIORNO);
+    var quando = s.querySelector('.serata-quando');
+    if (diff <= 1 && quando) {
+      var tag = document.createElement('span');
+      tag.className = 'serata-oggi';
+      tag.textContent = diff === 0 ? 'Tonight' : 'Tomorrow';
+      quando.insertBefore(tag, quando.firstChild);
+    }
   });
   if (!vis) { var sec = document.getElementById('serate'); if (sec) sec.remove(); }
 })();
@@ -1091,27 +1118,27 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
     <form onsubmit="handleForm(event)">
       <div class="form-row">
         <div class="form-field">
-          <label>Full name</label>
-          <input type="text" placeholder="John Smith" required>
+          <label for="ev-nome">Full name</label>
+          <input type="text" id="ev-nome" autocomplete="name" placeholder="John Smith" required>
         </div>
         <div class="form-field">
-          <label>Phone</label>
-          <input type="tel" placeholder="+44 0000 000000" required>
+          <label for="ev-tel">Phone</label>
+          <input type="tel" id="ev-tel" autocomplete="tel" placeholder="+44 0000 000000" required>
         </div>
       </div>
       <div class="form-row">
         <div class="form-field">
-          <label>Event date</label>
-          <input type="date" required>
+          <label for="ev-data">Event date</label>
+          <input type="date" id="ev-data" required>
         </div>
         <div class="form-field">
-          <label>Number of guests</label>
-          <input type="number" min="2" placeholder="e.g. 20" required>
+          <label for="ev-persone">Number of guests</label>
+          <input type="number" id="ev-persone" min="2" inputmode="numeric" placeholder="e.g. 20" required>
         </div>
       </div>
       <div class="form-field">
-        <label>Type of event</label>
-        <select>
+        <label for="ev-tipo">Type of event</label>
+        <select id="ev-tipo" required>
           <option value="">Select...</option>
           <option>Corporate dinner</option>
           <option>Birthday / Anniversary</option>
@@ -1121,17 +1148,18 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
         </select>
       </div>
       <div class="form-field">
-        <label>Notes or special requests</label>
-        <textarea placeholder="Tell us about your occasion..."></textarea>
+        <label for="ev-note">Notes or special requests</label>
+        <textarea id="ev-note" placeholder="Tell us about your occasion..."></textarea>
       </div>
       <div class="form-submit">
         <button type="submit" class="btn-dark">Send request</button>
         <span class="divider-or">or</span>
-        <a href="https://wa.me/390813357572?text=Hi!%20I%27d%20like%20some%20information%20about%20an%20event%20at%20Casa%20Rosebery." class="btn-wa" target="_blank">
+        <a href="https://wa.me/390813357572?text=Hi!%20I%27d%20like%20some%20information%20about%20an%20event%20at%20Casa%20Rosebery." class="btn-wa" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           Message us on WhatsApp
         </a>
       </div>
+      <p class="form-esito" id="form-esito" role="status" hidden></p>
     </form>
   </div>
 </section>
@@ -1179,7 +1207,7 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
     </div>
   </div>
   <div class="contatti-map">
-    <iframe
+    <iframe title="Map: Casa Rosebery, Via Ferdinando Russo 13, Naples"
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.9!2d14.2018!3d40.8132!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133b08f25b6f8c47%3A0x1!2sVia+Ferdinando+Russo+13%2C+Napoli!5e0!3m2!1sen!2sit!4v1"
       allowfullscreen loading="lazy">
     </iframe>
@@ -1372,7 +1400,7 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
 #cookie-banner .cb-azioni { display: flex; gap: 10px; }
 #cookie-banner button.cb-btn {
   flex: 1; padding: 12px 16px; cursor: pointer;
-  font: 500 10px/1 'Jost', sans-serif; letter-spacing: 2px; text-transform: uppercase;
+  font: 500 12px/1 'Jost', sans-serif; letter-spacing: 2px; text-transform: uppercase;
   background: transparent; color: var(--oro-lt); border: 1px solid var(--oro);
 }
 #cookie-banner button.cb-btn:hover { background: var(--oro); color: var(--nero); }
@@ -1522,19 +1550,30 @@ function handleForm(e) {
     `Notes: ${note}`
   );
   if (window.traccia) window.traccia('richiesta_evento', { tipo_evento: tipo, persone: pax });
-  window.open(`mailto:prenotazioni@casaroseberyristorante.it?subject=Event%20request%20Casa%20Rosebery%20(EN)&body=${msg}`, '_blank');
+  // L'email parte dall'app di posta del visitatore: se sul telefono non ce n'è una non succede nulla,
+  // quindi mostriamo sempre la stessa richiesta pronta da inviare su WhatsApp.
+  var en = document.documentElement.lang.indexOf('en') === 0;
+  var wa = 'https://wa.me/390813357572?text=' + msg;
+  var esito = document.getElementById('form-esito');
+  esito.innerHTML = en
+    ? 'Your email app should open with the request ready to send. If it doesn\u2019t, <a href="/' + wa + '" target="_blank" rel="noopener">send the same request on WhatsApp</a>.'
+    : 'Si sta aprendo la tua app di posta con la richiesta pronta da inviare. Se non si apre, <a href="/' + wa + '" target="_blank" rel="noopener">invia la stessa richiesta su WhatsApp</a>.';
+  esito.hidden = false;
+  window.location.href = `mailto:prenotazioni@casaroseberyristorante.it?subject=Event%20request%20Casa%20Rosebery%20(EN)&body=${msg}`;
 }
+(function () {
+  // niente date passate nel form eventi
+  var campo = document.getElementById('ev-data');
+  var d = new Date();
+  if (campo) campo.min = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+})();
 
 // ── GALLERY FILTER ─────────────────────────────────────
 function filterGallery(cat, btn) {
   document.querySelectorAll('.gallery-filter').forEach(function(b) { b.classList.remove('active'); });
   btn.classList.add('active');
-  // Use grid layout instead of columns to fix filtering
-  var grid = document.getElementById('gallery-grid');
-  grid.style.columns = 'initial';
-  grid.style.display = 'grid';
-  grid.style.gridTemplateColumns = 'repeat(3, 1fr)';
-  grid.style.gap = '8px';
+  // con il filtro attivo si passa a una griglia (stesse colonne della vista normale)
+  document.getElementById('gallery-grid').classList.add('filtrata');
   document.querySelectorAll('.gallery-item').forEach(function(item) {
     var show = cat === 'all' || item.dataset.cat === cat;
     item.style.display = show ? 'block' : 'none';
@@ -1555,8 +1594,11 @@ function buildLightboxPhotos() {
   });
 }
 
+var lightboxOrigine = null;
+
 function openLightbox(idx) {
   if (lightboxPhotos.length === 0) buildLightboxPhotos();
+  lightboxOrigine = document.activeElement;
   lightboxIndex = idx;
   document.getElementById('lightbox-img').src = lightboxPhotos[idx];
   document.getElementById('lightbox-img').alt = lightboxAlts[idx] || '';
@@ -1564,9 +1606,15 @@ function openLightbox(idx) {
   document.body.style.overflow = 'hidden';
 }
 
+function lightboxAperto() {
+  return document.getElementById('lightbox').classList.contains('open');
+}
+
 function closeLightbox() {
+  if (!lightboxAperto()) return;
   document.getElementById('lightbox').classList.remove('open');
   document.body.style.overflow = '';
+  if (lightboxOrigine && lightboxOrigine.focus) lightboxOrigine.focus();
 }
 
 function lightboxNav(dir) {
@@ -1579,9 +1627,17 @@ document.getElementById('lightbox').addEventListener('click', function(e) {
   if (e.target === this) closeLightbox();
 });
 document.addEventListener('keydown', function(e) {
+  if (!lightboxAperto()) return;
   if (e.key === 'Escape') closeLightbox();
   if (e.key === 'ArrowRight') lightboxNav(1);
   if (e.key === 'ArrowLeft') lightboxNav(-1);
+});
+document.querySelectorAll('.gallery-item').forEach(function(item) {
+  item.setAttribute('tabindex', '0');
+  item.setAttribute('role', 'button');
+  item.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); item.click(); }
+  });
 });
 
 // ── BOTTOM NAV ACTIVE STATE ────────────────────────────
@@ -1591,9 +1647,12 @@ function scrollToTop() {
 
 function updateBottomNav() {
   var sections = [
-    { id: 'menu',     btn: 'bn-menu' },
-    { id: 'gallery',  btn: 'bn-gallery' },
-    { id: 'contatti', btn: 'bn-contatti' },
+    { id: 'menu',       btn: 'bn-menu' },
+    { id: 'serate',     btn: null },
+    { id: 'eventi',     btn: null },
+    { id: 'contatti',   btn: 'bn-contatti' },
+    { id: 'gallery',    btn: 'bn-gallery' },
+    { id: 'recensioni', btn: null },
   ];
   var scrollY = window.scrollY;
   var active = 'bn-home';

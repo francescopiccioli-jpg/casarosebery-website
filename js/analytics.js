@@ -38,7 +38,7 @@
     'padding:22px 20px 18px;font:400 13px/1.6 Jost,system-ui,sans-serif}#cookie-banner.visibile{display:block}' +
     '#cookie-banner p{margin:0 28px 16px 0}#cookie-banner a{color:#d4b06a;text-decoration:underline}' +
     '#cookie-banner .cb-azioni{display:flex;gap:10px}#cookie-banner .cb-btn{flex:1;padding:12px 16px;cursor:pointer;' +
-    'font:500 10px/1 Jost,system-ui,sans-serif;letter-spacing:2px;text-transform:uppercase;background:transparent;color:#d4b06a;border:1px solid #b8923a}' +
+    'font:500 12px/1 Jost,system-ui,sans-serif;letter-spacing:2px;text-transform:uppercase;background:transparent;color:#d4b06a;border:1px solid #b8923a}' +
     '#cookie-banner .cb-btn:hover{background:#b8923a;color:#000}#cookie-banner .cb-chiudi{position:absolute;top:10px;right:12px;background:none;border:0;' +
     'cursor:pointer;color:rgba(255,255,255,.5);font-size:20px;line-height:1;padding:4px}' +
     '@media(min-width:1025px){#cookie-banner{left:28px;right:auto;bottom:28px;max-width:420px}}';
