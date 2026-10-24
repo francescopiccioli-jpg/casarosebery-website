@@ -39,7 +39,7 @@ TESTI = {
         "file": RADICE / "eventi-privati.html", "lang": "it", "rad": "", "url": f"{SITO}/eventi-privati.html",
         "alt_url": f"{SITO}/en/private-events.html", "alt_lang": "en", "alt_txt": "English", "home": "index.html",
         "title": "Eventi privati e cene aziendali a Posillipo · Casa Rosebery, Napoli",
-        "descr": f"Cene aziendali, compleanni, battesimi e feste private a Posillipo con vista sul Golfo di Napoli: "
+        "descr": f"Cene aziendali, compleanni, battesimi, feste di laurea e degustazioni private a Posillipo con vista sul Golfo di Napoli: "
                  f"fino a {CAPIENZA_SEDUTI} ospiti seduti o {CAPIENZA_PIEDI} in piedi, menu su misura dalla nostra braceria.",
         "eyebrow": "Eventi privati", "h1": "La vostra occasione, <em>con vista sul Golfo</em>",
         "intro": "Dalla cena aziendale al compleanno, dal battesimo alla festa tra amici: a Casa Rosebery ogni evento ha "
@@ -53,8 +53,9 @@ TESTI = {
             ("Cene aziendali", "Cene con clienti e colleghi, festa di fine anno, team building a tavola."),
             ("Compleanni e anniversari", "Dal tavolo riservato alla sala intera, con torta e brindisi."),
             ("Battesimi e comunioni", "Pranzi in famiglia con un menu dedicato anche ai più piccoli."),
-            ("Feste private", "Lauree, addii al nubilato, rimpatriate: la sala è vostra."),
-            ("Presentazioni ed eventi", "Lanci di prodotto, degustazioni, serate a tema con musica."),
+            ("Feste di laurea e feste private", "Lauree, rimpatriate, feste tra amici: la sala è vostra."),
+            ("Degustazioni private", "Su richiesta, degustazioni di vini e di carni e percorsi di avvicinamento alla degustazione, guidati da sommelier qualificati."),
+            ("Presentazioni ed eventi", "Lanci di prodotto, serate a tema, eventi aziendali con musica."),
         ],
         "perche_tit": "Perché da noi",
         "perche": [
@@ -82,7 +83,7 @@ TESTI = {
         "file": RADICE / "en" / "private-events.html", "lang": "en", "rad": "/", "url": f"{SITO}/en/private-events.html",
         "alt_url": f"{SITO}/eventi-privati.html", "alt_lang": "it", "alt_txt": "Italiano", "home": "/en/",
         "title": "Private events & corporate dinners in Posillipo, Naples · Casa Rosebery",
-        "descr": f"Corporate dinners, birthdays, christenings and private parties in Posillipo overlooking the Bay of Naples: "
+        "descr": f"Corporate dinners, birthdays, christenings, graduation parties and private tastings in Posillipo overlooking the Bay of Naples: "
                  f"up to {CAPIENZA_SEDUTI} seated guests or {CAPIENZA_PIEDI} standing, tailor-made menus from our steakhouse.",
         "eyebrow": "Private events", "h1": "Your occasion, <em>overlooking the Bay</em>",
         "intro": "From corporate dinners to birthdays, christenings and parties with friends: at Casa Rosebery every event gets a "
@@ -96,8 +97,9 @@ TESTI = {
             ("Corporate dinners", "Client dinners, end-of-year parties, team events around the table."),
             ("Birthdays & anniversaries", "From a reserved table to the whole room, with cake and a toast."),
             ("Christenings & communions", "Family lunches with a dedicated menu for children too."),
-            ("Private parties", "Graduations, hen parties, reunions: the room is yours."),
-            ("Launches & events", "Product launches, tastings, themed evenings with music."),
+            ("Graduation & private parties", "Graduations, reunions, parties with friends: the room is yours."),
+            ("Private tastings", "On request, wine and meat tastings and introductory tasting courses led by qualified sommeliers."),
+            ("Launches & events", "Product launches, themed evenings, corporate events with music."),
         ],
         "perche_tit": "Why Casa Rosebery",
         "perche": [
