@@ -177,6 +177,8 @@ T = [
     ('<p>Ogni sabato, a cena, la serata è accompagnata da musica dal vivo.</p>', '<p>Every Saturday, dinner is accompanied by live music.</p>'),
     ('Organizziamo cene aziendali, eventi privati, serate a tema e compleanni.<br>\n      Raccontaci la tua occasione — creiamo qualcosa di indimenticabile insieme.',
      'We host corporate dinners, private events, themed evenings and birthdays.<br>\n      Tell us about your occasion — let\'s create something unforgettable together.'),
+    ('<a href="eventi-privati.html" style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--oro);border-bottom:1px solid rgba(184,146,58,0.4)">Capienza, occasioni e menu per gli eventi privati →</a>',
+     '<a href="/en/private-events.html" style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--oro);border-bottom:1px solid rgba(184,146,58,0.4)">Capacity, occasions and menus for private events →</a>'),
     ('<label for="ev-nome">Nome e cognome</label>', '<label for="ev-nome">Full name</label>'),
     ('placeholder="Mario Rossi"', 'placeholder="John Smith"'),
     ('<label for="ev-tel">Telefono</label>', '<label for="ev-tel">Phone</label>'),

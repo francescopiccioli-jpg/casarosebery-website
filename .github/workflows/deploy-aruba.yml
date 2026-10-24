@@ -28,5 +28,6 @@ jobs:
             casarosebery_site.html
             menu-src/**
             eventi-src/**
+            eventi-privati-src/**
             vini-src/**
             en-src/**

@@ -37,4 +37,14 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaroseberyristorante.it/vini.html"/>
   </url>
   <url><loc>https://www.casaroseberyristorante.it/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>
+  <url>
+    <loc>https://www.casaroseberyristorante.it/eventi-privati.html</loc><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaroseberyristorante.it/eventi-privati.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaroseberyristorante.it/en/private-events.html"/>
+  </url>
+  <url>
+    <loc>https://www.casaroseberyristorante.it/en/private-events.html</loc><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaroseberyristorante.it/eventi-privati.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaroseberyristorante.it/en/private-events.html"/>
+  </url>
 </urlset>
