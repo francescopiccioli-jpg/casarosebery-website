@@ -276,7 +276,7 @@ T = [
 
     # ── barra mobile ──
     ('<span style="color:var(--oro);font-weight:600">Prenota</span>', '<span style="color:var(--oro);font-weight:600">Book</span>'),
-    ('<span>Dove siamo</span>', '<span>Find us</span>'),
+    ('<span>Contatti</span>', '<span>Contact</span>'),
     ('<span>Serate</span>', '<span>Events</span>'),
     ('alt="Bistecche con osso frollate nella nostra cella, pronte per la brace"', 'alt="Bone-in steaks dry-aged in our ageing room, ready for the grill"'),
     ('alt="Brisket Casa Rosebery su purea di patate, con il porticciolo e il Golfo di Napoli sullo sfondo"', 'alt="Brisket Casa Rosebery on mashed potato, with the marina and the Bay of Naples in the background"'),
