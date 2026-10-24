@@ -47,4 +47,40 @@
     <xhtml:link rel="alternate" hreflang="it" href="https://www.casaroseberyristorante.it/eventi-privati.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://www.casaroseberyristorante.it/en/private-events.html"/>
   </url>
+  <url>
+    <loc>https://www.casaroseberyristorante.it/braceria.html</loc><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaroseberyristorante.it/braceria.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaroseberyristorante.it/en/steakhouse.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaroseberyristorante.it/braceria.html"/>
+  </url>
+  <url>
+    <loc>https://www.casaroseberyristorante.it/en/steakhouse.html</loc><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaroseberyristorante.it/braceria.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaroseberyristorante.it/en/steakhouse.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaroseberyristorante.it/braceria.html"/>
+  </url>
+  <url>
+    <loc>https://www.casaroseberyristorante.it/serate.html</loc><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaroseberyristorante.it/serate.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaroseberyristorante.it/en/live-music.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaroseberyristorante.it/serate.html"/>
+  </url>
+  <url>
+    <loc>https://www.casaroseberyristorante.it/en/live-music.html</loc><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaroseberyristorante.it/serate.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaroseberyristorante.it/en/live-music.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaroseberyristorante.it/serate.html"/>
+  </url>
+  <url>
+    <loc>https://www.casaroseberyristorante.it/vista-mare-posillipo.html</loc><changefreq>monthly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaroseberyristorante.it/vista-mare-posillipo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaroseberyristorante.it/en/sea-view-restaurant-naples.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaroseberyristorante.it/vista-mare-posillipo.html"/>
+  </url>
+  <url>
+    <loc>https://www.casaroseberyristorante.it/en/sea-view-restaurant-naples.html</loc><changefreq>monthly</changefreq><priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="it" href="https://www.casaroseberyristorante.it/vista-mare-posillipo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.casaroseberyristorante.it/en/sea-view-restaurant-naples.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.casaroseberyristorante.it/vista-mare-posillipo.html"/>
+  </url>
 </urlset>

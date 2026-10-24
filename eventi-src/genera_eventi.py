@@ -39,6 +39,7 @@ TESTI = {
         "intro": "Cene con musica dal vivo e ospiti speciali. Le serate a menu fisso hanno posti limitati e si prenotano solo via WhatsApp; le serate alla carta si prenotano come sempre.",
         "menu_fisso": " Menu fisso a {p} € a persona.", "descr_default": "{t} a Casa Rosebery, Napoli.",
         "nav": "Serate",
+        "tutte": ("/serate.html", "Tutte le serate e come si prenota →"),
     },
     "en": {
         "file": RADICE / "en" / "index.html", "url": f"{SITO}/en/",
@@ -55,6 +56,7 @@ TESTI = {
         "intro": "Dinners with live music and special guests. Set-menu evenings have limited seating and can only be booked via WhatsApp; à la carte evenings are booked as usual.",
         "menu_fisso": " Set menu at €{p} per person.", "descr_default": "{t} at Casa Rosebery, Naples.",
         "nav": "Live",
+        "tutte": ("/en/live-music.html", "All evenings and how to book →"),
     },
 }
 
@@ -204,6 +206,7 @@ def blocco(lingua):
   </div>
   <div class="serate-lista">{"".join(carta(s, lingua) for s in serate)}
   </div>
+  <p style="text-align:center;margin-top:28px"><a href="{L["tutte"][0]}" style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--oro);border-bottom:1px solid rgba(184,146,58,0.4);text-decoration:none">{L["tutte"][1]}</a></p>
 </section>
 {"".join(f'<script type="application/ld+json">{jsonld(s, lingua)}</script>' for s in serate if s.get("pubblica"))}
 <script>
@@ -245,3 +248,7 @@ for lingua, L in TESTI.items():
         testo = testo.replace(f'href="#serate">{L["nav"]}', f'href="#eventi">{L["nav"]}')
     f.write_text(testo, encoding="utf-8")
     print(f"{f.relative_to(RADICE)}: {len(serate)} serate inserite" + (" (ANTEPRIMA, non pubblicare)" if ANTEPRIMA else ""))
+
+# aggiorna anche le pagine tematiche (braceria, serate, vista mare)
+import subprocess as _sp
+_sp.run([sys.executable if "sys" in dir() else "python3", str(RADICE / "pagine-src" / "genera_pagine.py")], check=True)

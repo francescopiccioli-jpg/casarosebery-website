@@ -278,3 +278,7 @@ for L in TESTI.values():
     L["file"].parent.mkdir(exist_ok=True)
     L["file"].write_text(pagina(L), encoding="utf-8")
     print(f'{L["file"].relative_to(RADICE)} generato')
+
+# aggiorna anche le pagine tematiche (braceria, serate, vista mare)
+import subprocess as _sp
+_sp.run([sys.executable if "sys" in dir() else "python3", str(RADICE / "pagine-src" / "genera_pagine.py")], check=True)

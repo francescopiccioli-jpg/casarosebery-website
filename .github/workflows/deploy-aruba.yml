@@ -30,5 +30,6 @@ jobs:
             eventi-src/**
             eventi-privati-src/**
             serata-src/**
+            pagine-src/**
             vini-src/**
             en-src/**
