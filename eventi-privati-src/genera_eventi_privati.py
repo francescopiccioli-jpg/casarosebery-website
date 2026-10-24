@@ -10,7 +10,7 @@ SITO = "https://www.casaroseberyristorante.it"
 WA = "390813357572"
 EMAIL = "prenotazioni@casaroseberyristorante.it"
 
-CAPIENZA_SEDUTI, CAPIENZA_PIEDI = 90, 130
+CAPIENZA_SEDUTI, CAPIENZA_PIEDI = 120, 180
 
 FOTO = {
     "hero": "img/IMG_1181.webp",
