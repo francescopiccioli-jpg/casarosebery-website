@@ -162,13 +162,15 @@ nav#main-nav.scrolled {
   background-image: url('img/8843EF97-F411-4595-B695-7439A9E8FF3B.webp');
 }
 .hero-half--braceria .hero-half-overlay {
-  background: linear-gradient(to top, rgba(14,13,10,0.95) 0%, rgba(14,13,10,0.8) 22%, rgba(14,13,10,0.2) 60%, transparent 100%);
+  background: linear-gradient(to bottom, rgba(14,13,10,0.7) 0, transparent 140px),
+              linear-gradient(to top, rgba(14,13,10,0.95) 0%, rgba(14,13,10,0.8) 30%, rgba(14,13,10,0.2) 65%, transparent 100%);
 }
 .hero-half--dining .hero-half-bg {
   background-image: url('img/IMG_1171.webp');
 }
 .hero-half--dining .hero-half-overlay {
-  background: linear-gradient(to top, rgba(10,20,14,0.95) 0%, rgba(10,20,14,0.8) 22%, rgba(10,20,14,0.2) 60%, transparent 100%);
+  background: linear-gradient(to bottom, rgba(10,20,14,0.7) 0, transparent 140px),
+              linear-gradient(to top, rgba(10,20,14,0.95) 0%, rgba(10,20,14,0.8) 30%, rgba(10,20,14,0.2) 65%, transparent 100%);
 }
 
 /* Divisore tra le due anime su mobile */
@@ -207,7 +209,7 @@ nav#main-nav.scrolled {
 }
 .btn-ghost:hover { background: var(--oro); border-color: var(--oro); color: var(--nero); }
 /* sopra le foto dell'hero un oro più chiaro, per restare leggibile */
-.hero-content .btn-ghost { color: #e0ba72; }
+.hero-content .btn-ghost, .hero-content .hero-eyebrow, nav#main-nav:not(.scrolled) .nav-cta { color: #e4c07c; }
 .hero-content .btn-ghost:hover { color: var(--nero); }
 
 /* ── CLAIM ─────────────────────────────────────────────── */
@@ -1233,7 +1235,7 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
 <div class="gallery-item" data-cat="braceria" onclick="openLightbox(0)"><img src="img/braceria-bistecche-frollate.webp" alt="Bistecche con osso frollate nella nostra cella, pronte per la brace" loading="lazy"></div>
 <div class="gallery-item" data-cat="braceria" onclick="openLightbox(1)"><img src="img/braceria-brisket-golfo-napoli.webp" alt="Brisket Casa Rosebery su purea di patate, con il porticciolo e il Golfo di Napoli sullo sfondo" loading="lazy"></div>
 <div class="gallery-item" data-cat="braceria" onclick="openLightbox(2)"><img src="img/8843EF97-F411-4595-B695-7439A9E8FF3B.webp" alt="Medaglioni di manzo alla brace con peperoni e germogli, su ardesia" loading="lazy"></div>
-<div class="gallery-item" data-cat="braceria" onclick="openLightbox(3)"><img src="img/EDFEC6D3-3CC5-4770-87F6-668E4FE563E1.webp" alt="Tagliata al sangue servita su piatto nero" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(3)"><img src="img/EDFEC6D3-3CC5-4770-87F6-668E4FE563E1.webp" alt="Carne al sangue tagliata a fette, su piatto nero" loading="lazy"></div>
 <div class="gallery-item" data-cat="braceria" onclick="openLightbox(4)"><img src="img/IMG_0414.webp" alt="Bistecca alla brace con sale grosso" loading="lazy"></div>
 <div class="gallery-item" data-cat="braceria" onclick="openLightbox(5)"><img src="img/IMG_1504.webp" alt="Costata con l'osso tagliata a fette e servita su pietra" loading="lazy"></div>
 <div class="gallery-item" data-cat="braceria" onclick="openLightbox(6)"><img src="img/IMG_1623.webp" alt="Tagli di manzo con l'osso in esposizione" loading="lazy"></div>
@@ -1241,24 +1243,24 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
 <div class="gallery-item" data-cat="braceria" onclick="openLightbox(8)"><img src="img/IMG_5372.webp" alt="Taglio di manzo frollato in primo piano" loading="lazy"></div>
 <div class="gallery-item" data-cat="braceria" onclick="openLightbox(9)"><img src="img/IMG_5412.webp" alt="Lo chef al lavoro alla piastra, in bianco e nero" loading="lazy"></div>
 <div class="gallery-item" data-cat="braceria" onclick="openLightbox(10)"><img src="img/IMG_5417.webp" alt="Un tagliere di carne portato in sala" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(11)"><img src="img/cucina-ciabatta-friarielli-vesuvio.webp" alt="Ciabatta con friarielli, stracciatella e prosciutto croccante, Vesuvio al tramonto sullo sfondo" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(12)"><img src="img/cucina-involtini-verza-vesuvio.webp" alt="Involtini di verza con provola filante e salsiccia croccante, Vesuvio al tramonto sullo sfondo" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(13)"><img src="img/dolce.webp" alt="Carne glassata con salsa, su piatto turchese" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(14)"><img src="img/IMG_1171.webp" alt="Spaghetti al pomodoro con crema di formaggio" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(15)"><img src="img/IMG_1175.webp" alt="Carpaccio di manzo" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(16)"><img src="img/IMG_2487.webp" alt="Carne sfilacciata con olio alle erbe, accanto alla vetrata" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(17)"><img src="img/IMG_2547.webp" alt="Crêpe con crema e frutti di bosco" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(11)"><img src="img/cucina-ciabatta-friarielli-vesuvio.webp" alt="Pane farcito con friarielli, stracciatella e prosciutto croccante, Vesuvio al tramonto sullo sfondo" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(12)"><img src="img/cucina-involtini-verza-vesuvio.webp" alt="Verza ripiena con provola filante e salsiccia croccante, Vesuvio al tramonto sullo sfondo" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(13)"><img src="img/dolce.webp" alt="Piatto di carne glassata con salsa, su piatto turchese" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(14)"><img src="img/IMG_1171.webp" alt="Pasta al pomodoro con crema di formaggio" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(15)"><img src="img/IMG_1175.webp" alt="Fettine sottili di manzo crudo" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(16)"><img src="img/IMG_2487.webp" alt="Piatto di carne sfilacciata con olio alle erbe, accanto alla vetrata" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(17)"><img src="img/IMG_2547.webp" alt="Dolce con crema e frutti di bosco" loading="lazy"></div>
 <div class="gallery-item" data-cat="cucina" onclick="openLightbox(18)"><img src="img/IMG_2554.webp" alt="Dolce monoporzione alla crema su base di biscotto" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(19)"><img src="img/IMG_2600.webp" alt="Carne sfilacciata con salsa verde, sullo sfondo una barca" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(20)"><img src="img/IMG_2601.webp" alt="Pasta alla Genovese con gli ziti, sullo sfondo il mare" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(21)"><img src="img/IMG_4963.webp" alt="Polpettine fritte in salsa cremosa" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(19)"><img src="img/IMG_2600.webp" alt="Piatto di carne sfilacciata con salsa verde, sullo sfondo una barca" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(20)"><img src="img/IMG_2601.webp" alt="Genovese, sullo sfondo il mare" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(21)"><img src="img/IMG_4963.webp" alt="Polpette fritte in salsa cremosa" loading="lazy"></div>
 <div class="gallery-item" data-cat="cucina" onclick="openLightbox(22)"><img src="img/IMG_5019.webp" alt="Piatto di carni crude e salumi con salse" loading="lazy"></div>
 <div class="gallery-item" data-cat="cucina" onclick="openLightbox(23)"><img src="img/IMG_5020.webp" alt="Panino con carne e formaggio fuso" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(24)"><img src="img/IMG_6250.webp" alt="Spaghetti con zucchine fritte" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(25)"><img src="img/IMG_6252.webp" alt="Polpettine fritte in primo piano" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(24)"><img src="img/IMG_6250.webp" alt="Pasta con zucchine fritte" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(25)"><img src="img/IMG_6252.webp" alt="Polpette fritte in primo piano" loading="lazy"></div>
 <div class="gallery-item" data-cat="cucina" onclick="openLightbox(26)"><img src="img/IMG_7331.webp" alt="Dolce su stecco con granella e ribes" loading="lazy"></div>
 <div class="gallery-item" data-cat="cucina" onclick="openLightbox(27)"><img src="img/IMG_7332.webp" alt="Dolce al cioccolato con pistacchi" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(28)"><img src="img/IMG_8058.webp" alt="Pasta alla Genovese con gli ziti, in primo piano" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(28)"><img src="img/IMG_8058.webp" alt="Genovese, in primo piano" loading="lazy"></div>
 <div class="gallery-item" data-cat="locale" onclick="openLightbox(29)"><img src="img/IMG_1176.webp" alt="Tavolo apparecchiato davanti alla finestra con il Vesuvio" loading="lazy"></div>
 <div class="gallery-item" data-cat="locale" onclick="openLightbox(30)"><img src="img/IMG_1178.webp" alt="Scaffali con vini, olio e prodotti della dispensa" loading="lazy"></div>
 <div class="gallery-item" data-cat="locale" onclick="openLightbox(31)"><img src="img/IMG_1179.webp" alt="Calici sulla tavola apparecchiata" loading="lazy"></div>

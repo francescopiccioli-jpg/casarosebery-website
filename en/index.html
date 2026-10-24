@@ -163,13 +163,15 @@ nav#main-nav.scrolled {
   background-image: url('/img/8843EF97-F411-4595-B695-7439A9E8FF3B.webp');
 }
 .hero-half--braceria .hero-half-overlay {
-  background: linear-gradient(to top, rgba(14,13,10,0.95) 0%, rgba(14,13,10,0.8) 22%, rgba(14,13,10,0.2) 60%, transparent 100%);
+  background: linear-gradient(to bottom, rgba(14,13,10,0.7) 0, transparent 140px),
+              linear-gradient(to top, rgba(14,13,10,0.95) 0%, rgba(14,13,10,0.8) 30%, rgba(14,13,10,0.2) 65%, transparent 100%);
 }
 .hero-half--dining .hero-half-bg {
   background-image: url('/img/IMG_1171.webp');
 }
 .hero-half--dining .hero-half-overlay {
-  background: linear-gradient(to top, rgba(10,20,14,0.95) 0%, rgba(10,20,14,0.8) 22%, rgba(10,20,14,0.2) 60%, transparent 100%);
+  background: linear-gradient(to bottom, rgba(10,20,14,0.7) 0, transparent 140px),
+              linear-gradient(to top, rgba(10,20,14,0.95) 0%, rgba(10,20,14,0.8) 30%, rgba(10,20,14,0.2) 65%, transparent 100%);
 }
 
 /* Divisore tra le due anime su mobile */
@@ -208,7 +210,7 @@ nav#main-nav.scrolled {
 }
 .btn-ghost:hover { background: var(--oro); border-color: var(--oro); color: var(--nero); }
 /* sopra le foto dell'hero un oro più chiaro, per restare leggibile */
-.hero-content .btn-ghost { color: #e0ba72; }
+.hero-content .btn-ghost, .hero-content .hero-eyebrow, nav#main-nav:not(.scrolled) .nav-cta { color: #e4c07c; }
 .hero-content .btn-ghost:hover { color: var(--nero); }
 
 /* ── CLAIM ─────────────────────────────────────────────── */
@@ -1232,9 +1234,9 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
   </div>
   <div class="gallery-grid" id="gallery-grid">
 <div class="gallery-item" data-cat="braceria" onclick="openLightbox(0)"><img src="/img/braceria-bistecche-frollate.webp" alt="Bone-in steaks dry-aged in our ageing room, ready for the grill" loading="lazy"></div>
-<div class="gallery-item" data-cat="braceria" onclick="openLightbox(1)"><img src="/img/braceria-brisket-golfo-napoli.webp" alt="Casa Rosebery brisket on mashed potato, with the marina and the Bay of Naples in the background" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(1)"><img src="/img/braceria-brisket-golfo-napoli.webp" alt="Brisket Casa Rosebery on mashed potato, with the marina and the Bay of Naples in the background" loading="lazy"></div>
 <div class="gallery-item" data-cat="braceria" onclick="openLightbox(2)"><img src="/img/8843EF97-F411-4595-B695-7439A9E8FF3B.webp" alt="Grilled beef medallions with peppers and microgreens on slate" loading="lazy"></div>
-<div class="gallery-item" data-cat="braceria" onclick="openLightbox(3)"><img src="/img/EDFEC6D3-3CC5-4770-87F6-668E4FE563E1.webp" alt="Rare sliced steak served on a black plate" loading="lazy"></div>
+<div class="gallery-item" data-cat="braceria" onclick="openLightbox(3)"><img src="/img/EDFEC6D3-3CC5-4770-87F6-668E4FE563E1.webp" alt="Rare beef cut into slices, on a black plate" loading="lazy"></div>
 <div class="gallery-item" data-cat="braceria" onclick="openLightbox(4)"><img src="/img/IMG_0414.webp" alt="Grilled steak with coarse salt" loading="lazy"></div>
 <div class="gallery-item" data-cat="braceria" onclick="openLightbox(5)"><img src="/img/IMG_1504.webp" alt="Bone-in steak sliced and served on a stone" loading="lazy"></div>
 <div class="gallery-item" data-cat="braceria" onclick="openLightbox(6)"><img src="/img/IMG_1623.webp" alt="Bone-in beef cuts on display" loading="lazy"></div>
@@ -1242,24 +1244,24 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
 <div class="gallery-item" data-cat="braceria" onclick="openLightbox(8)"><img src="/img/IMG_5372.webp" alt="Close-up of a dry-aged beef cut" loading="lazy"></div>
 <div class="gallery-item" data-cat="braceria" onclick="openLightbox(9)"><img src="/img/IMG_5412.webp" alt="The chef at work at the griddle, in black and white" loading="lazy"></div>
 <div class="gallery-item" data-cat="braceria" onclick="openLightbox(10)"><img src="/img/IMG_5417.webp" alt="A board of meat carried into the dining room" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(11)"><img src="/img/cucina-ciabatta-friarielli-vesuvio.webp" alt="Ciabatta with friarielli, stracciatella and crispy prosciutto, Mount Vesuvius at sunset in the background" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(12)"><img src="/img/cucina-involtini-verza-vesuvio.webp" alt="Savoy cabbage rolls with melted provola and crispy sausage, Mount Vesuvius at sunset in the background" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(13)"><img src="/img/dolce.webp" alt="Glazed meat with sauce on a turquoise plate" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(14)"><img src="/img/IMG_1171.webp" alt="Spaghetti with tomato and a cheese cream" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(15)"><img src="/img/IMG_1175.webp" alt="Beef carpaccio" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(16)"><img src="/img/IMG_2487.webp" alt="Pulled meat with herb oil, by the window" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(17)"><img src="/img/IMG_2547.webp" alt="Crêpe with custard and berries" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(11)"><img src="/img/cucina-ciabatta-friarielli-vesuvio.webp" alt="Bread filled with friarielli, stracciatella and crispy prosciutto, Mount Vesuvius at sunset in the background" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(12)"><img src="/img/cucina-involtini-verza-vesuvio.webp" alt="Stuffed savoy cabbage with melted provola and crispy sausage, Mount Vesuvius at sunset in the background" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(13)"><img src="/img/dolce.webp" alt="Glazed meat dish with sauce, on a turquoise plate" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(14)"><img src="/img/IMG_1171.webp" alt="Pasta with tomato and a cheese cream" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(15)"><img src="/img/IMG_1175.webp" alt="Thin slices of raw beef" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(16)"><img src="/img/IMG_2487.webp" alt="Pulled meat dish with herb oil, by the window" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(17)"><img src="/img/IMG_2547.webp" alt="Dessert with custard and berries" loading="lazy"></div>
 <div class="gallery-item" data-cat="cucina" onclick="openLightbox(18)"><img src="/img/IMG_2554.webp" alt="Single-serve cream dessert on a biscuit base" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(19)"><img src="/img/IMG_2600.webp" alt="Pulled meat with green sauce, a boat in the background" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(20)"><img src="/img/IMG_2601.webp" alt="Pasta alla Genovese with ziti, the sea in the background" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(19)"><img src="/img/IMG_2600.webp" alt="Pulled meat dish with green sauce, a boat in the background" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(20)"><img src="/img/IMG_2601.webp" alt="Genovese, the sea in the background" loading="lazy"></div>
 <div class="gallery-item" data-cat="cucina" onclick="openLightbox(21)"><img src="/img/IMG_4963.webp" alt="Fried meatballs in a creamy sauce" loading="lazy"></div>
 <div class="gallery-item" data-cat="cucina" onclick="openLightbox(22)"><img src="/img/IMG_5019.webp" alt="Platter of raw and cured meats with sauces" loading="lazy"></div>
 <div class="gallery-item" data-cat="cucina" onclick="openLightbox(23)"><img src="/img/IMG_5020.webp" alt="Sandwich with meat and melted cheese" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(24)"><img src="/img/IMG_6250.webp" alt="Spaghetti with fried courgettes" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(24)"><img src="/img/IMG_6250.webp" alt="Pasta with fried courgettes" loading="lazy"></div>
 <div class="gallery-item" data-cat="cucina" onclick="openLightbox(25)"><img src="/img/IMG_6252.webp" alt="Close-up of fried meatballs" loading="lazy"></div>
 <div class="gallery-item" data-cat="cucina" onclick="openLightbox(26)"><img src="/img/IMG_7331.webp" alt="Dessert on a stick with crumble and redcurrants" loading="lazy"></div>
 <div class="gallery-item" data-cat="cucina" onclick="openLightbox(27)"><img src="/img/IMG_7332.webp" alt="Chocolate dessert with pistachios" loading="lazy"></div>
-<div class="gallery-item" data-cat="cucina" onclick="openLightbox(28)"><img src="/img/IMG_8058.webp" alt="Close-up of pasta alla Genovese with ziti" loading="lazy"></div>
+<div class="gallery-item" data-cat="cucina" onclick="openLightbox(28)"><img src="/img/IMG_8058.webp" alt="Genovese, close-up" loading="lazy"></div>
 <div class="gallery-item" data-cat="locale" onclick="openLightbox(29)"><img src="/img/IMG_1176.webp" alt="Table set by the window with Vesuvius in view" loading="lazy"></div>
 <div class="gallery-item" data-cat="locale" onclick="openLightbox(30)"><img src="/img/IMG_1178.webp" alt="Shelves of wine, olive oil and pantry products" loading="lazy"></div>
 <div class="gallery-item" data-cat="locale" onclick="openLightbox(31)"><img src="/img/IMG_1179.webp" alt="Wine glasses on a set table" loading="lazy"></div>
