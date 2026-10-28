@@ -141,6 +141,19 @@
     },
     {
       "pubblica": true,
+      "data": "2026-10-31",
+      "ora": "21:00",
+      "titolo": "Cena e live music",
+      "artista": "Alberto Miranda",
+      "sottotitolo": "Musica dal vivo durante la cena",
+      "foto": "img/eventi/2026-10-31-alberto-miranda.jpg",
+      "nota_menu": "nessun minimo di spesa",
+      "titolo_en": "Dinner & live music",
+      "sottotitolo_en": "Live music throughout dinner",
+      "nota_menu_en": "no minimum spend"
+    },
+    {
+      "pubblica": true,
       "data": "2026-11-05",
       "titolo": "Cena e musica swing dal vivo",
       "artista": "Raoul & Swing Orchestra",
