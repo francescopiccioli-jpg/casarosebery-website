@@ -228,7 +228,7 @@ footer a {{ text-decoration:underline; }}
   <a class="btn" href="{L["vini_url"]}">{L["vini"]}</a>
 {LINK_PDF}</div>
 </main>
-<footer>© 2026 Casa Rosebery · Nado Advertising S.r.l. · P.IVA 07284940488 · <a href="{rad}privacy.html">{L["privacy"]}</a></footer>
+<footer>{"© 2026 Casa Rosebery is a trademark of Nado Advertising S.r.l. · VAT no. 07284940488" if L["lang"] == "en" else "© 2026 Casa Rosebery è un marchio di Nado Advertising S.r.l. · P. IVA 07284940488"} · <a href="{rad}privacy.html">{L["privacy"]}</a></footer>
 <script>
 (function () {{
   var links = document.querySelectorAll('nav.cat a');

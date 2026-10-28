@@ -318,7 +318,7 @@ footer a {{ color:inherit; }}
   <h2>{L["dove"]}</h2>
   <p>{e(L["indirizzo"])}<br>{L["tel_lbl"]}: <a href="tel:0813357572">081 335 7572</a> · <a href="mailto:{EMAIL}">{EMAIL}</a></p>
 </div>
-<footer>© 2026 Casa Rosebery · Nado Advertising S.r.l. · P.IVA 07284940488 · <a href="{r}privacy.html">{L["privacy"]}</a></footer>
+<footer>{"© 2026 Casa Rosebery is a trademark of Nado Advertising S.r.l. · VAT no. 07284940488" if L["lang"] == "en" else "© 2026 Casa Rosebery è un marchio di Nado Advertising S.r.l. · P. IVA 07284940488"} · <a href="{r}privacy.html">{L["privacy"]}</a></footer>
 
 <script id="cfg-evento" type="application/json">{cfg}</script>
 <script>

@@ -245,6 +245,7 @@ T = [
     ('https://www.tripadvisor.it/Restaurant_Review', 'https://www.tripadvisor.com/Restaurant_Review', 3),
 
     # ── footer, sticky, cookie ──
+    ('© 2026 Casa Rosebery è un marchio di Nado Advertising S.r.l. · P. IVA 07284940488 · Tutti i diritti riservati', '© 2026 Casa Rosebery is a trademark of Nado Advertising S.r.l. · VAT no. 07284940488 · All rights reserved'),
     ('Privacy e Cookie Policy</a> · <a href="#" id="apri-preferenze-cookie" style="color:rgba(255,255,255,0.65);text-decoration:underline">Preferenze cookie</a>',
      'Privacy & Cookie Policy (Italian)</a> · <a href="#" id="apri-preferenze-cookie" style="color:rgba(255,255,255,0.65);text-decoration:underline">Cookie preferences</a>'),
     ('class="prenota-sticky" target="_blank">\n  Prenota ora\n</a>', 'class="prenota-sticky" target="_blank">\n  Book now\n</a>'),
