@@ -32,8 +32,6 @@ RewriteRule ^serata/?$ serata.html [L,NC]
 # 4. Bozza non pubblica
 RewriteRule ^(casarosebery_site\.html|menu-src|eventi-src|eventi-privati-src|pagine-src|serata-src|stampa-src|vini-src|en-src)(/|$) - [F,L]
 
-# 4b. Menu PDF sospeso finché non vengono corretti gli allergeni (togliere questa riga per riattivarlo)
-RewriteRule ^menu-casa-rosebery\.pdf$ - [F,L]
 
 # 4c. Vecchi URL del menu (WordPress / QR code stampati) -> nuova pagina menu
 RewriteRule ^(menu|menu-1|menu-2|il-menu|menu-casa-rosebery)/?$ https://www.casaroseberyristorante.it/menu.html [L,R=301,NC]

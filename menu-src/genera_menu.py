@@ -62,7 +62,7 @@ TESTI = {
            "all_0": ("Some dishes may contain allergens (EU Regulation No 1169/2011). "
                      "Before ordering, please tell our staff about any allergy or intolerance: "
                      "we will tell you exactly what goes into each dish."),
-           "prenota": "Book a table", "vini": "Wine list", "vini_url": "vini.html", "pdf": "Download the menu (PDF, Italian)",
+           "prenota": "Book a table", "vini": "Wine list", "vini_url": "vini.html", "pdf": "Download the menu (PDF)",
            "privacy": "Privacy &amp; Cookie Policy (Italian)"},
 }
 
@@ -137,7 +137,8 @@ def pagina(L):
     TESTO_ALLERGENI = L["all_1"] if dati.get("mostra_allergeni", True) else L["all_0"]
     leg = LEGENDA_EN if L["lang"] == "en" else LEGENDA_IT
     LEGENDA_HTML = ('<ol class="legenda">' + "".join(f"<li><b>{i}</b> {x}</li>" for i, x in enumerate(leg, 1)) + "</ol>") if dati.get("mostra_allergeni", True) else ""
-    LINK_PDF = (f'  <a class="btn" href="{L["rad"]}menu-casa-rosebery.pdf" target="_blank">{L["pdf"]}</a>\n'
+    pdf = "/en/menu-casa-rosebery-en.pdf" if L["lang"] == "en" else "/menu-casa-rosebery.pdf"
+    LINK_PDF = (f'  <a class="btn" href="{pdf}" target="_blank" rel="noopener" download>{L["pdf"]}</a>\n'
                 if dati.get("mostra_pdf", False) else "")
     rad = L["rad"]
     agg = dati.get("aggiornato_en", dati["aggiornato"]) if L["lang"] == "en" else dati["aggiornato"]

@@ -736,5 +736,6 @@
     }
   ],
   "mostra_allergeni": true,
-  "aggiornato_en": "October 2026"
+  "aggiornato_en": "October 2026",
+  "mostra_pdf": true
 }
