@@ -7,9 +7,22 @@ from pathlib import Path
 SITO = Path(__file__).resolve().parent.parent
 OUT = Path(sys.argv[1])
 BOZZA = "--definitivo" not in sys.argv
+EN = "--en" in sys.argv  # versione inglese (testi *_en di menu.json)
+def tr(o, k, d=""):
+    return (o.get(k + "_en") or o.get(k, d)) if EN else o.get(k, d)
+X = {"perc": "Tasting menu", "pp": "per person · minimum 2 guests · drinks not included", "carta": "À la carte",
+     "gf": "gluten free", "unita": " /100 g", "sotto": "Champagne bar · Restaurant · Steakhouse · Naples",
+     "all": "Allergens", "all1": "The numbers next to each dish indicate the allergens present under EU Regulation No 1169/2011.",
+     "all2": "If you have any allergy or intolerance, please tell our staff before ordering: some dishes are prepared where other allergens are present and cross-contamination cannot be ruled out."} if EN else \
+    {"perc": "Percorso degustazione", "pp": "a persona · minimo 2 persone · bevande escluse", "carta": "Alla carta",
+     "gf": "senza glutine", "unita": " /etto", "sotto": "Champagneria · Ristorante · Braceria · Napoli",
+     "all": "Allergeni", "all1": "I numeri accanto ai piatti indicano gli allergeni presenti secondo il Regolamento UE n. 1169/2011.",
+     "all2": "Per allergie o intolleranze chiedi al nostro personale prima di ordinare: alcune preparazioni avvengono in ambienti dove sono presenti altri allergeni e non possiamo escludere contaminazioni."}
 e = html.escape
 M = json.loads((SITO / "menu-src/menu.json").read_text(encoding="utf-8"))
 
+LEGENDA_EN = ["Cereals containing gluten", "Crustaceans", "Eggs", "Fish", "Peanuts", "Soybeans", "Milk", "Nuts",
+              "Celery", "Mustard", "Sesame seeds", "Sulphites (> 10 mg/kg)", "Lupin", "Molluscs"]
 LEGENDA = ["Cereali con glutine", "Crostacei", "Uova", "Pesce", "Arachidi", "Soia", "Latte", "Frutta a guscio",
            "Sedano", "Senape", "Sesamo", "Solfiti (> 10 mg/kg)", "Lupini", "Molluschi"]
 
@@ -84,9 +97,9 @@ perc_html = ""
 for pc in M["percorsi"]:
     righe = ""
     for po in pc["portate"]:
-        righe += f'<h4 class="portata">{e(po["titolo"])}</h4>'
+        righe += f'<h4 class="portata">{e(tr(po, "titolo"))}</h4>'
         if po.get("nota"):
-            righe += f'<p class="nota-p">{e(po["nota"])}</p>'
+            righe += f'<p class="nota-p">{e(tr(po, "nota"))}</p>'
         for p in po["piatti"]:
             n = p["nome"]
             base = n.replace("Locena di maiale CBT", "Locena di maiale")
@@ -100,27 +113,27 @@ for pc in M["percorsi"]:
                 verifica.append((f"Percorso {pc['nome']}", n, p.get("all", "") or "—", a or "nessuno", mot))
             else:
                 a = p.get("all", "")
-            righe += f'<div class="pp"><b>{e(n)}{numeri(a)}</b><span>{e(p.get("desc", ""))}</span></div>'
-    perc_html += f'''<div class="pagina"><div class="cont"><section class="percorso"><p class="occhiello">Percorso degustazione</p><h3>{e(pc["nome"])}</h3>
-      <p class="prezzo-p">€ {e(pc["prezzo"])} <small>a persona · minimo 2 persone · bevande escluse</small></p>{righe}</section></div></div>'''
+            righe += f'<div class="pp"><b>{e(tr(p, "nome"))}{numeri(a)}</b><span>{e(tr(p, "desc"))}</span></div>'
+    perc_html += f'''<div class="pagina"><div class="cont"><section class="percorso"><p class="occhiello">{X["perc"]}</p><h3>{e(pc["nome"])}</h3>
+      <p class="prezzo-p">€ {e(pc["prezzo"])} <small>{X["pp"]}</small></p>{righe}</section></div></div>'''
 
 # ── carta: una sezione per blocco, poi pagine bilanciate
 blocchi = []
 for s in M["sezioni"]:
-    tit = s["titolo"]
-    unita = " /etto" if s.get("unita") else ""
+    tit = tr(s, "titolo")
+    unita = X["unita"] if s.get("unita") else ""
     voci = ""
     for p in s["piatti"]:
         a = FINAL[p["nome"]]
-        gf = ' <span class="gf">senza glutine</span>' if p.get("senza_glutine") else ""
-        desc = f'<span class="d">{e(p["desc"])}</span>' if p.get("desc") else ""
-        voci += f'<div class="voce"><div class="r"><b>{e(p["nome"])}{numeri(a)}{gf}</b><i></i><em>{prezzo(p.get("prezzo"), unita)}</em></div>{desc}</div>'
-    blocchi.append((tit, s.get("sotto"), voci))
+        gf = ' <span class="gf">{X["gf"]}</span>' if p.get("senza_glutine") else ""
+        desc = f'<span class="d">{e(tr(p, "desc"))}</span>' if p.get("desc") else ""
+        voci += f'<div class="voce"><div class="r"><b>{e(tr(p, "nome"))}{numeri(a)}{gf}</b><i></i><em>{prezzo(p.get("prezzo"), unita)}</em></div>{desc}</div>'
+    blocchi.append((tit, tr(s, "sotto") or None, voci))
 GRUPPI = [[0, 1], [2, 3], [4, 5], [6], [7, 8], [9, 10]]
 assert sorted(sum(GRUPPI, [])) == list(range(len(blocchi))), "aggiornare GRUPPI: sono cambiate le sezioni del menu"
 pagine_carta = []
 for gi, g_ in enumerate(GRUPPI):
-    h = '<p class="occhiello">Alla carta</p>' if gi == 0 else ""
+    h = f'<p class="occhiello">{X["carta"]}</p>' if gi == 0 else ""
     prec = None
     for i in g_:
         tit, sotto, voci = blocchi[i]
@@ -128,11 +141,11 @@ for gi, g_ in enumerate(GRUPPI):
         prec = tit
     pagine_carta.append(h)
 
-leg = "".join(f"<li><b>{i}</b> {e(t)}</li>" for i, t in enumerate(LEGENDA, 1))
+leg = "".join(f"<li><b>{i}</b> {e(t)}</li>" for i, t in enumerate(LEGENDA_EN if EN else LEGENDA, 1))
 banda = ""
 logo = (SITO / "logo.png").as_uri()
 
-HTML = f'''<!doctype html><html lang="it"><head><meta charset="utf-8"><style>
+HTML = f'''<!doctype html><html lang="{"en" if EN else "it"}"><head><meta charset="utf-8"><style>
 @page {{ size:A4; margin:0 0 9mm 0; }}
 .pagina {{ width:210mm; height:288mm; padding:14mm 18mm 8mm; display:flex; flex-direction:column; justify-content:center; break-after:page; overflow:hidden; }}
 .pagina:last-child {{ break-after:auto; }}
@@ -172,13 +185,13 @@ h2:first-child, .occhiello + h2 {{ margin-top:2mm; }}
 .info li b {{ display:inline-block; width:7mm; color:#b8923a; }}
 .info p {{ margin-top:5mm; color:#5d5446; text-align:center; }}
 </style></head><body>{banda}
-<div class="pagina"><div class="cont cover"><img src="{logo}" alt="Casa Rosebery"><h1>Menu</h1><p>Champagneria · Ristorante · Braceria · Napoli</p><p>{e(M.get("aggiornato", ""))}</p></div></div>
+<div class="pagina"><div class="cont cover"><img src="{logo}" alt="Casa Rosebery"><h1>Menu</h1><p>{X["sotto"]}</p><p>{e(tr(M, "aggiornato"))}</p></div></div>
 {perc_html}
 {"".join(f'<div class="pagina"><div class="cont">{h}</div></div>' for h in pagine_carta)}
-<div class="pagina"><div class="cont info"><h2>Allergeni</h2>
-<p>I numeri accanto ai piatti indicano gli allergeni presenti secondo il Regolamento UE n. 1169/2011.</p>
+<div class="pagina"><div class="cont info"><h2>{X["all"]}</h2>
+<p>{X["all1"]}</p>
 <ol>{leg}</ol>
-<p>Per allergie o intolleranze chiedi al nostro personale prima di ordinare: alcune preparazioni avvengono in ambienti dove sono presenti altri allergeni e non possiamo escludere contaminazioni.</p></div></div>
+<p>{X["all2"]}</p></div></div>
 <script>
 // se una pagina non entra, riduce un poco quella pagina (mai sotto l'80%)
 document.querySelectorAll('.pagina').forEach(function (p) {{
@@ -189,7 +202,7 @@ document.querySelectorAll('.pagina').forEach(function (p) {{
 }});
 </script>
 </body></html>'''
-(OUT / "menu.html").write_text(HTML, encoding="utf-8")
+(OUT / ("menu_en.html" if EN else "menu.html")).write_text(HTML, encoding="utf-8")
 
 # ── scheda di verifica
 righe = "".join(f"<tr><td>{e(a)}</td><td><b>{e(b)}</b></td><td>{e(c)}</td><td class='p'>{e(d)}</td><td>{e(m)}</td><td class='ok'>☐ ok&nbsp;&nbsp; correzione: ________</td></tr>"
