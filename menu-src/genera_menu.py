@@ -94,7 +94,7 @@ def piatto(p, L, unita=""):
     lg = L["lang"]
     prezzo = f'<span class="prezzo">€ {e(p["prezzo"])}{e(unita)}</span>' if p.get("prezzo") else ""
     desc = f'<p class="desc">{e(tr(p, "desc", lg))}</p>' if p.get("desc") else ""
-    return (f'<li class="piatto"><div class="riga"><h4>{e(tr(p, "nome", lg))}{allergeni(p, L)}</h4>'
+    return (f'<li class="piatto"><div class="riga"><h4>{e(tr(p, "nome", lg))}{allergeni(p, L)}{(' <span class="gf">' + ("gluten free" if lg == "en" else "senza glutine") + '</span>') if p.get("senza_glutine") else ""}</h4>'
             f'<span class="punti"></span>{prezzo}</div>{desc}</li>')
 
 
@@ -205,6 +205,7 @@ main {{ max-width:860px; margin:0 auto; padding:16px 20px 60px; }}
 .percorso .punti {{ display:none; }}
 .escl {{ text-align:center; font-size:11px; color:rgba(255,255,255,0.65); margin-top:18px; font-style:italic; }}
 .info {{ margin-top:56px; background:#fff; border:1px solid var(--sabbia); padding:24px; font-size:13px; color:#5d5446; }}
+.gf {{ font-family:'Jost',sans-serif; font-size:10px; letter-spacing:1px; text-transform:uppercase; color:#4f7a52; border:1px solid #4f7a52; padding:0 4px; margin-left:6px; vertical-align:middle; white-space:nowrap; }}
 .legenda {{ list-style:none; display:grid; grid-template-columns:repeat(2,1fr); gap:4px 20px; margin-top:14px; }}
 .legenda li {{ border-bottom:1px solid var(--sabbia); padding:4px 0; }}
 .legenda b {{ display:inline-block; width:26px; color:var(--oro); font-weight:500; }}
