@@ -11,18 +11,19 @@
             {
               "nome": "Ciabatta Mediterraneo",
               "desc": "Con insalatina di puntarelle, alici di Cetara, stracciatella di bufala e dressing di miele e senape.",
-              "desc_en": "With puntarelle chicory salad, Cetara anchovies, buffalo stracciatella and a honey-mustard dressing."
+              "desc_en": "With puntarelle chicory salad, Cetara anchovies, buffalo stracciatella and a honey-mustard dressing.",
+              "all": "1,4,7,9,10"
             },
             {
               "nome": "Polpettine alla gricia",
-              "all": "1,5,4,10",
+              "all": "1,3,7",
               "desc": "Morbide polpettine di manzetta prussiana selezionata, impreziosite da guanciale croccante e adagiate su una vellutata crema al cacio e pepe.",
               "desc_en": "Tender meatballs of select Prussian heifer beef, topped with crispy guanciale and served on a smooth cacio e pepe cream.",
               "nome_en": "Polpettine alla gricia (meatballs)"
             },
             {
               "nome": "Grissino di pollo",
-              "all": "1,3,5",
+              "all": "1,3",
               "desc": "Cialda di pane croccante, ripiena di pulled chicken, cetriolini, salsa BBQ e maionese al lime.",
               "desc_en": "Crisp bread shell filled with pulled chicken, gherkins, BBQ sauce and lime mayonnaise.",
               "nome_en": "Chicken grissino"
@@ -35,7 +36,7 @@
           "piatti": [
             {
               "nome": "Scarpariello secondo Casa Rosebery",
-              "all": "1,3",
+              "all": "1,7",
               "desc": "Bombardone ripieno di crema al pecorino e salsa di pomodoro leggermente piccante.",
               "desc_en": "Large pasta tubes filled with pecorino cream, with a lightly spicy tomato sauce."
             }
@@ -47,7 +48,7 @@
           "piatti": [
             {
               "nome": "Stinco di maiale al forno",
-              "all": "7,10",
+              "all": "1,12",
               "desc": "Pregiato taglio di suino cotto lentamente a bassa temperatura, sfumato al vino bianco e profumato con un trito fine di rosmarino, aglio e aromi freschi. Servito con il suo fondo di cottura ristretto, rostie di patate e riduzione alla birra.",
               "desc_en": "Prime pork shank slow-cooked at low temperature, deglazed with white wine and scented with finely chopped rosemary, garlic and fresh herbs. Served with its reduced cooking juices, potato rösti and a beer reduction.",
               "nome_en": "Roast pork shank"
@@ -60,7 +61,7 @@
           "piatti": [
             {
               "nome": "Tiramisù",
-              "all": "5",
+              "all": "3,7,8",
               "desc": "La nostra interpretazione del classico dessert trevigiano: spuma di mascarpone d'alpeggio, pan di Spagna al caffè e cacao fine.",
               "desc_en": "Our take on the Treviso classic: alpine mascarpone mousse, coffee-soaked sponge and fine cocoa."
             }
@@ -78,14 +79,14 @@
           "piatti": [
             {
               "nome": "Brasato",
-              "all": "5,12",
+              "all": "7,12",
               "desc": "Stracotto di manzo al vino rosso, servito con fonduta di parmigiano.",
               "desc_en": "Beef slow-braised in red wine, served with Parmigiano fondue.",
               "nome_en": "Brasato (braised beef)"
             },
             {
               "nome": "Ribs in salsa BBQ",
-              "all": "12",
+              "all": "6,10,12",
               "desc": "Costine di maiale cotte lentamente al forno e rifinite alla griglia, con la nostra salsa BBQ dolce e affumicata.",
               "desc_en": "Pork ribs slow-roasted in the oven and finished on the grill, with our sweet, smoky BBQ sauce.",
               "nome_en": "BBQ ribs"
@@ -98,7 +99,7 @@
           "piatti": [
             {
               "nome": "Genovese",
-              "all": "1,5,12",
+              "all": "1,7,9,12",
               "desc": "Zito alla genovese, secondo la tradizione napoletana.",
               "desc_en": "Zito pasta with Genovese sauce (slow-cooked onion and beef ragù), the traditional Neapolitan way."
             }
@@ -110,7 +111,7 @@
           "piatti": [
             {
               "nome": "Tagliata Flambè",
-              "all": "5,12",
+              "all": "7,12",
               "desc": "Cuberoll Black Angus argentino, brandy, crema di mascarpone e melanzana fondente, flambata al tavolo.",
               "desc_en": "Argentine Black Angus rib eye, brandy, mascarpone cream and melting aubergine, flambéed at your table."
             }
@@ -122,7 +123,7 @@
           "piatti": [
             {
               "nome": "Tris di gelati",
-              "all": "5,8",
+              "all": "7,8",
               "desc": "Gelati fatti in casa: nocciola, pistacchio e cioccolato ruby.",
               "desc_en": "Homemade ice cream: hazelnut, pistachio and ruby chocolate.",
               "nome_en": "Trio of ice creams"
@@ -161,7 +162,8 @@
               "nome": "Manzetta Prussiana 100 g",
               "desc": "Pregiata razza polacca dalla marezzatura straordinaria: carne succosa e morbida al morso.",
               "desc_en": "A prized Polish breed with extraordinary marbling: juicy and tender to the bite.",
-              "nome_en": "Prussian heifer 100 g"
+              "nome_en": "Prussian heifer 100 g",
+              "all": "1"
             }
           ],
           "titolo_en": "Mini burger"
@@ -196,7 +198,7 @@
           "piatti": [
             {
               "nome": "Delizia al limone",
-              "all": "1,3",
+              "all": "3,7",
               "desc": "Pan di Spagna allo sciroppo di limone, farcito e ricoperto di crema ai limoni di Sorrento IGP.",
               "desc_en": "Sponge soaked in lemon syrup, filled and covered with Sorrento IGP lemon cream.",
               "nome_en": "Delizia al limone (lemon cake)"
@@ -216,14 +218,14 @@
       "piatti": [
         {
           "nome": "Ciabatta Mediterraneo",
-          "all": "1,4,9,10",
+          "all": "1,4,7,9,10",
           "prezzo": "10",
           "desc": "Con insalatina di puntarelle, alici di Cetara, stracciatella di bufala e dressing di miele e senape.",
           "desc_en": "With puntarelle chicory salad, Cetara anchovies, buffalo stracciatella and a honey-mustard dressing."
         },
         {
           "nome": "Rosebery",
-          "all": "1,9,12",
+          "all": "1,7,9,12",
           "prezzo": "10",
           "desc": "Con salsiccia croccante, crema di friarielli e provola affumicata.",
           "desc_en": "With crispy sausage, friarielli (Neapolitan broccoli rabe) cream and smoked provola."
@@ -290,7 +292,7 @@
       "piatti": [
         {
           "nome": "Gran crudo in cinque consistenze",
-          "all": "3,5,6,12",
+          "all": "1,3,6,7,12",
           "prezzo": "35",
           "desc": "Carpaccio di Wagyu con salsa teriyaki; straccetti di manzo con stracciata di bufala; tartare di filetto con salsa all'uovo; mousse di fesa con salsa alle mele; carpaccio di sottofesa con salsa alla cipolla rossa.",
           "desc_en": "Wagyu carpaccio with teriyaki sauce; beef strips with buffalo stracciata; fillet tartare with egg sauce; topside mousse with apple sauce; silverside carpaccio with red onion sauce.",
@@ -298,7 +300,7 @@
         },
         {
           "nome": "Carpaccio di Wagyu Giappone",
-          "all": "5",
+          "all": "7",
           "prezzo": "38",
           "desc": "Sottilissime fettine di autentico Wagyu giapponese A5, marezzatura 10/12: consistenza setosa che si scioglie in bocca.",
           "desc_en": "Wafer-thin slices of authentic Japanese A5 Wagyu, marbling score 10/12: a silky texture that melts in the mouth.",
@@ -306,7 +308,6 @@
         },
         {
           "nome": "Carpaccio di Creekstone Farms",
-          "all": "5",
           "prezzo": "25",
           "desc": "Black Angus Creekstone Farms con salsa acidula artigianale e note agrumate.",
           "desc_en": "Creekstone Farms Black Angus with a house-made tangy sauce and citrus notes."
@@ -316,7 +317,8 @@
           "prezzo": "20",
           "desc": "Filetto di Fassona piemontese in purezza, con giardiniera di verdure fatta in casa.",
           "desc_en": "Pure Piedmontese Fassona fillet, with homemade pickled vegetables.",
-          "nome_en": "Classic tartare"
+          "nome_en": "Classic tartare",
+          "all": "9,12"
         },
         {
           "nome": "Tartare Rosebery",
@@ -340,7 +342,7 @@
         },
         {
           "nome": "Tagliere salumi e formaggi",
-          "all": "5,12",
+          "all": "1,7,12",
           "prezzo": "28",
           "desc": "Salumi artigianali Tomaso Salumi e formaggi del territorio, con confetture artigianali e pane caldo.",
           "desc_en": "Artisan cured meats by Tomaso Salumi and local cheeses, with artisan preserves and warm bread.",
@@ -372,7 +374,7 @@
         },
         {
           "nome": "Formaggi (al pezzo)",
-          "all": "5,12",
+          "all": "7,12",
           "prezzo": "6",
           "nome_en": "Cheeses (by the piece)"
         }
@@ -424,7 +426,8 @@
           "nome": "Nerano",
           "prezzo": "18",
           "desc": "Spaghetti, zucchine, provolone del Monaco DOP, basilico e pepe.",
-          "desc_en": "Spaghetti, courgettes, Provolone del Monaco DOP, basil and pepper."
+          "desc_en": "Spaghetti, courgettes, Provolone del Monaco DOP, basil and pepper.",
+          "all": "1,7"
         }
       ],
       "titolo_en": "Pasta & risotto"
@@ -442,7 +445,7 @@
         },
         {
           "nome": "Stinco di maiale al forno",
-          "all": "12",
+          "all": "1,12",
           "prezzo": "18",
           "desc": "Cotto lentamente a bassa temperatura, sfumato al vino bianco, con rostie di patate e riduzione alla birra.",
           "desc_en": "Slow-cooked at low temperature, deglazed with white wine, with potato rösti and a beer reduction.",
@@ -482,7 +485,8 @@
           "nome": "Brisket Casa Rosebery",
           "prezzo": "24",
           "desc": "Dodici ore di cottura lenta, servito su purea di patate e provola.",
-          "desc_en": "Twelve hours of slow cooking, served on mashed potato and provola."
+          "desc_en": "Twelve hours of slow cooking, served on mashed potato and provola.",
+          "all": "7"
         }
       ],
       "titolo_en": "Main courses"
@@ -635,7 +639,8 @@
           "prezzo": "7",
           "desc": "Patate di montagna setacciate e montate con burro d'alpeggio.",
           "desc_en": "Mountain potatoes, sieved and whipped with alpine butter.",
-          "nome_en": "Mashed potatoes (French style)"
+          "nome_en": "Mashed potatoes (French style)",
+          "all": "7"
         },
         {
           "nome": "Verdure grigliate di stagione",
@@ -703,7 +708,8 @@
           "prezzo": "8",
           "desc": "Dal cuore caldo e colante, servito tiepido con zucchero a velo.",
           "desc_en": "With a warm, molten centre, served warm with icing sugar.",
-          "nome_en": "Dark chocolate fondant"
+          "nome_en": "Dark chocolate fondant",
+          "all": "1,3,7"
         }
       ],
       "titolo_en": "Desserts"
