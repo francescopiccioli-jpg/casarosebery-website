@@ -735,6 +735,6 @@
       "titolo_en": "Drinks"
     }
   ],
-  "mostra_allergeni": false,
+  "mostra_allergeni": true,
   "aggiornato_en": "October 2026"
 }

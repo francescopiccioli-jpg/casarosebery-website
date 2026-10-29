@@ -77,6 +77,12 @@ def slug(s):
     return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
 
 
+LEGENDA_IT = ["Cereali con glutine", "Crostacei", "Uova", "Pesce", "Arachidi", "Soia", "Latte", "Frutta a guscio",
+              "Sedano", "Senape", "Sesamo", "Solfiti (oltre 10 mg/kg)", "Lupini", "Molluschi"]
+LEGENDA_EN = ["Cereals containing gluten", "Crustaceans", "Eggs", "Fish", "Peanuts", "Soybeans", "Milk", "Nuts",
+              "Celery", "Mustard", "Sesame seeds", "Sulphites (over 10 mg/kg)", "Lupin", "Molluscs"]
+
+
 def allergeni(p, L):
     # numeri nascosti finché la cucina non verifica gli allergeni (vedi menu.json: mostra_allergeni)
     if not dati.get("mostra_allergeni", True) or not p.get("all"):
@@ -129,6 +135,8 @@ def contenuto(L):
 def pagina(L):
     nav, corpo = contenuto(L)
     TESTO_ALLERGENI = L["all_1"] if dati.get("mostra_allergeni", True) else L["all_0"]
+    leg = LEGENDA_EN if L["lang"] == "en" else LEGENDA_IT
+    LEGENDA_HTML = ('<ol class="legenda">' + "".join(f"<li><b>{i}</b> {x}</li>" for i, x in enumerate(leg, 1)) + "</ol>") if dati.get("mostra_allergeni", True) else ""
     LINK_PDF = (f'  <a class="btn" href="{L["rad"]}menu-casa-rosebery.pdf" target="_blank">{L["pdf"]}</a>\n'
                 if dati.get("mostra_pdf", False) else "")
     rad = L["rad"]
@@ -197,6 +205,9 @@ main {{ max-width:860px; margin:0 auto; padding:16px 20px 60px; }}
 .percorso .punti {{ display:none; }}
 .escl {{ text-align:center; font-size:11px; color:rgba(255,255,255,0.65); margin-top:18px; font-style:italic; }}
 .info {{ margin-top:56px; background:#fff; border:1px solid var(--sabbia); padding:24px; font-size:13px; color:#5d5446; }}
+.legenda {{ list-style:none; display:grid; grid-template-columns:repeat(2,1fr); gap:4px 20px; margin-top:14px; }}
+.legenda li {{ border-bottom:1px solid var(--sabbia); padding:4px 0; }}
+.legenda b {{ display:inline-block; width:26px; color:var(--oro); font-weight:500; }}
 .info h3 {{ font-family:'Cormorant Garamond',serif; font-weight:600; font-size:22px; color:var(--text); margin-bottom:8px; }}
 .azioni {{ display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:36px; }}
 .btn {{ font-size:11px; letter-spacing:2px; text-transform:uppercase; padding:15px 26px; border:1px solid var(--oro); color:var(--text); font-weight:500; }}
@@ -222,6 +233,7 @@ footer a {{ text-decoration:underline; }}
 <section class="info" id="allergeni">
   <h3>{L["all_h"]}</h3>
   <p>{TESTO_ALLERGENI}</p>
+  {LEGENDA_HTML}
 </section>
 <div class="azioni">
   <a class="btn pieno" href="https://casarosebery.plateform.app/reserve" target="_blank" rel="noopener">{L["prenota"]}</a>
