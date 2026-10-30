@@ -231,7 +231,7 @@ T = [
 
 
     # ── social ──
-    ('<h2 class="social-strip-title">Seguici su <em>Instagram</em></h2>', '<h2 class="social-strip-title">Follow us on <em>Instagram</em></h2>'),
+    ('<h2 class="social-strip-title">Seguici sui <em>social</em></h2>', '<h2 class="social-strip-title">Follow us on <em>social media</em></h2>'),
     ('<p class="social-strip-sub">@casarosebery · Napoli, Posillipo</p>', '<p class="social-strip-sub">@casarosebery · Posillipo, Naples</p>'),
     ('<p class="social-tag">4.716 follower · 112 post</p>', '<p class="social-tag">4,716 followers · 112 posts</p>'),
 
