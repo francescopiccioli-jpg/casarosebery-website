@@ -113,7 +113,8 @@ for pc in M["percorsi"]:
                 verifica.append((f"Percorso {pc['nome']}", n, p.get("all", "") or "—", a or "nessuno", mot))
             else:
                 a = p.get("all", "")
-            righe += f'<div class="pp"><b>{e(tr(p, "nome"))}{numeri(a)}</b><span>{e(tr(p, "desc"))}</span></div>'
+            gf = f' <span class="gf">{X["gf"]}</span>' if p.get("senza_glutine") else ""
+            righe += f'<div class="pp"><b>{e(tr(p, "nome"))}{numeri(a)}{gf}</b><span>{e(tr(p, "desc"))}</span></div>'
     perc_html += f'''<div class="pagina"><div class="cont"><section class="percorso"><p class="occhiello">{X["perc"]}</p><h3>{e(pc["nome"])}</h3>
       <p class="prezzo-p">€ {e(pc["prezzo"])} <small>{X["pp"]}</small></p>{righe}</section></div></div>'''
 
@@ -125,7 +126,7 @@ for s in M["sezioni"]:
     voci = ""
     for p in s["piatti"]:
         a = FINAL[p["nome"]]
-        gf = ' <span class="gf">{X["gf"]}</span>' if p.get("senza_glutine") else ""
+        gf = f' <span class="gf">{X["gf"]}</span>' if p.get("senza_glutine") else ""
         desc = f'<span class="d">{e(tr(p, "desc"))}</span>' if p.get("desc") else ""
         voci += f'<div class="voce"><div class="r"><b>{e(tr(p, "nome"))}{numeri(a)}{gf}</b><i></i><em>{prezzo(p.get("prezzo"), unita)}</em></div>{desc}</div>'
     blocchi.append((tit, tr(s, "sotto") or None, voci))
