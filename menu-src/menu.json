@@ -48,7 +48,7 @@
           "piatti": [
             {
               "nome": "Stinco di maiale al forno",
-              "all": "1,12",
+              "all": "12",
               "desc": "Pregiato taglio di suino cotto lentamente a bassa temperatura, sfumato al vino bianco e profumato con un trito fine di rosmarino, aglio e aromi freschi. Servito con il suo fondo di cottura ristretto, rostie di patate e riduzione alla birra.",
               "desc_en": "Prime pork shank slow-cooked at low temperature, deglazed with white wine and scented with finely chopped rosemary, garlic and fresh herbs. Served with its reduced cooking juices, potato rösti and a beer reduction.",
               "nome_en": "Roast pork shank"
@@ -201,7 +201,8 @@
               "all": "3,7",
               "desc": "Pan di Spagna allo sciroppo di limone, farcito e ricoperto di crema ai limoni di Sorrento IGP.",
               "desc_en": "Sponge soaked in lemon syrup, filled and covered with Sorrento IGP lemon cream.",
-              "nome_en": "Delizia al limone (lemon cake)"
+              "nome_en": "Delizia al limone (lemon cake)",
+              "senza_glutine": true
             }
           ],
           "titolo_en": "Dessert"
@@ -315,10 +316,9 @@
         {
           "nome": "Tartare al naturale",
           "prezzo": "20",
-          "desc": "Filetto di Fassona piemontese in purezza, con giardiniera di verdure fatta in casa.",
-          "desc_en": "Pure Piedmontese Fassona fillet, with homemade pickled vegetables.",
-          "nome_en": "Classic tartare",
-          "all": "9,12"
+          "desc": "Filetto di Fassona piemontese in purezza.",
+          "desc_en": "Pure Piedmontese Fassona fillet.",
+          "nome_en": "Classic tartare"
         },
         {
           "nome": "Tartare Rosebery",
@@ -342,10 +342,10 @@
         },
         {
           "nome": "Tagliere salumi e formaggi",
-          "all": "1,7,12",
+          "all": "7,12",
           "prezzo": "28",
-          "desc": "Salumi artigianali Tomaso Salumi e formaggi del territorio, con confetture artigianali e pane caldo.",
-          "desc_en": "Artisan cured meats by Tomaso Salumi and local cheeses, with artisan preserves and warm bread.",
+          "desc": "Salumi artigianali Tomaso Salumi e formaggi del territorio, con confetture artigianali. Pane servito a parte.",
+          "desc_en": "Artisan cured meats by Tomaso Salumi and local cheeses, with artisan preserves. Bread served separately.",
           "nome_en": "Charcuterie and cheese board"
         },
         {
@@ -445,7 +445,7 @@
         },
         {
           "nome": "Stinco di maiale al forno",
-          "all": "1,12",
+          "all": "12",
           "prezzo": "18",
           "desc": "Cotto lentamente a bassa temperatura, sfumato al vino bianco, con rostie di patate e riduzione alla birra.",
           "desc_en": "Slow-cooked at low temperature, deglazed with white wine, with potato rösti and a beer reduction.",
