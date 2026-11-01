@@ -171,22 +171,23 @@ h2:first-child, .occhiello + h2 {{ margin-top:2mm; }}
 .d {{ display:block; color:#5d5446; font-size:8.8pt; margin-top:.6mm; }}
 .all {{ font-family:Inter,sans-serif; font-weight:500; font-size:5.8pt; color:#b8923a; margin-left:1.5mm; letter-spacing:.5px; vertical-align:super; }}
 .gf {{ font-family:Inter,sans-serif; font-size:6.5pt; letter-spacing:1px; text-transform:uppercase; color:#4f7a52; border:.2mm solid #4f7a52; padding:0 1mm; margin-left:1.5mm; vertical-align:middle; }}
-.percorso {{ border:.3mm solid #b8923a; padding:11mm 10mm 10mm; text-align:center; }}
+.percorso {{ border:.3mm solid #b8923a; padding:12mm 12mm 11mm; text-align:center; }}
 .occhiello {{ font-size:7.5pt; letter-spacing:3px; text-transform:uppercase; color:#8a6d2c; }}
-.percorso h3 {{ font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:400; font-size:24pt; margin:1mm 0; }}
-.prezzo-p {{ font-family:'Cormorant Garamond',serif; font-size:15pt; }}
+.percorso h3 {{ font-family:'Cormorant Garamond',serif; font-weight:400; font-size:21pt; margin:1mm 0 0; }}
+.percorso h3::after {{ content:''; display:block; width:12mm; height:.4mm; background:#b8923a; margin:2.5mm auto 3mm; }}
+.prezzo-p {{ font-family:Inter,sans-serif; font-weight:500; font-size:10pt; }}
 .prezzo-p small {{ display:block; font-family:Inter,sans-serif; font-size:7.5pt; color:#6f6656; letter-spacing:1px; }}
-.portata {{ font-size:7.5pt; letter-spacing:2.5px; text-transform:uppercase; color:#8a6d2c; margin:5mm 0 1mm; }}
-.nota-p {{ font-size:8pt; color:#6f6656; font-style:italic; }}
-.pp {{ margin:1.8mm auto; max-width:140mm; }}
-.pp b {{ display:block; font-family:'Cormorant Garamond',serif; font-weight:600; font-size:13pt; }}
-.pp span {{ color:#5d5446; font-size:8.6pt; }}
+.portata {{ font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:400; font-size:12.5pt; color:#8a6d2c; margin:7mm 0 1.5mm; }}
+.nota-p {{ font-size:8.8pt; color:#5d5446; }}
+.pp {{ margin:3mm auto; max-width:140mm; }}
+.pp b {{ display:block; font-family:'Cormorant Garamond',serif; font-weight:600; font-size:12.5pt; }}
+.pp > span {{ display:block; color:#5d5446; font-size:8.8pt; margin-top:.6mm; }}
 .info ol {{ list-style:none; columns:2; column-gap:10mm; margin-top:4mm; }}
 .info li {{ padding:1.2mm 0; border-bottom:.2mm solid #e8e0d0; }}
 .info li b {{ display:inline-block; width:7mm; color:#b8923a; }}
 .info p {{ margin-top:5mm; color:#5d5446; text-align:center; }}
 </style></head><body>{banda}
-<div class="pagina"><div class="cont cover"><img src="{logo}" alt="Casa Rosebery"><h1>Menu</h1><p>{X["sotto"]}</p><p>{e(tr(M, "aggiornato"))}</p></div></div>
+<div class="pagina"><div class="cont cover"><img src="{logo}" alt="Casa Rosebery"><h1>Menu</h1><p>{X["sotto"]}</p></div></div>
 {perc_html}
 {"".join(f'<div class="pagina"><div class="cont">{h}</div></div>' for h in pagine_carta)}
 <div class="pagina"><div class="cont info"><h2>{X["all"]}</h2>
@@ -198,8 +199,6 @@ h2:first-child, .occhiello + h2 {{ margin-top:2mm; }}
 document.querySelectorAll('.pagina').forEach(function (p) {{
   var c = p.querySelector('.cont'), z = 1, max = p.clientHeight - 22 * 3.78;
   while (c.scrollHeight * z > max && z > 0.8) {{ z -= 0.02; c.style.zoom = z; }}
-  // i percorsi (pagine corte) si ingrandiscono fino a riempire bene la pagina, al massimo +30%
-  if (c.querySelector('.percorso')) {{ while (c.scrollHeight * (z + 0.02) < max * 0.86 && z < 1.3) {{ z += 0.02; c.style.zoom = z; }} }}
 }});
 </script>
 </body></html>'''
