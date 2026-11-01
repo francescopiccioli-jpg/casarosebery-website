@@ -169,7 +169,7 @@ h2:first-child, .occhiello + h2 {{ margin-top:2mm; }}
 .r i {{ flex:1; border-bottom:.25mm dotted #c9bfa9; transform:translateY(-1mm); }}
 .r em {{ font-style:normal; font-weight:500; white-space:nowrap; }}
 .d {{ display:block; color:#5d5446; font-size:8.8pt; margin-top:.6mm; }}
-.all {{ font-family:Inter,sans-serif; font-weight:500; font-size:6.8pt; color:#b8923a; margin-left:1.5mm; letter-spacing:.5px; vertical-align:super; }}
+.all {{ font-family:Inter,sans-serif; font-weight:500; font-size:5.8pt; color:#b8923a; margin-left:1.5mm; letter-spacing:.5px; vertical-align:super; }}
 .gf {{ font-family:Inter,sans-serif; font-size:6.5pt; letter-spacing:1px; text-transform:uppercase; color:#4f7a52; border:.2mm solid #4f7a52; padding:0 1mm; margin-left:1.5mm; vertical-align:middle; }}
 .percorso {{ border:.3mm solid #b8923a; padding:11mm 10mm 10mm; text-align:center; }}
 .occhiello {{ font-size:7.5pt; letter-spacing:3px; text-transform:uppercase; color:#8a6d2c; }}
