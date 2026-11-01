@@ -557,6 +557,11 @@
           "prezzo": "15",
           "desc": "Razza bovina della Galizia, nel nord-ovest della Spagna, apprezzata per il sapore intenso.",
           "desc_en": "A cattle breed from Galicia, north-west Spain, prized for its intense flavour."
+        },
+        {
+          "nome": "Frisona Baltica",
+          "prezzo": "12",
+          "nome_en": "Baltic Friesian"
         }
       ],
       "titolo_en": "From the grill",
