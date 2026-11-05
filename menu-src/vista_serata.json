@@ -1,11 +1,13 @@
 {
-  "_istruzioni": "DISATTIVATO: il menu della serata ora sta su /serata (QR dedicato, serata-src/serate.json). Il menu alla carta del sito resta sempre completo. Lasciare 'date' vuoto.",
-  "date": [],
-  "titolo": "Serata con Ste",
+  "_istruzioni": "Vista limitata di menu.html per le date in 'date' (fino alle 4 del mattino dopo). Da usare solo quando il QR dei tavoli punta a menu.html; il QR dedicato è /serata (serata-src/serate.json). Dopo la serata svuotare 'date'.",
+  "date": [
+    "2026-11-05"
+  ],
+  "titolo": "Serata con Raoul & Swing Orchestra",
   "menu": {
     "titolo": "Menu della serata",
-    "prezzo": "70",
-    "nota": "a persona · escluso beverage, coperto e servizio 10%",
+    "prezzo": "80",
+    "nota": "a persona",
     "piatti": [
       [
         "Ciabatta Mediterraneo",
@@ -36,6 +38,16 @@
   },
   "sezioni": [
     {
+      "titolo": "Su richiesta",
+      "voci": [
+        [
+          "Risotto cacio e pepe",
+          "",
+          ""
+        ]
+      ]
+    },
+    {
       "titolo": "Exclusive grill",
       "voci": [
         [
@@ -45,17 +57,17 @@
         ],
         [
           "Kobe Japanese",
-          "La carne più pregiata al mondo, da bovini di pura razza Tajima (Prefettura di Hyogo). Straordinaria marezzatura di grasso nobile, consistenza burrosa che si scioglie in bocca.",
+          "La carne più pregiata al mondo, da bovini di pura razza Tajima (Prefettura di Hyogo). Straordinaria marezzatura di grasso nobile, consistenza burrosa che si scioglie in bocca e sapore d'intensità unica.",
           "€ 400 / kg"
         ],
         [
-          "Red Hereford · Irlanda",
+          "Red Hereford – Irlanda",
           "Pregiata carne allevata al pascolo naturale in Irlanda (grass-fed): eccellente morbidezza, gusto ricco e marezzatura fine che si scioglie in cottura.",
           "€ 85 / kg"
         ],
         [
-          "Red Dan · Danimarca",
-          "Pregiata selezione dalle pianure della Danimarca, celebre per la straordinaria marezzatura: tenerissima, succosa, con note dolci e burrose.",
+          "Red Dan – Danimarca",
+          "Pregiata selezione dalle pianure della Danimarca: straordinaria marezzatura, consistenza tenerissima e succosa, note dolci e burrose.",
           "€ 120 / kg"
         ]
       ]
@@ -100,23 +112,23 @@
           "€ 65"
         ],
         [
-          "Mirall Brut",
-          "Alghero · Spumante",
+          "Alghero Brut Mirall",
+          "Spumante · Italia",
           "€ 35"
         ],
         [
-          "Mirall Rosé",
-          "Alghero · Spumante",
+          "Alghero Rosé Mirall",
+          "Spumante · Italia",
           "€ 40"
         ],
         [
-          "Perrier-Jouët Blanc de Blancs",
-          "Champagne · Francia",
+          "Perrier-Jouët",
+          "Blanc de Blancs · Francia",
           "€ 180"
         ],
         [
-          "Ruinart Blanc de Blancs",
-          "Champagne · Francia",
+          "Ruinart",
+          "Blanc de Blancs · Francia",
           "€ 175"
         ]
       ]
@@ -127,22 +139,22 @@
       "voci": [
         [
           "Chardonnay",
-          "Cavit · Trentino",
+          "Cavit · Italia",
           "€ 40"
         ],
         [
           "Gewürztraminer",
-          "Cavit · Trentino",
+          "Cavit · Italia",
           "€ 40"
         ],
         [
           "Fiano di Avellino",
-          "Donna Giorgia · Campania",
+          "Donna Giorgia",
           "€ 35"
         ],
         [
           "Greco di Tufo",
-          "Terrazze della Luna · Campania",
+          "Terrazze della Luna",
           "€ 35"
         ]
       ]
@@ -187,19 +199,24 @@
           "€ 80"
         ],
         [
+          "Pinot Noir",
+          "Ca' del Bosco · Corte del Lupo",
+          "€ 55"
+        ],
+        [
           "Morellino di Scansano",
           "Podere 414 · Toscana",
           "€ 50"
         ],
         [
           "Pinot Nero",
-          "Muri Gries · Alto Adige",
+          "Muri-Gries · Trentino Alto Adige",
           "€ 35"
         ],
         [
-          "Primitivo di Manduria Riserva",
-          "Jorche · Puglia",
-          "€ 100"
+          "Lacryma Christi",
+          "Olivella · Campania",
+          "€ 30"
         ],
         [
           "Valpolicella Ripasso",
@@ -210,16 +227,6 @@
           "Taurasi",
           "Tenuta De Gregorio · Campania",
           "€ 55"
-        ],
-        [
-          "Sul Vulcano Etna Rosso",
-          "Donnafugata · Sicilia",
-          "€ 50"
-        ],
-        [
-          "Valpolicella",
-          "Duca Fedele · Veneto",
-          "€ 35"
         ]
       ]
     }
