@@ -7,7 +7,8 @@ from pathlib import Path
 SITO = Path(__file__).resolve().parent.parent
 OUT = Path(sys.argv[1])
 BOZZA = "--definitivo" not in sys.argv
-EN = "--en" in sys.argv  # versione inglese (testi *_en di menu.json)
+EN = "--en" in sys.argv
+WEB = "--web" in sys.argv  # A4 simmetrico per il PDF scaricabile dal sito; senza: formato raccoglitore 23x31  # versione inglese (testi *_en di menu.json)
 def tr(o, k, d=""):
     return (o.get(k + "_en") or o.get(k, d)) if EN else o.get(k, d)
 X = {"perc": "Tasting menu", "pp": "per person · minimum 2 guests · drinks not included", "carta": "À la carte",
@@ -142,13 +143,22 @@ for gi, g_ in enumerate(GRUPPI):
         prec = tit
     pagine_carta.append(h)
 
+PAG_W, PAG_H, M_INT, M_EST = (210, 297, 18, 18) if WEB else (230, 310, 38, 14)
+bz_js = repr(' · <span class="bz">BOZZA · allergeni da confermare in cucina prima della stampa</span>') if BOZZA else "''"
 leg = "".join(f"<li><b>{i}</b> {e(t)}</li>" for i, t in enumerate(LEGENDA_EN if EN else LEGENDA, 1))
 banda = ""
 logo = (SITO / "logo.png").as_uri()
 
 HTML = f'''<!doctype html><html lang="{"en" if EN else "it"}"><head><meta charset="utf-8"><style>
-@page {{ size:A4; margin:0 0 9mm 0; }}
-.pagina {{ width:210mm; height:288mm; padding:14mm 18mm 8mm; display:flex; flex-direction:column; justify-content:center; break-after:page; overflow:hidden; }}
+/* formato raccoglitore 23x31 cm con fascia di rilegatura a viti (2,5 cm) sul lato dorso:
+   margine interno 38 mm (fascia + respiro), esterno 14 mm -> testo centrato sulla parte visibile.
+   Pagine dispari: dorso a sinistra; pari (retro): dorso a destra. */
+@page {{ size:{PAG_W}mm {PAG_H}mm; margin:0; }}
+.pagina {{ position:relative; width:{PAG_W}mm; height:{PAG_H}mm; padding:16mm {M_EST}mm 16mm {M_INT}mm; display:flex; flex-direction:column; justify-content:center; break-after:page; overflow:hidden; }}
+.pagina.retro {{ padding:16mm {M_INT}mm 16mm {M_EST}mm; }}
+.npag {{ position:absolute; bottom:7mm; left:{M_INT}mm; right:{M_EST}mm; text-align:center; font-size:7pt; color:#9a9080; }}
+.retro .npag {{ left:{M_EST}mm; right:{M_INT}mm; }}
+.npag .bz {{ color:#a3412b; letter-spacing:1px; }}
 .pagina:last-child {{ break-after:auto; }}
 .cont {{ width:100%; }}
 * {{ box-sizing:border-box; margin:0; padding:0; }}
@@ -196,8 +206,12 @@ h2:first-child, .occhiello + h2 {{ margin-top:2mm; }}
 <p>{X["all2"]}</p></div></div>
 <script>
 // se una pagina non entra, riduce un poco quella pagina (mai sotto l'80%)
-document.querySelectorAll('.pagina').forEach(function (p) {{
-  var c = p.querySelector('.cont'), z = 1, max = p.clientHeight - 22 * 3.78;
+document.querySelectorAll('.pagina').forEach(function (p, i) {{
+  if (i % 2) p.classList.add('retro');
+  var n = document.createElement('div'); n.className = 'npag';
+  n.innerHTML = 'Casa Rosebery · ' + (i + 1) + {bz_js};
+  p.appendChild(n);
+  var c = p.querySelector('.cont'), z = 1, max = p.clientHeight - 34 * 3.78;
   while (c.scrollHeight * z > max && z > 0.8) {{ z -= 0.02; c.style.zoom = z; }}
 }});
 </script>
