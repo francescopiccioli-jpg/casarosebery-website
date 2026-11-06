@@ -8,7 +8,7 @@ SITO = Path(__file__).resolve().parent.parent
 OUT = Path(sys.argv[1])
 BOZZA = "--definitivo" not in sys.argv
 EN = "--en" in sys.argv
-WEB = "--web" in sys.argv  # A4 simmetrico per il PDF scaricabile dal sito; senza: formato raccoglitore 23x31  # versione inglese (testi *_en di menu.json)
+WEB = "--web" in sys.argv  # A4 simmetrico per il PDF scaricabile dal sito; senza: formato raccoglitore 23x30  # versione inglese (testi *_en di menu.json)
 def tr(o, k, d=""):
     return (o.get(k + "_en") or o.get(k, d)) if EN else o.get(k, d)
 X = {"perc": "Tasting menu", "pp": "per person · minimum 2 guests · drinks not included", "carta": "À la carte",
@@ -143,14 +143,14 @@ for gi, g_ in enumerate(GRUPPI):
         prec = tit
     pagine_carta.append(h)
 
-PAG_W, PAG_H, M_INT, M_EST = (210, 297, 18, 18) if WEB else (230, 310, 38, 14)
+PAG_W, PAG_H, M_INT, M_EST = (210, 297, 18, 18) if WEB else (230, 300, 38, 14)
 bz_js = repr(' · <span class="bz">BOZZA · allergeni da confermare in cucina prima della stampa</span>') if BOZZA else "''"
 leg = "".join(f"<li><b>{i}</b> {e(t)}</li>" for i, t in enumerate(LEGENDA_EN if EN else LEGENDA, 1))
 banda = ""
 logo = (SITO / "logo.png").as_uri()
 
 HTML = f'''<!doctype html><html lang="{"en" if EN else "it"}"><head><meta charset="utf-8"><style>
-/* formato raccoglitore 23x31 cm con fascia di rilegatura a viti (2,5 cm) sul lato dorso:
+/* formato raccoglitore 23x30 cm con fascia di rilegatura a viti (2,5 cm) sul lato dorso:
    margine interno 38 mm (fascia + respiro), esterno 14 mm -> testo centrato sulla parte visibile.
    Pagine dispari: dorso a sinistra; pari (retro): dorso a destra. */
 @page {{ size:{PAG_W}mm {PAG_H}mm; margin:0; }}
