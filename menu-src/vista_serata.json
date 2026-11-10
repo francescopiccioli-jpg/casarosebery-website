@@ -1,29 +1,25 @@
 {
   "_istruzioni": "Vista limitata di menu.html per le date in 'date' (fino alle 4 del mattino dopo). Da usare solo quando il QR dei tavoli punta a menu.html; il QR dedicato è /serata (serata-src/serate.json). Dopo la serata svuotare 'date'.",
   "date": [
-    "2026-11-05"
+    "2026-11-20"
   ],
-  "titolo": "Serata con Raoul & Swing Orchestra",
+  "titolo": "Serata con Marco e Raf",
   "menu": {
     "titolo": "Menu della serata",
-    "prezzo": "80",
-    "nota": "a persona",
+    "prezzo": "60",
+    "nota": "a persona · escluso beverage e servizio",
     "piatti": [
       [
-        "Ciabatta Mediterraneo",
-        "Con insalatina di puntarelle, alici di Cetara, stracciatella di bufala e dressing di miele e senape."
+        "Tris di antipasti",
+        "Polpettine alla gricia · Ribs di maiale in salsa BBQ · Bun di pulled chicken."
       ],
       [
-        "Brasato",
-        "Stracotto di manzo al vino rosso, servito con fonduta di parmigiano."
+        "Pasta al forno",
+        "Paccheri con ragù napoletano, polpettine e provola."
       ],
       [
-        "Scarpariello secondo Casa Rosebery",
-        "Bombardone ripieno di crema al pecorino e salsa di pomodoro leggermente piccante."
-      ],
-      [
-        "Locena di maiale",
-        "Dalla finitura croccante, accompagnata da papaccelle saltate in padella e riduzione vellutata alla mela."
+        "Brisket",
+        "Tenerissimo manzo, 12 ore di cottura lenta, servito su purea di patate e provola."
       ],
       [
         "Tiramisù",
