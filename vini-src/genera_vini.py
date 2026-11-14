@@ -151,6 +151,12 @@ main {{ max-width:860px; margin:0 auto; padding:16px 20px 60px; }}
 .btn.pieno {{ background:var(--oro); color:var(--nero); }}
 footer {{ background:var(--nero); color:rgba(255,255,255,0.65); text-align:center; font-size:11px; padding:28px 20px; }}
 footer a {{ text-decoration:underline; }}
+.prenota-fissa {{ position:fixed; z-index:50; left:12px; right:12px; bottom:calc(12px + env(safe-area-inset-bottom,0px)); display:block; text-align:center;
+  font-size:12px; letter-spacing:2px; text-transform:uppercase; font-weight:500; padding:16px 20px; background:var(--oro); color:var(--nero);
+  box-shadow:0 8px 24px rgba(0,0,0,.28); transition:opacity .25s, transform .25s; }}
+.prenota-fissa.nascosto {{ opacity:0; transform:translateY(16px); pointer-events:none; }}
+footer {{ padding-bottom:calc(28px + 72px + env(safe-area-inset-bottom,0px)); }}
+@media (min-width:1025px) {{ .prenota-fissa {{ left:auto; right:28px; bottom:28px; padding:15px 26px; }} footer {{ padding-bottom:28px; }} }}
 </style>
 </head>
 <body>
@@ -207,6 +213,18 @@ footer a {{ text-decoration:underline; }}
     }});
   }}, {{ rootMargin: '-140px 0px -70% 0px' }});
   document.querySelectorAll('.sez').forEach(function (s) {{ obs.observe(s); }});
+}})();
+</script>
+<a class="prenota-fissa nascosto" id="prenota-fissa" href="https://casarosebery.plateform.app/reserve" target="_blank" rel="noopener" data-posizione="vini_fisso">{L["prenota"]}</a>
+<script>
+// pulsante Prenota sempre visibile: compare dopo l'intestazione, sparisce quando sono visibili i pulsanti in fondo
+(function () {{
+  var b = document.getElementById('prenota-fissa'), top = document.querySelector('.top'), fondo = document.querySelector('.azioni');
+  if (!b || !('IntersectionObserver' in window)) {{ if (b) b.classList.remove('nascosto'); return; }}
+  var topVisibile = true, fondoVisibile = false;
+  function aggiorna() {{ b.classList.toggle('nascosto', topVisibile || fondoVisibile); }}
+  new IntersectionObserver(function (v) {{ topVisibile = v[0].isIntersecting; aggiorna(); }}).observe(top);
+  if (fondo) new IntersectionObserver(function (v) {{ fondoVisibile = v[0].isIntersecting; aggiorna(); }}).observe(fondo);
 }})();
 </script>
 <script src="/js/analytics.js" defer></script>
