@@ -37,6 +37,7 @@ RewriteRule ^(casarosebery_site\.html|menu-src|eventi-src|eventi-privati-src|pag
 RewriteRule ^(menu|menu-1|menu-2|il-menu|menu-casa-rosebery)/?$ https://www.casaroseberyristorante.it/menu.html [L,R=301,NC]
 
 # 4d. Vecchie pagine WordPress ancora presenti su Google -> pagina o sezione corrispondente
+RewriteRule ^prenotazioni/?$ https://casarosebery.plateform.app/reserve [L,R=301,NC]
 RewriteRule ^chi-siamo/?$ https://www.casaroseberyristorante.it/#storia [L,R=301,NE,NC]
 RewriteRule ^contatti/?$ https://www.casaroseberyristorante.it/#contatti [L,R=301,NE,NC]
 RewriteRule ^(discover-our-new-menu|menu/[^/]+)/?$ https://www.casaroseberyristorante.it/menu.html [L,R=301,NC]

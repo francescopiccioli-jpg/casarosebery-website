@@ -76,7 +76,7 @@
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a[href]'); if (!a) return;
     var h = a.getAttribute('href');
-    if (h.indexOf('plateform.app') !== -1) traccia('click_prenota', { posizione: pagina });
+    if (h.indexOf('plateform.app') !== -1) traccia('click_prenota', { posizione: a.getAttribute('data-posizione') || pagina });
     else if (h.indexOf('tel:') === 0) traccia('click_telefono', { posizione: pagina });
     else if (h.indexOf('wa.me') !== -1) traccia('click_whatsapp', { motivo: 'generico', posizione: pagina });
     else if (h.indexOf('vini.html') !== -1) traccia('click_vini', { da: pagina });
