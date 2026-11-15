@@ -158,7 +158,7 @@ T = [
     ('<span class="posillipo-detail-label">Dove siamo</span>', '<span class="posillipo-detail-label">Where we are</span>'),
     ('Via Ferdinando Russo 13<br>Posillipo, Napoli</span>', 'Via Ferdinando Russo 13<br>Posillipo, Naples</span>'),
     ('<span class="posillipo-detail-label">Parcheggio</span>', '<span class="posillipo-detail-label">Parking</span>'),
-    ('Gratuito e riservato<br>Nessuna ZTL</span>', 'Free and reserved<br>No limited-traffic zone (ZTL)</span>'),
+    ('Gratuito e riservato<br>Convenzionato con la ZTL</span>', 'Free and reserved<br>ZTL access included for guests</span>'),
 
     # ── menu ──
     ('<span class="section-eyebrow">Esplora</span>', '<span class="section-eyebrow">Explore</span>'),
@@ -216,8 +216,8 @@ T = [
     ('<a href="tel:0813357572">081 335 7572</a>', '<a href="tel:+390813357572">+39 081 335 7572</a>'),
     ('<span class="info-label">Orari di apertura</span>', '<span class="info-label">Opening hours</span>'),
     ('<span class="info-label">Parcheggio</span>', '<span class="info-label">Parking</span>'),
-    ('Gratuito e riservato ai clienti<br><span style="font-size:12px;opacity:0.6">Nessun vincolo ZTL</span>',
-     'Free and reserved for guests<br><span style="font-size:12px;opacity:0.6">Outside the limited-traffic zone (ZTL)</span>'),
+    ('Gratuito e riservato ai clienti<br><span style="font-size:12px;opacity:0.6">Convenzionato con la ZTL</span>',
+     'Free and reserved for guests<br><span style="font-size:12px;opacity:0.6">ZTL access included for guests</span>'),
     ('!5e0!3m2!1sit!2sit!4v1', '!5e0!3m2!1sen!2sit!4v1'),
 
     # ── gallery ──
