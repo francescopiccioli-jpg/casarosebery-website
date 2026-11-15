@@ -38,6 +38,9 @@ RewriteRule ^(menu|menu-1|menu-2|il-menu|menu-casa-rosebery)/?$ https://www.casa
 
 # 4d. Vecchie pagine WordPress ancora presenti su Google -> pagina o sezione corrispondente
 RewriteRule ^prenotazioni/?$ https://casarosebery.plateform.app/reserve [L,R=301,NC]
+# Indirizzi brevi usati dal numero WhatsApp automatico (casa-rosebery-whatsapp): 302, possono cambiare destinazione
+RewriteRule ^prenota/?$ https://casarosebery.plateform.app/reserve [L,R=302,NC]
+RewriteRule ^eventi/?$ https://www.casaroseberyristorante.it/serate.html [L,R=302,NC]
 RewriteRule ^chi-siamo/?$ https://www.casaroseberyristorante.it/#storia [L,R=301,NE,NC]
 RewriteRule ^contatti/?$ https://www.casaroseberyristorante.it/#contatti [L,R=301,NE,NC]
 RewriteRule ^(discover-our-new-menu|menu/[^/]+)/?$ https://www.casaroseberyristorante.it/menu.html [L,R=301,NC]
