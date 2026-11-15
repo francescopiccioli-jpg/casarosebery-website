@@ -1183,6 +1183,7 @@ footer { padding-bottom: calc(24px + 70px + env(safe-area-inset-bottom, 0px)); }
       <span class="info-label">Phone & Reservations</span>
       <div class="info-value">
         <a href="tel:+390813357572">+39 081 335 7572</a><br>
+        <a href="https://wa.me/393783110419" target="_blank" rel="noopener">WhatsApp 378 311 0419</a><br>
         <a href="mailto:prenotazioni@casaroseberyristorante.it" style="font-size:12px;opacity:0.7">prenotazioni@casaroseberyristorante.it</a>
       </div>
     </div>
@@ -1514,8 +1515,29 @@ window.addEventListener('scroll', () => {
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const target = document.querySelector(a.getAttribute('href'));
-    if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+    if (target) { e.preventDefault(); vaiA(target); }
   });
+});
+// Le foto caricate durante lo scorrimento allungano la pagina e il punto di arrivo si sposta
+// (succede soprattutto alla prima visita o nei browser interni alle app): per 2 secondi
+// la posizione viene corretta, a meno che il visitatore non scorra da solo.
+function vaiA(target) {
+  target.scrollIntoView({ behavior: 'smooth' });
+  let giri = 0, fermo = false;
+  const stop = () => { fermo = true; };
+  ['wheel', 'touchstart', 'keydown'].forEach(ev => window.addEventListener(ev, stop, { once: true, passive: true }));
+  const t = setInterval(() => {
+    giri++;
+    if (fermo || giri > 8) { clearInterval(t); return; }
+    const scarto = target.getBoundingClientRect().top - 72;
+    if (giri > 3 && Math.abs(scarto) > 8) target.scrollIntoView({ behavior: 'auto' });
+  }, 250);
+}
+// Arrivo da un link con #sezione (es. /contatti → /#contatti): stessa correzione
+window.addEventListener('load', () => {
+  let t = null;
+  try { t = location.hash ? document.querySelector(location.hash) : null; } catch (e) {}
+  if (t) vaiA(t);
 });
 
 // ── FORM SUBMIT ────────────────────────────────────────
