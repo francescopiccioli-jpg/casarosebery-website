@@ -86,7 +86,7 @@ h3 {{ font-size:7.5pt; letter-spacing:3px; text-transform:uppercase; color:#8a6d
 </style></head><body>
 <div class="cover"><img src="{logo}" alt="Casa Rosebery"><h1>Carta dei vini</h1><p>Champagneria · Ristorante · Braceria · Napoli</p><p>{n} etichette · {e(D.get("aggiornato", ""))}</p></div>
 {"".join(corpo)}
-<p class="nota">Prezzi a bottiglia. Annate e disponibilità possono variare: chiedi al nostro personale.</p>
+<p class="nota">Prezzi a bottiglia. Annate e disponibilità possono variare: chiedi al nostro personale.<br><b>Tutti i vini contengono solfiti.</b></p>
 </body></html>'''
 (OUT / "vini.html").write_text(HTML, encoding="utf-8")
 print(n, "vini")

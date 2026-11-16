@@ -37,7 +37,7 @@ TESTI = {
            "eyebrow": "Braceria &amp; Ristorante · Posillipo", "h1": "Carta dei <em>vini</em>", "agg": "{n} etichette · aggiornata a {d}",
            "tip": "Tipologie", "cerca": "Cerca un vino, un produttore o una regione…", "cerca_aria": "Cerca nella carta dei vini",
            "vuoto": "Nessun vino trovato. Chiedi al nostro personale: la cantina riserva sempre qualche sorpresa.",
-           "nota": "Prezzi a bottiglia. Annate e disponibilità possono variare: il nostro personale di sala ti consiglia l'abbinamento migliore con i tagli alla brace.",
+           "nota": "Prezzi a bottiglia. Annate e disponibilità possono variare: il nostro personale di sala ti consiglia l'abbinamento migliore con i tagli alla brace.<br><strong>Tutti i vini contengono solfiti.</strong>",
            "prenota": "Prenota un tavolo", "menu": "Sfoglia il menu", "privacy": "Privacy e Cookie Policy"},
     "en": {"lang": "en", "file": RADICE / "en" / "vini.html", "rad": "/", "home": "/en/", "link": "/vini.html", "link_lang": "it", "link_txt": "IT",
            "sez": {"bollicine": "Sparkling", "rossi": "Reds", "bianchi": "Whites", "rosati": "Rosés"},
@@ -49,7 +49,7 @@ TESTI = {
            "eyebrow": "Steakhouse &amp; Restaurant · Posillipo", "h1": "Wine <em>list</em>", "agg": "{n} labels · updated {d}",
            "tip": "Wine types", "cerca": "Search for a wine, producer or region…", "cerca_aria": "Search the wine list",
            "vuoto": "No wines found. Ask our staff: the cellar always has a few surprises in store.",
-           "nota": "Prices are per bottle. Vintages and availability may vary: our dining room staff will suggest the best pairing for your grilled cuts.",
+           "nota": "Prices are per bottle. Vintages and availability may vary: our dining room staff will suggest the best pairing for your grilled cuts.<br><strong>All wines contain sulphites.</strong>",
            "prenota": "Book a table", "menu": "Browse the menu", "privacy": "Privacy &amp; Cookie Policy (Italian)"},
 }
 
