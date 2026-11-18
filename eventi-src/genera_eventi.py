@@ -124,7 +124,7 @@ def carta(s, lingua):
         menu_html = (f'<div class="serata-menu"><div class="serata-prezzo"><b>{L["menu_carta"]}</b>'
                      f'<span>{e(tr(s, "nota_menu", lingua, L["nota_default"]))}</span></div></div>')
     testo_wa = L["wa"].format(g=d.day, m=L["mesi"][d.month - 1], t=titolo)
-    wa = "https://wa.me/390813357572?text=" + urllib.parse.quote(testo_wa)
+    wa = "https://wa.me/393783110419?text=" + urllib.parse.quote(testo_wa)
     if s.get("prezzo"):
         # menu fisso: posti limitati, solo WhatsApp
         prenota = (f'<p class="serata-avviso">{L["avviso"]}</p>\n        <div class="serata-cta">'
