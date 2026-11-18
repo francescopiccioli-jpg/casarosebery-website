@@ -203,8 +203,8 @@ T = [
     ('placeholder="Descrivi la tua occasione..."', 'placeholder="Tell us about your occasion..."'),
     ('class="btn-dark">Invia richiesta</button>', 'class="btn-dark">Send request</button>'),
     ('<span class="divider-or">oppure</span>', '<span class="divider-or">or</span>'),
-    ('https://wa.me/390813357572?text=Ciao!%20Vorrei%20informazioni%20per%20un%20evento%20a%20Casa%20Rosebery.',
-     'https://wa.me/390813357572?text=Hi!%20I%27d%20like%20some%20information%20about%20an%20event%20at%20Casa%20Rosebery.'),
+    ('https://wa.me/393783110419?text=Ciao!%20Vorrei%20informazioni%20per%20un%20evento%20a%20Casa%20Rosebery.',
+     'https://wa.me/393783110419?text=Hi!%20I%27d%20like%20some%20information%20about%20an%20event%20at%20Casa%20Rosebery.'),
     ('          Scrivici su WhatsApp\n', '          Message us on WhatsApp\n'),
 
     # ── contatti ──

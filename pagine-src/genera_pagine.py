@@ -15,7 +15,7 @@ from zoneinfo import ZoneInfo
 RADICE = Path(__file__).resolve().parent.parent
 SITO = "https://www.casaroseberyristorante.it"
 PRENOTA = "https://casarosebery.plateform.app/reserve"
-WA = "390813357572"
+WA = "393783110419"
 MAPPA = "https://www.google.com/maps/dir/?api=1&destination=" + urllib.parse.quote("Casa Rosebery, Via Ferdinando Russo 13, Napoli")
 LAT, LON = 40.8132, 14.2018
 

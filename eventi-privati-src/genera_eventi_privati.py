@@ -7,7 +7,7 @@ from pathlib import Path
 
 RADICE = Path(__file__).resolve().parent.parent
 SITO = "https://www.casaroseberyristorante.it"
-WA = "390813357572"
+WA = "393783110419"
 EMAIL = "prenotazioni@casaroseberyristorante.it"
 
 CAPIENZA_SEDUTI, CAPIENZA_PIEDI = 120, 180
