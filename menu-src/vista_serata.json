@@ -1,6 +1,8 @@
 {
   "_istruzioni": "Vista limitata di menu.html per le date in 'date' (fino alle 4 del mattino dopo). Da usare solo quando il QR dei tavoli punta a menu.html; il QR dedicato è /serata (serata-src/serate.json). Dopo la serata svuotare 'date'.",
-  "date": [],
+  "date": [
+    "2026-11-20"
+  ],
   "titolo": "Cena spettacolo con Marco & Raf",
   "menu": {
     "titolo": "Menu della serata",
