@@ -1,11 +1,24 @@
 name: Pubblica su Aruba
 
-# Ad ogni modifica sul ramo main, carica il sito sull'hosting Aruba via FTP.
+# Ad ogni modifica sul ramo main:
+#  1. rigenera menu e carta dei vini dalle fonti (menu-src/menu.json, vini-src/vini.json);
+#     se è cambiato menu.json rigenera anche i PDF del menu (italiano e inglese);
+#  2. se le pagine generate sono cambiate, le salva nel repository (commit automatico);
+#  3. carica il sito sull'hosting Aruba via FTP.
+# Le modifiche a menu.json e vini.json arrivano anche dall'app interna (sezione "Sito da approvare"),
+# dopo l'approvazione del direttore o dell'amministratore.
 # Carica solo i file cambiati e NON cancella nulla sul server (il vecchio WordPress resta dov'e').
 on:
   push:
     branches: [main]
   workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pubblica-aruba
+  cancel-in-progress: false
 
 jobs:
   deploy:
@@ -13,6 +26,48 @@ jobs:
     steps:
       - name: Scarica il repo
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Rigenera menu e carta dei vini
+        run: |
+          python3 menu-src/genera_menu.py
+          python3 vini-src/genera_vini.py
+
+      - name: Il menu è cambiato?
+        id: menu
+        run: |
+          if git diff --name-only HEAD~1 HEAD 2>/dev/null | grep -q '^menu-src/menu.json$'; then
+            echo "cambiato=si" >> "$GITHUB_OUTPUT"
+          else
+            echo "cambiato=no" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Rigenera i PDF del menu
+        if: steps.menu.outputs.cambiato == 'si'
+        run: |
+          npm install --no-save --no-audit --no-fund playwright@1
+          npx playwright install --with-deps chromium
+          mkdir -p /tmp/pdf-it /tmp/pdf-en
+          python3 stampa-src/genera_menu_pdf.py /tmp/pdf-it --definitivo --web
+          python3 stampa-src/genera_menu_pdf.py /tmp/pdf-en --definitivo --web --en
+          node stampa-src/pdf.js /tmp/pdf-it --definitivo
+          node stampa-src/pdf.js /tmp/pdf-en --definitivo --en
+          cp /tmp/pdf-it/menu.pdf menu-casa-rosebery.pdf
+          cp /tmp/pdf-en/menu_en.pdf en/menu-casa-rosebery-en.pdf
+          rm -rf node_modules package-lock.json
+
+      - name: Salva le pagine rigenerate
+        run: |
+          git config user.name "Casa Rosebery (automatico)"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A -- '*.html' '*.pdf'
+          if git diff --cached --quiet; then
+            echo "Nessuna pagina da aggiornare"
+          else
+            git commit -m "Pagine rigenerate da menu.json / vini.json [skip ci]"
+            git push
+          fi
 
       - name: Carica su Aruba via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -34,3 +89,4 @@ jobs:
             stampa-src/**
             vini-src/**
             en-src/**
+            node_modules/**
