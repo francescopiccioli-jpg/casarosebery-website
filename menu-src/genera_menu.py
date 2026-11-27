@@ -12,26 +12,35 @@ import re
 
 RADICE = pathlib.Path(__file__).resolve().parent.parent
 dati = json.loads((RADICE / "menu-src" / "menu.json").read_text(encoding="utf-8"))
-_vs = RADICE / "menu-src" / "vista_serata.json"
-vista = json.loads(_vs.read_text(encoding="utf-8")) if _vs.exists() else {}
+# Le serate evento stanno in un solo posto: serata-src/serate.json (lo scrive anche la scheda "Serate" dell'app).
+# Qui si prendono quelle di oggi o future: nella loro data il QR dei tavoli (menu.html) mostra il menu della serata.
+# Una serata con "menu_tavoli": false non cambia il menu.html (il QR dei tavoli resta sul menu alla carta).
+import datetime
+_se = RADICE / "serata-src" / "serate.json"
+_da = (datetime.date.today() - datetime.timedelta(days=2)).isoformat()
+viste = [x for x in (json.loads(_se.read_text(encoding="utf-8")).get("serate", []) if _se.exists() else [])
+         if x.get("data", "") >= _da and x.get("menu_tavoli", True)]
 
 
 def vista_serata_html():
-    """Vista limitata per una serata (solo pagina italiana): nascosta di default, la attiva lo script nelle date indicate."""
-    if not vista.get("date"):
-        return ""
-    m = vista["menu"]
+    """Viste limitate per le serate (solo pagina italiana): nascoste di default, le attiva lo script nella data della serata."""
     voce = lambda n, d, pr="": (f'<li class="piatto"><div class="riga"><h4>{e(n)}</h4><span class="punti"></span>'
                                 + (f'<span class="prezzo">{e(pr)}</span>' if pr else "") + f'</div><p class="desc">{e(d)}</p></li>')
-    integ = m.get("integrazione")
-    perc = (f'<article class="percorso"><header><h3>{e(m["titolo"])}</h3><p class="pp">€ {e(m["prezzo"])} <span>{e(m["nota"])}</span></p></header>'
-            f'<div class="portata"><ul>{"".join(voce(n, d) for n, d in m["piatti"])}</ul></div>'
-            + (f'<div class="portata"><h5>{e(integ[0])}</h5><ul>{voce(integ[1], integ[2])}</ul></div>' if integ else "")
-            + '</article>')
-    sez = "".join(f'<section class="sez"><h2>{e(x["titolo"])}</h2><ul class="lista">{"".join(voce(*v) for v in x["voci"])}</ul></section>'
-                  for x in vista.get("sezioni", []))
-    return (f'<section id="vista-serata" data-mostra-il="{",".join(vista["date"])}" hidden>'
-            f'<section class="sez"><h2>{e(vista.get("titolo", "Menu della serata"))}</h2><div class="percorsi">{perc}</div></section>{sez}</section>')
+    out = []
+    for vista in viste:
+        m = vista["menu"]
+        integ = m.get("integrazione")
+        perc = (f'<article class="percorso"><header><h3>{e(m["titolo"])}</h3><p class="pp">€ {e(m["prezzo"])} <span>{e(m["nota"])}</span></p></header>'
+                f'<div class="portata"><ul>{"".join(voce(n, d) for n, d in m["piatti"])}</ul></div>'
+                + (f'<div class="portata"><h5>{e(integ[0])}</h5><ul>{voce(integ[1], integ[2])}</ul></div>' if integ else "")
+                + '</article>')
+        sez = "".join(f'<section class="sez"><h2>{e(x["titolo"])}</h2><ul class="lista">{"".join(voce(*v) for v in x["voci"])}</ul></section>'
+                      for x in vista.get("sezioni", []))
+        out.append(f'<section class="vista-serata" data-mostra-il="{e(vista["data"])}" hidden>'
+                   f'<section class="sez"><h2>{e(vista.get("titolo", "Menu della serata"))}</h2><div class="percorsi">{perc}</div></section>{sez}</section>')
+    return "".join(out)
+
+
 e = html.escape
 SITO = "https://www.casaroseberyristorante.it"
 
@@ -271,12 +280,12 @@ footer {{ padding-bottom:calc(28px + 72px + env(safe-area-inset-bottom,0px)); }}
 }})();
 </script>
 <script>
-// Vista limitata della serata: nelle date indicate mostra solo #vista-serata (fino alle 4 del mattino dopo)
+// Vista limitata della serata: nella data indicata mostra solo la sua .vista-serata (fino alle 4 del mattino dopo)
 (function () {{
-  var v = document.getElementById('vista-serata'); if (!v) return;
   var d = new Date(Date.now() - 4 * 3600 * 1000);
   var oggi = new Intl.DateTimeFormat('en-CA', {{ timeZone: 'Europe/Rome' }}).format(d);
-  if (v.getAttribute('data-mostra-il').split(',').indexOf(oggi) < 0) return;
+  var v = Array.prototype.filter.call(document.querySelectorAll('.vista-serata'), function (x) {{ return x.getAttribute('data-mostra-il') === oggi; }})[0];
+  if (!v) return;
   v.hidden = false;
   document.querySelectorAll('nav.cat, main > .sez, main > .info, .azioni a[href*="vini"], .top .lang, .top .agg').forEach(function (el) {{ el.style.display = 'none'; }});
 }})();

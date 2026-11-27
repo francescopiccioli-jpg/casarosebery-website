@@ -688,6 +688,10 @@
   {
    "data": "2026-12-03",
    "titolo": "Cena spettacolo con Erminio Sinni",
+   "ora_inizio": "20:30",
+   "ora_fine": "",
+   "immagine": "img/evento-erminio-sinni-2026-12-03.jpg",
+   "riassunto": "Cena spettacolo a Casa Rosebery con Erminio Sinni dal vivo, a Posillipo. Menu fisso a 70 € a persona, escluso servizio e beverage: ciabatta \"Rosebery\" con salsiccia croccante, crema di friarielli e provola affumicata; brasato di manzo al vino rosso con fonduta di parmigiano; risotto alla zucca con speck croccante; cuberoll argentino alla brace con patate al forno; tiramisù. In alternativa si può ordinare dall'Exclusive grill.",
    "menu": {
     "titolo": "Menu della serata",
     "prezzo": "70",
