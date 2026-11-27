@@ -1,48 +1,37 @@
 {
   "_istruzioni": "Vista limitata di menu.html per le date in 'date' (fino alle 4 del mattino dopo). Da usare solo quando il QR dei tavoli punta a menu.html; il QR dedicato è /serata (serata-src/serate.json). Dopo la serata svuotare 'date'.",
   "date": [
-    "2026-11-20"
+    "2026-11-27"
   ],
-  "titolo": "Cena spettacolo con Marco & Raf",
+  "titolo": "Cena spettacolo con Erminio Sinni",
   "menu": {
     "titolo": "Menu della serata",
-    "prezzo": "60",
-    "nota": "a persona · escluso beverage e servizio",
+    "prezzo": "70",
+    "nota": "a persona · escluso servizio e beverage",
     "piatti": [
       [
-        "Tris di antipasti",
-        "Polpettine alla gricia · Ribs di maiale in salsa BBQ · Bun di pulled chicken."
+        "Ciabatta “Rosebery”",
+        "Con salsiccia croccante, crema di friarielli e provola affumicata."
       ],
       [
-        "Pasta al forno",
-        "Paccheri con ragù napoletano, polpettine e provola."
+        "Brasato",
+        "Stracotto di manzo al vino rosso, servito con fonduta di parmigiano."
       ],
       [
-        "Brisket",
-        "Tenerissimo manzo, 12 ore di cottura lenta, servito su purea di patate e provola."
+        "Risotto",
+        "Zucca in doppia consistenza e speck croccante."
+      ],
+      [
+        "Cuberoll argentino",
+        "Pregiatissimo taglio di manzo cotto su brace e servito con patate al forno, aromatizzate."
       ],
       [
         "Tiramisù",
         "La nostra interpretazione del classico dessert trevigiano: spuma leggera di mascarpone d'alpeggio e uova pastorizzate su pan di Spagna imbevuto di caffè, con texture di cacao fine."
       ]
-    ],
-    "integrazione": [
-      "Integrazione menu · + € 25 a persona",
-      "Cuberoll argentino (300 g)",
-      "Servito con patate al forno"
     ]
   },
   "sezioni": [
-    {
-      "titolo": "Su richiesta",
-      "voci": [
-        [
-          "Risotto cacio e pepe",
-          "",
-          ""
-        ]
-      ]
-    },
     {
       "titolo": "Exclusive grill",
       "voci": [
