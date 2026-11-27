@@ -388,14 +388,16 @@ def serate(lingua):
         foto = s.get("foto") or "img/eventi/serata-esempio.jpg"
         carte.append(f'''<article class="serata" data-data="{s["data"]}"><img src="/{foto}" alt="{e(s.get("artista", ""))}" loading="lazy">
       <div class="corpo"><span class="quando">{e(q)}</span><h3>{e(titolo)}</h3><span class="artista">{e(s.get("artista", ""))}</span>
-      <p>{e(tr(s, "sottotitolo", lingua))}</p><p class="formula">{e(formula)}</p>{cta}</div></article>''')
+      {f'<p>{e(tr(s, "sottotitolo", lingua))}</p>' if tr(s, "sottotitolo", lingua) else ''}<p class="formula">{e(formula)}</p>{cta}</div></article>''')
         ev = {"@context": "https://schema.org", "@type": "Event", "name": f"{titolo} · {s.get('artista', '')}".strip(" ·"),
               "startDate": dt.datetime.fromisoformat(f'{s["data"]}T{s.get("ora", "21:00")}').replace(tzinfo=ZoneInfo("Europe/Rome")).isoformat(),
               "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-              "description": tr(s, "sottotitolo", lingua), "image": f"{SITO}/{foto}", "url": url("serate", lingua),
+              "image": f"{SITO}/{foto}", "url": url("serate", lingua),
               "location": {"@type": "Restaurant", "name": "Casa Rosebery", "address": {"@type": "PostalAddress",
                            "streetAddress": "Via Ferdinando Russo 13", "addressLocality": "Napoli", "postalCode": "80123", "addressCountry": "IT"}},
               "organizer": {"@type": "Organization", "name": "Casa Rosebery", "url": f"{SITO}/"}}
+        if tr(s, "sottotitolo", lingua):
+            ev["description"] = tr(s, "sottotitolo", lingua)
         if s.get("artista"):
             ev["performer"] = {"@type": "PerformingGroup" if "&" in s["artista"] else "Person", "name": s["artista"]}
         if s.get("prezzo"):
