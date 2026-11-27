@@ -127,12 +127,12 @@ footer { padding-bottom:calc(28px + 72px + env(safe-area-inset-bottom,0px)); }
 })();
 </script>
 <script>
-// Vista limitata della serata: nelle date indicate mostra solo #vista-serata (fino alle 4 del mattino dopo)
+// Vista limitata della serata: nella data indicata mostra solo la sua .vista-serata (fino alle 4 del mattino dopo)
 (function () {
-  var v = document.getElementById('vista-serata'); if (!v) return;
   var d = new Date(Date.now() - 4 * 3600 * 1000);
   var oggi = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Rome' }).format(d);
-  if (v.getAttribute('data-mostra-il').split(',').indexOf(oggi) < 0) return;
+  var v = Array.prototype.filter.call(document.querySelectorAll('.vista-serata'), function (x) { return x.getAttribute('data-mostra-il') === oggi; })[0];
+  if (!v) return;
   v.hidden = false;
   document.querySelectorAll('nav.cat, main > .sez, main > .info, .azioni a[href*="vini"], .top .lang, .top .agg').forEach(function (el) { el.style.display = 'none'; });
 })();

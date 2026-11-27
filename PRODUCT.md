@@ -40,7 +40,7 @@ Una braceria con carni da undici provenienze (Wagyu A5 di Kagoshima, Black Angus
 ## Capabilities and Constraints
 
 - **Stack:** HTML/CSS statico scritto a mano, nessun framework. Pagine: `index.html`, `menu.html`, `vini.html`, `privacy.html`, `en/`.
-- **Contenuti generati da JSON tramite script Python:** `menu-src/` (menu.json, vista_serata.json), `vini-src/`, `eventi-src/` (eventi.json; le serate passate spariscono da sole, `pubblica: false` le nasconde), `en-src/`. Le modifiche ai contenuti si fanno nel JSON, poi si rigenera l'HTML; non si modifica a mano l'HTML generato.
+- **Contenuti generati da JSON tramite script Python:** `menu-src/` (menu.json; le serate evento stanno in `serata-src/serate.json`, scritto anche dalla scheda "Serate" dell’app), `vini-src/`, `eventi-src/` (eventi.json; le serate passate spariscono da sole, `pubblica: false` le nasconde), `en-src/`. Le modifiche ai contenuti si fanno nel JSON, poi si rigenera l'HTML; non si modifica a mano l'HTML generato.
 - **Deploy:** GitHub Actions carica via FTP su hosting Aruba a ogni push su `main` (solo i file cambiati, nessuna cancellazione). `.htaccess` gestisce le intestazioni di sicurezza.
 - **Analytics:** Google Analytics caricato solo dopo il consenso cookie; la chiave di consenso è condivisa tra home, menu e vini (`js/analytics.js`).
 - **Dati strutturati:** JSON-LD `Restaurant` in homepage (orari, indirizzo, link di prenotazione, menu). Va tenuto allineato al contenuto visibile.
