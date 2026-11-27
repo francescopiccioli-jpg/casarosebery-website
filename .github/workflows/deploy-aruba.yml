@@ -1,7 +1,8 @@
 name: Pubblica su Aruba
 
 # Ad ogni modifica sul ramo main:
-#  1. rigenera menu e carta dei vini dalle fonti (menu-src/menu.json, vini-src/vini.json);
+#  1. rigenera menu e carta dei vini dalle fonti (menu-src/menu.json, vini-src/vini.json) e la sezione
+#     "Prossime serate" di home e versione inglese (eventi-src/eventi.json; la scheda Serate dell'app la aggiorna);
 #     se è cambiato menu.json rigenera anche i PDF del menu (italiano e inglese);
 #  2. se le pagine generate sono cambiate, le salva nel repository (commit automatico);
 #  3. carica il sito sull'hosting Aruba via FTP.
@@ -29,10 +30,11 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Rigenera menu e carta dei vini
+      - name: Rigenera menu, carta dei vini e serate
         run: |
           python3 menu-src/genera_menu.py
           python3 vini-src/genera_vini.py
+          python3 eventi-src/genera_eventi.py
 
       - name: Il menu è cambiato?
         id: menu

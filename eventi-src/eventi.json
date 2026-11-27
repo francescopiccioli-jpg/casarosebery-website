@@ -373,6 +373,82 @@
   },
   {
    "pubblica": true,
+   "data": "2026-12-03",
+   "ora": "20:30",
+   "titolo": "Cena spettacolo",
+   "artista": "Erminio Sinni",
+   "foto": "img/evento-erminio-sinni-2026-12-03.jpg",
+   "prezzo": "70",
+   "menu": [
+    {
+     "nome": "Ciabatta “Rosebery”",
+     "desc": "Con salsiccia croccante, crema di friarielli e provola affumicata."
+    },
+    {
+     "nome": "Brasato",
+     "desc": "Stracotto di manzo al vino rosso, servito con fonduta di parmigiano."
+    },
+    {
+     "nome": "Risotto",
+     "desc": "Zucca in doppia consistenza e speck croccante."
+    },
+    {
+     "nome": "Cuberoll argentino",
+     "desc": "Pregiatissimo taglio di manzo cotto su brace e servito con patate al forno, aromatizzate."
+    },
+    {
+     "nome": "Tiramisù",
+     "desc": "La nostra interpretazione del classico dessert trevigiano: spuma leggera di mascarpone d'alpeggio e uova pastorizzate su pan di Spagna imbevuto di caffè, con texture di cacao fine."
+    }
+   ],
+   "extra_titolo": "Alla carta durante la serata",
+   "extra": [
+    {
+     "gruppo": "Exclusive grill",
+     "nome": "Ribeye Canada",
+     "prezzo": "120 / kg",
+     "desc": "Cuberoll di manzo canadese d'eccellenza, da allevamento nutrito a cereali. Taglio eccezionalmente tenero, succoso e ricco di sapore grazie alla perfetta marezzatura."
+    },
+    {
+     "gruppo": "Exclusive grill",
+     "nome": "Kobe Japanese",
+     "prezzo": "400 / kg",
+     "desc": "La carne più pregiata al mondo, da bovini di pura razza Tajima (Prefettura di Hyogo). Straordinaria marezzatura di grasso nobile, consistenza burrosa che si scioglie in bocca e sapore d'intensità unica."
+    },
+    {
+     "gruppo": "Exclusive grill",
+     "nome": "Red Hereford – Irlanda",
+     "prezzo": "85 / kg",
+     "desc": "Pregiata carne allevata al pascolo naturale in Irlanda (grass-fed): eccellente morbidezza, gusto ricco e marezzatura fine che si scioglie in cottura."
+    },
+    {
+     "gruppo": "Exclusive grill",
+     "nome": "Red Dan – Danimarca",
+     "prezzo": "120 / kg",
+     "desc": "Pregiata selezione dalle pianure della Danimarca: straordinaria marezzatura, consistenza tenerissima e succosa, note dolci e burrose."
+    },
+    {
+     "gruppo": "Dolci",
+     "nome": "Brownie",
+     "prezzo": "8",
+     "desc": "Tipico dolcetto della tradizione americana, servito tiepido: cuore fondente, sottile crosticina croccante e noci pecan."
+    },
+    {
+     "gruppo": "Dolci",
+     "nome": "New York Cheese Cake",
+     "prezzo": "8",
+     "desc": "Iconica torta cotta al formaggio con base croccante di biscotto, servita con salsa ai frutti rossi."
+    },
+    {
+     "gruppo": "Dolci",
+     "nome": "Tiramisù",
+     "prezzo": "8",
+     "desc": "Tiramisù classico fatto in casa con mascarpone fresco, savoiardi artigianali all'espresso e cacao amaro."
+    }
+   ]
+  },
+  {
+   "pubblica": true,
    "data": "2026-12-10",
    "titolo": "Cena e musica swing dal vivo",
    "artista": "Raoul & Swing Orchestra",
